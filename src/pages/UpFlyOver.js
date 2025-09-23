@@ -142,9 +142,65 @@ const HeroVisual = styled.div`
   }
 `;
 
-const StatsSection = styled.section`
+const LaunchSection = styled.section`
   padding: 80px 0;
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+`;
+
+const LaunchBanner = styled.div`
+  text-align: center;
+  margin-bottom: 60px;
+`;
+
+const LaunchTitle = styled.h2`
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+`;
+
+const LaunchSubtitle = styled.p`
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+`;
+
+const LaunchOffer = styled.div`
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+`;
+
+const OfferBadge = styled.div`
+  background: #ff6b35;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+`;
+
+const OfferText = styled.h3`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+`;
+
+const OfferDetails = styled.p`
+  font-size: 1.1rem;
+  opacity: 0.9;
 `;
 
 const StatsGrid = styled.div`
@@ -286,6 +342,15 @@ const PricingGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   margin-top: 60px;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const LaunchCTA = styled.div`
+  padding: 20px 30px 0;
+  text-align: center;
 `;
 
 const PricingCard = styled.div`
@@ -308,12 +373,18 @@ const PricingCard = styled.div`
 `;
 
 const PopularBadge = styled.div`
-  background: #1e3a8a;
+  background: #10b981;
   color: white;
   text-align: center;
   padding: 10px;
   font-weight: 600;
   font-size: 0.9rem;
+  animation: glow 2s ease-in-out infinite alternate;
+
+  @keyframes glow {
+    from { box-shadow: 0 0 5px #10b981; }
+    to { box-shadow: 0 0 20px #10b981, 0 0 30px #10b981; }
+  }
 `;
 
 const PricingHeader = styled.div`
@@ -801,24 +872,33 @@ const UpFlyOver = () => {
         </Container>
       </HeroSection>
 
-      <StatsSection>
+      <LaunchSection>
         <Container>
+          <LaunchBanner>
+            <LaunchTitle>🚀 Now Launching in UAE!</LaunchTitle>
+            <LaunchSubtitle>Be among the first 1000 companies to join</LaunchSubtitle>
+            <LaunchOffer>
+              <OfferBadge>LIMITED TIME OFFER</OfferBadge>
+              <OfferText>First Year Completely FREE</OfferText>
+              <OfferDetails>No payment required • Full access to all features • Join now and secure your spot</OfferDetails>
+            </LaunchOffer>
+          </LaunchBanner>
           <StatsGrid>
             <StatCard>
-              <StatNumber>10K+</StatNumber>
-              <StatLabel>Companies</StatLabel>
+              <StatNumber>UAE</StatNumber>
+              <StatLabel>Launch Market</StatLabel>
             </StatCard>
             <StatCard>
-              <StatNumber>50K+</StatNumber>
-              <StatLabel>Connections</StatLabel>
+              <StatNumber>1000</StatNumber>
+              <StatLabel>Early Adopters</StatLabel>
             </StatCard>
             <StatCard>
-              <StatNumber>95%</StatNumber>
-              <StatLabel>Success Rate</StatLabel>
+              <StatNumber>100%</StatNumber>
+              <StatLabel>Free First Year</StatLabel>
             </StatCard>
           </StatsGrid>
         </Container>
-      </StatsSection>
+      </LaunchSection>
 
       <WhyChooseSection>
         <Container>
@@ -893,38 +973,47 @@ const UpFlyOver = () => {
       <PricingSection>
         <Container>
           <SectionHeader>
-            <h2>Simple, Transparent Pricing</h2>
-            <p>From individuals to enterprises - we have the perfect plan for you</p>
-            <PricingNote>14-day free trial on all paid plans</PricingNote>
+            <h2>UAE Launch Pricing</h2>
+            <p>Special offer for the first 1000 UAE companies to join our platform</p>
+            <PricingNote>🎉 First Year Completely FREE - No Credit Card Required</PricingNote>
           </SectionHeader>
           <PricingGrid>
-            <PricingCard>
+            <PricingCard className="popular">
+              <PopularBadge>🇦🇪 UAE Launch Special</PopularBadge>
               <PricingHeader>
-                <h3>Starter</h3>
-                <PricingPrice>Free<span>Forever</span></PricingPrice>
-                <p>Perfect for individuals and freelancers</p>
+                <h3>Early Adopter</h3>
+                <PricingPrice>FREE<span>First Year</span></PricingPrice>
+                <p>Complete platform access for UAE businesses</p>
               </PricingHeader>
               <PricingFeatures>
-                <li>Individual Profile (No company required)</li>
-                <li>Post 4 requirements/month</li>
-                <li>Browse 500 companies</li>
-                <li>Basic messaging (5 conversations/month)</li>
-                <li>Manual verification by our team</li>
-                <li>Email support</li>
+                <li>Premium company profile with verification badge</li>
+                <li>Unlimited team users</li>
+                <li>Unlimited requirements posting</li>
+                <li>Browse unlimited companies</li>
+                <li>Advanced messaging & video calls</li>
+                <li>AI-powered matching</li>
+                <li>Analytics dashboard</li>
+                <li>Priority support</li>
+                <li>Custom integrations (API access)</li>
+                <li>Dedicated account manager</li>
               </PricingFeatures>
+              <LaunchCTA>
+                <CTAButton href="https://upflyover.vercel.app" target="_blank" className="primary">
+                  🚀 Join Free for 1 Year
+                </CTAButton>
+              </LaunchCTA>
             </PricingCard>
             
-            <PricingCard className="popular">
-              <PopularBadge>Most Popular</PopularBadge>
+            <PricingCard>
               <PricingHeader>
                 <h3>Professional</h3>
                 <PricingPrice>$99<span>/month</span></PricingPrice>
-                <p>Ideal for growing companies</p>
+                <p>Starting from Year 2 (2026)</p>
               </PricingHeader>
               <PricingFeatures>
-                <li>Enhanced company profile with verification badge</li>
-                <li>3 team users included</li>
-                <li>Post 20 requirements/month</li>
+                <li>Enhanced company profile</li>
+                <li>5 team users included</li>
+                <li>Post 50 requirements/month</li>
                 <li>Browse unlimited companies</li>
                 <li>Advanced messaging & video calls</li>
                 <li>AI-powered matching</li>
@@ -937,11 +1026,11 @@ const UpFlyOver = () => {
               <PricingHeader>
                 <h3>Enterprise</h3>
                 <PricingPrice>$299<span>/month</span></PricingPrice>
-                <p>For large organizations</p>
+                <p>Starting from Year 2 (2026)</p>
               </PricingHeader>
               <PricingFeatures>
                 <li>Premium company profile with trust badges</li>
-                <li>10 team users included</li>
+                <li>Unlimited team users</li>
                 <li>Unlimited requirements</li>
                 <li>Advanced team management</li>
                 <li>Custom integrations (API access)</li>
@@ -1047,8 +1136,8 @@ const UpFlyOver = () => {
       <CTASection>
         <Container>
           <CTAContent>
-            <h2>Ready to Connect Globally?</h2>
-            <p>Join thousands of businesses already networking on UpFlyOver and discover unlimited partnership opportunities</p>
+            <h2>Ready to Be a Founding Member?</h2>
+            <p>Join the first 1000 UAE companies and get lifetime benefits as an early adopter</p>
             <CTAButtons>
               <CTAButton href="https://upflyover.vercel.app" target="_blank" rel="noopener noreferrer" className="primary">
                 <i className="fas fa-rocket"></i>
