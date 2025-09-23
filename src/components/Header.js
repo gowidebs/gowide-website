@@ -34,32 +34,74 @@ const Logo = styled.div`
   font-size: 1.8rem;
   font-weight: 800;
   
+  .logo-text {
+    text-decoration: none;
+    display: inline-block;
+  }
+  
   .go {
     color: var(--primary-orange);
-    animation: colorShift 3s ease-in-out infinite;
+    animation: goColorShift 4s ease-in-out infinite;
+    transition: color 0.3s ease;
   }
   
   .wide {
-    color: var(--text-primary);
-    animation: colorShift 3s ease-in-out infinite reverse;
+    color: #ffffff;
+    animation: wideColorShift 4s ease-in-out infinite;
+    transition: color 0.3s ease;
   }
 
-  @keyframes colorShift {
+  body.light-theme & .go {
+    animation: goColorShiftLight 4s ease-in-out infinite;
+  }
+
+  body.light-theme & .wide {
+    animation: wideColorShiftLight 4s ease-in-out infinite;
+  }
+
+  /* Dark mode animations */
+  @keyframes goColorShift {
     0%, 100% { 
       color: var(--primary-orange);
       text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
     }
-    25% { 
-      color: var(--secondary-orange);
-      text-shadow: 0 0 15px rgba(255, 154, 26, 0.6);
+    50% { 
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @keyframes wideColorShift {
+    0%, 100% { 
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
     50% { 
-      color: var(--tertiary-orange);
-      text-shadow: 0 0 20px rgba(255, 179, 71, 0.7);
+      color: var(--primary-orange);
+      text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
     }
-    75% { 
-      color: var(--secondary-orange);
-      text-shadow: 0 0 15px rgba(255, 154, 26, 0.6);
+  }
+
+  /* Light mode animations */
+  @keyframes goColorShiftLight {
+    0%, 100% { 
+      color: var(--primary-orange);
+      text-shadow: 0 0 10px rgba(255, 137, 6, 0.3);
+    }
+    50% { 
+      color: #000000;
+      text-shadow: none;
+    }
+  }
+
+  @keyframes wideColorShiftLight {
+    0%, 100% { 
+      color: #000000;
+      text-shadow: none;
+    }
+    50% { 
+      color: var(--primary-orange);
+      text-shadow: 0 0 10px rgba(255, 137, 6, 0.3);
     }
   }
 `;
@@ -283,7 +325,9 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo>
-          <span className="go">Go</span><span className="wide">Wide</span>
+          <Link to="/" className="logo-text">
+            <span className="go">Go</span><span className="wide">Wide</span>
+          </Link>
         </Logo>
         
         <NavLinks className={isMenuOpen ? 'active' : ''}>
