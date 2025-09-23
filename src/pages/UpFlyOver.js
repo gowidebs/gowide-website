@@ -10,7 +10,7 @@ const UpFlyOverPage = styled.div`
 
 const HeroSection = styled.section`
   padding: 120px 0 80px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
   color: white;
   position: relative;
   overflow: hidden;
@@ -101,7 +101,7 @@ const CTAButton = styled.a`
 
   &.primary {
     background: white;
-    color: #1e3a8a;
+    color: var(--primary-orange);
 
     &:hover {
       background: #f0f0f0;
@@ -116,7 +116,7 @@ const CTAButton = styled.a`
 
     &:hover {
       background: white;
-      color: #1e3a8a;
+      color: var(--primary-orange);
       transform: translateY(-2px);
     }
   }
@@ -226,7 +226,7 @@ const StatCard = styled.div`
 const StatNumber = styled.div`
   font-size: 3rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: var(--primary-orange);
   margin-bottom: 10px;
 `;
 
@@ -254,19 +254,19 @@ const WhyChooseCard = styled.div`
   .icon {
     width: 80px;
     height: 80px;
-    background: rgba(30, 58, 138, 0.1);
+    background: rgba(255, 137, 6, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 2rem;
-    color: #1e3a8a;
+    color: var(--primary-orange);
     transition: all 0.3s ease;
   }
 
   &:hover .icon {
-    background: #1e3a8a;
+    background: var(--primary-orange);
     color: white;
     transform: scale(1.1);
   }
@@ -275,7 +275,7 @@ const WhyChooseCard = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -312,7 +312,7 @@ const StepCard = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -332,7 +332,7 @@ const PricingSection = styled.section`
 `;
 
 const PricingNote = styled.p`
-  color: #10b981;
+  color: var(--primary-orange);
   font-weight: 600;
   margin-top: 10px;
 `;
@@ -362,7 +362,7 @@ const PricingCard = styled.div`
   transition: all 0.3s ease;
 
   &.popular {
-    border-color: #1e3a8a;
+    border-color: var(--primary-orange);
     transform: scale(1.05);
   }
 
@@ -373,7 +373,7 @@ const PricingCard = styled.div`
 `;
 
 const PopularBadge = styled.div`
-  background: #10b981;
+  background: var(--primary-orange);
   color: white;
   text-align: center;
   padding: 10px;
@@ -382,8 +382,8 @@ const PopularBadge = styled.div`
   animation: glow 2s ease-in-out infinite alternate;
 
   @keyframes glow {
-    from { box-shadow: 0 0 5px #10b981; }
-    to { box-shadow: 0 0 20px #10b981, 0 0 30px #10b981; }
+    from { box-shadow: 0 0 5px var(--primary-orange); }
+    to { box-shadow: 0 0 20px var(--primary-orange), 0 0 30px var(--primary-orange); }
   }
 `;
 
@@ -395,7 +395,7 @@ const PricingHeader = styled.div`
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -407,7 +407,7 @@ const PricingHeader = styled.div`
 const PricingPrice = styled.div`
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1e3a8a;
+  color: var(--primary-orange);
   margin-bottom: 10px;
 
   span {
@@ -430,7 +430,7 @@ const PricingFeatures = styled.ul`
 
     &::before {
       content: '✓';
-      color: #10b981;
+      color: var(--primary-orange);
       font-weight: bold;
     }
 
@@ -462,7 +462,7 @@ const MobileText = styled.div`
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -500,7 +500,7 @@ const MobilePreview = styled.div`
 const PhoneMockup = styled.div`
   width: 280px;
   height: 560px;
-  background: #1e3a8a;
+  background: var(--primary-orange);
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -529,7 +529,7 @@ const PhoneScreen = styled.div`
     h3 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1e3a8a;
+      color: var(--primary-orange);
       margin-bottom: 5px;
     }
     
@@ -549,7 +549,7 @@ const PhoneScreen = styled.div`
       padding: 10px 15px;
       border-radius: 10px;
       font-weight: 600;
-      color: #1e3a8a;
+      color: var(--primary-orange);
     }
   }
 
@@ -574,7 +574,7 @@ const SectionHeader = styled.div`
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -611,7 +611,7 @@ const FeatureCard = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
@@ -619,7 +619,7 @@ const FeatureCard = styled.div`
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: #1e3a8a;
+    border-color: var(--primary-orange);
     
     &::before {
       transform: scaleX(1);
@@ -629,20 +629,20 @@ const FeatureCard = styled.div`
   .feature-icon {
     width: 80px;
     height: 80px;
-    background: rgba(30, 58, 138, 0.1);
+    background: rgba(255, 137, 6, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 25px;
     font-size: 2rem;
-    color: #1e3a8a;
-    border: 3px solid rgba(30, 58, 138, 0.2);
+    color: var(--primary-orange);
+    border: 3px solid rgba(255, 137, 6, 0.2);
     transition: all 0.3s ease;
   }
 
   &:hover .feature-icon {
-    background: #1e3a8a;
+    background: var(--primary-orange);
     color: white;
     transform: scale(1.1);
   }
@@ -651,7 +651,7 @@ const FeatureCard = styled.div`
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #1e3a8a;
+    color: var(--primary-orange);
   }
 
   p {
@@ -684,12 +684,12 @@ const TechItem = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: #1e3a8a;
+    border-color: var(--primary-orange);
   }
 
   i {
     font-size: 3rem;
-    color: #1e3a8a;
+    color: var(--primary-orange);
     margin-bottom: 15px;
   }
 
@@ -702,7 +702,7 @@ const TechItem = styled.div`
 
 const CTASection = styled.section`
   padding: 100px 0;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
   color: white;
   text-align: center;
   position: relative;

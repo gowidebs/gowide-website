@@ -34,7 +34,17 @@ export const GlobalStyles = createGlobalStyle`
     --text-primary: #fffffe;
     --text-secondary: #a7a9be;
     --bg-primary: #0f0e17;
+    --bg-secondary: #1a1825;
     --bg-light: #fffffe;
+    --card-bg: #1a1825;
+  }
+
+  body.light-theme {
+    --text-primary: #0f0e17;
+    --text-secondary: #666666;
+    --bg-primary: #fffffe;
+    --bg-secondary: #f8f9fa;
+    --card-bg: #ffffff;
   }
 
   * {
@@ -50,11 +60,6 @@ export const GlobalStyles = createGlobalStyle`
     background: var(--bg-primary);
     overflow-x: hidden;
     transition: all 0.3s ease;
-  }
-
-  body.light-theme {
-    background: var(--bg-light);
-    color: var(--bg-primary);
   }
 
   .highlight {

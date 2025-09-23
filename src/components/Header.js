@@ -14,9 +14,11 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid rgba(255, 137, 6, 0.2);
   z-index: 1000;
   padding: 1rem 2rem;
+  transition: all 0.3s ease;
 
   body.light-theme & {
     background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -38,10 +40,6 @@ const Logo = styled.div`
   
   .wide {
     color: var(--text-primary);
-  }
-
-  body.light-theme & .wide {
-    color: var(--bg-primary);
   }
 `;
 
@@ -65,7 +63,8 @@ const NavLinks = styled.ul`
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--card-bg);
+    background: var(--bg-primary);
+    border: 1px solid rgba(255, 137, 6, 0.2);
     min-width: 200px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
@@ -139,14 +138,6 @@ const NavLink = styled.a`
   &:hover {
     color: var(--primary-orange);
     text-shadow: 0 0 5px rgba(255, 137, 6, 0.3);
-  }
-
-  body.light-theme & {
-    color: var(--bg-primary);
-  }
-
-  body.light-theme &:hover {
-    color: var(--primary-orange);
   }
 `;
 
@@ -242,7 +233,7 @@ const Hamburger = styled.button`
     transform-origin: center;
 
     body.light-theme & {
-      background: var(--bg-primary);
+      background: var(--text-primary);
     }
   }
 

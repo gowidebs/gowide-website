@@ -42,7 +42,7 @@ const HeroContent = styled.div`
     font-weight: 700;
     margin-bottom: 30px;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--text-primary), var(--primary));
+    background: linear-gradient(135deg, var(--text-primary), var(--primary-orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -74,22 +74,22 @@ const HeroButton = styled(Link)`
   transition: all 0.3s ease;
 
   &.primary {
-    background: var(--primary);
+    background: var(--primary-orange);
     color: white;
 
     &:hover {
-      background: #e67c00;
+      background: var(--secondary-orange);
       transform: translateY(-2px);
     }
   }
 
   &.secondary {
     background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
 
     &:hover {
-      background: var(--primary);
+      background: var(--primary-orange);
       color: white;
       transform: translateY(-2px);
     }
@@ -121,7 +121,7 @@ const SplitContent = styled.div`
 
 const ContentSide = styled.div`
   .highlight-text {
-    color: var(--primary);
+    color: var(--primary-orange);
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 20px;
@@ -156,7 +156,7 @@ const FeatureItem = styled.div`
   gap: 15px;
 
   i {
-    color: var(--primary);
+    color: var(--primary-orange);
     font-size: 1.2rem;
   }
 
@@ -170,7 +170,7 @@ const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--primary);
+  background: var(--primary-orange);
   color: white;
   padding: 15px 30px;
   border-radius: 50px;
@@ -179,7 +179,7 @@ const CTAButton = styled(Link)`
   transition: all 0.3s ease;
 
   &:hover {
-    background: #e67c00;
+    background: var(--secondary-orange);
     transform: translateY(-2px);
   }
 `;
@@ -221,7 +221,7 @@ const FloatingCard = styled.div`
   }
 
   i {
-    color: var(--primary);
+    color: var(--primary-orange);
     font-size: 1.5rem;
   }
 
@@ -253,7 +253,7 @@ const SectionHeader = styled.div`
     margin: 0 auto;
 
     .highlight {
-      color: var(--primary);
+      color: var(--primary-orange);
       font-weight: 600;
     }
   }
@@ -277,7 +277,7 @@ const ServiceBox = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary);
+    border-color: var(--primary-orange);
   }
 
   .box-icon {
@@ -290,7 +290,7 @@ const ServiceBox = styled.div`
     justify-content: center;
     margin: 0 auto 25px;
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--primary-orange);
     border: 2px solid rgba(255, 137, 6, 0.2);
   }
 
@@ -317,7 +317,7 @@ const ServiceBox = styled.div`
       color: var(--text-secondary);
 
       i {
-        color: var(--primary);
+        color: var(--primary-orange);
         font-size: 0.9rem;
       }
     }
@@ -376,7 +376,7 @@ const ProductCardFront = styled.div`
 
   .product-icon {
     font-size: 3rem;
-    color: var(--primary);
+    color: var(--primary-orange);
     margin-bottom: 20px;
   }
 
@@ -384,7 +384,7 @@ const ProductCardFront = styled.div`
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 
   .product-tagline {
@@ -408,7 +408,7 @@ const ProductCardBack = styled.div`
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 
   .product-description {
@@ -419,7 +419,7 @@ const ProductCardBack = styled.div`
   }
 
   .learn-more-btn {
-    background: var(--primary);
+    background: var(--primary-orange);
     color: white;
     padding: 10px 20px;
     border-radius: 25px;
@@ -428,7 +428,7 @@ const ProductCardBack = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      background: #e67c00;
+      background: var(--secondary-orange);
     }
   }
 `;
@@ -452,7 +452,7 @@ const TimelineItem = styled.div`
   .timeline-marker {
     width: 60px;
     height: 60px;
-    background: var(--primary);
+    background: var(--primary-orange);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -465,7 +465,7 @@ const TimelineItem = styled.div`
 
   .timeline-icon {
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--primary-orange);
     margin-bottom: 15px;
   }
 
@@ -517,7 +517,7 @@ const CircularProgress = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(var(--primary) ${props => props.percentage}%, rgba(255, 255, 255, 0.1) 0%);
+    background: conic-gradient(var(--primary-orange) ${props => props.percentage}%, rgba(255, 255, 255, 0.1) 0%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -538,7 +538,7 @@ const CircularProgress = styled.div`
     z-index: 2;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 `;
 
@@ -565,11 +565,11 @@ const ContactBtn = styled(Link)`
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  background: var(--primary);
+  background: var(--primary-orange);
   color: white;
 
   &:hover {
-    background: #e67c00;
+    background: var(--secondary-orange);
     transform: translateY(-2px);
   }
 `;
