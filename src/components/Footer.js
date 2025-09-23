@@ -44,13 +44,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-column services-links">
-            <h4>Services</h4>
+          <div className="footer-column upflyover-links">
+            <h4>UpFlyOver</h4>
             <ul>
-              <li><a href="#branding">Branding</a></li>
-              <li><a href="#technology">Technology</a></li>
-              <li><a href="#marketing">Marketing</a></li>
-              <li><a href="#advertising">Advertising</a></li>
+              <li><a href="/upflyover">Platform Overview</a></li>
+              <li><a href="/upflyover#features">Features</a></li>
+              <li><a href="/upflyover#pricing">Pricing</a></li>
+              <li><a href="/upflyover#contact">Get Started</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-column gymestry-links">
+            <h4>Gymestry</h4>
+            <ul>
+              <li><a href="/gymestry">Platform Overview</a></li>
+              <li><a href="/gymestry#features">Features</a></li>
+              <li><a href="/gymestry#pricing">Pricing</a></li>
+              <li><a href="/gymestry#contact">Get Started</a></li>
             </ul>
           </div>
 
@@ -61,15 +71,6 @@ const Footer = () => {
               <li><a href="#blog">Blog</a></li>
               <li><a href="#careers">Careers</a></li>
               <li><a href="#case-studies">Case Studies</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-column products-links">
-            <h4>Products</h4>
-            <ul>
-              <li><a href="/rendre">Rendre</a></li>
-              <li><a href="/upflyover">UpFlyOver</a></li>
-              <li><a href="/gymestry">Gymestry</a></li>
             </ul>
           </div>
         </div>
