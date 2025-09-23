@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const HeaderContainer = styled.header`
@@ -224,12 +225,11 @@ const Header = () => {
         </Logo>
         
         <NavLinks className={isMenuOpen ? 'active' : ''}>
-          <li><NavLink href="#home">Home</NavLink></li>
-          <li><NavLink href="#about">About</NavLink></li>
-          <li><NavLink href="#services">Services</NavLink></li>
-          <li><NavLink href="#products">Products</NavLink></li>
-          <li><NavLink href="#team">Team</NavLink></li>
-          <li><NavLink href="#contact">Contact</NavLink></li>
+          <li><NavLink as={Link} to="/">Home</NavLink></li>
+          <li><NavLink as={Link} to="/services">Services</NavLink></li>
+          <li><NavLink as={Link} to="/products">Products</NavLink></li>
+          <li><NavLink as={Link} to="/team">Team</NavLink></li>
+          <li><NavLink as={Link} to="/contact">Contact</NavLink></li>
         </NavLinks>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
