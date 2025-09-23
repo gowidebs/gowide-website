@@ -5,8 +5,12 @@ import { Link } from 'react-router-dom';
 
 const HomePage = styled.div`
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
   color: var(--text-primary);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const HeroSection = styled.section`
@@ -98,7 +102,11 @@ const HeroButton = styled(Link)`
 
 const SplitSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const Container = styled.div`
@@ -233,7 +241,11 @@ const FloatingCard = styled.div`
 
 const ServicesSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const SectionHeader = styled.div`
@@ -451,7 +463,11 @@ const ProductCardBack = styled.div`
 
 const ProcessSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const ProcessTimeline = styled.div`
@@ -507,7 +523,11 @@ const TimelineItem = styled.div`
 
 const ImpactSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const ImpactGrid = styled.div`
@@ -576,8 +596,12 @@ const CircularProgress = styled.div`
 
 const ContactSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
   text-align: center;
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const ContactButtons = styled.div`

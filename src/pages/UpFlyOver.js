@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 
 const UpFlyOverPage = styled.div`
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
   color: var(--text-primary);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const HeroSection = styled.section`
@@ -238,7 +242,11 @@ const StatLabel = styled.div`
 
 const WhyChooseSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const WhyChooseGrid = styled.div`
@@ -294,7 +302,11 @@ const WhyChooseCard = styled.div`
 
 const HowItWorksSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const StepsGrid = styled.div`
@@ -344,7 +356,11 @@ const StepNumber = styled.div`
 
 const PricingSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const PricingNote = styled.p`
@@ -458,7 +474,11 @@ const PricingFeatures = styled.ul`
 
 const MobileSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const MobileContent = styled.div`
@@ -601,7 +621,11 @@ const SectionHeader = styled.div`
 
 const FeaturesSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const FeaturesGrid = styled.div`
@@ -687,7 +711,11 @@ const FeatureCard = styled.div`
 
 const TechStackSection = styled.section`
   padding: 100px 0;
-  background: var(--bg-secondary);
+  background: rgba(26, 24, 37, 0.8);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const TechGrid = styled.div`
