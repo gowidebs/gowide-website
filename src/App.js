@@ -4,7 +4,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { GlobalStyles } from './styles/GlobalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Newsletter from './components/Newsletter';
+
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
@@ -60,7 +60,7 @@ function App() {
                   <Route path="/case-studies" element={<CaseStudies />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
-                <Newsletter />
+
               </main>
               <Footer />
               <ScrollToTop />

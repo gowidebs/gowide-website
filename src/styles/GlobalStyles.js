@@ -146,10 +146,6 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
-
-    body.light-theme & {
-      color: var(--bg-primary);
-    }
   }
 
   /* Utility Classes */
@@ -362,10 +358,6 @@ export const ContentSide = styled.div`
     margin: 1rem 0;
     line-height: 1.2;
 
-    body.light-theme & {
-      color: var(--bg-primary);
-    }
-
     @media (max-width: 768px) {
       font-size: 2rem;
     }
@@ -377,10 +369,6 @@ export const ContentSide = styled.div`
     margin: 1rem 0;
     line-height: 1.6;
     opacity: 0.8;
-
-    body.light-theme & {
-      color: var(--bg-primary);
-    }
   }
 
   .feature-list {
@@ -581,20 +569,12 @@ export const NewsletterSection = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-
-    body.light-theme & {
-      color: var(--bg-primary);
-    }
   }
 
   p {
     color: var(--text-primary);
     opacity: 0.8;
     margin-bottom: 1.5rem;
-
-    body.light-theme & {
-      color: var(--bg-primary);
-    }
   }
 `;
 
@@ -719,10 +699,6 @@ export const MainFooter = styled.footer`
           &:hover {
             color: var(--primary-orange);
           }
-
-          body.light-theme & {
-            color: var(--bg-primary);
-          }
         }
       }
     }
@@ -731,10 +707,6 @@ export const MainFooter = styled.footer`
       color: var(--text-primary);
       opacity: 0.8;
       line-height: 1.6;
-
-      body.light-theme & {
-        color: var(--bg-primary);
-      }
     }
   }
 
@@ -750,10 +722,6 @@ export const MainFooter = styled.footer`
       
       .wide {
         color: var(--text-primary);
-
-        body.light-theme & {
-          color: var(--bg-primary);
-        }
       }
     }
 
@@ -806,10 +774,6 @@ export const MainFooter = styled.footer`
     .copyright p {
       color: var(--text-primary);
       opacity: 0.8;
-
-      body.light-theme & {
-        color: var(--bg-primary);
-      }
     }
 
     .footer-right {
@@ -842,10 +806,6 @@ export const MainFooter = styled.footer`
 
         &:hover {
           color: var(--primary-orange);
-        }
-
-        body.light-theme & {
-          color: var(--bg-primary);
         }
       }
     }
