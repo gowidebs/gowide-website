@@ -8,7 +8,7 @@ import Newsletter from './components/Newsletter';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+import About from './pages/About';
 import Branding from './pages/Branding';
 import Advertising from './pages/Advertising';
 import Marketing from './pages/Marketing';
@@ -44,7 +44,7 @@ function App() {
               <main>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<AboutUs />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/branding" element={<Branding />} />
                   <Route path="/advertising" element={<Advertising />} />
                   <Route path="/marketing" element={<Marketing />} />
