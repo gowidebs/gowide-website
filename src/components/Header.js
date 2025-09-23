@@ -51,6 +51,45 @@ const NavLinks = styled.ul`
   gap: 2rem;
   align-items: center;
 
+  .dropdown {
+    position: relative;
+    
+    &:hover .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card-bg);
+    min-width: 200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    
+    a {
+      display: block;
+      padding: 0.8rem 1.5rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 137, 6, 0.1);
+        color: var(--primary-orange);
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
@@ -75,6 +114,17 @@ const NavLinks = styled.ul`
 
     body.light-theme & {
       background: rgba(255, 255, 255, 0.95);
+    }
+    
+    .dropdown-content {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
+      margin-left: 1rem;
     }
   }
 `;
@@ -226,9 +276,28 @@ const Header = () => {
         
         <NavLinks className={isMenuOpen ? 'active' : ''}>
           <li><NavLink as={Link} to="/">Home</NavLink></li>
-          <li><NavLink as={Link} to="/services">Services</NavLink></li>
-          <li><NavLink as={Link} to="/products">Products</NavLink></li>
+          <li><NavLink as={Link} to="/about">About</NavLink></li>
+          <li className="dropdown">
+            <NavLink>Services ▼</NavLink>
+            <div className="dropdown-content">
+              <NavLink as={Link} to="/branding">Branding</NavLink>
+              <NavLink as={Link} to="/advertising">Advertising</NavLink>
+              <NavLink as={Link} to="/marketing">Marketing</NavLink>
+              <NavLink as={Link} to="/technology">Technology</NavLink>
+            </div>
+          </li>
+          <li className="dropdown">
+            <NavLink>Products ▼</NavLink>
+            <div className="dropdown-content">
+              <NavLink as={Link} to="/caferunner">CafeRunner</NavLink>
+              <NavLink as={Link} to="/gowidecrm">GoWideCRM</NavLink>
+              <NavLink as={Link} to="/hotelpro">HotelPro</NavLink>
+            </div>
+          </li>
           <li><NavLink as={Link} to="/team">Team</NavLink></li>
+          <li><NavLink as={Link} to="/blog">Blog</NavLink></li>
+          <li><NavLink as={Link} to="/careers">Careers</NavLink></li>
+          <li><NavLink as={Link} to="/case-studies">Case Studies</NavLink></li>
           <li><NavLink as={Link} to="/contact">Contact</NavLink></li>
         </NavLinks>
 

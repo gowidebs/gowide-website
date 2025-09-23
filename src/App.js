@@ -8,9 +8,18 @@ import Newsletter from './components/Newsletter';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Products from './pages/Products';
+import AboutUs from './pages/AboutUs';
+import Branding from './pages/Branding';
+import Advertising from './pages/Advertising';
+import Marketing from './pages/Marketing';
+import Technology from './pages/Technology';
+import CafeRunner from './pages/CafeRunner';
+import GoWideCRM from './pages/GoWideCRM';
+import HotelPro from './pages/HotelPro';
 import Team from './pages/Team';
+import Blog from './pages/Blog';
+import Careers from './pages/Careers';
+import CaseStudies from './pages/CaseStudies';
 import Contact from './pages/Contact';
 
 function App() {
@@ -33,9 +42,18 @@ function App() {
               <main>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/products" element={<Products />} />
+                  <Route path="/about" element={<AboutUs />} />
+                  <Route path="/branding" element={<Branding />} />
+                  <Route path="/advertising" element={<Advertising />} />
+                  <Route path="/marketing" element={<Marketing />} />
+                  <Route path="/technology" element={<Technology />} />
+                  <Route path="/caferunner" element={<CafeRunner />} />
+                  <Route path="/gowidecrm" element={<GoWideCRM />} />
+                  <Route path="/hotelpro" element={<HotelPro />} />
                   <Route path="/team" element={<Team />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/careers" element={<Careers />} />
+                  <Route path="/case-studies" element={<CaseStudies />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
                 <Newsletter />
