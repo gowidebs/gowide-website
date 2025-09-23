@@ -459,7 +459,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A creative digital agency driven by innovation and excellence, transforming ideas into extraordinary digital experiences.
+            We are GoWide Business Services Pvt Ltd, a creative digital agency based in Kalpetta, Kerala. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.
           </motion.p>
           <ScrollIndicator>
             <div className="mouse"></div>
