@@ -684,6 +684,13 @@ const Home = () => {
 
   const products = [
     {
+      title: "Rendre",
+      tagline: "Transforming Waste, Driving Sustainability.",
+      description: "Rendre is an innovative platform revolutionizing the recycling of abandoned and end-of-life vehicles (ELVs). It streamlines the identification, collection, and recycling process while promoting environmental sustainability.",
+      icon: "fas fa-recycle",
+      link: "/rendre"
+    },
+    {
       title: "UpFlyOver",
       tagline: "Connecting Businesses Worldwide Through Intelligent Matching.",
       description: "UpFlyOver is a comprehensive B2B networking platform that connects companies worldwide with AI-powered matching and verified partnerships. Features include company registration, KYC verification, real-time dashboard, and intelligent business matching.",
@@ -696,13 +703,6 @@ const Home = () => {
       description: "Gymestry is an innovative fitness management platform that streamlines gym operations, member management, and workout tracking. Perfect for fitness centers looking to enhance member experience and operational efficiency.",
       icon: "fas fa-dumbbell",
       link: "/gymestry"
-    },
-    {
-      title: "Rendre",
-      tagline: "Transforming Waste, Driving Sustainability.",
-      description: "Rendre is an innovative platform revolutionizing the recycling of abandoned and end-of-life vehicles (ELVs). It streamlines the identification, collection, and recycling process while promoting environmental sustainability.",
-      icon: "fas fa-recycle",
-      link: "/rendre"
     }
   ];
 

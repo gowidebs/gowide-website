@@ -334,7 +334,7 @@ const Header = () => {
           <li><NavLink as={Link} to="/">Home</NavLink></li>
           <li><NavLink as={Link} to="/about">About</NavLink></li>
           <li className="dropdown">
-            <NavLink>Services ▼</NavLink>
+            <NavLink>Services</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/branding">Branding</NavLink>
               <NavLink as={Link} to="/advertising">Advertising</NavLink>
@@ -343,19 +343,13 @@ const Header = () => {
             </div>
           </li>
           <li className="dropdown">
-            <NavLink>Products ▼</NavLink>
+            <NavLink>Products</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/rendre">Rendre</NavLink>
               <NavLink as={Link} to="/upflyover">UpFlyOver</NavLink>
               <NavLink as={Link} to="/gymestry">Gymestry</NavLink>
-              <NavLink as={Link} to="/gowidecrm">GoWideCRM</NavLink>
-              <NavLink as={Link} to="/hotelpro">HotelPro</NavLink>
             </div>
           </li>
-          <li><NavLink as={Link} to="/team">Team</NavLink></li>
-          <li><NavLink as={Link} to="/blog">Blog</NavLink></li>
-          <li><NavLink as={Link} to="/careers">Careers</NavLink></li>
-          <li><NavLink as={Link} to="/case-studies">Case Studies</NavLink></li>
           <li><NavLink as={Link} to="/contact">Contact</NavLink></li>
         </NavLinks>
 

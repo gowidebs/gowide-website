@@ -40,7 +40,6 @@ const Footer = () => {
               <li><a href="#about">About Us</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#products">Products</a></li>
-              <li><a href="#team">Our Team</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -56,11 +55,21 @@ const Footer = () => {
           </div>
 
           <div className="footer-column contact-info">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#team">Our Team</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#case-studies">Case Studies</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-column products-links">
             <h4>Products</h4>
             <ul>
+              <li><a href="/rendre">Rendre</a></li>
               <li><a href="/upflyover">UpFlyOver</a></li>
               <li><a href="/gymestry">Gymestry</a></li>
-              <li><a href="#contact">Rendre</a></li>
             </ul>
           </div>
         </div>
