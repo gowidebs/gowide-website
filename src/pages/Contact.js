@@ -769,7 +769,7 @@ const Contact = () => {
               </p>
               <div className="location-contact">
                 <span><i className="fas fa-phone"></i> Coming Soon</span>
-                <span><i className="fas fa-envelope"></i> kochi@gowide.in</span>
+                <span><i className="fas fa-envelope"></i> contact@gowide.in</span>
               </div>
             </LocationCard>
 
