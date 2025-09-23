@@ -48,6 +48,16 @@ function App() {
               <div className="star"></div>
               <div className="star"></div>
               <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
             </div>
           </div>
           {isLoading ? (
