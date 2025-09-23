@@ -13,7 +13,9 @@ import Branding from './pages/Branding';
 import Advertising from './pages/Advertising';
 import Marketing from './pages/Marketing';
 import Technology from './pages/Technology';
-import CafeRunner from './pages/CafeRunner';
+import Rendre from './pages/Rendre';
+import UpFlyOver from './pages/UpFlyOver';
+import Gymestry from './pages/Gymestry';
 import GoWideCRM from './pages/GoWideCRM';
 import HotelPro from './pages/HotelPro';
 import Team from './pages/Team';
@@ -47,7 +49,9 @@ function App() {
                   <Route path="/advertising" element={<Advertising />} />
                   <Route path="/marketing" element={<Marketing />} />
                   <Route path="/technology" element={<Technology />} />
-                  <Route path="/caferunner" element={<CafeRunner />} />
+                  <Route path="/rendre" element={<Rendre />} />
+                  <Route path="/upflyover" element={<UpFlyOver />} />
+                  <Route path="/gymestry" element={<Gymestry />} />
                   <Route path="/gowidecrm" element={<GoWideCRM />} />
                   <Route path="/hotelpro" element={<HotelPro />} />
                   <Route path="/team" element={<Team />} />

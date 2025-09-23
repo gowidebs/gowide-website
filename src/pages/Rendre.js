@@ -48,15 +48,15 @@ const FeatureCard = styled(motion.div)`
   text-align: center;
 `;
 
-const CafeRunner = () => {
+const Rendre = () => {
   return (
     <ProductContainer>
       <HeroSection>
         <Title>
-          <span className="highlight">CafeRunner</span> - Restaurant Management
+          <span className="highlight">Rendre</span> - 3D Rendering Platform
         </Title>
         <Description>
-          Complete restaurant management solution with POS, inventory, and customer management features.
+          Professional 3D rendering and visualization platform for architects, designers, and creative professionals.
         </Description>
       </HeroSection>
 
@@ -66,8 +66,8 @@ const CafeRunner = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <h3>POS System</h3>
-          <p>Advanced point-of-sale system with real-time analytics</p>
+          <h3>Real-time Rendering</h3>
+          <p>High-quality real-time 3D rendering with advanced lighting and materials</p>
         </FeatureCard>
         
         <FeatureCard
@@ -75,8 +75,8 @@ const CafeRunner = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h3>Inventory Management</h3>
-          <p>Smart inventory tracking and automated reorder alerts</p>
+          <h3>Cloud Processing</h3>
+          <p>Powerful cloud-based rendering for complex scenes and animations</p>
         </FeatureCard>
         
         <FeatureCard
@@ -84,12 +84,12 @@ const CafeRunner = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h3>Customer Analytics</h3>
-          <p>Detailed customer insights and loyalty program management</p>
+          <h3>Collaboration Tools</h3>
+          <p>Team collaboration features with version control and project sharing</p>
         </FeatureCard>
       </FeaturesGrid>
     </ProductContainer>
   );
 };
 
-export default CafeRunner;
+export default Rendre;
