@@ -148,8 +148,12 @@ const HeroVisual = styled.div`
 
 const LaunchSection = styled.section`
   padding: 80px 0;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
+  background: transparent;
+  color: var(--text-primary);
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
 `;
 
 const LaunchBanner = styled.div`
