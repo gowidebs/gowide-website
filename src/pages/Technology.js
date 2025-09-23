@@ -5,6 +5,11 @@ import { motion } from 'framer-motion';
 const TechnologyContainer = styled.div`
   padding-top: 120px;
   min-height: 100vh;
+  background: rgba(15, 14, 23, 0.85);
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const HeroSection = styled.section`
