@@ -36,6 +36,20 @@ function App() {
       <Router>
         <GlobalStyles />
         <div className="App">
+          <div className="stars-container">
+            <div className="stars">
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+              <div className="star"></div>
+            </div>
+          </div>
           {isLoading ? (
             <LoadingScreen onLoadingComplete={handleLoadingComplete} />
           ) : (
