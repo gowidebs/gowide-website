@@ -36,10 +36,31 @@ const Logo = styled.div`
   
   .go {
     color: var(--primary-orange);
+    animation: colorShift 3s ease-in-out infinite;
   }
   
   .wide {
     color: var(--text-primary);
+    animation: colorShift 3s ease-in-out infinite reverse;
+  }
+
+  @keyframes colorShift {
+    0%, 100% { 
+      color: var(--primary-orange);
+      text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
+    }
+    25% { 
+      color: var(--secondary-orange);
+      text-shadow: 0 0 15px rgba(255, 154, 26, 0.6);
+    }
+    50% { 
+      color: var(--tertiary-orange);
+      text-shadow: 0 0 20px rgba(255, 179, 71, 0.7);
+    }
+    75% { 
+      color: var(--secondary-orange);
+      text-shadow: 0 0 15px rgba(255, 154, 26, 0.6);
+    }
   }
 `;
 
