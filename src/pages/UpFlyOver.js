@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const UpFlyOverPage = styled.div`
   min-height: 100vh;
-  background: rgba(15, 14, 23, 0.85);
+  background: transparent;
   color: var(--text-primary);
   
   body.light-theme & {
@@ -242,7 +242,7 @@ const StatLabel = styled.div`
 
 const WhyChooseSection = styled.section`
   padding: 100px 0;
-  background: rgba(15, 14, 23, 0.85);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
@@ -302,7 +302,7 @@ const WhyChooseCard = styled.div`
 
 const HowItWorksSection = styled.section`
   padding: 100px 0;
-  background: rgba(26, 24, 37, 0.8);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
@@ -356,7 +356,7 @@ const StepNumber = styled.div`
 
 const PricingSection = styled.section`
   padding: 100px 0;
-  background: rgba(15, 14, 23, 0.85);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
@@ -474,7 +474,7 @@ const PricingFeatures = styled.ul`
 
 const MobileSection = styled.section`
   padding: 100px 0;
-  background: rgba(26, 24, 37, 0.8);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
@@ -621,7 +621,7 @@ const SectionHeader = styled.div`
 
 const FeaturesSection = styled.section`
   padding: 100px 0;
-  background: rgba(15, 14, 23, 0.85);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
@@ -711,7 +711,7 @@ const FeatureCard = styled.div`
 
 const TechStackSection = styled.section`
   padding: 100px 0;
-  background: rgba(26, 24, 37, 0.8);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);

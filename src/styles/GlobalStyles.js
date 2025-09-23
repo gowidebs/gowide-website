@@ -574,12 +574,16 @@ export const ContactBtn = styled(Button)`
 `;
 
 export const NewsletterSection = styled.div`
-  background: rgba(255, 137, 6, 0.1);
+  background: transparent;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 15px;
   text-align: center;
   border: 1px solid rgba(255, 137, 6, 0.2);
+
+  body.light-theme & {
+    background: rgba(255, 137, 6, 0.1);
+  }
 
   h3 {
     color: var(--text-primary);

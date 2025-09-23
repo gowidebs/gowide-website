@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const AdvertisingContainer = styled.div`
   padding-top: 120px;
   min-height: 100vh;
-  background: rgba(15, 14, 23, 0.85);
+  background: transparent;
   
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
