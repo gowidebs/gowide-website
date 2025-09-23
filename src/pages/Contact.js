@@ -757,7 +757,7 @@ const Contact = () => {
               </div>
             </LocationCard>
 
-            <LocationCard>
+            <LocationCard className="active">
               <div className="location-icon">
                 <i className="fas fa-city"></i>
               </div>
