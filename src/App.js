@@ -16,8 +16,7 @@ import Technology from './pages/Technology';
 import Rendre from './pages/Rendre';
 import UpFlyOver from './pages/UpFlyOver';
 import Gymestry from './pages/Gymestry';
-import GoWideCRM from './pages/GoWideCRM';
-import HotelPro from './pages/HotelPro';
+
 import Team from './pages/Team';
 import Blog from './pages/Blog';
 import Careers from './pages/Careers';
@@ -76,8 +75,7 @@ function App() {
                   <Route path="/rendre" element={<Rendre />} />
                   <Route path="/upflyover" element={<UpFlyOver />} />
                   <Route path="/gymestry" element={<Gymestry />} />
-                  <Route path="/gowidecrm" element={<GoWideCRM />} />
-                  <Route path="/hotelpro" element={<HotelPro />} />
+
                   <Route path="/team" element={<Team />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/careers" element={<Careers />} />
