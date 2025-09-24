@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     if (type === 'newsletter') {
       emailContent = {
         to: data.email,
-        from: 'hello@gowide.in',
+        from: 'your-verified-email@domain.com', // Replace with your verified SendGrid sender
         subject: 'Welcome to GoWide Newsletter!',
         html: `
           <h2>Thank you for subscribing!</h2>
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     } else if (type === 'contact') {
       emailContent = {
         to: data.email,
-        from: 'hello@gowide.in',
+        from: 'your-verified-email@domain.com', // Replace with your verified SendGrid sender
         subject: 'Thank you for contacting GoWide',
         html: `
           <h2>Thank you for your inquiry!</h2>
