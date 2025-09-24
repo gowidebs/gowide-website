@@ -36,7 +36,8 @@ export const getContactEnquiries = () => {
 // Form submission functions
 export const submitContactForm = async (formData) => {
   try {
-    return await writeClient.create({
+    console.log('Submitting form with token:', process.env.REACT_APP_SANITY_TOKEN ? 'Token exists' : 'No token');
+    const result = await writeClient.create({
       _type: 'contactEnquiry',
       name: formData.name,
       email: formData.email,
@@ -44,10 +45,14 @@ export const submitContactForm = async (formData) => {
       company: formData.company,
       message: formData.message,
       status: 'new'
-    })
+    });
+    console.log('Form submitted successfully:', result);
+    return result;
   } catch (error) {
-    console.error('Error submitting contact form:', error);
-    throw new Error('Failed to submit contact form');
+    console.error('Detailed error:', error);
+    console.error('Error message:', error.message);
+    console.error('Error details:', error.details);
+    throw error;
   }
 }
 
