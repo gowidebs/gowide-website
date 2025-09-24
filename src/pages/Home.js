@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import TechShowcase from '../components/TechShowcase';
+import InteractiveDemo from '../components/InteractiveDemo';
 
 const HomePage = styled.div`
   min-height: 100vh;
@@ -1132,6 +1134,9 @@ const Home = () => {
           </ImpactGrid>
         </Container>
       </ImpactSection>
+
+      <TechShowcase />
+      <InteractiveDemo />
     </HomePage>
     </>
   );
