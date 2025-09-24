@@ -64,15 +64,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-column contact-info">
-            <h4>Contact</h4>
-            <ul>
-              <li><Link to="/contact">Get In Touch</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><a href="tel:+917559988886">+91 7559988886</a></li>
-              <li><a href="mailto:contact@gowide.in">contact@gowide.in</a></li>
-            </ul>
-          </div>
+
         </div>
       </div>
 
