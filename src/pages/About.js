@@ -71,10 +71,11 @@ const HeroContent = styled.div`
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
     margin-bottom: 30px;
-    background: linear-gradient(135deg, var(--text-primary), var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
+    
+    .highlight {
+      color: var(--primary-orange);
+    }
   }
 
   p {
@@ -457,7 +458,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Who We Are
+            Who <span className="highlight">We Are</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
