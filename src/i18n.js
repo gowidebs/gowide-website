@@ -1,0 +1,181 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const resources = {
+  en: {
+    translation: {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "products": "Products",
+        "contact": "Contact"
+      },
+      "hero": {
+        "title": "Transforming Ideas Into Digital Reality",
+        "subtitle": "We're more than just a digital agency. We're your partners in growth, dedicated to turning your vision into impactful digital solutions that drive results.",
+        "getStarted": "Get Started",
+        "learnMore": "Learn More"
+      },
+      "footer": {
+        "quickLinks": "Quick Links",
+        "services": "Services",
+        "products": "Products",
+        "copyright": "© 2025 Gowide Business Services Pvt Ltd. All rights reserved."
+      }
+    }
+  },
+  ar: {
+    translation: {
+      "nav": {
+        "home": "الرئيسية",
+        "about": "حول",
+        "services": "الخدمات",
+        "products": "المنتجات",
+        "contact": "اتصل بنا"
+      },
+      "hero": {
+        "title": "تحويل الأفكار إلى واقع رقمي",
+        "subtitle": "نحن أكثر من مجرد وكالة رقمية. نحن شركاؤك في النمو، مكرسون لتحويل رؤيتك إلى حلول رقمية مؤثرة تحقق النتائج.",
+        "getStarted": "ابدأ الآن",
+        "learnMore": "اعرف المزيد"
+      },
+      "footer": {
+        "quickLinks": "روابط سريعة",
+        "services": "الخدمات",
+        "products": "المنتجات",
+        "copyright": "© 2025 جو وايد لخدمات الأعمال المحدودة. جميع الحقوق محفوظة."
+      }
+    }
+  },
+  ml: {
+    translation: {
+      "nav": {
+        "home": "ഹോം",
+        "about": "കുറിച്ച്",
+        "services": "സേവനങ്ങൾ",
+        "products": "ഉൽപ്പന്നങ്ങൾ",
+        "contact": "ബന്ധപ്പെടുക"
+      },
+      "hero": {
+        "title": "ആശയങ്ങളെ ഡിജിറ്റൽ യാഥാർത്ഥ്യമാക്കുന്നു",
+        "subtitle": "ഞങ്ങൾ വെറുമൊരു ഡിജിറ്റൽ ഏജൻസിയല്ല. ഞങ്ങൾ നിങ്ങളുടെ വളർച്ചയുടെ പങ്കാളികളാണ്, നിങ്ങളുടെ കാഴ്ചപ്പാടിനെ ഫലപ്രദമായ ഡിജിറ്റൽ പരിഹാരങ്ങളാക്കി മാറ്റാൻ പ്രതിജ്ഞാബദ്ധരാണ്.",
+        "getStarted": "ആരംഭിക്കുക",
+        "learnMore": "കൂടുതൽ അറിയുക"
+      },
+      "footer": {
+        "quickLinks": "പെട്ടെന്നുള്ള ലിങ്കുകൾ",
+        "services": "സേവനങ്ങൾ",
+        "products": "ഉൽപ്പന്നങ്ങൾ",
+        "copyright": "© 2025 ഗോവൈഡ് ബിസിനസ് സർവീസസ് പ്രൈവറ്റ് ലിമിറ്റഡ്. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതമാണ്."
+      }
+    }
+  },
+  fr: {
+    translation: {
+      "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "services": "Services",
+        "products": "Produits",
+        "contact": "Contact"
+      },
+      "hero": {
+        "title": "Transformer les idées en réalité numérique",
+        "subtitle": "Nous sommes plus qu'une simple agence numérique. Nous sommes vos partenaires de croissance, dédiés à transformer votre vision en solutions numériques percutantes qui génèrent des résultats.",
+        "getStarted": "Commencer",
+        "learnMore": "En savoir plus"
+      },
+      "footer": {
+        "quickLinks": "Liens rapides",
+        "services": "Services",
+        "products": "Produits",
+        "copyright": "© 2025 Gowide Business Services Pvt Ltd. Tous droits réservés."
+      }
+    }
+  },
+  es: {
+    translation: {
+      "nav": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "services": "Servicios",
+        "products": "Productos",
+        "contact": "Contacto"
+      },
+      "hero": {
+        "title": "Transformando ideas en realidad digital",
+        "subtitle": "Somos más que una agencia digital. Somos sus socios en el crecimiento, dedicados a convertir su visión en soluciones digitales impactantes que generan resultados.",
+        "getStarted": "Empezar",
+        "learnMore": "Saber más"
+      },
+      "footer": {
+        "quickLinks": "Enlaces rápidos",
+        "services": "Servicios",
+        "products": "Productos",
+        "copyright": "© 2025 Gowide Business Services Pvt Ltd. Todos los derechos reservados."
+      }
+    }
+  },
+  hi: {
+    translation: {
+      "nav": {
+        "home": "होम",
+        "about": "के बारे में",
+        "services": "सेवाएं",
+        "products": "उत्पाद",
+        "contact": "संपर्क"
+      },
+      "hero": {
+        "title": "विचारों को डिजिटल वास्तविकता में बदलना",
+        "subtitle": "हम सिर्फ एक डिजिटल एजेंसी से कहीं अधिक हैं। हम आपके विकास के साझीदार हैं, आपकी दृष्टि को प्रभावशाली डिजिटल समाधानों में बदलने के लिए समर्पित हैं जो परिणाम देते हैं।",
+        "getStarted": "शुरू करें",
+        "learnMore": "और जानें"
+      },
+      "footer": {
+        "quickLinks": "त्वरित लिंक",
+        "services": "सेवाएं",
+        "products": "उत्पाद",
+        "copyright": "© 2025 गोवाइड बिजनेस सर्विसेज प्राइवेट लिमिटेड। सभी अधिकार सुरक्षित।"
+      }
+    }
+  },
+  ta: {
+    translation: {
+      "nav": {
+        "home": "முகப்பு",
+        "about": "பற்றி",
+        "services": "சேவைகள்",
+        "products": "தயாரிப்புகள்",
+        "contact": "தொடர்பு"
+      },
+      "hero": {
+        "title": "கருத்துக்களை டிஜிட்டல் உண்மையாக மாற்றுதல்",
+        "subtitle": "நாங்கள் வெறும் டிஜிட்டல் ஏஜென்சியை விட அதிகம். நாங்கள் உங்கள் வளர்ச்சியின் பங்காளிகள், உங்கள் பார்வையை பலனளிக்கும் டிஜிட்டல் தீர்வுகளாக மாற்ற அர்ப்பணிப்புடன் உள்ளோம்.",
+        "getStarted": "தொடங்குங்கள்",
+        "learnMore": "மேலும் அறிக"
+      },
+      "footer": {
+        "quickLinks": "விரைவு இணைப்புகள்",
+        "services": "சேவைகள்",
+        "products": "தயாரிப்புகள்",
+        "copyright": "© 2025 கோவைட் பிசினஸ் சர்வீசஸ் பிரைவேட் லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+      }
+    }
+  }
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'en',
+    debug: false,
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;

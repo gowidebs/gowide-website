@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -315,6 +317,7 @@ const Hamburger = styled.button`
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -331,10 +334,10 @@ const Header = () => {
         </Logo>
         
         <NavLinks className={isMenuOpen ? 'active' : ''}>
-          <li><NavLink as={Link} to="/">Home</NavLink></li>
-          <li><NavLink as={Link} to="/about">About</NavLink></li>
+          <li><NavLink as={Link} to="/">{t('nav.home')}</NavLink></li>
+          <li><NavLink as={Link} to="/about">{t('nav.about')}</NavLink></li>
           <li className="dropdown">
-            <NavLink>Services</NavLink>
+            <NavLink>{t('nav.services')}</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/branding">Branding</NavLink>
               <NavLink as={Link} to="/advertising">Advertising</NavLink>
@@ -343,7 +346,7 @@ const Header = () => {
             </div>
           </li>
           <li className="dropdown">
-            <NavLink>Products</NavLink>
+            <NavLink>{t('nav.products')}</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/rendre">Rendre</NavLink>
               <NavLink as={Link} to="/upflyover">UpFlyOver</NavLink>
@@ -351,10 +354,11 @@ const Header = () => {
             </div>
           </li>
 
-          <li><NavLink as={Link} to="/contact">Contact</NavLink></li>
+          <li><NavLink as={Link} to="/contact">{t('nav.contact')}</NavLink></li>
         </NavLinks>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <LanguageSwitcher />
           <ThemeToggle 
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
