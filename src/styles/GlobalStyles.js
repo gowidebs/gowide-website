@@ -808,13 +808,14 @@ export const MainFooter = styled.footer`
       margin-bottom: 1rem;
       
       img {
-        height: 80px;
+        height: 120px;
         width: auto;
         transition: all 0.3s ease;
-        filter: brightness(0) invert(1);
+        filter: invert(1) brightness(2);
+        background: transparent;
         
         body.light-theme & {
-          filter: brightness(0) invert(0);
+          filter: invert(0) brightness(1);
         }
         
         &:hover {
@@ -822,7 +823,11 @@ export const MainFooter = styled.footer`
         }
         
         @media (max-width: 480px) {
-          height: 60px;
+          height: 80px;
+        }
+        
+        @media (max-width: 768px) {
+          height: 100px;
         }
       }
       
