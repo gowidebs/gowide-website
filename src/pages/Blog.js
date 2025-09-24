@@ -272,9 +272,9 @@ const Blog = () => {
                 </div>
                 <h3>{blog.title}</h3>
                 <p>{blog.excerpt}</p>
-                <a href={`/blog/${blog.slug.current}`} className="read-more">
-                  Read More <i className="fas fa-arrow-right"></i>
-                </a>
+                <span className="read-more" style={{cursor: 'not-allowed', opacity: 0.6}}>
+                  Coming Soon <i className="fas fa-clock"></i>
+                </span>
               </div>
             </BlogCard>
           ))}

@@ -279,9 +279,9 @@ const CaseStudies = () => {
                     </div>
                   </div>
                 )}
-                <a href={`/case-studies/${caseStudy.slug?.current}`} className="view-case">
-                  View Case Study <i className="fas fa-arrow-right"></i>
-                </a>
+                <span className="view-case" style={{cursor: 'not-allowed', opacity: 0.6}}>
+                  Coming Soon <i className="fas fa-clock"></i>
+                </span>
               </div>
             </CaseStudyCard>
           ))}
