@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
