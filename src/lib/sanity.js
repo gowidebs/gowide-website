@@ -3,9 +3,8 @@ import { createClient } from '@sanity/client'
 export const client = createClient({
   projectId: '5nkpumup',
   dataset: 'production',
-  useCdn: false,
-  apiVersion: '2023-05-03',
-  token: process.env.REACT_APP_SANITY_TOKEN
+  useCdn: true,
+  apiVersion: '2023-05-03'
 })
 
 export const writeClient = createClient({

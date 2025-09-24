@@ -264,7 +264,6 @@ const NoJobsState = styled.div`
 const Careers = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const handleApplyClick = (jobId, jobTitle) => {
     // Create a proper modal instead of using prompt
@@ -312,13 +311,10 @@ const Careers = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        console.log('Fetching jobs...');
         const jobsData = await getJobVacancies();
-        console.log('Jobs data:', jobsData);
         setJobs(jobsData || []);
       } catch (error) {
         console.error('Error fetching jobs:', error);
-        setError(error.message);
         setJobs([]);
       } finally {
         setLoading(false);
@@ -338,16 +334,7 @@ const Careers = () => {
     );
   }
 
-  if (error) {
-    return (
-      <CareersContainer>
-        <LoadingState>
-          <h2>Error: {error}</h2>
-          <p>Debug: Check console for details</p>
-        </LoadingState>
-      </CareersContainer>
-    );
-  }
+
 
   return (
     <>
