@@ -9,7 +9,7 @@ export const client = createClient({
 
 // Helper functions for fetching data
 export const getJobVacancies = () => {
-  return client.fetch('*[_type == "jobVacancy"] | order(_createdAt desc)')
+  return client.fetch('*[_type == "jobVacancy" && isActive == true] | order(_createdAt desc)')
 }
 
 export const getBlogPosts = () => {
