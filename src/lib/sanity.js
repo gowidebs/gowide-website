@@ -57,7 +57,7 @@ export const submitContactForm = async (formData) => {
 
 export const submitJobApplication = async (applicationData) => {
   try {
-    return await client.create({
+    return await writeClient.create({
       _type: 'jobApplication',
       jobId: applicationData.jobId,
       applicantName: applicationData.name,
@@ -69,13 +69,13 @@ export const submitJobApplication = async (applicationData) => {
     })
   } catch (error) {
     console.error('Error submitting job application:', error);
-    throw new Error('Failed to submit job application');
+    throw error;
   }
 }
 
 export const subscribeNewsletter = async (email, name = '') => {
   try {
-    return await client.create({
+    return await writeClient.create({
       _type: 'newsletter',
       email: email,
       name: name,
@@ -83,6 +83,6 @@ export const subscribeNewsletter = async (email, name = '') => {
     })
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);
-    throw new Error('Failed to subscribe to newsletter');
+    throw error;
   }
 }
