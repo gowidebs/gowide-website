@@ -808,8 +808,9 @@ export const MainFooter = styled.footer`
       margin-bottom: 1rem;
       
       img {
-        height: 120px;
-        width: auto;
+        width: 100%;
+        height: auto;
+        max-height: 120px;
         transition: all 0.3s ease;
         filter: invert(1) brightness(2);
         background: transparent;
@@ -823,11 +824,11 @@ export const MainFooter = styled.footer`
         }
         
         @media (max-width: 480px) {
-          height: 80px;
+          max-height: 80px;
         }
         
         @media (max-width: 768px) {
-          height: 100px;
+          max-height: 100px;
         }
       }
       
