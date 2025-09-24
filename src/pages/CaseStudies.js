@@ -50,6 +50,26 @@ const CaseStudiesGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;
+    gap: 2.5rem;
+  }
 `;
 
 const CaseStudyCard = styled(motion.article)`
@@ -62,6 +82,12 @@ const CaseStudyCard = styled(motion.article)`
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(255, 137, 6, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
   
   .case-image {
@@ -100,6 +126,10 @@ const CaseStudyCard = styled(motion.article)`
   .case-content {
     padding: 2rem;
     
+    @media (max-width: 480px) {
+      padding: 1.5rem;
+    }
+    
     .case-client {
       color: var(--primary-orange);
       font-weight: 600;
@@ -112,6 +142,10 @@ const CaseStudyCard = styled(motion.article)`
       font-size: 1.5rem;
       margin-bottom: 1rem;
       line-height: 1.3;
+      
+      @media (max-width: 480px) {
+        font-size: 1.3rem;
+      }
     }
     
     p {
@@ -125,6 +159,11 @@ const CaseStudyCard = styled(motion.article)`
       gap: 1rem;
       margin-bottom: 1.5rem;
       
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
       .result-item {
         text-align: center;
         
@@ -133,6 +172,10 @@ const CaseStudyCard = styled(motion.article)`
           font-weight: 700;
           color: var(--primary-orange);
           display: block;
+          
+          @media (max-width: 480px) {
+            font-size: 1.3rem;
+          }
         }
         
         .result-label {

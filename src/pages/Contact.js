@@ -78,6 +78,19 @@ const Container = styled.div`
   padding: 0 20px;
   position: relative;
   z-index: 2;
+  
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;
+    padding: 0 2rem;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -100,13 +113,17 @@ const Badge = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
 
   .highlight {
     color: var(--primary);
+  }
+  
+  @media (min-width: 1920px) {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
   }
 `;
 
@@ -128,6 +145,16 @@ const StatsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   margin-bottom: 40px;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 `;
 
 const StatItem = styled.div`
@@ -229,6 +256,16 @@ const LocationsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 `;
 
 const LocationCard = styled.div`
@@ -340,6 +377,16 @@ const CompaniesGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
   margin-top: 40px;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 `;
 
 const CompanyCard = styled.div`
@@ -359,6 +406,10 @@ const CompanyCard = styled.div`
     font-size: 3rem;
     color: var(--primary);
     margin-bottom: 20px;
+    
+    @media (max-width: 480px) {
+      font-size: 2.5rem;
+    }
   }
 
   h3 {
@@ -366,6 +417,10 @@ const CompanyCard = styled.div`
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--primary);
+    
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
   }
 
   .company-description {
@@ -398,6 +453,11 @@ const FormWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: start;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -481,6 +541,7 @@ const InputRow = styled.div`
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 `;
 
@@ -572,6 +633,16 @@ const DirectContactGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 `;
 
 const DirectContactCard = styled.a`

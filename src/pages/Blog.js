@@ -18,6 +18,19 @@ const HeroSection = styled.section`
   text-align: center;
   max-width: 1400px;
   margin: 0 auto;
+  
+  @media (max-width: 480px) {
+    padding: 4rem 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 5rem 1.5rem;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;
+    padding: 8rem 2rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -30,8 +43,17 @@ const Title = styled.h1`
     color: var(--primary-orange);
   }
   
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
   @media (max-width: 768px) {
     font-size: 3rem;
+  }
+  
+  @media (min-width: 1920px) {
+    font-size: 4.5rem;
   }
 `;
 
@@ -41,6 +63,21 @@ const Description = styled.p`
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto 3rem;
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin: 0 auto 2.5rem;
+  }
+  
+  @media (min-width: 1920px) {
+    font-size: 1.3rem;
+    max-width: 700px;
+  }
 `;
 
 const BlogGrid = styled.div`
@@ -50,6 +87,26 @@ const BlogGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;
+    gap: 2.5rem;
+  }
 `;
 
 const BlogCard = styled(motion.article)`
@@ -62,6 +119,12 @@ const BlogCard = styled(motion.article)`
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(255, 137, 6, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
   
   .blog-image {
@@ -87,6 +150,10 @@ const BlogCard = styled(motion.article)`
   .blog-content {
     padding: 2rem;
     
+    @media (max-width: 480px) {
+      padding: 1.5rem;
+    }
+    
     .blog-meta {
       display: flex;
       gap: 1rem;
@@ -104,6 +171,10 @@ const BlogCard = styled(motion.article)`
       font-size: 1.5rem;
       margin-bottom: 1rem;
       line-height: 1.3;
+      
+      @media (max-width: 480px) {
+        font-size: 1.3rem;
+      }
     }
     
     p {

@@ -42,6 +42,14 @@ const HeroContent = styled.div`
   z-index: 2;
   position: relative;
   
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1100px;
+  }
+  
   @media (min-width: 1920px) {
     max-width: 1200px;
   }
@@ -51,7 +59,7 @@ const HeroContent = styled.div`
   }
 
   h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 700;
     margin-bottom: 30px;
     line-height: 1.2;
@@ -59,6 +67,15 @@ const HeroContent = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    
+    @media (max-width: 480px) {
+      font-size: clamp(2rem, 8vw, 2.5rem);
+      margin-bottom: 20px;
+    }
+    
+    @media (min-width: 1920px) {
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+    }
   }
 
   p {
@@ -66,6 +83,19 @@ const HeroContent = styled.div`
     color: var(--text-secondary);
     margin-bottom: 40px;
     line-height: 1.6;
+    
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+    
+    @media (min-width: 1920px) {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -74,6 +104,12 @@ const HeroButtons = styled.div`
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  
+  @media (max-width: 480px) {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const HeroButton = styled(Link)`
@@ -123,6 +159,19 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+    padding: 0 30px;
+  }
+  
   @media (min-width: 1920px) {
     max-width: 1800px;
     padding: 0 40px;
@@ -140,9 +189,18 @@ const SplitContent = styled.div`
   gap: 80px;
   align-items: center;
 
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  
+  @media (min-width: 1920px) {
+    gap: 100px;
   }
 `;
 
@@ -296,20 +354,31 @@ const ServicesGrid = styled.div`
   gap: 30px;
   margin-bottom: 50px;
   
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
   @media (min-width: 1920px) {
     gap: 40px;
   }
   
   @media (min-width: 2560px) {
     gap: 50px;
-  }
-
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
   }
 `;
 
@@ -326,6 +395,14 @@ const ServiceBox = styled.div`
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-orange);
   }
+  
+  @media (max-width: 480px) {
+    padding: 30px 20px;
+    
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
 
   .box-icon {
     width: 80px;
@@ -339,6 +416,13 @@ const ServiceBox = styled.div`
     font-size: 2rem;
     color: var(--primary-orange);
     border: 2px solid rgba(255, 137, 6, 0.2);
+    
+    @media (max-width: 480px) {
+      width: 70px;
+      height: 70px;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
   }
 
   h3 {
@@ -348,6 +432,11 @@ const ServiceBox = styled.div`
 
     .highlight {
       color: var(--primary);
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
     }
   }
 
@@ -383,9 +472,31 @@ const ProductsGrid = styled.div`
   max-width: 1000px;
   margin: 0 auto;
 
-  @media (max-width: 900px) {
+  @media (max-width: 480px) {
     grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 350px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
     max-width: 400px;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1200px;
+    gap: 35px;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1400px;
+    gap: 40px;
   }
 `;
 
@@ -502,12 +613,23 @@ const ProcessTimeline = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  @media (min-width: 1920px) {
+    gap: 50px;
   }
 `;
 
@@ -562,12 +684,23 @@ const ImpactGrid = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 480px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+  
+  @media (min-width: 1920px) {
+    gap: 50px;
   }
 `;
 
@@ -636,6 +769,12 @@ const ContactButtons = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 40px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 `;
 
 const ContactBtn = styled(Link)`

@@ -215,6 +215,23 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
   
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0 2.5rem;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+  
   @media (min-width: 1920px) {
     max-width: 1800px;
     padding: 0 4rem;
@@ -448,6 +465,25 @@ export const ServicesGrid = styled.div`
   max-width: 1600px;
   margin: 0 auto;
 
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media (min-width: 1920px) {
     max-width: 1800px;
     gap: 3rem;
@@ -456,15 +492,6 @@ export const ServicesGrid = styled.div`
   @media (min-width: 2560px) {
     max-width: 2200px;
     gap: 4rem;
-  }
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 `;
 
@@ -702,6 +729,15 @@ export const MainFooter = styled.footer`
     margin: 0 auto;
     padding: 0 2rem;
     
+    @media (max-width: 480px) {
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 1440px) {
+      max-width: 1400px;
+      padding: 0 3rem;
+    }
+    
     @media (min-width: 1920px) {
       max-width: 1800px;
       padding: 0 4rem;
@@ -717,13 +753,19 @@ export const MainFooter = styled.footer`
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
 
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
       @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
       }
-
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr;
+      
+      @media (min-width: 1920px) {
+        gap: 3rem;
       }
     }
   }
@@ -788,6 +830,10 @@ export const MainFooter = styled.footer`
       display: flex;
       gap: 1rem;
       margin-top: 1rem;
+      
+      @media (max-width: 480px) {
+        justify-content: center;
+      }
 
       a {
         width: 40px;
@@ -823,10 +869,34 @@ export const MainFooter = styled.footer`
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 1rem;
+      }
 
       @media (max-width: 768px) {
         flex-direction: column;
         text-align: center;
+      }
+      
+      @media (min-width: 1440px) {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      @media (min-width: 1920px) {
+        max-width: 1800px;
+        padding: 0 4rem;
+      }
+      
+      @media (min-width: 2560px) {
+        max-width: 2200px;
+        padding: 0 6rem;
       }
     }
 
@@ -841,6 +911,12 @@ export const MainFooter = styled.footer`
       gap: 2rem;
       flex-wrap: wrap;
 
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+
       @media (max-width: 768px) {
         flex-direction: column;
         gap: 1rem;
@@ -851,10 +927,12 @@ export const MainFooter = styled.footer`
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
 
       @media (max-width: 480px) {
         flex-direction: column;
         gap: 0.5rem;
+        width: 100%;
       }
 
       a {

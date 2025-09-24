@@ -52,6 +52,26 @@ const JobsGrid = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;
+    gap: 2.5rem;
+  }
 `;
 
 const JobCard = styled(motion.article)`
@@ -66,11 +86,30 @@ const JobCard = styled(motion.article)`
     box-shadow: 0 20px 40px rgba(255, 137, 6, 0.2);
   }
   
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
   .job-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1.5rem;
+    
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
     
     .job-info {
       flex: 1;
@@ -87,6 +126,10 @@ const JobCard = styled(motion.article)`
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
         line-height: 1.3;
+        
+        @media (max-width: 480px) {
+          font-size: 1.3rem;
+        }
       }
       
       .job-location {
@@ -147,6 +190,12 @@ const JobCard = styled(motion.article)`
     justify-content: space-between;
     align-items: center;
     
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    
     .job-salary {
       color: var(--primary-orange);
       font-weight: 600;
@@ -165,6 +214,11 @@ const JobCard = styled(motion.article)`
       &:hover {
         background: var(--secondary-orange);
         transform: translateY(-2px);
+      }
+      
+      @media (max-width: 480px) {
+        width: 100%;
+        padding: 1rem;
       }
     }
   }
