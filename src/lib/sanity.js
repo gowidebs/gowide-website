@@ -35,7 +35,6 @@ export const getContactEnquiries = () => {
 // Form submission functions
 export const submitContactForm = async (formData) => {
   try {
-    // console.log('Submitting form with token:', process.env.REACT_APP_SANITY_TOKEN ? 'Token exists' : 'No token');
     const result = await writeClient.create({
       _type: 'contactEnquiry',
       name: formData.name,
@@ -45,12 +44,17 @@ export const submitContactForm = async (formData) => {
       message: formData.message,
       status: 'new'
     });
-    console.log('Form submitted successfully:', result);
+    
+    // Send thank you email
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'contact', data: formData })
+    });
+    
     return result;
   } catch (error) {
-    console.error('Detailed error:', error);
-    console.error('Error message:', error.message);
-    console.error('Error details:', error.details);
+    console.error('Error submitting contact form:', error);
     throw error;
   }
 }
@@ -75,12 +79,21 @@ export const submitJobApplication = async (applicationData) => {
 
 export const subscribeNewsletter = async (email, name = '') => {
   try {
-    return await writeClient.create({
+    const result = await writeClient.create({
       _type: 'newsletter',
       email: email,
       name: name,
       status: 'active'
-    })
+    });
+    
+    // Send welcome email
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'newsletter', data: { email, name } })
+    });
+    
+    return result;
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);
     throw error;
