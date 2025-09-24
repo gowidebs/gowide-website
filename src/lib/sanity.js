@@ -3,7 +3,15 @@ import { createClient } from '@sanity/client'
 export const client = createClient({
   projectId: '5nkpumup',
   dataset: 'production',
-  useCdn: true,
+  useCdn: false,
+  apiVersion: '2023-05-03',
+  token: process.env.REACT_APP_SANITY_TOKEN
+})
+
+export const writeClient = createClient({
+  projectId: '5nkpumup',
+  dataset: 'production',
+  useCdn: false,
   apiVersion: '2023-05-03',
   token: process.env.REACT_APP_SANITY_TOKEN
 })
@@ -28,7 +36,7 @@ export const getContactEnquiries = () => {
 // Form submission functions
 export const submitContactForm = async (formData) => {
   try {
-    return await client.create({
+    return await writeClient.create({
       _type: 'contactEnquiry',
       name: formData.name,
       email: formData.email,
