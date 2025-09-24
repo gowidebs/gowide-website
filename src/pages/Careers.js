@@ -312,7 +312,7 @@ const Careers = () => {
     const fetchJobs = async () => {
       try {
         const jobsData = await getJobVacancies();
-        console.log('Jobs fetched:', jobsData);
+        // console.log('Jobs fetched:', jobsData);
         setJobs(Array.isArray(jobsData) ? jobsData : []);
       } catch (error) {
         console.error('Error fetching jobs:', error);

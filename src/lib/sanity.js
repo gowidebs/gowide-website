@@ -35,7 +35,7 @@ export const getContactEnquiries = () => {
 // Form submission functions
 export const submitContactForm = async (formData) => {
   try {
-    console.log('Submitting form with token:', process.env.REACT_APP_SANITY_TOKEN ? 'Token exists' : 'No token');
+    // console.log('Submitting form with token:', process.env.REACT_APP_SANITY_TOKEN ? 'Token exists' : 'No token');
     const result = await writeClient.create({
       _type: 'contactEnquiry',
       name: formData.name,

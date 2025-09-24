@@ -26,7 +26,8 @@ const Notification = () => {
   useEffect(() => {
     showNotificationGlobal = (message, type = 'success') => {
       setNotification({ message, type });
-      setTimeout(() => setNotification(null), 4000);
+      const timeoutId = setTimeout(() => setNotification(null), 4000);
+      return () => clearTimeout(timeoutId);
     };
   }, []);
 

@@ -50,7 +50,7 @@ const ScrollToTop = () => {
     const toggleVisibility = () => {
       if (timeoutId) clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        setIsVisible(window.pageYOffset > 300);
+        setIsVisible(window.scrollY > 300);
       }, 16);
     };
 
