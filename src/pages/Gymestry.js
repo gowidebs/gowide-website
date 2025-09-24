@@ -156,7 +156,7 @@ const CountdownTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--primary-orange);
 `;
 
 const CountdownSubtitle = styled.p`
@@ -178,7 +178,7 @@ const CountdownTimer = styled.div`
 `;
 
 const TimeUnit = styled.div`
-  background: var(--primary);
+  background: var(--primary-orange);
   color: white;
   padding: 25px 15px;
   border-radius: 15px;
@@ -264,7 +264,7 @@ const SectionHeader = styled.div`
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 
   p {
@@ -309,7 +309,7 @@ const FeatureCard = styled.div`
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: var(--primary);
+    border-color: var(--primary-orange);
     
     &::before {
       transform: scaleX(1);
@@ -341,7 +341,7 @@ const FeatureCard = styled.div`
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 
   p {
@@ -374,7 +374,7 @@ const BenefitItem = styled.div`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary);
+    border-color: var(--primary-orange);
   }
 
   .benefit-icon {
@@ -402,7 +402,7 @@ const BenefitItem = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--primary-orange);
   }
 
   p {
