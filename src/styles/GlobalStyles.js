@@ -808,12 +808,16 @@ export const MainFooter = styled.footer`
       margin-bottom: 1rem;
       
       img {
-        height: 40px;
+        height: 60px;
         width: auto;
         transition: all 0.3s ease;
         
         &:hover {
           transform: scale(1.05);
+        }
+        
+        @media (max-width: 480px) {
+          height: 50px;
         }
       }
       
