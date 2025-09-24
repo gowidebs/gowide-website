@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { getCaseStudies } from '../lib/sanity';
 
 const CaseStudiesContainer = styled.div`
@@ -279,9 +280,9 @@ const CaseStudies = () => {
                     </div>
                   </div>
                 )}
-                <span className="view-case" style={{cursor: 'not-allowed', opacity: 0.6}}>
-                  Coming Soon <i className="fas fa-clock"></i>
-                </span>
+                <Link to={`/case-studies/${caseStudy.slug?.current}`} className="view-case">
+                  View Case Study <i className="fas fa-arrow-right"></i>
+                </Link>
               </div>
             </CaseStudyCard>
           ))}

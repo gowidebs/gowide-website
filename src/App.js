@@ -22,8 +22,10 @@ import Gymestry from './pages/Gymestry';
 
 import Team from './pages/Team';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Careers from './pages/Careers';
 import CaseStudies from './pages/CaseStudies';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 import Contact from './pages/Contact';
 
 function App() {
@@ -82,8 +84,10 @@ function App() {
 
                   <Route path="/team" element={<Team />} />
                   <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/case-studies" element={<CaseStudies />} />
+                  <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
 

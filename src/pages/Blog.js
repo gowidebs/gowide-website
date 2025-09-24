@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { getBlogPosts } from '../lib/sanity';
 
 const BlogContainer = styled.div`
@@ -272,9 +273,9 @@ const Blog = () => {
                 </div>
                 <h3>{blog.title}</h3>
                 <p>{blog.excerpt}</p>
-                <span className="read-more" style={{cursor: 'not-allowed', opacity: 0.6}}>
-                  Coming Soon <i className="fas fa-clock"></i>
-                </span>
+                <Link to={`/blog/${blog.slug?.current}`} className="read-more">
+                  Read More <i className="fas fa-arrow-right"></i>
+                </Link>
               </div>
             </BlogCard>
           ))}
