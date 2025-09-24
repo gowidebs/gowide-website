@@ -211,9 +211,19 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  @media (min-width: 1920px) {
+    max-width: 1800px;
+    padding: 0 4rem;
+  }
+  
+  @media (min-width: 2560px) {
+    max-width: 2200px;
+    padding: 0 6rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -434,9 +444,19 @@ export const ImageSide = styled.div`
 export const ServicesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  max-width: 1400px;
+  gap: 2rem;
+  max-width: 1600px;
   margin: 0 auto;
+
+  @media (min-width: 1920px) {
+    max-width: 1800px;
+    gap: 3rem;
+  }
+  
+  @media (min-width: 2560px) {
+    max-width: 2200px;
+    gap: 4rem;
+  }
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -678,9 +698,19 @@ export const MainFooter = styled.footer`
   }
 
   .footer-content {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 2rem;
+    
+    @media (min-width: 1920px) {
+      max-width: 1800px;
+      padding: 0 4rem;
+    }
+    
+    @media (min-width: 2560px) {
+      max-width: 2200px;
+      padding: 0 6rem;
+    }
 
     .footer-container {
       display: grid;

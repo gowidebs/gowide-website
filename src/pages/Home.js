@@ -37,10 +37,18 @@ const HeroSection = styled.section`
 
 const HeroContent = styled.div`
   text-align: center;
-  max-width: 800px;
+  max-width: 1000px;
   padding: 0 20px;
   z-index: 2;
   position: relative;
+  
+  @media (min-width: 1920px) {
+    max-width: 1200px;
+  }
+  
+  @media (min-width: 2560px) {
+    max-width: 1400px;
+  }
 
   h1 {
     font-size: clamp(3rem, 6vw, 5rem);
@@ -111,9 +119,19 @@ const SplitSection = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 20px;
+  
+  @media (min-width: 1920px) {
+    max-width: 1800px;
+    padding: 0 40px;
+  }
+  
+  @media (min-width: 2560px) {
+    max-width: 2200px;
+    padding: 0 60px;
+  }
 `;
 
 const SplitContent = styled.div`
@@ -277,6 +295,14 @@ const ServicesGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 50px;
+  
+  @media (min-width: 1920px) {
+    gap: 40px;
+  }
+  
+  @media (min-width: 2560px) {
+    gap: 50px;
+  }
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
