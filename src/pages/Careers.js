@@ -312,7 +312,8 @@ const Careers = () => {
     const fetchJobs = async () => {
       try {
         const jobsData = await getJobVacancies();
-        setJobs(jobsData || []);
+        console.log('Jobs fetched:', jobsData);
+        setJobs(Array.isArray(jobsData) ? jobsData : []);
       } catch (error) {
         console.error('Error fetching jobs:', error);
         setJobs([]);
@@ -324,15 +325,7 @@ const Careers = () => {
     fetchJobs();
   }, []);
 
-  if (loading) {
-    return (
-      <CareersContainer>
-        <LoadingState>
-          <h2>Loading career opportunities...</h2>
-        </LoadingState>
-      </CareersContainer>
-    );
-  }
+
 
 
 
@@ -355,7 +348,11 @@ const Careers = () => {
       </HeroSection>
 
       <section style={{ padding: '0 0 6rem' }}>
-        {jobs.length > 0 ? (
+        {loading ? (
+          <LoadingState>
+            <h2>Loading career opportunities...</h2>
+          </LoadingState>
+        ) : jobs.length > 0 ? (
           <JobsGrid>
             {jobs.map((job, index) => (
               <JobCard
