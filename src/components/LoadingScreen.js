@@ -73,23 +73,32 @@ const LoadingScreen = ({ onLoadingComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    let timer = null;
+    
+    const updateProgress = () => {
       setProgress(prev => {
         if (prev >= 100) {
-          clearInterval(timer);
+          if (timer) clearInterval(timer);
           setTimeout(() => {
             setIsVisible(false);
             setTimeout(() => {
-              onLoadingComplete();
+              try {
+                if (onLoadingComplete) onLoadingComplete();
+              } catch (error) {
+                console.error('Loading complete callback error:', error);
+              }
             }, 500);
           }, 500);
           return 100;
         }
-        return prev + Math.random() * 15;
+        return Math.min(prev + Math.random() * 15, 100);
       });
-    }, 100);
-
-    return () => clearInterval(timer);
+    };
+    
+    timer = setInterval(updateProgress, 100);
+    return () => {
+      if (timer) clearInterval(timer);
+    };
   }, [onLoadingComplete]);
 
   return (

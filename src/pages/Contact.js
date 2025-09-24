@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { submitContactForm } from '../lib/sanity';
+import { showNotification } from '../components/Notification';
+import SEO from '../components/SEO';
 
 const ContactPage = styled.div`
   min-height: 100vh;
@@ -33,6 +36,11 @@ const FloatingElements = styled.div`
   right: 0;
   bottom: 0;
   pointer-events: none;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
 
   .floating-element {
     position: absolute;
@@ -646,9 +654,15 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you! Your message has been sent successfully. We will get back to you soon.');
+    try {
+      await submitContactForm({
+        name: `${formData.firstName} ${formData.lastName}`,
+        email: formData.email,
+        company: formData.service,
+        message: formData.message
+      });
+      
+      showNotification('Thank you! Your message has been sent successfully. We will get back to you soon.', 'success');
       setFormData({
         firstName: '',
         lastName: '',
@@ -656,12 +670,23 @@ const Contact = () => {
         service: '',
         message: ''
       });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   return (
-    <ContactPage>
+    <>
+      <SEO 
+        title="Contact Us - Get In Touch"
+        description="Ready to transform your business? Contact GoWide for innovative digital solutions. Get free consultation and expert advice."
+        keywords="contact, consultation, digital agency, business solutions, get quote, contact GoWide"
+        url="https://gowide.in/contact"
+      />
+      <ContactPage>
       <ContactHero>
         <FloatingElements>
           <div className="floating-element">
@@ -1055,6 +1080,7 @@ const Contact = () => {
         </Container>
       </DirectContactSection>
     </ContactPage>
+    </>
   );
 };
 

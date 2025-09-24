@@ -27,6 +27,11 @@ const FloatingShapes = styled.div`
   bottom: 0;
   pointer-events: none;
 
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
   .shape {
     position: absolute;
     background: rgba(255, 137, 6, 0.1);
@@ -459,7 +464,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We are GoWide Business Services Pvt Ltd, a creative digital agency based in Kalpetta, Kerala. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.
+            We are GoWide , a creative digital agency. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.
           </motion.p>
           <ScrollIndicator>
             <div className="mouse"></div>

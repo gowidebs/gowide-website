@@ -350,6 +350,9 @@ const Header = () => {
               <NavLink as={Link} to="/gymestry">Gymestry</NavLink>
             </div>
           </li>
+          <li><NavLink as={Link} to="/careers">Careers</NavLink></li>
+          <li><NavLink as={Link} to="/blog">Blog</NavLink></li>
+          <li><NavLink as={Link} to="/case-studies">Case Studies</NavLink></li>
           <li><NavLink as={Link} to="/contact">Contact</NavLink></li>
         </NavLinks>
 

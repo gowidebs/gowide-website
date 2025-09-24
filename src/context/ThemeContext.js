@@ -14,16 +14,20 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.body.className = savedTheme === 'light' ? 'light-theme' : '';
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      setTheme(savedTheme);
+      document.body.className = savedTheme === 'light' ? 'light-theme' : '';
+    }
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.body.className = newTheme === 'light' ? 'light-theme' : '';
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', newTheme);
+      document.body.className = newTheme === 'light' ? 'light-theme' : '';
+    }
   };
 
   return (

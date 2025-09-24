@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Newsletter from './Newsletter';
 import { MainFooter } from '../styles/GlobalStyles';
 
@@ -14,7 +15,7 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-column company-info">
             <div className="footer-logo">
-              <span className="go">Go</span><span className="wide">Wide</span>
+              <img src="/gowide-logo.png" alt="GoWide Logo" />
             </div>
             <p>
               We are a creative agency focused on growing brands through 
@@ -36,41 +37,40 @@ const Footer = () => {
           <div className="footer-column quick-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/case-studies">Case Studies</Link></li>
+              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/team">Our Team</Link></li>
             </ul>
           </div>
 
-          <div className="footer-column upflyover-links">
-            <h4>UpFlyOver</h4>
+          <div className="footer-column services-links">
+            <h4>Services</h4>
             <ul>
-              <li><a href="/upflyover">Platform Overview</a></li>
-              <li><a href="/upflyover#features">Features</a></li>
-              <li><a href="/upflyover#pricing">Pricing</a></li>
-              <li><a href="/upflyover#contact">Get Started</a></li>
+              <li><Link to="/branding">Branding</Link></li>
+              <li><Link to="/advertising">Advertising</Link></li>
+              <li><Link to="/marketing">Marketing</Link></li>
+              <li><Link to="/technology">Technology</Link></li>
             </ul>
           </div>
 
-          <div className="footer-column gymestry-links">
-            <h4>Gymestry</h4>
+          <div className="footer-column products-links">
+            <h4>Products</h4>
             <ul>
-              <li><a href="/gymestry">Platform Overview</a></li>
-              <li><a href="/gymestry#features">Features</a></li>
-              <li><a href="/gymestry#pricing">Pricing</a></li>
-              <li><a href="/gymestry#contact">Get Started</a></li>
+              <li><Link to="/rendre">Rendre</Link></li>
+              <li><Link to="/upflyover">UpFlyOver</Link></li>
+              <li><Link to="/gymestry">Gymestry</Link></li>
             </ul>
           </div>
 
           <div className="footer-column contact-info">
-            <h4>Company</h4>
+            <h4>Contact</h4>
             <ul>
-              <li><a href="#team">Our Team</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="#case-studies">Case Studies</a></li>
+              <li><Link to="/contact">Get In Touch</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><a href="tel:+917559988886">+91 7559988886</a></li>
+              <li><a href="mailto:contact@gowide.in">contact@gowide.in</a></li>
             </ul>
           </div>
         </div>

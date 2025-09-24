@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const HomePage = styled.div`
   min-height: 100vh;
@@ -727,7 +728,13 @@ const Home = () => {
   ];
 
   return (
-    <HomePage>
+    <>
+      <SEO 
+        title="GoWide - Creative Digital Solutions"
+        description="Transform your business with innovative branding, advertising, marketing, and technology services. Your trusted digital partner for growth."
+        keywords="digital marketing, web development, branding services, advertising agency, technology solutions, business growth"
+      />
+      <HomePage>
       <HeroSection>
         <HeroContent>
           <motion.h1
@@ -960,6 +967,7 @@ const Home = () => {
         </Container>
       </ImpactSection>
     </HomePage>
+    </>
   );
 };
 

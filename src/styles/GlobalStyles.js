@@ -733,9 +733,17 @@ export const MainFooter = styled.footer`
 
   .company-info {
     .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 800;
       margin-bottom: 1rem;
+      
+      img {
+        height: 40px;
+        width: auto;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
       
       .go {
         color: var(--primary-orange);

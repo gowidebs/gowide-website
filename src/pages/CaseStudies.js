@@ -1,160 +1,249 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { getCaseStudies } from '../lib/sanity';
 
 const CaseStudiesContainer = styled.div`
   padding-top: 120px;
   min-height: 100vh;
+  background: transparent;
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const HeroSection = styled.section`
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 137, 6, 0.1), rgba(255, 137, 6, 0.05));
+  max-width: 1400px;
+  margin: 0 auto;
 `;
 
 const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--text-primary);
   
   .highlight {
     color: var(--primary-orange);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 3rem;
   }
 `;
 
 const Description = styled.p`
   font-size: 1.2rem;
   color: var(--text-secondary);
+  line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
 `;
 
-const CasesGrid = styled.div`
+const CaseStudiesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
-  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 `;
 
-const CaseCard = styled(motion.div)`
+const CaseStudyCard = styled(motion.article)`
   background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 15px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 137, 6, 0.2);
-  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
   
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 137, 6, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 137, 6, 0.2);
+  }
+  
+  .case-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary-orange), rgba(255, 137, 6, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .placeholder {
+      color: white;
+      font-size: 3rem;
+    }
+    
+    .case-category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-orange);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+  
+  .case-content {
+    padding: 2rem;
+    
+    .case-client {
+      color: var(--primary-orange);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    h3 {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .case-results {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      
+      .result-item {
+        text-align: center;
+        
+        .result-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--primary-orange);
+          display: block;
+        }
+        
+        .result-label {
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+      }
+    }
+    
+    .view-case {
+      color: var(--primary-orange);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
   }
 `;
 
-const CaseTitle = styled.h3`
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-`;
-
-const CaseClient = styled.span`
-  color: var(--primary-orange);
-  font-size: 0.9rem;
-  font-weight: 500;
-`;
-
-const CaseDescription = styled.p`
-  color: var(--text-secondary);
-  margin: 1rem 0;
-  line-height: 1.6;
-`;
-
-const CaseResults = styled.div`
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.5rem;
-`;
-
-const ResultItem = styled.div`
+const LoadingState = styled.div`
   text-align: center;
-  
-  .number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-orange);
-  }
-  
-  .label {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-  }
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
 `;
 
 const CaseStudies = () => {
-  const cases = [
-    {
-      title: "E-commerce Platform Redesign",
-      client: "TechStore Inc.",
-      description: "Complete redesign and development of an e-commerce platform resulting in significant improvements in user experience and sales.",
-      results: [
-        { number: "150%", label: "Sales Increase" },
-        { number: "65%", label: "User Engagement" }
-      ]
-    },
-    {
-      title: "Digital Marketing Campaign",
-      client: "Local Restaurant Chain",
-      description: "Comprehensive digital marketing strategy including social media, SEO, and paid advertising campaigns.",
-      results: [
-        { number: "300%", label: "Online Orders" },
-        { number: "85%", label: "Brand Awareness" }
-      ]
-    },
-    {
-      title: "Mobile App Development",
-      client: "Fitness Startup",
-      description: "Native mobile app development for iOS and Android with real-time tracking and social features.",
-      results: [
-        { number: "50K+", label: "Downloads" },
-        { number: "4.8", label: "App Rating" }
-      ]
-    }
-  ];
+  const [caseStudies, setCaseStudies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const caseStudiesData = await getCaseStudies();
+        setCaseStudies(caseStudiesData || []);
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+        setCaseStudies([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCaseStudies();
+  }, []);
+
+  if (loading) {
+    return (
+      <CaseStudiesContainer>
+        <LoadingState>
+          <h2>Loading case studies...</h2>
+        </LoadingState>
+      </CaseStudiesContainer>
+    );
+  }
 
   return (
     <CaseStudiesContainer>
       <HeroSection>
         <Title>
-          Our <span className="highlight">Case Studies</span>
+          Case <span className="highlight">Studies</span>
         </Title>
         <Description>
-          Real results from real clients. See how we've helped businesses achieve their goals.
+          Real results from real clients. Discover how we've helped businesses achieve their goals.
         </Description>
       </HeroSection>
 
-      <CasesGrid>
-        {cases.map((caseStudy, index) => (
-          <CaseCard
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <CaseTitle>{caseStudy.title}</CaseTitle>
-            <CaseClient>{caseStudy.client}</CaseClient>
-            <CaseDescription>{caseStudy.description}</CaseDescription>
-            <CaseResults>
-              {caseStudy.results.map((result, idx) => (
-                <ResultItem key={idx}>
-                  <div className="number">{result.number}</div>
-                  <div className="label">{result.label}</div>
-                </ResultItem>
-              ))}
-            </CaseResults>
-          </CaseCard>
-        ))}
-      </CasesGrid>
+      <section style={{ padding: '0 0 6rem' }}>
+        <CaseStudiesGrid>
+          {caseStudies.map((caseStudy, index) => (
+            <CaseStudyCard
+              key={caseStudy.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="case-image">
+                {caseStudy.projectImage ? (
+                  <img src={caseStudy.projectImage} alt={caseStudy.projectTitle || 'Case study image'} />
+                ) : (
+                  <div className="placeholder">
+                    <i className="fas fa-chart-line"></i>
+                  </div>
+                )}
+                <div className="case-category">{caseStudy.industry}</div>
+              </div>
+              <div className="case-content">
+                <div className="case-client">{caseStudy.clientName}</div>
+                <h3>{caseStudy.projectTitle}</h3>
+                <p>{caseStudy.projectDescription}</p>
+                {caseStudy.results && (
+                  <div className="case-results">
+                    <div className="result-item">
+                      <span className="result-number">{caseStudy.results}</span>
+                      <span className="result-label">Results Achieved</span>
+                    </div>
+                  </div>
+                )}
+                <a href={`/case-studies/${caseStudy.slug?.current}`} className="view-case">
+                  View Case Study <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </CaseStudyCard>
+          ))}
+        </CaseStudiesGrid>
+      </section>
     </CaseStudiesContainer>
   );
 };

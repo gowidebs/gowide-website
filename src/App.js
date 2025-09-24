@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { HelmetProvider } from 'react-helmet-async';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Header from './components/Header';
@@ -8,6 +9,7 @@ import Footer from './components/Footer';
 
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
+import Notification from './components/Notification';
 import Home from './pages/Home';
 import About from './pages/About';
 import Branding from './pages/Branding';
@@ -32,8 +34,9 @@ function App() {
   };
 
   return (
-    <ThemeProvider>
-      <Router>
+    <HelmetProvider>
+      <ThemeProvider>
+        <Router>
         <GlobalStyles />
         <div className="App">
           <div className="stars-container">
@@ -87,12 +90,14 @@ function App() {
               </main>
               <Footer />
               <ScrollToTop />
+              <Notification />
               <SpeedInsights />
             </>
           )}
         </div>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

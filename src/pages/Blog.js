@@ -1,92 +1,168 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { getBlogPosts } from '../lib/sanity';
 
 const BlogContainer = styled.div`
   padding-top: 120px;
   min-height: 100vh;
+  background: transparent;
+  
+  body.light-theme & {
+    background: rgba(255, 255, 254, 0.95);
+  }
 `;
 
 const HeroSection = styled.section`
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 137, 6, 0.1), rgba(255, 137, 6, 0.05));
+  max-width: 1400px;
+  margin: 0 auto;
 `;
 
 const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--text-primary);
   
   .highlight {
     color: var(--primary-orange);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 3rem;
   }
 `;
 
 const Description = styled.p`
   font-size: 1.2rem;
   color: var(--text-secondary);
+  line-height: 1.6;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
 `;
 
 const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 `;
 
-const BlogCard = styled(motion.div)`
+const BlogCard = styled(motion.article)`
   background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 15px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 137, 6, 0.2);
-  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
   
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 137, 6, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 137, 6, 0.2);
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-orange), rgba(255, 137, 6, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .placeholder {
+      color: white;
+      font-size: 3rem;
+    }
+  }
+  
+  .blog-content {
+    padding: 2rem;
+    
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      
+      .date {
+        color: var(--primary-orange);
+      }
+    }
+    
+    h3 {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .read-more {
+      color: var(--primary-orange);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
   }
 `;
 
-const BlogDate = styled.span`
-  color: var(--primary-orange);
-  font-size: 0.9rem;
-  font-weight: 500;
-`;
-
-const BlogTitle = styled.h3`
-  margin: 1rem 0;
-  color: var(--text-primary);
-`;
-
-const BlogExcerpt = styled.p`
+const LoadingState = styled.div`
+  text-align: center;
+  padding: 4rem 2rem;
   color: var(--text-secondary);
-  line-height: 1.6;
 `;
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      title: "The Future of Digital Marketing in 2024",
-      excerpt: "Explore the latest trends and technologies shaping digital marketing strategies for businesses worldwide.",
-      date: "March 15, 2024"
-    },
-    {
-      title: "Building Scalable Web Applications",
-      excerpt: "Best practices for developing web applications that can handle growth and maintain performance.",
-      date: "March 10, 2024"
-    },
-    {
-      title: "Brand Identity Design Principles",
-      excerpt: "Essential principles for creating memorable and effective brand identities that resonate with audiences.",
-      date: "March 5, 2024"
-    }
-  ];
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogsData = await getBlogPosts();
+        setBlogs(blogsData || []);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+        setBlogs([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) {
+    return (
+      <BlogContainer>
+        <LoadingState>
+          <h2>Loading blog posts...</h2>
+        </LoadingState>
+      </BlogContainer>
+    );
+  }
 
   return (
     <BlogContainer>
@@ -95,24 +171,44 @@ const Blog = () => {
           Our <span className="highlight">Blog</span>
         </Title>
         <Description>
-          Insights, tips, and industry knowledge from our team of experts.
+          Insights, tips, and industry knowledge to help you stay ahead in the digital world.
         </Description>
       </HeroSection>
 
-      <BlogGrid>
-        {blogPosts.map((post, index) => (
-          <BlogCard
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <BlogDate>{post.date}</BlogDate>
-            <BlogTitle>{post.title}</BlogTitle>
-            <BlogExcerpt>{post.excerpt}</BlogExcerpt>
-          </BlogCard>
-        ))}
-      </BlogGrid>
+      <section style={{ padding: '0 0 6rem' }}>
+        <BlogGrid>
+          {blogs.map((blog, index) => (
+            <BlogCard
+              key={blog.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="blog-image">
+                {blog.featuredImage ? (
+                  <img src={blog.featuredImage} alt={blog.title || 'Blog post image'} />
+                ) : (
+                  <div className="placeholder">
+                    <i className="fas fa-newspaper"></i>
+                  </div>
+                )}
+              </div>
+              <div className="blog-content">
+                <div className="blog-meta">
+                  <span className="date">{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString() : 'No date'}</span>
+                  <span>•</span>
+                  <span>{blog.category || 'General'}</span>
+                </div>
+                <h3>{blog.title}</h3>
+                <p>{blog.excerpt}</p>
+                <a href={`/blog/${blog.slug.current}`} className="read-more">
+                  Read More <i className="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </BlogCard>
+          ))}
+        </BlogGrid>
+      </section>
     </BlogContainer>
   );
 };
