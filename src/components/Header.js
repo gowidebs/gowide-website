@@ -285,9 +285,13 @@ const Hamburger = styled.button`
   gap: 4px;
   padding: 0.5rem;
   z-index: 1001;
+  position: relative;
 
   @media (max-width: 768px) {
     display: flex;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
   }
 
   span {
