@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 // import TechShowcase from '../components/TechShowcase';
 // import InteractiveDemo from '../components/InteractiveDemo';
@@ -799,6 +800,7 @@ const ContactBtn = styled(Link)`
 `;
 
 const Home = () => {
+  const { t } = useTranslation();
   const services = [
     {
       title: "Branding",
@@ -910,14 +912,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Transforming Ideas Into Digital Reality
+            {t('hero.title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We're more than just a digital agency. We're your partners in growth, dedicated to turning your vision into impactful digital solutions that drive results.
+            {t('hero.subtitle')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -927,11 +929,11 @@ const Home = () => {
             <HeroButtons>
               <HeroButton to="/contact" className="primary">
                 <i className="fas fa-rocket"></i>
-                Get Started
+                {t('hero.getStarted')}
               </HeroButton>
               <HeroButton to="/about" className="secondary">
                 <i className="fas fa-info-circle"></i>
-                Learn More
+                {t('hero.learnMore')}
               </HeroButton>
             </HeroButtons>
           </motion.div>
