@@ -944,11 +944,10 @@ const Home = () => {
         <Container>
           <SplitContent>
             <ContentSide>
-              <span className="highlight-text">Who We Are</span>
-              <h2>Transforming Ideas Into Digital Reality</h2>
+              <span className="highlight-text">{t('about.whoWeAre')}</span>
+              <h2>{t('hero.title')}</h2>
               <p className="main-text">
-                We're more than just a digital agency. We're your partners in growth, 
-                dedicated to turning your vision into impactful digital solutions that drive results.
+                {t('hero.subtitle')}
               </p>
               <FeatureList>
                 <FeatureItem>
@@ -966,7 +965,7 @@ const Home = () => {
               </FeatureList>
               <CTAButton to="/contact">
                 <i className="fas fa-handshake"></i>
-                Let's Work Together
+                {t('common.contactUs')}
               </CTAButton>
             </ContentSide>
             <ImageSide>
@@ -1014,7 +1013,7 @@ const Home = () => {
             </ServicesGrid>
             <CTAContainer>
               <CTAButton to={service.link}>
-                Learn More About Our {service.title} Services
+                {t('common.learnMore')}
               </CTAButton>
             </CTAContainer>
           </Container>
@@ -1024,7 +1023,7 @@ const Home = () => {
       <ServicesSection>
         <Container>
           <SectionHeader>
-            <h2>Our Products</h2>
+            <h2>{t('common.ourProducts')}</h2>
             <p>Explore our innovative <span className="highlight">software solutions</span> designed to meet your needs.</p>
           </SectionHeader>
           <ProductsGrid>
@@ -1041,7 +1040,7 @@ const Home = () => {
                   <ProductCardBack>
                     <h3 className="product-title">{product.title}</h3>
                     <p className="product-description">{product.description}</p>
-                    <Link to={product.link} className="learn-more-btn">Learn More</Link>
+                    <Link to={product.link} className="learn-more-btn">{t('common.learnMore')}</Link>
                   </ProductCardBack>
                 </ProductCardInner>
               </ProductCard>
