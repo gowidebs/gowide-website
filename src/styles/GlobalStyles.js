@@ -730,8 +730,9 @@ export const NewsletterForm = styled.form`
 export const MainFooter = styled.footer`
   background: transparent;
   color: var(--text-primary);
-  padding: 3rem 0 1rem;
+  padding: 5rem 0 1rem;
   border-top: 1px solid rgba(255, 137, 6, 0.2);
+  margin-top: 3rem;
 
   body.light-theme & {
     color: var(--bg-primary);
@@ -785,10 +786,7 @@ export const MainFooter = styled.footer`
 
   .footer-column {
     background: transparent;
-    border: 1px solid rgba(255, 137, 6, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
+    padding: 0;
     
     h4 {
       color: var(--primary-orange);
