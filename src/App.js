@@ -12,7 +12,6 @@ import ScrollToTop from './components/ScrollToTop';
 import Notification from './components/Notification';
 import ParticleBackground from './components/ParticleBackground';
 import ScrollProgress from './components/ScrollProgress';
-import FloatingCTA from './components/FloatingCTA';
 // Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
@@ -84,7 +83,6 @@ function App() {
               <Footer />
               <ScrollToTop />
               <Notification />
-              <FloatingCTA />
               <SpeedInsights />
             </>
           )}
