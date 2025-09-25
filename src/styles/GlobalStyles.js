@@ -807,37 +807,32 @@ export const MainFooter = styled.footer`
     .footer-logo {
       margin-bottom: 1rem;
       
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 120px;
-        transition: all 0.3s ease;
-        filter: invert(1) brightness(2);
-        background: transparent;
+      .logo-text {
+        font-size: 2.5rem;
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-block;
         
-        body.light-theme & {
-          filter: invert(0) brightness(1);
+        .go {
+          color: var(--primary-orange);
+          animation: goColorShift 4s ease-in-out infinite;
+          transition: color 0.3s ease;
         }
         
-        &:hover {
-          transform: scale(1.05);
+        .wide {
+          color: #ffffff;
+          animation: wideColorShift 4s ease-in-out infinite;
+          transition: color 0.3s ease;
         }
-        
-        @media (max-width: 480px) {
-          max-height: 80px;
+
+        body.light-theme & .go {
+          animation: goColorShiftLight 4s ease-in-out infinite;
         }
-        
-        @media (max-width: 768px) {
-          max-height: 100px;
+
+        body.light-theme & .wide {
+          color: #000000;
+          animation: wideColorShiftLight 4s ease-in-out infinite;
         }
-      }
-      
-      .go {
-        color: var(--primary-orange);
-      }
-      
-      .wide {
-        color: var(--text-primary);
       }
     }
 
@@ -1042,5 +1037,50 @@ export const NotificationSuccess = styled.div`
   }
 `;
 
+// Logo animations
+const goColorShift = keyframes`
+  0%, 100% { 
+    color: var(--primary-orange);
+    text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
+  }
+  50% { 
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+`;
+
+const wideColorShift = keyframes`
+  0%, 100% { 
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% { 
+    color: var(--primary-orange);
+    text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
+  }
+`;
+
+const goColorShiftLight = keyframes`
+  0%, 100% { 
+    color: var(--primary-orange);
+    text-shadow: 0 0 10px rgba(255, 137, 6, 0.3);
+  }
+  50% { 
+    color: #000000;
+    text-shadow: none;
+  }
+`;
+
+const wideColorShiftLight = keyframes`
+  0%, 100% { 
+    color: #000000;
+    text-shadow: none;
+  }
+  50% { 
+    color: var(--primary-orange);
+    text-shadow: 0 0 10px rgba(255, 137, 6, 0.3);
+  }
+`;
+
 // Export keyframes for use in components
-export { twinkle, float, gradientShift, logoColorChangeDark, logoColorChangeLight };
+export { twinkle, float, gradientShift, logoColorChangeDark, logoColorChangeLight, goColorShift, wideColorShift, goColorShiftLight, wideColorShiftLight };

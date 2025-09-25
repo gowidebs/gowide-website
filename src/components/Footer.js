@@ -15,7 +15,9 @@ const Footer = () => {
         <div className="footer-container">
           <div className="footer-column company-info">
             <div className="footer-logo">
-              <img src="/gowide-logo.png" alt="GoWide Logo" />
+              <Link to="/" className="logo-text">
+                <span className="go">Go</span><span className="wide">Wide</span>
+              </Link>
             </div>
             <p>
               We are a creative agency focused on growing brands through 
