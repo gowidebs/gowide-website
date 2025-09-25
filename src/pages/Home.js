@@ -712,14 +712,23 @@ const ImpactGrid = styled.div`
 const ImpactCard = styled.div`
   text-align: center;
   padding: 30px;
-  background: var(--bg-secondary);
+  background: transparent;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--primary-orange);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(255, 137, 6, 0.3);
+    border-color: var(--secondary-orange);
+  }
+  
+  h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
   }
 `;
 
@@ -744,7 +753,8 @@ const CircularProgress = styled.div`
       position: absolute;
       width: 80%;
       height: 80%;
-      background: var(--bg-secondary);
+      background: transparent;
+      border: 2px solid var(--primary-orange);
       border-radius: 50%;
     }
   }
