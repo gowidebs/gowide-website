@@ -37,6 +37,9 @@ export const GlobalStyles = createGlobalStyle`
     --primary-orange: #ff8906;
     --secondary-orange: #ff9a1a;
     --tertiary-orange: #ffb347;
+  }
+
+  body {
     --text-primary: #fffffe;
     --text-secondary: #a7a9be;
     --bg-primary: transparent;
@@ -46,11 +49,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body.light-theme {
-    --text-primary: #0f0e17;
-    --text-secondary: #666666;
-    --bg-primary: transparent;
-    --bg-secondary: transparent;
-    --card-bg: transparent;
+    --text-primary: #0f0e17 !important;
+    --text-secondary: #666666 !important;
+    --bg-primary: transparent !important;
+    --bg-secondary: transparent !important;
+    --card-bg: transparent !important;
   }
 
   * {
@@ -80,8 +83,12 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
     z-index: -2;
-    background: var(--bg-primary);
+    background: #0f0e17;
     transition: all 0.3s ease;
+  }
+
+  body.light-theme .stars-container {
+    background: #f8f9fa;
   }
 
   .stars {
@@ -98,6 +105,11 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 50%;
     box-shadow: 0 0 6px #ffffff, 0 0 12px #ffffff;
     animation: ${twinkle} 2s infinite;
+  }
+
+  body.light-theme .star {
+    background: #333333;
+    box-shadow: 0 0 6px #333333, 0 0 12px #333333;
   }
 
   .star:nth-child(1) { top: 15%; left: 25%; animation-delay: 0s; }
