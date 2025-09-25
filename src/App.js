@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import Notification from './components/Notification';
+import ParticleBackground from './components/ParticleBackground';
+import ScrollProgress from './components/ScrollProgress';
+import FloatingCTA from './components/FloatingCTA';
 // Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
@@ -40,6 +43,8 @@ function App() {
       <ThemeProvider>
         <Router>
         <GlobalStyles />
+        <ParticleBackground />
+        <ScrollProgress />
         <div className="App">
           <div className="stars-container">
             <div className="stars">
@@ -79,6 +84,7 @@ function App() {
               <Footer />
               <ScrollToTop />
               <Notification />
+              <FloatingCTA />
               <SpeedInsights />
             </>
           )}
