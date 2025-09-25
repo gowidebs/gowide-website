@@ -39,18 +39,18 @@ export const GlobalStyles = createGlobalStyle`
     --tertiary-orange: #ffb347;
     --text-primary: #fffffe;
     --text-secondary: #a7a9be;
-    --bg-primary: #0f0e17;
-    --bg-secondary: #1a1825;
-    --bg-light: #fffffe;
-    --card-bg: #1a1825;
+    --bg-primary: transparent;
+    --bg-secondary: transparent;
+    --bg-light: transparent;
+    --card-bg: transparent;
   }
 
   body.light-theme {
     --text-primary: #0f0e17;
     --text-secondary: #666666;
-    --bg-primary: #fffffe;
-    --bg-secondary: #f8f9fa;
-    --card-bg: #ffffff;
+    --bg-primary: transparent;
+    --bg-secondary: transparent;
+    --card-bg: transparent;
   }
 
   * {
@@ -63,7 +63,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Catamaran', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: var(--bg-primary);
+    background: transparent;
     overflow-x: hidden;
     transition: all 0.3s ease;
   }
@@ -276,7 +276,7 @@ export const ServiceBox = styled.div`
   border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 137, 6, 0.2);
+  border: 2px solid rgba(255, 137, 6, 0.4);
   position: relative;
   overflow: hidden;
   min-height: 280px;
@@ -299,12 +299,13 @@ export const ServiceBox = styled.div`
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(255, 137, 6, 0.2);
-    border-color: rgba(255, 137, 6, 0.5);
+    box-shadow: 0 15px 30px rgba(255, 137, 6, 0.3);
+    border-color: var(--primary-orange);
   }
 
   body.light-theme & {
-    background: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border-color: rgba(255, 137, 6, 0.6);
   }
 `;
 
@@ -771,6 +772,12 @@ export const MainFooter = styled.footer`
   }
 
   .footer-column {
+    background: transparent;
+    border: 1px solid rgba(255, 137, 6, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    
     h4 {
       color: var(--primary-orange);
       font-size: 1.2rem;

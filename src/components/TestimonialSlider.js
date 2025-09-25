@@ -23,12 +23,13 @@ const SectionTitle = styled.h2`
 `;
 
 const TestimonialCard = styled(motion.div)`
-  background: var(--bg-secondary);
+  background: transparent;
   border-radius: 20px;
   padding: 50px 40px;
-  border: 1px solid rgba(255, 137, 6, 0.2);
+  border: 2px solid rgba(255, 137, 6, 0.4);
   position: relative;
   margin: 0 20px;
+  backdrop-filter: blur(10px);
   
   &::before {
     content: '"';

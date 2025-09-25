@@ -4,10 +4,14 @@ import { motion } from 'framer-motion';
 
 const StatsContainer = styled.section`
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
-  color: white;
+  background: transparent;
+  border: 2px solid var(--primary-orange);
+  border-radius: 20px;
+  margin: 20px;
+  color: var(--text-primary);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
   
   &::before {
     content: '';
