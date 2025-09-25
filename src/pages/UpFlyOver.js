@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const UpFlyOverPage = styled.div`
   min-height: 100vh;
@@ -816,6 +817,8 @@ const CTAButtons = styled.div`
 `;
 
 const UpFlyOver = () => {
+  const { t } = useTranslation();
+  
   const features = [
     {
       icon: "fas fa-user-plus",
@@ -884,7 +887,7 @@ const UpFlyOver = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                UpFlyOver
+                {t('upflyover.heroTitle')}
               </motion.h1>
               <motion.p
                 className="hero-tagline"
@@ -892,7 +895,7 @@ const UpFlyOver = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Fly Over Business Barriers
+                {t('upflyover.heroTagline')}
               </motion.p>
               <motion.p
                 className="hero-subtitle"
@@ -900,7 +903,7 @@ const UpFlyOver = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                The world's most trusted B2B networking platform
+                {t('upflyover.heroSubtitle')}
               </motion.p>
               <motion.p
                 className="hero-description"
@@ -908,7 +911,7 @@ const UpFlyOver = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Join thousands of verified companies worldwide. Find suppliers, customers, and business partners with our AI-powered matching system.
+                {t('upflyover.heroDescription')}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -918,11 +921,11 @@ const UpFlyOver = () => {
                 <HeroButtons>
                   <CTAButton href="https://upflyover.vercel.app" target="_blank" rel="noopener noreferrer" className="primary">
                     <i className="fas fa-rocket"></i>
-                    Launch Platform
+                    {t('upflyover.launchPlatform')}
                   </CTAButton>
                   <CTAButton href="#features" className="secondary">
                     <i className="fas fa-info-circle"></i>
-                    Learn More
+                    {t('upflyover.learnMore')}
                   </CTAButton>
                 </HeroButtons>
               </motion.div>
@@ -939,12 +942,12 @@ const UpFlyOver = () => {
       <LaunchSection>
         <Container>
           <LaunchBanner>
-            <LaunchTitle>🚀 Now Launching in UAE!</LaunchTitle>
-            <LaunchSubtitle>Be among the first 1000 companies to join</LaunchSubtitle>
+            <LaunchTitle>{t('upflyover.launchingUAE')}</LaunchTitle>
+            <LaunchSubtitle>{t('upflyover.firstThousand')}</LaunchSubtitle>
             <LaunchOffer>
-              <OfferBadge>LIMITED TIME OFFER</OfferBadge>
-              <OfferText>First Year Completely FREE</OfferText>
-              <OfferDetails>No payment required • Full access to all features • Join now and secure your spot</OfferDetails>
+              <OfferBadge>{t('upflyover.limitedOffer')}</OfferBadge>
+              <OfferText>{t('upflyover.firstYearFree')}</OfferText>
+              <OfferDetails>{t('upflyover.offerDetails')}</OfferDetails>
             </LaunchOffer>
           </LaunchBanner>
           <StatsGrid>
@@ -967,8 +970,8 @@ const UpFlyOver = () => {
       <WhyChooseSection>
         <Container>
           <SectionHeader>
-            <h2>Why Choose UpFlyOver?</h2>
-            <p>Discover the revolutionary features that make UpFlyOver the world's most trusted B2B networking platform</p>
+            <h2>{t('upflyover.whyChoose')}</h2>
+            <p>{t('upflyover.whyChooseDesc')}</p>
           </SectionHeader>
           <WhyChooseGrid>
             <WhyChooseCard>
@@ -1006,8 +1009,8 @@ const UpFlyOver = () => {
       <HowItWorksSection>
         <Container>
           <SectionHeader>
-            <h2>How It Works</h2>
-            <p>Get started in minutes and connect with verified businesses worldwide</p>
+            <h2>{t('upflyover.howItWorks')}</h2>
+            <p>{t('upflyover.howItWorksDesc')}</p>
           </SectionHeader>
           <StepsGrid>
             <StepCard>
@@ -1037,9 +1040,9 @@ const UpFlyOver = () => {
       <PricingSection>
         <Container>
           <SectionHeader>
-            <h2>UAE Launch Pricing</h2>
-            <p>Special offer for the first 1000 UAE companies to join our platform</p>
-            <PricingNote>🎉 First Year Completely FREE - No Credit Card Required</PricingNote>
+            <h2>{t('upflyover.uaeLaunchPricing')}</h2>
+            <p>{t('upflyover.pricingDesc')}</p>
+            <PricingNote>{t('upflyover.pricingNote')}</PricingNote>
           </SectionHeader>
           <PricingGrid>
             <PricingCard className="popular">
@@ -1111,8 +1114,8 @@ const UpFlyOver = () => {
         <Container>
           <MobileContent>
             <MobileText>
-              <h2>Take UpFlyOver Anywhere</h2>
-              <p>Connect with businesses on the go with our powerful mobile app</p>
+              <h2>{t('upflyover.takeAnywhere')}</h2>
+              <p>{t('upflyover.mobileDesc')}</p>
               <MobileFeatures>
                 <li>Real-time notifications for new connections</li>
                 <li>Browse companies and requirements offline</li>
@@ -1147,8 +1150,8 @@ const UpFlyOver = () => {
       <FeaturesSection id="features">
         <Container>
           <SectionHeader>
-            <h2>Platform Features</h2>
-            <p>Powerful tools for global B2B networking</p>
+            <h2>{t('upflyover.platformFeatures')}</h2>
+            <p>{t('upflyover.featuresDesc')}</p>
           </SectionHeader>
           <FeaturesGrid>
             {features.map((feature, index) => (
@@ -1175,8 +1178,8 @@ const UpFlyOver = () => {
       <TechStackSection>
         <Container>
           <SectionHeader>
-            <h2>Built with Modern Technology</h2>
-            <p>Powered by cutting-edge technologies for optimal performance and scalability</p>
+            <h2>{t('upflyover.builtWithTech')}</h2>
+            <p>{t('upflyover.techDesc')}</p>
           </SectionHeader>
           <TechGrid>
             {techStack.map((tech, index) => (
@@ -1200,16 +1203,16 @@ const UpFlyOver = () => {
       <CTASection>
         <Container>
           <CTAContent>
-            <h2>Ready to Be a Founding Member?</h2>
-            <p>Join the first 1000 UAE companies and get lifetime benefits as an early adopter</p>
+            <h2>{t('upflyover.readyFoundingMember')}</h2>
+            <p>{t('upflyover.foundingDesc')}</p>
             <CTAButtons>
               <CTAButton href="https://upflyover.vercel.app" target="_blank" rel="noopener noreferrer" className="primary">
                 <i className="fas fa-rocket"></i>
-                Get Started Now
+                {t('upflyover.getStartedNow')}
               </CTAButton>
               <CTAButton href="/contact" className="secondary">
                 <i className="fas fa-envelope"></i>
-                Contact Sales
+                {t('upflyover.contactSales')}
               </CTAButton>
             </CTAButtons>
           </CTAContent>

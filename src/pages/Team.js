@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const TeamPage = styled.div`
   min-height: 100vh;
@@ -159,6 +160,7 @@ const TeamCard = styled.div`
 `;
 
 const Team = () => {
+  const { t } = useTranslation();
   const teamMembers = [
     {
       name: "Ashique Ebrahim",
@@ -259,27 +261,27 @@ const Team = () => {
         <Container>
           <Badge>
             <i className="fas fa-users"></i>
-            Our Team
+            {t('team.ourTeam')}
           </Badge>
           <HeroTitle>
-            Meet the <span className="highlight">Minds</span> Behind GoWide
+            {t('team.title')}
           </HeroTitle>
           <HeroSubtitle>
-            Our diverse team of passionate professionals brings together creativity, technical expertise, and <span className="highlight">innovative thinking</span>
+            {t('team.subtitle')}
           </HeroSubtitle>
 
           <StatsGrid>
             <StatItem>
               <span className="stat-number">15+</span>
-              <span className="stat-label">Team Members</span>
+              <span className="stat-label">{t('team.teamMembers')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">5+</span>
-              <span className="stat-label">Years Experience</span>
+              <span className="stat-label">{t('team.yearsExperience')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">100+</span>
-              <span className="stat-label">Projects Delivered</span>
+              <span className="stat-label">{t('team.projectsDelivered')}</span>
             </StatItem>
           </StatsGrid>
         </Container>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { submitContactForm } from '../lib/sanity';
 import { showNotification } from '../components/Notification';
 import SEO from '../components/SEO';
@@ -705,6 +706,7 @@ const DirectContactCard = styled.a`
 `;
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -778,13 +780,13 @@ const Contact = () => {
           <HeroContent>
             <Badge>
               <i className="fas fa-handshake"></i>
-              Let's Connect
+              {t('contact.letsConnect')}
             </Badge>
             <HeroTitle>
-              Ready to Transform Your <span className="highlight">Business?</span>
+              {t('contact.heroTitle')}
             </HeroTitle>
             <HeroSubtitle>
-              From innovative technology solutions to creative branding strategies, we're here to help your business thrive and <span className="highlight">bring your vision to life</span>
+              {t('contact.heroSubtitle')}
             </HeroSubtitle>
           </HeroContent>
 
@@ -794,32 +796,32 @@ const Contact = () => {
                 <i className="fas fa-clock"></i>
               </div>
               <span className="stat-number">24/7</span>
-              <span className="stat-label">Support</span>
+              <span className="stat-label">{t('contact.support')}</span>
             </StatItem>
             <StatItem>
               <div className="stat-icon">
                 <i className="fas fa-rocket"></i>
               </div>
               <span className="stat-number">100+</span>
-              <span className="stat-label">Projects</span>
+              <span className="stat-label">{t('contact.projects')}</span>
             </StatItem>
             <StatItem>
               <div className="stat-icon">
                 <i className="fas fa-users"></i>
               </div>
               <span className="stat-number">50+</span>
-              <span className="stat-label">Happy Clients</span>
+              <span className="stat-label">{t('contact.happyClients')}</span>
             </StatItem>
           </StatsGrid>
 
           <HeroActions>
             <HeroButton href="#contact-form" className="primary">
               <i className="fas fa-paper-plane"></i>
-              Send Message
+              {t('contact.sendMessage')}
             </HeroButton>
             <HeroButton href="tel:+917559988886" className="secondary">
               <i className="fas fa-phone"></i>
-              Call Now
+              {t('common.callNow')}
             </HeroButton>
           </HeroActions>
         </Container>
@@ -830,10 +832,10 @@ const Contact = () => {
           <SectionHeader>
             <Badge>
               <i className="fas fa-globe"></i>
-              Global Presence
+              {t('contact.globalPresence')}
             </Badge>
-            <h2>Our Locations</h2>
-            <p>Find us across multiple locations <span className="highlight">worldwide</span></p>
+            <h2>{t('contact.ourLocations')}</h2>
+            <p>{t('contact.locationsDesc')}</p>
           </SectionHeader>
 
           <LocationsGrid>
@@ -841,7 +843,7 @@ const Contact = () => {
               <div className="location-icon">
                 <i className="fas fa-building"></i>
               </div>
-              <h3>Head Office - GoWide</h3>
+              <h3>{t('contact.headOffice')}</h3>
               <p className="location-address">
                 KM XIII/292, WMO APS Building<br />
                 PWD Road, Kalpetta<br />
@@ -857,7 +859,7 @@ const Contact = () => {
               <div className="location-icon">
                 <i className="fas fa-city"></i>
               </div>
-              <h3>Kochi Branch</h3>
+              <h3>{t('contact.kochiBranch')}</h3>
               <p className="location-address">
                 60/39 Ground Floor<br />
                 Karthika Apartment, Panampilly Nagar<br />
@@ -873,7 +875,7 @@ const Contact = () => {
               <div className="location-icon">
                 <i className="fas fa-globe-asia"></i>
               </div>
-              <h3>Dubai Office - Global Trade Allies LLC FZ</h3>
+              <h3>{t('contact.dubaiOffice')}</h3>
               <p className="location-address">
                 Meydan Grandstand<br />
                 6th Floor, Meydan Road, Nad Al Sheba<br />
@@ -893,14 +895,14 @@ const Contact = () => {
               <div className="location-icon">
                 <i className="fas fa-globe-europe"></i>
               </div>
-              <h3>London Office</h3>
+              <h3>{t('contact.londonOffice')}</h3>
               <p className="location-address">
                 Prime Business Location<br />
                 Central London<br />
                 United Kingdom
               </p>
               <div className="location-status">
-                <span className="status-badge">Opening Q4 2025</span>
+                <span className="status-badge">{t('contact.openingQ4')}</span>
               </div>
             </LocationCard>
           </LocationsGrid>
@@ -912,10 +914,10 @@ const Contact = () => {
           <SectionHeader>
             <Badge>
               <i className="fas fa-network-wired"></i>
-              Our Companies
+              {t('contact.ourCompanies')}
             </Badge>
-            <h2>Group of Companies</h2>
-            <p>Diverse portfolio of <span className="highlight">innovative solutions</span></p>
+            <h2>{t('contact.groupOfCompanies')}</h2>
+            <p>{t('contact.companiesDesc')}</p>
           </SectionHeader>
 
           <CompaniesGrid>
@@ -974,10 +976,10 @@ const Contact = () => {
               <div className="form-header">
                 <Badge>
                   <i className="fas fa-paper-plane"></i>
-                  Get In Touch
+                  {t('contact.getInTouch')}
                 </Badge>
-                <h2>Send Us a Message</h2>
-                <p>Tell us about your project and we'll get back to you within 24 hours</p>
+                <h2>{t('contact.sendUsMessage')}</h2>
+                <p>{t('contact.messageDesc')}</p>
               </div>
 
               <BenefitsList>
@@ -986,8 +988,8 @@ const Contact = () => {
                     <i className="fas fa-rocket"></i>
                   </div>
                   <div className="benefit-content">
-                    <h4>Fast Response</h4>
-                    <p>We respond to all inquiries within 24 hours</p>
+                    <h4>{t('contact.fastResponse')}</h4>
+                    <p>{t('contact.fastResponseDesc')}</p>
                   </div>
                 </BenefitItem>
 
@@ -996,8 +998,8 @@ const Contact = () => {
                     <i className="fas fa-shield-check"></i>
                   </div>
                   <div className="benefit-content">
-                    <h4>Secure & Private</h4>
-                    <p>Your information is completely confidential</p>
+                    <h4>{t('contact.securePrivate')}</h4>
+                    <p>{t('contact.securePrivateDesc')}</p>
                   </div>
                 </BenefitItem>
 
@@ -1006,8 +1008,8 @@ const Contact = () => {
                     <i className="fas fa-gift"></i>
                   </div>
                   <div className="benefit-content">
-                    <h4>Free Consultation</h4>
-                    <p>No cost initial discussion about your project</p>
+                    <h4>{t('contact.freeConsultation')}</h4>
+                    <p>{t('contact.freeConsultationDesc')}</p>
                   </div>
                 </BenefitItem>
               </BenefitsList>
@@ -1025,7 +1027,7 @@ const Contact = () => {
                       placeholder=" "
                       required
                     />
-                    <label>First Name</label>
+                    <label>{t('contact.firstName')}</label>
                   </InputGroup>
                   <InputGroup>
                     <input
@@ -1036,7 +1038,7 @@ const Contact = () => {
                       placeholder=" "
                       required
                     />
-                    <label>Last Name</label>
+                    <label>{t('contact.lastName')}</label>
                   </InputGroup>
                 </InputRow>
 
@@ -1049,7 +1051,7 @@ const Contact = () => {
                     placeholder=" "
                     required
                   />
-                  <label>Email Address</label>
+                  <label>{t('contact.email')}</label>
                 </InputGroup>
 
                 <InputGroup>
@@ -1068,7 +1070,7 @@ const Contact = () => {
                     <option value="consultation">Business Consultation</option>
                     <option value="other">Other Services</option>
                   </select>
-                  <label>Service Required</label>
+                  <label>{t('contact.service')}</label>
                 </InputGroup>
 
                 <InputGroup>
@@ -1079,19 +1081,19 @@ const Contact = () => {
                     placeholder=" "
                     required
                   />
-                  <label>Tell us about your project</label>
+                  <label>{t('contact.message')}</label>
                 </InputGroup>
 
                 <SubmitButton type="submit" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <i className="fas fa-spinner fa-spin"></i>
-                      Sending...
+                      {t('contact.sending')}
                     </>
                   ) : (
                     <>
                       <i className="fas fa-paper-plane"></i>
-                      Send Message
+                      {t('contact.sendMessage')}
                     </>
                   )}
                 </SubmitButton>
@@ -1104,8 +1106,8 @@ const Contact = () => {
       <DirectContactSection>
         <Container>
           <SectionHeader>
-            <h2>Prefer Direct Contact?</h2>
-            <p>Choose the method that works best for you</p>
+            <h2>{t('contact.preferDirectContact')}</h2>
+            <p>{t('contact.directContactDesc')}</p>
           </SectionHeader>
 
           <DirectContactGrid>
@@ -1114,7 +1116,7 @@ const Contact = () => {
                 <i className="fas fa-envelope"></i>
               </div>
               <div className="contact-content">
-                <h4>Email Us</h4>
+                <h4>{t('contact.emailUs')}</h4>
                 <span>contact@gowide.in</span>
               </div>
               <div className="contact-arrow">
@@ -1127,7 +1129,7 @@ const Contact = () => {
                 <i className="fas fa-phone"></i>
               </div>
               <div className="contact-content">
-                <h4>Call Us</h4>
+                <h4>{t('contact.callUs')}</h4>
                 <span>+91 7559988886</span>
               </div>
               <div className="contact-arrow">
@@ -1140,8 +1142,8 @@ const Contact = () => {
                 <i className="fas fa-calendar-alt"></i>
               </div>
               <div className="contact-content">
-                <h4>Schedule Call</h4>
-                <span>Book a consultation</span>
+                <h4>{t('contact.scheduleCall')}</h4>
+                <span>{t('contact.bookConsultation')}</span>
               </div>
               <div className="contact-arrow">
                 <i className="fas fa-arrow-right"></i>

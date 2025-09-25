@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AboutPage = styled.div`
   min-height: 100vh;
@@ -376,6 +377,7 @@ const ImpactTitle = styled.h3`
 `;
 
 const About = () => {
+  const { t } = useTranslation();
   const steps = [
     {
       number: "01",
@@ -458,14 +460,14 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Who <span className="highlight">We Are</span>
+            {t('about.whoWeAre')} <span className="highlight">{t('about.subtitle')}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We are GoWide , a creative digital agency. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.
+            {t('about.description')}
           </motion.p>
           <ScrollIndicator>
             <div className="mouse"></div>
@@ -483,8 +485,8 @@ const About = () => {
             viewport={{ once: true }}
           >
             <VMCard>
-              <h2>Our Vision</h2>
-              <p>To be the leading force in digital innovation, creating transformative solutions that inspire and elevate businesses worldwide. We envision a future where technology and creativity converge to create unprecedented value for our clients.</p>
+              <h2>{t('about.ourVision')}</h2>
+              <p>{t('about.visionText')}</p>
             </VMCard>
           </motion.div>
           <motion.div
@@ -494,8 +496,8 @@ const About = () => {
             viewport={{ once: true }}
           >
             <VMCard>
-              <h2>Our Mission</h2>
-              <p>To deliver exceptional digital solutions through innovative thinking, cutting-edge technology, and unwavering commitment to client success.</p>
+              <h2>{t('about.ourMission')}</h2>
+              <p>{t('about.missionText')}</p>
             </VMCard>
           </motion.div>
         </VMContainer>
@@ -504,8 +506,8 @@ const About = () => {
       <StepsSection>
         <Container>
           <SectionHeader>
-            <h2>Our <span className="highlight">Tailored Solution</span></h2>
-            <p>A systematic approach to <span className="highlight">deliver exceptional results</span></p>
+            <h2>{t('about.tailoredSolution')}</h2>
+            <p>{t('about.tailoredSolutionDesc')}</p>
           </SectionHeader>
           <StepsGrid>
             {steps.map((step, index) => (
@@ -532,8 +534,8 @@ const About = () => {
       <ValuesSection>
         <Container>
           <SectionHeader>
-            <h2>Our <span className="highlight">Core Values</span></h2>
-            <p>The principles that <span className="highlight">guide everything we do</span></p>
+            <h2>{t('about.coreValues')}</h2>
+            <p>{t('about.coreValuesDesc')}</p>
           </SectionHeader>
           <ValuesGrid>
             {values.map((value, index) => (
@@ -560,8 +562,8 @@ const About = () => {
       <ImpactSection>
         <Container>
           <SectionHeader>
-            <h2>Our Impact</h2>
-            <p>Numbers that <span className="highlight">speak for themselves</span></p>
+            <h2>{t('about.impact')}</h2>
+            <p>{t('about.impactDesc')}</p>
           </SectionHeader>
           <ImpactGrid>
             {impacts.map((impact, index) => (

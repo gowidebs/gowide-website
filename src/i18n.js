@@ -10,11 +10,19 @@ const resources = {
         "about": "About",
         "services": "Services",
         "products": "Products",
-        "contact": "Contact"
+        "contact": "Contact",
+        "team": "Team",
+        "blog": "Blog",
+        "careers": "Careers",
+        "caseStudies": "Case Studies",
+        "branding": "Branding",
+        "technology": "Technology",
+        "marketing": "Marketing",
+        "advertising": "Advertising"
       },
       "hero": {
-        "title": "Transforming Ideas Into Digital Reality",
-        "subtitle": "We're more than just a digital agency. We're your partners in growth, dedicated to turning your vision into impactful digital solutions that drive results.",
+        "title": "Transforming Ideas into Digital Reality",
+        "subtitle": "We are more than just a digital agency. We are your growth partners, dedicated to transforming your vision into impactful digital solutions that deliver results.",
         "getStarted": "Get Started",
         "learnMore": "Learn More"
       },
@@ -24,12 +32,21 @@ const resources = {
         "contactUs": "Contact Us",
         "readMore": "Read More",
         "viewAll": "View All",
-        "scheduleCall": "Schedule a Call",
+        "scheduleCall": "Schedule Call",
         "ourServices": "Our Services",
         "ourProducts": "Our Products",
         "whyChoose": "Why Choose GoWide?",
         "ourProcess": "Our Process",
-        "ourImpact": "Our Impact"
+        "ourImpact": "Our Impact",
+        "loading": "Loading...",
+        "applyNow": "Apply Now",
+        "viewMore": "View More",
+        "sendMessage": "Send Message",
+        "callNow": "Call Now",
+        "watchDemo": "Watch Demo",
+        "joinWaitlist": "Join Waitlist",
+        "launchPlatform": "Launch Platform",
+        "scheduleDemo": "Schedule Demo"
       },
       "about": {
         "whoWeAre": "Who We Are",
@@ -37,21 +54,33 @@ const resources = {
         "ourVision": "Our Vision",
         "ourMission": "Our Mission",
         "visionText": "To be the leading force in digital innovation, creating transformative solutions that inspire and elevate businesses worldwide.",
-        "missionText": "To deliver exceptional digital solutions through innovative thinking, cutting-edge technology, and unwavering commitment to client success."
+        "missionText": "To deliver exceptional digital solutions through innovative thinking, cutting-edge technology, and unwavering commitment to client success.",
+        "title": "Who We Are",
+        "subtitle": "Innovative thinking",
+        "coreValues": "Our Core Values",
+        "coreValuesDesc": "The principles that guide everything we do",
+        "tailoredSolution": "Our Tailored Solution",
+        "tailoredSolutionDesc": "A systematic approach to deliver exceptional results",
+        "impact": "Our Impact",
+        "impactDesc": "Numbers that speak for themselves"
       },
       "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive digital solutions to grow your business",
         "branding": "Branding",
         "technology": "Technology",
         "marketing": "Marketing",
         "advertising": "Advertising",
-        "brandingDesc": "Transform Your Brand Identity With Our Expertise",
-        "technologyDesc": "Powering Innovation with Advanced Solutions",
-        "marketingDesc": "Drive Growth with Strategic Marketing Solutions",
-        "advertisingDesc": "Create Impactful Ad Campaigns That Convert"
+        "brandingDesc": "Transform your brand identity with our expertise",
+        "technologyDesc": "Power innovation with advanced solutions",
+        "marketingDesc": "Drive growth with strategic marketing solutions",
+        "advertisingDesc": "Create impactful advertising campaigns that convert"
       },
       "contact": {
-        "title": "Ready to Get Started?",
-        "subtitle": "Let us know your needs and we'll get back to you",
+        "heroTitle": "Ready to Transform Your Business?",
+        "heroSubtitle": "From innovative technology solutions to creative branding strategies, we're here to help your business thrive and bring your vision to life",
+        "title": "Ready to get started?",
+        "subtitle": "Tell us what you need and we'll get back to you",
         "name": "Name",
         "email": "Email",
         "phone": "Phone",
@@ -60,13 +89,107 @@ const resources = {
         "send": "Send Message",
         "getInTouch": "Get In Touch",
         "address": "Address",
-        "followUs": "Follow Us"
+        "followUs": "Follow Us",
+        "ourLocations": "Our Locations",
+        "locationsDesc": "Find us across multiple locations worldwide",
+        "groupOfCompanies": "Group of Companies",
+        "companiesDesc": "Diverse portfolio of innovative solutions",
+        "sendUsMessage": "Send Us a Message",
+        "messageDesc": "Tell us about your project and we'll get back to you within 24 hours",
+        "preferDirectContact": "Prefer Direct Contact?",
+        "directContactDesc": "Choose the method that works best for you"
+      },
+      "team": {
+        "title": "Meet the Minds Behind GoWide",
+        "subtitle": "Our diverse team of passionate professionals brings together creativity, technical expertise, and innovative thinking",
+        "teamMembers": "Team Members",
+        "yearsExperience": "Years Experience",
+        "projectsDelivered": "Projects Delivered"
+      },
+      "blog": {
+        "title": "Our Blog",
+        "subtitle": "Insights, tips, and industry knowledge to help you stay ahead in the digital world.",
+        "loading": "Loading blog posts...",
+        "noDate": "No date",
+        "general": "General"
+      },
+      "careers": {
+        "title": "Join Our Team",
+        "subtitle": "Build your career with us and help create amazing digital experiences for clients worldwide.",
+        "loading": "Loading career opportunities...",
+        "noOpenPositions": "No Open Positions",
+        "noPositionsDesc": "We don't have any open positions right now, but we're always looking for talented people!",
+        "sendResume": "Send Us Your Resume"
+      },
+      "caseStudies": {
+        "title": "Case Studies",
+        "subtitle": "Real results from real clients. Discover how we've helped businesses achieve their goals.",
+        "loading": "Loading case studies...",
+        "viewCaseStudy": "View Case Study",
+        "resultsAchieved": "Results Achieved"
+      },
+      "branding": {
+        "heroTitle": "Elevate Your Brand Identity",
+        "heroSubtitle": "We craft compelling brand experiences that resonate with your audience and drive meaningful connections through strategic design and storytelling.",
+        "startJourney": "Start Your Journey",
+        "whatWeOffer": "What We Offer",
+        "brandingServices": "Our Branding Services",
+        "servicesDesc": "Comprehensive solutions to elevate your brand presence"
+      },
+      "technology": {
+        "heroTitle": "Power Your Digital Future",
+        "heroSubtitle": "We deliver cutting-edge technology solutions that transform businesses and drive innovation through strategic development and digital excellence.",
+        "ourExpertise": "Our Expertise",
+        "technologySolutions": "Technology Solutions",
+        "solutionsDesc": "Innovative technology services that transform your business"
+      },
+      "marketing": {
+        "heroTitle": "Elevate Your Marketing Game",
+        "heroSubtitle": "Strategic marketing campaigns that build brand awareness, engage audiences, and drive sustainable business growth through innovative digital strategies.",
+        "marketingServices": "Marketing Services",
+        "servicesDesc": "Comprehensive marketing solutions that drive growth"
+      },
+      "advertising": {
+        "heroTitle": "Amplify Your Brand Reach",
+        "heroSubtitle": "Strategic advertising campaigns that drive results and maximize your ROI through targeted digital marketing solutions.",
+        "advertisingServices": "Advertising Services",
+        "servicesDesc": "Comprehensive advertising solutions that drive growth"
+      },
+      "products": {
+        "title": "Our Products",
+        "subtitle": "Explore our innovative software solutions designed to meet your needs.",
+        "rendre": {
+          "title": "Rendre Recycling",
+          "tagline": "Transform waste, drive sustainability.",
+          "subtitle": "Transform vehicle recycling with smart identification, efficient collection, and eco-friendly processing for environmental sustainability.",
+          "launchingMid2026": "🚀 Launching Mid 2026",
+          "getNotified": "Get Notified at Launch"
+        },
+        "upflyover": {
+          "title": "UpFlyOver",
+          "tagline": "Fly Over Business Barriers",
+          "subtitle": "The world's most trusted B2B networking platform",
+          "description": "Join thousands of verified companies worldwide. Find suppliers, customers, and business partners with our AI-powered matching system.",
+          "launchingUAE": "🚀 Now Launching in UAE!",
+          "firstYearFree": "First Year Completely FREE"
+        },
+        "gymestry": {
+          "title": "Gymestry",
+          "tagline": "Revolutionizing Fitness Management",
+          "subtitle": "The most comprehensive fitness management platform designed specifically for modern gyms and fitness centers.",
+          "launchingJan2026": "🚀 Launching January 1, 2026"
+        }
       },
       "footer": {
+        "description": "We are a creative agency focused on growing brands through innovative digital solutions and memorable experiences.",
         "quickLinks": "Quick Links",
         "services": "Services",
         "products": "Products",
         "copyright": "© 2025 Gowide Business Services Pvt Ltd. All rights reserved.",
+        "termsConditions": "Terms & Conditions",
+        "privacyPolicy": "Privacy Policy",
+        "refundPolicy": "Refund Policy",
+        "cookiePolicy": "Cookie Policy",
         "newsletter": "Newsletter",
         "subscribe": "Subscribe",
         "enterEmail": "Enter your email"
@@ -80,7 +203,15 @@ const resources = {
         "about": "حول",
         "services": "الخدمات",
         "products": "المنتجات",
-        "contact": "اتصل بنا"
+        "contact": "اتصل بنا",
+        "team": "الفريق",
+        "blog": "المدونة",
+        "careers": "الوظائف",
+        "caseStudies": "دراسات الحالة",
+        "branding": "العلامة التجارية",
+        "technology": "التكنولوجيا",
+        "marketing": "التسويق",
+        "advertising": "الإعلان"
       },
       "hero": {
         "title": "تحويل الأفكار إلى واقع رقمي",
@@ -99,7 +230,16 @@ const resources = {
         "ourProducts": "منتجاتنا",
         "whyChoose": "لماذا تختار جو وايد؟",
         "ourProcess": "عمليتنا",
-        "ourImpact": "تأثيرنا"
+        "ourImpact": "تأثيرنا",
+        "loading": "جاري التحميل...",
+        "applyNow": "تقدم الآن",
+        "viewMore": "عرض المزيد",
+        "sendMessage": "إرسال رسالة",
+        "callNow": "اتصل الآن",
+        "watchDemo": "مشاهدة العرض التوضيحي",
+        "joinWaitlist": "انضم لقائمة الانتظار",
+        "launchPlatform": "تشغيل المنصة",
+        "scheduleDemo": "جدولة عرض توضيحي"
       },
       "about": {
         "whoWeAre": "من نحن",
@@ -107,9 +247,19 @@ const resources = {
         "ourVision": "رؤيتنا",
         "ourMission": "مهمتنا",
         "visionText": "أن نكون القوة الرائدة في الابتكار الرقمي، وإنشاء حلول تحويلية تلهم وترفع الشركات في جميع أنحاء العالم.",
-        "missionText": "تقديم حلول رقمية استثنائية من خلال التفكير المبتكر والتكنولوجيا المتطورة والالتزام الثابت بنجاح العملاء."
+        "missionText": "تقديم حلول رقمية استثنائية من خلال التفكير المبتكر والتكنولوجيا المتطورة والالتزام الثابت بنجاح العملاء.",
+        "title": "من نحن",
+        "subtitle": "التفكير المبتكر",
+        "coreValues": "قيمنا الأساسية",
+        "coreValuesDesc": "المبادئ التي توجه كل ما نقوم به",
+        "tailoredSolution": "حلولنا المخصصة",
+        "tailoredSolutionDesc": "نهج منهجي لتحقيق نتائج استثنائية",
+        "impact": "تأثيرنا",
+        "impactDesc": "أرقام تتحدث عن نفسها"
       },
       "services": {
+        "title": "خدماتنا",
+        "subtitle": "حلول رقمية شاملة لنمو عملك",
         "branding": "العلامة التجارية",
         "technology": "التكنولوجيا",
         "marketing": "التسويق",
@@ -120,6 +270,8 @@ const resources = {
         "advertisingDesc": "إنشاء حملات إعلانية مؤثرة تحقق التحويل"
       },
       "contact": {
+        "heroTitle": "مستعد لتحويل عملك؟",
+        "heroSubtitle": "من الحلول التقنية المبتكرة إلى استراتيجيات العلامة التجارية الإبداعية، نحن هنا لمساعدة عملك على الازدهار وتحقيق رؤيتك",
         "title": "مستعد للبدء؟",
         "subtitle": "أخبرنا باحتياجاتك وسنعاود الاتصال بك",
         "name": "الاسم",
@@ -130,131 +282,153 @@ const resources = {
         "send": "إرسال الرسالة",
         "getInTouch": "تواصل معنا",
         "address": "العنوان",
-        "followUs": "تابعنا"
+        "followUs": "تابعنا",
+        "ourLocations": "مواقعنا",
+        "locationsDesc": "اعثر علينا في مواقع متعددة حول العالم",
+        "groupOfCompanies": "مجموعة الشركات",
+        "companiesDesc": "محفظة متنوعة من الحلول المبتكرة",
+        "sendUsMessage": "أرسل لنا رسالة",
+        "messageDesc": "أخبرنا عن مشروعك وسنعاود الاتصال بك خلال 24 ساعة",
+        "preferDirectContact": "تفضل التواصل المباشر؟",
+        "directContactDesc": "اختر الطريقة التي تناسبك"
+      },
+      "team": {
+        "title": "تعرف على العقول وراء جو وايد",
+        "subtitle": "فريقنا المتنوع من المحترفين المتحمسين يجمع بين الإبداع والخبرة التقنية والتفكير المبتكر",
+        "teamMembers": "أعضاء الفريق",
+        "yearsExperience": "سنوات الخبرة",
+        "projectsDelivered": "المشاريع المنجزة"
+      },
+      "blog": {
+        "title": "مدونتنا",
+        "subtitle": "رؤى ونصائح ومعرفة الصناعة لمساعدتك على البقاء في المقدمة في العالم الرقمي.",
+        "loading": "جاري تحميل منشورات المدونة...",
+        "noDate": "لا يوجد تاريخ",
+        "general": "عام"
+      },
+      "careers": {
+        "title": "انضم إلى فريقنا",
+        "subtitle": "ابن مسيرتك المهنية معنا وساعد في إنشاء تجارب رقمية مذهلة للعملاء في جميع أنحاء العالم.",
+        "loading": "جاري تحميل الفرص الوظيفية...",
+        "noOpenPositions": "لا توجد وظائف شاغرة",
+        "noPositionsDesc": "ليس لدينا أي وظائف شاغرة الآن، لكننا نبحث دائماً عن الأشخاص الموهوبين!",
+        "sendResume": "أرسل لنا سيرتك الذاتية"
+      },
+      "caseStudies": {
+        "title": "دراسات الحالة",
+        "subtitle": "نتائج حقيقية من عملاء حقيقيين. اكتشف كيف ساعدنا الشركات على تحقيق أهدافها.",
+        "loading": "جاري تحميل دراسات الحالة...",
+        "viewCaseStudy": "عرض دراسة الحالة",
+        "resultsAchieved": "النتائج المحققة"
+      },
+      "branding": {
+        "heroTitle": "ارتق بهوية علامتك التجارية",
+        "heroSubtitle": "نحن نصنع تجارب علامة تجارية مقنعة تتردد صداها مع جمهورك وتدفع الاتصالات الهادفة من خلال التصميم الاستراتيجي والسرد.",
+        "startJourney": "ابدأ رحلتك",
+        "whatWeOffer": "ما نقدمه",
+        "brandingServices": "خدمات العلامة التجارية",
+        "servicesDesc": "حلول شاملة لرفع حضور علامتك التجارية"
+      },
+      "technology": {
+        "heroTitle": "قوة مستقبلك الرقمي",
+        "heroSubtitle": "نحن نقدم حلول تقنية متطورة تحول الشركات وتدفع الابتكار من خلال التطوير الاستراتيجي والتميز الرقمي.",
+        "ourExpertise": "خبرتنا",
+        "technologySolutions": "الحلول التقنية",
+        "solutionsDesc": "خدمات تكنولوجية مبتكرة تحول عملك"
+      },
+      "marketing": {
+        "heroTitle": "ارتق بلعبة التسويق الخاصة بك",
+        "heroSubtitle": "حملات تسويقية استراتيجية تبني الوعي بالعلامة التجارية وتشرك الجماهير وتدفع النمو المستدام للأعمال من خلال استراتيجيات رقمية مبتكرة.",
+        "marketingServices": "خدمات التسويق",
+        "servicesDesc": "حلول تسويقية شاملة تدفع النمو"
+      },
+      "advertising": {
+        "heroTitle": "ضخم وصول علامتك التجارية",
+        "heroSubtitle": "حملات إعلانية استراتيجية تحقق النتائج وتزيد من عائد الاستثمار من خلال حلول التسويق الرقمي المستهدفة.",
+        "advertisingServices": "خدمات الإعلان",
+        "servicesDesc": "حلول إعلانية شاملة تدفع النمو"
+      },
+      "products": {
+        "title": "منتجاتنا",
+        "subtitle": "استكشف حلولنا البرمجية المبتكرة المصممة لتلبية احتياجاتك.",
+        "comingSoon": "قريباً",
+        "learnMore": "اعرف المزيد",
+        "rendre": {
+          "title": "رندر لإعادة التدوير",
+          "tagline": "تحويل النفايات، دفع الاستدامة.",
+          "subtitle": "تحويل إعادة تدوير المركبات بالتعرف الذكي والجمع الفعال والمعالجة الصديقة للبيئة للاستدامة البيئية.",
+          "launchingMid2026": "🚀 الإطلاق منتصف 2026",
+          "getNotified": "احصل على إشعار عند الإطلاق",
+          "currentProblems": "المشاكل الحالية",
+          "challengeTitle": "التحدي الذي نحله",
+          "challengeSubtitle": "معالجة التحديات البيئية والحضرية الحرجة",
+          "ourSolution": "حلنا",
+          "solutionTitle": "حلنا الشامل",
+          "solutionSubtitle": "رندر يدمج التكنولوجيا مع الممارسات المستدامة لإدارة دورة حياة المركبات الكاملة.",
+          "ourServices": "خدماتنا",
+          "servicesTitle": "خدمات إعادة تدوير المركبات",
+          "servicesSubtitle": "حلول إدارة المركبات من البداية إلى النهاية",
+          "days": "أيام",
+          "hours": "ساعات",
+          "minutes": "دقائق",
+          "seconds": "ثواني"
+        },
+        "upflyover": {
+          "title": "أب فلاي أوفر",
+          "tagline": "تحليق فوق حواجز الأعمال",
+          "subtitle": "منصة الشبكات التجارية الأكثر ثقة في العالم",
+          "description": "انضم إلى آلاف الشركات المعتمدة في جميع أنحاء العالم. ابحث عن الموردين والعملاء وشركاء الأعمال مع نظام المطابقة المدعوم بالذكاء الاصطناعي.",
+          "launchingUAE": "🚀 الآن يتم الإطلاق في الإمارات!",
+          "firstYearFree": "السنة الأولى مجانية تماماً",
+          "firstThousand": "كن من بين أول 1000 شركة تنضم",
+          "limitedOffer": "عرض محدود الوقت",
+          "offerDetails": "لا حاجة للدفع • وصول كامل لجميع الميزات • انضم الآن واحجز مكانك",
+          "whyChoose": "لماذا تختار أب فلاي أوفر؟",
+          "whyChooseDesc": "اكتشف الميزات الثورية التي تجعل أب فلاي أوفر منصة الشبكات التجارية الأكثر ثقة في العالم",
+          "howItWorks": "كيف يعمل",
+          "howItWorksDesc": "ابدأ في دقائق وتواصل مع الشركات المعتمدة في جميع أنحاء العالم",
+          "uaeLaunchPricing": "أسعار إطلاق الإمارات",
+          "pricingDesc": "عرض خاص لأول 1000 شركة إماراتية تنضم لمنصتنا",
+          "pricingNote": "🎉 السنة الأولى مجانية تماماً - لا حاجة لبطاقة ائتمان",
+          "takeAnywhere": "خذ أب فلاي أوفر في أي مكان",
+          "mobileDesc": "تواصل مع الشركات أثناء التنقل مع تطبيقنا المحمول القوي",
+          "platformFeatures": "ميزات المنصة",
+          "featuresDesc": "أدوات قوية للشبكات التجارية العالمية",
+          "builtWithTech": "مبني بتقنية حديثة",
+          "techDesc": "مدعوم بتقنيات متطورة للأداء الأمثل وقابلية التوسع",
+          "readyFoundingMember": "مستعد لتكون عضو مؤسس؟",
+          "foundingDesc": "انضم لأول 1000 شركة إماراتية واحصل على مزايا مدى الحياة كمتبني مبكر",
+          "getStartedNow": "ابدأ الآن",
+          "contactSales": "اتصل بالمبيعات",
+          "launchPlatform": "تشغيل المنصة"
+        },
+        "gymestry": {
+          "title": "جيمستري",
+          "tagline": "ثورة في إدارة اللياقة البدنية",
+          "subtitle": "منصة إدارة اللياقة البدنية الأكثر شمولية المصممة خصيصاً لصالات الألعاب الرياضية ومراكز اللياقة البدنية الحديثة.",
+          "launchingJan2026": "🚀 الإطلاق 1 يناير 2026",
+          "uaeLaunchStrategy": "🇦🇪 استراتيجية إطلاق الإمارات",
+          "targetMarket": "🎯 السوق المستهدف",
+          "platformFeatures": "ميزات المنصة الشاملة",
+          "whyChoose": "لماذا تختار جيمستري؟",
+          "readyToTransform": "مستعد لتحويل أعمال اللياقة البدنية؟",
+          "getNotified": "احصل على إشعار عند الإطلاق",
+          "joinWaitlist": "انضم لقائمة الانتظار"
+        }
       },
       "footer": {
+        "description": "نحن وكالة إبداعية تركز على تنمية العلامات التجارية من خلال الحلول الرقمية المبتكرة والتجارب التي لا تُنسى.",
         "quickLinks": "روابط سريعة",
         "services": "الخدمات",
         "products": "المنتجات",
         "copyright": "© 2025 جو وايد لخدمات الأعمال المحدودة. جميع الحقوق محفوظة.",
+        "termsConditions": "الشروط والأحكام",
+        "privacyPolicy": "سياسة الخصوصية",
+        "refundPolicy": "سياسة الاسترداد",
+        "cookiePolicy": "سياسة ملفات تعريف الارتباط",
         "newsletter": "النشرة الإخبارية",
         "subscribe": "اشترك",
         "enterEmail": "أدخل بريدك الإلكتروني"
-      }
-    }
-  },
-  ml: {
-    translation: {
-      "nav": {
-        "home": "ഹോം",
-        "about": "കുറിച്ച്",
-        "services": "സേവനങ്ങൾ",
-        "products": "ഉൽപ്പന്നങ്ങൾ",
-        "contact": "ബന്ധപ്പെടുക"
-      },
-      "hero": {
-        "title": "ആശയങ്ങളെ ഡിജിറ്റൽ യാഥാർത്ഥ്യമാക്കുന്നു",
-        "subtitle": "ഞങ്ങൾ വെറുമൊരു ഡിജിറ്റൽ ഏജൻസിയല്ല. ഞങ്ങൾ നിങ്ങളുടെ വളർച്ചയുടെ പങ്കാളികളാണ്, നിങ്ങളുടെ കാഴ്ചപ്പാടിനെ ഫലപ്രദമായ ഡിജിറ്റൽ പരിഹാരങ്ങളാക്കി മാറ്റാൻ പ്രതിജ്ഞാബദ്ധരാണ്.",
-        "getStarted": "ആരംഭിക്കുക",
-        "learnMore": "കൂടുതൽ അറിയുക"
-      },
-      "footer": {
-        "quickLinks": "പെട്ടെന്നുള്ള ലിങ്കുകൾ",
-        "services": "സേവനങ്ങൾ",
-        "products": "ഉൽപ്പന്നങ്ങൾ",
-        "copyright": "© 2025 ഗോവൈഡ് ബിസിനസ് സർവീസസ് പ്രൈവറ്റ് ലിമിറ്റഡ്. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതമാണ്."
-      }
-    }
-  },
-  fr: {
-    translation: {
-      "nav": {
-        "home": "Accueil",
-        "about": "À propos",
-        "services": "Services",
-        "products": "Produits",
-        "contact": "Contact"
-      },
-      "hero": {
-        "title": "Transformer les idées en réalité numérique",
-        "subtitle": "Nous sommes plus qu'une simple agence numérique. Nous sommes vos partenaires de croissance, dédiés à transformer votre vision en solutions numériques percutantes qui génèrent des résultats.",
-        "getStarted": "Commencer",
-        "learnMore": "En savoir plus"
-      },
-      "footer": {
-        "quickLinks": "Liens rapides",
-        "services": "Services",
-        "products": "Produits",
-        "copyright": "© 2025 Gowide Business Services Pvt Ltd. Tous droits réservés."
-      }
-    }
-  },
-  es: {
-    translation: {
-      "nav": {
-        "home": "Inicio",
-        "about": "Acerca de",
-        "services": "Servicios",
-        "products": "Productos",
-        "contact": "Contacto"
-      },
-      "hero": {
-        "title": "Transformando ideas en realidad digital",
-        "subtitle": "Somos más que una agencia digital. Somos sus socios en el crecimiento, dedicados a convertir su visión en soluciones digitales impactantes que generan resultados.",
-        "getStarted": "Empezar",
-        "learnMore": "Saber más"
-      },
-      "footer": {
-        "quickLinks": "Enlaces rápidos",
-        "services": "Servicios",
-        "products": "Productos",
-        "copyright": "© 2025 Gowide Business Services Pvt Ltd. Todos los derechos reservados."
-      }
-    }
-  },
-  hi: {
-    translation: {
-      "nav": {
-        "home": "होम",
-        "about": "के बारे में",
-        "services": "सेवाएं",
-        "products": "उत्पाद",
-        "contact": "संपर्क"
-      },
-      "hero": {
-        "title": "विचारों को डिजिटल वास्तविकता में बदलना",
-        "subtitle": "हम सिर्फ एक डिजिटल एजेंसी से कहीं अधिक हैं। हम आपके विकास के साझीदार हैं, आपकी दृष्टि को प्रभावशाली डिजिटल समाधानों में बदलने के लिए समर्पित हैं जो परिणाम देते हैं।",
-        "getStarted": "शुरू करें",
-        "learnMore": "और जानें"
-      },
-      "footer": {
-        "quickLinks": "त्वरित लिंक",
-        "services": "सेवाएं",
-        "products": "उत्पाद",
-        "copyright": "© 2025 गोवाइड बिजनेस सर्विसेज प्राइवेट लिमिटेड। सभी अधिकार सुरक्षित।"
-      }
-    }
-  },
-  ta: {
-    translation: {
-      "nav": {
-        "home": "முகப்பு",
-        "about": "பற்றி",
-        "services": "சேவைகள்",
-        "products": "தயாரிப்புகள்",
-        "contact": "தொடர்பு"
-      },
-      "hero": {
-        "title": "கருத்துக்களை டிஜிட்டல் உண்மையாக மாற்றுதல்",
-        "subtitle": "நாங்கள் வெறும் டிஜிட்டல் ஏஜென்சியை விட அதிகம். நாங்கள் உங்கள் வளர்ச்சியின் பங்காளிகள், உங்கள் பார்வையை பலனளிக்கும் டிஜிட்டல் தீர்வுகளாக மாற்ற அர்ப்பணிப்புடன் உள்ளோம்.",
-        "getStarted": "தொடங்குங்கள்",
-        "learnMore": "மேலும் அறிக"
-      },
-      "footer": {
-        "quickLinks": "விரைவு இணைப்புகள்",
-        "services": "சேவைகள்",
-        "products": "தயாரிப்புகள்",
-        "copyright": "© 2025 கோவைட் பிசினஸ் சர்வீசஸ் பிரைவேட் லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
       }
     }
   }

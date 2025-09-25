@@ -36,12 +36,7 @@ const LanguageSwitcher = () => {
 
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'ar', name: 'العربية' },
-    { code: 'ml', name: 'മലയാളം' },
-    { code: 'fr', name: 'Français' },
-    { code: 'es', name: 'Español' },
-    { code: 'hi', name: 'हिन्दी' },
-    { code: 'ta', name: 'தமிழ்' }
+    { code: 'ar', name: 'العربية' }
   ];
 
   const handleLanguageChange = (e) => {

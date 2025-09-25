@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -362,7 +361,6 @@ const Header = () => {
         </NavLinks>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <LanguageSwitcher />
           <ThemeToggle 
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}

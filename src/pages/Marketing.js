@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const MarketingContainer = styled.div`
   padding-top: 120px;
@@ -527,21 +528,23 @@ const ToolkitCard = styled(motion.div)`
 `;
 
 const Marketing = () => {
+  const { t } = useTranslation();
+  
   return (
     <MarketingContainer>
       <HeroSection>
         <HeroContent>
           <div className="hero-badge">
-            <span>Marketing Solutions</span>
+            <span>{t('marketing.marketingSolutions')}</span>
           </div>
           
           <Title>
-            <span className="title-main">Elevate Your</span>
-            <span className="title-highlight">Marketing Game</span>
+            <span className="title-main">{t('marketing.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
+            <span className="title-highlight">{t('marketing.heroTitle').split(' ').slice(2).join(' ')}</span>
           </Title>
           
           <Description>
-            Strategic marketing campaigns that build brand awareness, engage audiences, and drive sustainable business growth through innovative digital strategies.
+            {t('marketing.heroSubtitle')}
           </Description>
           
           <StatsContainer>
@@ -595,10 +598,10 @@ const Marketing = () => {
       <ServicesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Services</span>
+            <span>{t('marketing.ourServices')}</span>
           </div>
-          <h2>Marketing Services</h2>
-          <p className="section-subtitle">Comprehensive marketing solutions that <span className="highlight">drive growth</span> and build lasting brand connections</p>
+          <h2>{t('marketing.marketingServices')}</h2>
+          <p className="section-subtitle">{t('marketing.servicesSubtitle').split('drive growth')[0]}<span className="highlight">drive growth</span>{t('marketing.servicesSubtitle').split('drive growth')[1]}</p>
         </SectionHeader>
 
         <ServicesGrid>
@@ -715,10 +718,10 @@ const Marketing = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Why Choose Us</span>
+            <span>{t('marketing.whyChooseUs')}</span>
           </div>
-          <h2>Marketing Advantages</h2>
-          <p className="section-subtitle">What makes us your <span className="highlight">ideal marketing partner</span></p>
+          <h2>{t('marketing.marketingAdvantages')}</h2>
+          <p className="section-subtitle">{t('marketing.advantagesSubtitle').split('ideal marketing partner')[0]}<span className="highlight">ideal marketing partner</span></p>
         </SectionHeader>
 
         <AdvantagesGrid>
@@ -791,10 +794,10 @@ const Marketing = () => {
       <ProcessSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Process</span>
+            <span>{t('marketing.ourProcess')}</span>
           </div>
-          <h2>Marketing Process</h2>
-          <p className="section-subtitle">Strategic approach to transform your marketing vision into <span className="highlight">measurable results</span></p>
+          <h2>{t('marketing.marketingProcess')}</h2>
+          <p className="section-subtitle">{t('marketing.processSubtitle').split('measurable results')[0]}<span className="highlight">measurable results</span></p>
         </SectionHeader>
 
         <ProcessSteps>
@@ -855,10 +858,10 @@ const Marketing = () => {
       <ToolsSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Tools</span>
+            <span>{t('marketing.ourTools')}</span>
           </div>
-          <h2>Marketing Tools</h2>
-          <p className="section-subtitle">Professional marketing tools that <span className="highlight">power our campaigns</span> and drive results</p>
+          <h2>{t('marketing.marketingTools')}</h2>
+          <p className="section-subtitle">{t('marketing.toolsSubtitle').split('power our campaigns')[0]}<span className="highlight">power our campaigns</span>{t('marketing.toolsSubtitle').split('power our campaigns')[1]}</p>
         </SectionHeader>
 
         <ToolkitGrid>

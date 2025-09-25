@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { getJobVacancies, submitJobApplication } from '../lib/sanity';
 import { showNotification } from '../components/Notification';
 import SEO from '../components/SEO';
@@ -262,6 +263,7 @@ const NoJobsState = styled.div`
 `;
 
 const Careers = () => {
+  const { t } = useTranslation();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -340,17 +342,17 @@ const Careers = () => {
       <CareersContainer>
       <HeroSection>
         <Title>
-          Join Our <span className="highlight">Team</span>
+          {t('careers.title').split(' ').slice(0, 2).join(' ')} <span className="highlight">{t('careers.title').split(' ').slice(2).join(' ')}</span>
         </Title>
         <Description>
-          Build your career with us and help create amazing digital experiences for clients worldwide.
+          {t('careers.subtitle')}
         </Description>
       </HeroSection>
 
       <section style={{ padding: '0 0 6rem' }}>
         {loading ? (
           <LoadingState>
-            <h2>Loading career opportunities...</h2>
+            <h2>{t('careers.loading')}</h2>
           </LoadingState>
         ) : jobs.length > 0 ? (
           <JobsGrid>
@@ -379,7 +381,7 @@ const Careers = () => {
                 
                 {job.requirements && (
                   <div className="job-requirements">
-                    <h4>Requirements:</h4>
+                    <h4>{t('careers.requirements')}</h4>
                     <ul>
                       {job.requirements.slice(0, 4).map((req, idx) => (
                         <li key={idx}>
@@ -397,7 +399,7 @@ const Careers = () => {
                     className="apply-btn"
                     onClick={() => handleApplyClick(job._id, job.title)}
                   >
-                    Apply Now
+                    {t('careers.applyNow')}
                   </button>
                 </div>
               </JobCard>
@@ -405,10 +407,10 @@ const Careers = () => {
           </JobsGrid>
         ) : (
           <NoJobsState>
-            <h3>No Open Positions</h3>
-            <p>We don't have any open positions right now, but we're always looking for talented people!</p>
+            <h3>{t('careers.noOpenPositions')}</h3>
+            <p>{t('careers.noPositionsDesc')}</p>
             <button className="contact-btn">
-              Send Us Your Resume
+              {t('careers.sendResume')}
             </button>
           </NoJobsState>
         )}

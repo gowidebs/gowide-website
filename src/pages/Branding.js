@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const BrandingContainer = styled.div`
   padding-top: 120px;
@@ -595,6 +596,8 @@ const AdvantageCard = styled(motion.div)`
 `;
 
 const Branding = () => {
+  const { t } = useTranslation();
+  
   return (
     <BrandingContainer>
       <HeroBanner>
@@ -608,18 +611,17 @@ const Branding = () => {
         
         <HeroContent>
           <HeroTitle>
-            <span className="title-main">Elevate Your</span>
-            <span className="title-highlight">Brand Identity</span>
+            <span className="title-main">{t('branding.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
+            <span className="title-highlight">{t('branding.heroTitle').split(' ').slice(2).join(' ')}</span>
           </HeroTitle>
           
           <HeroDescription>
-            We craft compelling brand experiences that resonate with your audience 
-            and drive meaningful connections through strategic design and storytelling.
+            {t('branding.heroSubtitle')}
           </HeroDescription>
           
           <HeroActions>
             <button className="cta-primary">
-              <span>Start Your Journey</span>
+              <span>{t('branding.startJourney')}</span>
               <i className="fas fa-arrow-down"></i>
             </button>
           </HeroActions>
@@ -649,10 +651,10 @@ const Branding = () => {
       <ServicesSection>
         <ServicesHeader>
           <div className="section-badge">
-            <span>WHAT WE OFFER</span>
+            <span>{t('branding.whatWeOffer')}</span>
           </div>
-          <h2 className="services-title">Our Branding Services</h2>
-          <p className="services-subtitle">Comprehensive solutions to <span className="highlight">elevate your brand</span> presence</p>
+          <h2 className="services-title">{t('branding.ourServices')}</h2>
+          <p className="services-subtitle">{t('branding.servicesSubtitle').split('elevate your brand')[0]}<span className="highlight">elevate your brand</span>{t('branding.servicesSubtitle').split('elevate your brand')[1]}</p>
         </ServicesHeader>
         
         <ServicesContainer>
@@ -666,7 +668,7 @@ const Branding = () => {
               <div className="service-icon-new">
                 <i className="fas fa-paint-brush"></i>
               </div>
-              <span className="popular-badge">Most Popular</span>
+              <span className="popular-badge">{t('branding.mostPopular')}</span>
             </div>
             <div className="card-content">
               <h3>Visual Identity Design</h3>
@@ -747,10 +749,10 @@ const Branding = () => {
       <ProcessTimeline>
         <SectionHeader>
           <div className="section-badge">
-            <span>How We Work</span>
+            <span>{t('branding.howWeWork')}</span>
           </div>
-          <h2>Our Proven Process</h2>
-          <p className="section-subtitle">A systematic approach to building <span className="highlight">exceptional brands</span></p>
+          <h2>{t('branding.provenProcess')}</h2>
+          <p className="section-subtitle">{t('branding.processSubtitle').split('exceptional brands')[0]}<span className="highlight">exceptional brands</span></p>
         </SectionHeader>
         
         <TimelineContainer>
@@ -849,10 +851,10 @@ const Branding = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Why GoWide</span>
+            <span>{t('branding.whyGoWide')}</span>
           </div>
-          <h2>What Sets Us Apart</h2>
-          <p className="section-subtitle">The advantages that make us your <span className="highlight">ideal branding partner</span></p>
+          <h2>{t('branding.whatSetsUsApart')}</h2>
+          <p className="section-subtitle">{t('branding.advantagesSubtitle').split('ideal branding partner')[0]}<span className="highlight">ideal branding partner</span></p>
         </SectionHeader>
         
         <AdvantagesGrid>

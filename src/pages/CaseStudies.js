@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { getCaseStudies } from '../lib/sanity';
 
 const CaseStudiesContainer = styled.div`
@@ -209,6 +210,7 @@ const LoadingState = styled.div`
 `;
 
 const CaseStudies = () => {
+  const { t } = useTranslation();
   const [caseStudies, setCaseStudies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -232,7 +234,7 @@ const CaseStudies = () => {
     return (
       <CaseStudiesContainer>
         <LoadingState>
-          <h2>Loading case studies...</h2>
+          <h2>{t('caseStudies.loading')}</h2>
         </LoadingState>
       </CaseStudiesContainer>
     );
@@ -242,10 +244,10 @@ const CaseStudies = () => {
     <CaseStudiesContainer>
       <HeroSection>
         <Title>
-          Case <span className="highlight">Studies</span>
+          {t('caseStudies.title').split(' ')[0]} <span className="highlight">{t('caseStudies.title').split(' ')[1]}</span>
         </Title>
         <Description>
-          Real results from real clients. Discover how we've helped businesses achieve their goals.
+          {t('caseStudies.subtitle')}
         </Description>
       </HeroSection>
 
@@ -276,12 +278,12 @@ const CaseStudies = () => {
                   <div className="case-results">
                     <div className="result-item">
                       <span className="result-number">{caseStudy.results}</span>
-                      <span className="result-label">Results Achieved</span>
+                      <span className="result-label">{t('caseStudies.resultsAchieved')}</span>
                     </div>
                   </div>
                 )}
                 <Link to={`/case-studies/${caseStudy.slug?.current}`} className="view-case">
-                  View Case Study <i className="fas fa-arrow-right"></i>
+                  {t('caseStudies.viewCaseStudy')} <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
             </CaseStudyCard>

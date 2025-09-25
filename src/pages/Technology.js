@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const TechnologyContainer = styled.div`
   padding-top: 120px;
@@ -460,21 +461,23 @@ const StackCategory = styled(motion.div)`
 `;
 
 const Technology = () => {
+  const { t } = useTranslation();
+  
   return (
     <TechnologyContainer>
       <HeroSection>
         <HeroContent>
           <div className="hero-badge">
-            <span>Technology Solutions</span>
+            <span>{t('technology.technologySolutions')}</span>
           </div>
           
           <Title>
-            <span className="title-main">Power Your</span>
-            <span className="title-highlight">Digital Future</span>
+            <span className="title-main">{t('technology.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
+            <span className="title-highlight">{t('technology.heroTitle').split(' ').slice(2).join(' ')}</span>
           </Title>
           
           <Description>
-            We deliver cutting-edge technology solutions that transform businesses and drive innovation through strategic development and digital excellence.
+            {t('technology.heroSubtitle')}
           </Description>
         </HeroContent>
         
@@ -505,10 +508,10 @@ const Technology = () => {
       <SolutionsSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Expertise</span>
+            <span>{t('technology.ourExpertise')}</span>
           </div>
-          <h2>Technology Solutions</h2>
-          <p className="section-subtitle">Innovative technology services that <span className="highlight">transform your business</span></p>
+          <h2>{t('technology.technologySolutionsTitle')}</h2>
+          <p className="section-subtitle">{t('technology.solutionsSubtitle').split('transform your business')[0]}<span className="highlight">transform your business</span></p>
         </SectionHeader>
 
         <SolutionsGrid>
@@ -643,10 +646,10 @@ const Technology = () => {
       <ProcessSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Process</span>
+            <span>{t('technology.ourProcess')}</span>
           </div>
-          <h2>Development Process</h2>
-          <p className="section-subtitle">A systematic approach to delivering <span className="highlight">exceptional technology solutions</span></p>
+          <h2>{t('technology.developmentProcess')}</h2>
+          <p className="section-subtitle">{t('technology.processSubtitle').split('exceptional technology solutions')[0]}<span className="highlight">exceptional technology solutions</span></p>
         </SectionHeader>
 
         <ProcessSteps>
@@ -707,10 +710,10 @@ const Technology = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Why Choose Us</span>
+            <span>{t('technology.whyChooseUs')}</span>
           </div>
-          <h2>Technology Advantages</h2>
-          <p className="section-subtitle">What makes us your <span className="highlight">ideal technology partner</span></p>
+          <h2>{t('technology.technologyAdvantages')}</h2>
+          <p className="section-subtitle">{t('technology.advantagesSubtitle').split('ideal technology partner')[0]}<span className="highlight">ideal technology partner</span></p>
         </SectionHeader>
 
         <AdvantagesGrid>
@@ -783,10 +786,10 @@ const Technology = () => {
       <TechStackSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Tech Stack</span>
+            <span>{t('technology.techStack')}</span>
           </div>
-          <h2>Technology Stack</h2>
-          <p className="section-subtitle">Modern technologies powering <span className="highlight">innovative solutions</span></p>
+          <h2>{t('technology.technologyStack')}</h2>
+          <p className="section-subtitle">{t('technology.stackSubtitle').split('innovative solutions')[0]}<span className="highlight">innovative solutions</span></p>
         </SectionHeader>
 
         <StackCategories>

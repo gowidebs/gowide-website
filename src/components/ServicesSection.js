@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Container } from '../styles/GlobalStyles';
 
 const ServicesContainer = styled.section`
@@ -151,49 +152,51 @@ const ServiceFeatures = styled.ul`
 `;
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
+  
   const services = [
     {
       id: 1,
-      title: "Branding",
+      title: t('services.branding'),
       icon: "fas fa-palette",
       features: [
-        "Logo Design",
-        "Brand Identity",
-        "Visual Guidelines",
-        "Brand Strategy"
+        t('services.brandingFeatures.logoDesign'),
+        t('services.brandingFeatures.brandIdentity'),
+        t('services.brandingFeatures.visualGuidelines'),
+        t('services.brandingFeatures.brandStrategy')
       ]
     },
     {
       id: 2,
-      title: "Technology",
+      title: t('services.technology'),
       icon: "fas fa-code",
       features: [
-        "Web Development",
-        "Mobile Apps",
-        "Custom Software",
-        "API Integration"
+        t('services.technologyFeatures.webDevelopment'),
+        t('services.technologyFeatures.mobileApps'),
+        t('services.technologyFeatures.customSoftware'),
+        t('services.technologyFeatures.apiIntegration')
       ]
     },
     {
       id: 3,
-      title: "Marketing",
+      title: t('services.marketing'),
       icon: "fas fa-bullhorn",
       features: [
-        "Digital Marketing",
-        "Content Strategy",
-        "Social Media",
-        "SEO Optimization"
+        t('services.marketingFeatures.digitalMarketing'),
+        t('services.marketingFeatures.contentStrategy'),
+        t('services.marketingFeatures.socialMedia'),
+        t('services.marketingFeatures.seoOptimization')
       ]
     },
     {
       id: 4,
-      title: "Advertising",
+      title: t('services.advertising'),
       icon: "fas fa-ad",
       features: [
-        "Google Ads",
-        "Facebook Ads",
-        "Campaign Management",
-        "Analytics & Reporting"
+        t('services.advertisingFeatures.googleAds'),
+        t('services.advertisingFeatures.facebookAds'),
+        t('services.advertisingFeatures.campaignManagement'),
+        t('services.advertisingFeatures.analyticsReporting')
       ]
     }
   ];
@@ -221,9 +224,9 @@ const ServicesSection = () => {
     <Container>
       <ServicesContainer id="services">
         <SectionHeader>
-          <SectionTitle>Our <span className="highlight">Services</span></SectionTitle>
+          <SectionTitle>{t('services.title')}</SectionTitle>
           <SectionSubtitle>
-            Comprehensive digital solutions to grow your business
+            {t('services.subtitle')}
           </SectionSubtitle>
         </SectionHeader>
 
@@ -244,11 +247,7 @@ const ServicesSection = () => {
                   <i className={service.icon}></i>
                 </ServiceIcon>
                 <ServiceTitle>
-                  {service.title.split(' ').map((word, index) => 
-                    index === service.title.split(' ').length - 1 ? 
-                    <span key={index} className="highlight">{word}</span> : 
-                    word + ' '
-                  )}
+                  {service.title}
                 </ServiceTitle>
                 <ServiceFeatures>
                   {service.features.map((feature, index) => (

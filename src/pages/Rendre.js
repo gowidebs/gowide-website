@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const ProductContainer = styled.div`
   padding-top: 120px;
@@ -514,6 +515,7 @@ const SolutionSection = styled.section`
 `;
 
 const Rendre = () => {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -556,16 +558,16 @@ const Rendre = () => {
         <HeroContent>
           <div className="product-badge">
             <i className="fas fa-recycle"></i>
-            <span>Sustainable Innovation</span>
+            <span>{t('rendre.sustainableInnovation')}</span>
           </div>
           
           <Title>
-            <span className="brand-name">Rendre</span>
-            <span className="brand-highlight">Recycling</span>
+            <span className="brand-name">{t('rendre.heroTitle').split(' ')[0]}</span>
+            <span className="brand-highlight">{t('rendre.heroTitle').split(' ')[1]}</span>
           </Title>
           
           <Description>
-            Transform vehicle recycling with smart identification, efficient collection, and eco-friendly processing for environmental sustainability.
+            {t('rendre.heroSubtitle')}
           </Description>
           
           <StatsContainer>
@@ -584,23 +586,23 @@ const Rendre = () => {
           </StatsContainer>
           
           <CountdownContainer>
-            <h3>🚀 Launching Mid 2026</h3>
+            <h3>{t('rendre.launchingMid2026')}</h3>
             <div className="countdown">
               <div className="time-unit">
                 <span className="number">{timeLeft.days}</span>
-                <span className="label">Days</span>
+                <span className="label">{t('rendre.days')}</span>
               </div>
               <div className="time-unit">
                 <span className="number">{timeLeft.hours}</span>
-                <span className="label">Hours</span>
+                <span className="label">{t('rendre.hours')}</span>
               </div>
               <div className="time-unit">
                 <span className="number">{timeLeft.minutes}</span>
-                <span className="label">Minutes</span>
+                <span className="label">{t('rendre.minutes')}</span>
               </div>
               <div className="time-unit">
                 <span className="number">{timeLeft.seconds}</span>
-                <span className="label">Seconds</span>
+                <span className="label">{t('rendre.seconds')}</span>
               </div>
             </div>
           </CountdownContainer>
@@ -608,7 +610,7 @@ const Rendre = () => {
           <HeroActions>
             <button className="hero-btn primary">
               <i className="fas fa-bell"></i>
-              <span>Get Notified at Launch</span>
+              <span>{t('rendre.getNotified')}</span>
             </button>
           </HeroActions>
         </HeroContent>
@@ -651,10 +653,10 @@ const Rendre = () => {
       <SectionContainer>
         <SectionHeader>
           <div className="section-badge">
-            <span>Current Problems</span>
+            <span>{t('rendre.currentProblems')}</span>
           </div>
-          <h2>The Challenge We're Solving</h2>
-          <p className="section-subtitle">Addressing critical environmental and <span className="highlight">urban challenges</span></p>
+          <h2>{t('rendre.challengeTitle')}</h2>
+          <p className="section-subtitle">{t('rendre.challengeSubtitle').split('urban challenges')[0]}<span className="highlight">urban challenges</span></p>
         </SectionHeader>
 
         <Grid>
@@ -713,10 +715,10 @@ const Rendre = () => {
           <div className="solution-text">
             <SectionHeader style={{ textAlign: 'left', marginBottom: '2rem' }}>
               <div className="section-badge">
-                <span>Our Solution</span>
+                <span>{t('rendre.ourSolution')}</span>
               </div>
-              <h2>Our Comprehensive Solution</h2>
-              <p className="section-subtitle">Rendre integrates technology with <span className="highlight">sustainable practices</span> for complete vehicle lifecycle management.</p>
+              <h2>{t('rendre.solutionTitle')}</h2>
+              <p className="section-subtitle">{t('rendre.solutionSubtitle').split('sustainable practices')[0]}<span className="highlight">sustainable practices</span>{t('rendre.solutionSubtitle').split('sustainable practices')[1]}</p>
             </SectionHeader>
             <div className="solution-features">
               <div className="feature">
@@ -760,10 +762,10 @@ const Rendre = () => {
       <SectionContainer>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Services</span>
+            <span>{t('rendre.ourServices')}</span>
           </div>
-          <h2>Vehicle Recycling Services</h2>
-          <p className="section-subtitle">End-to-end vehicle management <span className="highlight">solutions</span></p>
+          <h2>{t('rendre.servicesTitle')}</h2>
+          <p className="section-subtitle">{t('rendre.servicesSubtitle').split('solutions')[0]}<span className="highlight">solutions</span></p>
         </SectionHeader>
 
         <Grid>

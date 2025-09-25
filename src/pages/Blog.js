@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { getBlogPosts } from '../lib/sanity';
 
 const BlogContainer = styled.div`
@@ -207,6 +208,7 @@ const LoadingState = styled.div`
 `;
 
 const Blog = () => {
+  const { t } = useTranslation();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -230,7 +232,7 @@ const Blog = () => {
     return (
       <BlogContainer>
         <LoadingState>
-          <h2>Loading blog posts...</h2>
+          <h2>{t('blog.loading')}</h2>
         </LoadingState>
       </BlogContainer>
     );
@@ -240,10 +242,10 @@ const Blog = () => {
     <BlogContainer>
       <HeroSection>
         <Title>
-          Our <span className="highlight">Blog</span>
+          {t('blog.title')}
         </Title>
         <Description>
-          Insights, tips, and industry knowledge to help you stay ahead in the digital world.
+          {t('blog.subtitle')}
         </Description>
       </HeroSection>
 
@@ -267,14 +269,14 @@ const Blog = () => {
               </div>
               <div className="blog-content">
                 <div className="blog-meta">
-                  <span className="date">{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString() : 'No date'}</span>
+                  <span className="date">{blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString() : t('blog.noDate')}</span>
                   <span>•</span>
-                  <span>{blog.category || 'General'}</span>
+                  <span>{blog.category || t('blog.general')}</span>
                 </div>
                 <h3>{blog.title}</h3>
                 <p>{blog.excerpt}</p>
                 <Link to={`/blog/${blog.slug?.current}`} className="read-more">
-                  Read More <i className="fas fa-arrow-right"></i>
+                  {t('common.readMore')} <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
             </BlogCard>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AdvertisingContainer = styled.div`
   padding-top: 120px;
@@ -506,21 +507,23 @@ const PlatformCard = styled(motion.div)`
 `;
 
 const Advertising = () => {
+  const { t } = useTranslation();
+  
   return (
     <AdvertisingContainer>
       <HeroSection>
         <HeroContent>
           <div className="hero-badge">
-            <span>Advertising Solutions</span>
+            <span>{t('advertising.advertisingSolutions')}</span>
           </div>
           
           <Title>
-            <span className="title-main">Amplify Your</span>
-            <span className="title-highlight">Brand Reach</span>
+            <span className="title-main">{t('advertising.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
+            <span className="title-highlight">{t('advertising.heroTitle').split(' ').slice(2).join(' ')}</span>
           </Title>
           
           <Description>
-            Strategic advertising campaigns that drive results and maximize your ROI through targeted digital marketing solutions.
+            {t('advertising.heroSubtitle')}
           </Description>
           
           <StatsContainer>
@@ -566,10 +569,10 @@ const Advertising = () => {
       <ServicesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Services</span>
+            <span>{t('advertising.ourServices')}</span>
           </div>
-          <h2>Advertising Services</h2>
-          <p className="section-subtitle">Comprehensive advertising solutions that <span className="highlight">drive growth</span> and maximize your marketing impact</p>
+          <h2>{t('advertising.advertisingServices')}</h2>
+          <p className="section-subtitle">{t('advertising.servicesSubtitle').split('drive growth')[0]}<span className="highlight">drive growth</span>{t('advertising.servicesSubtitle').split('drive growth')[1]}</p>
         </SectionHeader>
 
         <ServicesGrid>
@@ -686,10 +689,10 @@ const Advertising = () => {
       <ProcessSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Process</span>
+            <span>{t('advertising.ourProcess')}</span>
           </div>
-          <h2>Advertising Process</h2>
-          <p className="section-subtitle">Strategic approach to <span className="highlight">maximize your advertising ROI</span></p>
+          <h2>{t('advertising.advertisingProcess')}</h2>
+          <p className="section-subtitle">{t('advertising.processSubtitle').split('maximize your advertising ROI')[0]}<span className="highlight">maximize your advertising ROI</span></p>
         </SectionHeader>
 
         <ProcessSteps>
@@ -750,10 +753,10 @@ const Advertising = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Why Choose Us</span>
+            <span>{t('advertising.whyChooseUs')}</span>
           </div>
-          <h2>Advertising Advantages</h2>
-          <p className="section-subtitle">What makes us your <span className="highlight">ideal advertising partner</span></p>
+          <h2>{t('advertising.advertisingAdvantages')}</h2>
+          <p className="section-subtitle">{t('advertising.advantagesSubtitle').split('ideal advertising partner')[0]}<span className="highlight">ideal advertising partner</span></p>
         </SectionHeader>
 
         <AdvantagesGrid>
@@ -846,10 +849,10 @@ const Advertising = () => {
       <PlatformsSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>Our Platforms</span>
+            <span>{t('advertising.ourPlatforms')}</span>
           </div>
-          <h2>Advertising Platforms</h2>
-          <p className="section-subtitle">We manage campaigns across all major advertising platforms for <span className="highlight">maximum reach</span></p>
+          <h2>{t('advertising.advertisingPlatforms')}</h2>
+          <p className="section-subtitle">{t('advertising.platformsSubtitle').split('maximum reach')[0]}<span className="highlight">maximum reach</span></p>
         </SectionHeader>
 
         <PlatformsGrid>
