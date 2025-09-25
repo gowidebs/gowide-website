@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import TechShowcase from '../components/TechShowcase';
+import CounterStats from '../components/CounterStats';
+import TestimonialSlider from '../components/TestimonialSlider';
 
 const HomePage = styled.div`
   min-height: 100vh;
@@ -1135,7 +1137,9 @@ const Home = () => {
         </Container>
       </ImpactSection>
 
+      <CounterStats />
       <TechShowcase />
+      <TestimonialSlider />
     </HomePage>
     </>
   );
