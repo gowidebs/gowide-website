@@ -18,11 +18,58 @@ const resources = {
         "getStarted": "Get Started",
         "learnMore": "Learn More"
       },
+      "common": {
+        "learnMore": "Learn More",
+        "getStarted": "Get Started",
+        "contactUs": "Contact Us",
+        "readMore": "Read More",
+        "viewAll": "View All",
+        "scheduleCall": "Schedule a Call",
+        "ourServices": "Our Services",
+        "ourProducts": "Our Products",
+        "whyChoose": "Why Choose GoWide?",
+        "ourProcess": "Our Process",
+        "ourImpact": "Our Impact"
+      },
+      "about": {
+        "whoWeAre": "Who We Are",
+        "description": "We are GoWide, a creative digital agency. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.",
+        "ourVision": "Our Vision",
+        "ourMission": "Our Mission",
+        "visionText": "To be the leading force in digital innovation, creating transformative solutions that inspire and elevate businesses worldwide.",
+        "missionText": "To deliver exceptional digital solutions through innovative thinking, cutting-edge technology, and unwavering commitment to client success."
+      },
+      "services": {
+        "branding": "Branding",
+        "technology": "Technology",
+        "marketing": "Marketing",
+        "advertising": "Advertising",
+        "brandingDesc": "Transform Your Brand Identity With Our Expertise",
+        "technologyDesc": "Powering Innovation with Advanced Solutions",
+        "marketingDesc": "Drive Growth with Strategic Marketing Solutions",
+        "advertisingDesc": "Create Impactful Ad Campaigns That Convert"
+      },
+      "contact": {
+        "title": "Ready to Get Started?",
+        "subtitle": "Let us know your needs and we'll get back to you",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company",
+        "message": "Message",
+        "send": "Send Message",
+        "getInTouch": "Get In Touch",
+        "address": "Address",
+        "followUs": "Follow Us"
+      },
       "footer": {
         "quickLinks": "Quick Links",
         "services": "Services",
         "products": "Products",
-        "copyright": "© 2025 Gowide Business Services Pvt Ltd. All rights reserved."
+        "copyright": "© 2025 Gowide Business Services Pvt Ltd. All rights reserved.",
+        "newsletter": "Newsletter",
+        "subscribe": "Subscribe",
+        "enterEmail": "Enter your email"
       }
     }
   },
@@ -41,11 +88,58 @@ const resources = {
         "getStarted": "ابدأ الآن",
         "learnMore": "اعرف المزيد"
       },
+      "common": {
+        "learnMore": "اعرف المزيد",
+        "getStarted": "ابدأ الآن",
+        "contactUs": "اتصل بنا",
+        "readMore": "اقرأ المزيد",
+        "viewAll": "عرض الكل",
+        "scheduleCall": "جدولة مكالمة",
+        "ourServices": "خدماتنا",
+        "ourProducts": "منتجاتنا",
+        "whyChoose": "لماذا تختار جو وايد؟",
+        "ourProcess": "عمليتنا",
+        "ourImpact": "تأثيرنا"
+      },
+      "about": {
+        "whoWeAre": "من نحن",
+        "description": "نحن جو وايد، وكالة رقمية إبداعية. نتخصص في العلامات التجارية والإعلان والتسويق والحلول التقنية التي تساعد الشركات على النمو والازدهار في المشهد الرقمي.",
+        "ourVision": "رؤيتنا",
+        "ourMission": "مهمتنا",
+        "visionText": "أن نكون القوة الرائدة في الابتكار الرقمي، وإنشاء حلول تحويلية تلهم وترفع الشركات في جميع أنحاء العالم.",
+        "missionText": "تقديم حلول رقمية استثنائية من خلال التفكير المبتكر والتكنولوجيا المتطورة والالتزام الثابت بنجاح العملاء."
+      },
+      "services": {
+        "branding": "العلامة التجارية",
+        "technology": "التكنولوجيا",
+        "marketing": "التسويق",
+        "advertising": "الإعلان",
+        "brandingDesc": "حول هوية علامتك التجارية بخبرتنا",
+        "technologyDesc": "تشغيل الابتكار بحلول متقدمة",
+        "marketingDesc": "قيادة النمو بحلول تسويقية استراتيجية",
+        "advertisingDesc": "إنشاء حملات إعلانية مؤثرة تحقق التحويل"
+      },
+      "contact": {
+        "title": "مستعد للبدء؟",
+        "subtitle": "أخبرنا باحتياجاتك وسنعاود الاتصال بك",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "company": "الشركة",
+        "message": "الرسالة",
+        "send": "إرسال الرسالة",
+        "getInTouch": "تواصل معنا",
+        "address": "العنوان",
+        "followUs": "تابعنا"
+      },
       "footer": {
         "quickLinks": "روابط سريعة",
         "services": "الخدمات",
         "products": "المنتجات",
-        "copyright": "© 2025 جو وايد لخدمات الأعمال المحدودة. جميع الحقوق محفوظة."
+        "copyright": "© 2025 جو وايد لخدمات الأعمال المحدودة. جميع الحقوق محفوظة.",
+        "newsletter": "النشرة الإخبارية",
+        "subscribe": "اشترك",
+        "enterEmail": "أدخل بريدك الإلكتروني"
       }
     }
   },
