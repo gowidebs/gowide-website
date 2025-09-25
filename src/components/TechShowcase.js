@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const ShowcaseContainer = styled.section`
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 `;
@@ -17,14 +17,14 @@ const Container = styled.div`
 
 const TechGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-top: 60px;
 `;
 
 const TechCard = styled(motion.div)`
-  background: var(--bg-secondary);
-  border: 1px solid rgba(255, 137, 6, 0.2);
+  background: var(--bg-primary);
+  border: 2px solid var(--primary-orange);
   border-radius: 20px;
   padding: 30px;
   position: relative;
@@ -47,7 +47,7 @@ const TechCard = styled(motion.div)`
 `;
 
 const CodeBlock = styled.div`
-  background: #1a1a1a;
+  background: #000;
   border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
@@ -93,7 +93,6 @@ const LiveCounter = styled.div`
 const TechShowcase = () => {
   const [visitors, setVisitors] = useState(1247);
   const [apiCalls, setApiCalls] = useState(8934);
-  const [uptime, setUptime] = useState(99.9);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -136,10 +135,10 @@ const TechShowcase = () => {
               <span style={{ color: 'var(--text-primary)' }}>Live Data Stream</span>
             </LiveCounter>
             <CodeBlock>
-              {`// Live Website Stats
+{`// Live Website Stats
 visitors: ${visitors.toLocaleString()}
 apiCalls: ${apiCalls.toLocaleString()}
-uptime: ${uptime}%
+uptime: 99.9%
 status: "ONLINE"`}
             </CodeBlock>
             <p style={{ color: 'var(--text-secondary)' }}>
@@ -158,7 +157,7 @@ status: "ONLINE"`}
               🎨 Advanced Animations
             </h3>
             <CodeBlock>
-              {`// Framer Motion Magic
+{`// Framer Motion Magic
 <motion.div
   whileHover={{ scale: 1.1 }}
   whileInView={{ opacity: 1 }}
@@ -180,13 +179,13 @@ status: "ONLINE"`}
             transition={{ delay: 0.4 }}
           >
             <h3 style={{ color: 'var(--primary-orange)', marginBottom: '15px' }}>
-              🌐 Multi-Language AI
+              🌐 Multi-Language System
             </h3>
             <CodeBlock>
-              {`// i18n Implementation
+{`// i18n Implementation
 languages: [
   'English', 'العربية', 'മലയാളം',
-  'Français', 'Español', 'हिन्दी', 'தமிழ்'
+  'Français', 'Español', 'हिन्दी'
 ]
 autoDetect: true`}
             </CodeBlock>

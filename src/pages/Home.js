@@ -5,8 +5,7 @@ import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
-// import TechShowcase from '../components/TechShowcase';
-// import InteractiveDemo from '../components/InteractiveDemo';
+import TechShowcase from '../components/TechShowcase';
 
 const HomePage = styled.div`
   min-height: 100vh;
@@ -1136,8 +1135,7 @@ const Home = () => {
         </Container>
       </ImpactSection>
 
-      {/* <TechShowcase />
-      <InteractiveDemo /> */}
+      <TechShowcase />
     </HomePage>
     </>
   );
