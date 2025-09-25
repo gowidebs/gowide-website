@@ -374,7 +374,15 @@ const resources = {
         "solutionSubtitle": "الممارسات المستدامة",
         "ourServices": "خدماتنا",
         "servicesTitle": "خدمات إعادة تدوير المركبات",
-        "servicesSubtitle": "حلول"
+        "servicesSubtitle": "حلول",
+        "vehicleIdentification": "تحديد هوية المركبة",
+        "vehicleIdentificationDesc": "الكشف والفهرسة بالذكاء الاصطناعي للمركبات المهجورة باستخدام تقنية التصوير الذكية.",
+        "collectionServices": "خدمات الجمع",
+        "collectionServicesDesc": "الاستلام والنقل الفعال للمركبات إلى مرافق إعادة التدوير مع تتبع GPS.",
+        "materialProcessing": "معالجة المواد",
+        "materialProcessingDesc": "عمليات إعادة تدوير متقدمة لاستعادة المواد والمكونات القيمة بأمان.",
+        "impactTracking": "تتبع التأثير",
+        "impactTrackingDesc": "المراقبة والتقرير في الوقت الفعلي للتأثير البيئي ومقاييس إعادة التدوير."
       },
       "products": {
         "title": "منتجاتنا",
