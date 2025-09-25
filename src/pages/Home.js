@@ -990,43 +990,152 @@ const Home = () => {
       {services.map((service, index) => (
         <ServicesSection key={index}>
           <Container>
-            <SectionHeader>
-              <h2>{service.title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: service.subtitle }}></p>
-            </SectionHeader>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+            >
+              <SectionHeader>
+                <motion.h2
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -200 : 200, rotateY: 45 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    duration: 1.2, 
+                    delay: 0.4,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  style={{ perspective: "1000px" }}
+                >
+                  {service.title}
+                </motion.h2>
+                <motion.p 
+                  dangerouslySetInnerHTML={{ __html: service.subtitle }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                ></motion.p>
+              </SectionHeader>
+            </motion.div>
             <ServicesGrid>
               {service.items.map((item, itemIndex) => (
-                <ServiceBox key={itemIndex}>
-                  <div className="box-icon">
-                    <i className={item.icon}></i>
-                  </div>
-                  <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
-                  <ul>
-                    {item.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>
-                        <i className="fas fa-check"></i>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </ServiceBox>
+                <motion.div
+                  key={itemIndex}
+                  initial={{ opacity: 0, y: 80, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: itemIndex * 0.15,
+                    type: "spring",
+                    stiffness: 120
+                  }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    rotateY: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <ServiceBox>
+                    <motion.div 
+                      className="box-icon"
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: itemIndex * 0.15 + 0.3 }}
+                    >
+                      <i className={item.icon}></i>
+                    </motion.div>
+                    <motion.h3 
+                      dangerouslySetInnerHTML={{ __html: item.title }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: itemIndex * 0.15 + 0.4 }}
+                    ></motion.h3>
+                    <motion.ul
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: itemIndex * 0.15 + 0.5 }}
+                    >
+                      {item.features.map((feature, featureIndex) => (
+                        <motion.li 
+                          key={featureIndex}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ 
+                            duration: 0.4, 
+                            delay: itemIndex * 0.15 + 0.6 + featureIndex * 0.1 
+                          }}
+                        >
+                          <i className="fas fa-check"></i>
+                          <span>{feature}</span>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </ServiceBox>
+                </motion.div>
               ))}
             </ServicesGrid>
-            <CTAContainer>
-              <CTAButton to={service.link}>
-                {t('common.learnMore')}
-              </CTAButton>
-            </CTAContainer>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <CTAContainer>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <CTAButton to={service.link}>
+                    {t('common.learnMore')}
+                  </CTAButton>
+                </motion.div>
+              </CTAContainer>
+            </motion.div>
           </Container>
         </ServicesSection>
       ))}
 
       <ServicesSection>
         <Container>
-          <SectionHeader>
-            <h2>{t('common.ourProducts')}</h2>
-            <p>Explore our innovative <span className="highlight">software solutions</span> designed to meet your needs.</p>
-          </SectionHeader>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, type: "spring", stiffness: 100 }}
+          >
+            <SectionHeader>
+              <motion.h2
+                initial={{ opacity: 0, y: -100, rotateX: 90 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3, type: "spring" }}
+                style={{ perspective: "1000px" }}
+              >
+                {t('common.ourProducts')}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                Explore our innovative <span className="highlight">software solutions</span> designed to meet your needs.
+              </motion.p>
+            </SectionHeader>
+          </motion.div>
           <ProductsGrid>
             {products.map((product, index) => (
               <ProductCard key={index}>
