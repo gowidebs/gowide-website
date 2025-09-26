@@ -671,12 +671,12 @@ const Branding = () => {
               <span className="popular-badge">{t('branding.mostPopular')}</span>
             </div>
             <div className="card-content">
-              <h3>Visual Identity Design</h3>
-              <p>Create a cohesive visual language that tells your brand story through logos, colors, typography, and design systems.</p>
+              <h3>{t('branding.visualIdentityDesignTitle')}</h3>
+              <p>{t('branding.visualIdentityDesignDesc')}</p>
               <div className="service-list">
-                <span>Logo Design & Variations</span>
-                <span>Brand Guidelines</span>
-                <span>Color Palette & Typography</span>
+                <span>{t('branding.logoDesignVariations')}</span>
+                <span>{t('branding.brandGuidelines')}</span>
+                <span>{t('branding.colorPaletteTypography')}</span>
               </div>
             </div>
           </ServiceCardNew>
@@ -692,12 +692,12 @@ const Branding = () => {
               </div>
             </div>
             <div className="card-content">
-              <h3>Brand Strategy</h3>
-              <p>Develop a comprehensive roadmap to position your brand effectively in the competitive market landscape.</p>
+              <h3>{t('branding.brandStrategyTitle')}</h3>
+              <p>{t('branding.brandStrategyTitleDesc')}</p>
               <div className="service-list">
-                <span>Market Research</span>
-                <span>Competitor Analysis</span>
-                <span>Brand Positioning</span>
+                <span>{t('branding.marketResearch')}</span>
+                <span>{t('branding.competitorAnalysis')}</span>
+                <span>{t('branding.brandPositioning')}</span>
               </div>
             </div>
           </ServiceCardNew>
@@ -713,12 +713,12 @@ const Branding = () => {
               </div>
             </div>
             <div className="card-content">
-              <h3>Brand Voice & Messaging</h3>
-              <p>Craft a consistent tone and messaging strategy that resonates with your target audience across all touchpoints.</p>
+              <h3>{t('branding.brandVoiceMessagingTitle')}</h3>
+              <p>{t('branding.brandVoiceMessagingTitleDesc')}</p>
               <div className="service-list">
-                <span>Voice Guidelines</span>
-                <span>Content Strategy</span>
-                <span>Messaging Framework</span>
+                <span>{t('branding.voiceGuidelines')}</span>
+                <span>{t('branding.contentStrategy')}</span>
+                <span>{t('branding.messagingFramework')}</span>
               </div>
             </div>
           </ServiceCardNew>
@@ -734,12 +734,12 @@ const Branding = () => {
               </div>
             </div>
             <div className="card-content">
-              <h3>Brand Implementation</h3>
-              <p>Seamlessly integrate your new brand identity across all platforms and empower your team to represent it consistently.</p>
+              <h3>{t('branding.brandImplementationTitle')}</h3>
+              <p>{t('branding.brandImplementationTitleDesc')}</p>
               <div className="service-list">
-                <span>Team Training</span>
-                <span>Asset Creation</span>
-                <span>Launch Strategy</span>
+                <span>{t('branding.teamTraining')}</span>
+                <span>{t('branding.assetCreation')}</span>
+                <span>{t('branding.launchStrategy')}</span>
               </div>
             </div>
           </ServiceCardNew>
@@ -770,12 +770,12 @@ const Branding = () => {
               <div className="branding-timeline-icon">
                 <i className="fas fa-search"></i>
               </div>
-              <h3>Discovery & Research</h3>
-              <p>Deep dive into your business, market landscape, and target audience to understand your unique positioning and opportunities.</p>
+              <h3>{t('branding.discoveryResearchTitle')}</h3>
+              <p>{t('branding.discoveryResearchTitleDesc')}</p>
               <div className="branding-timeline-features">
-                <span>Market Analysis</span>
-                <span>Competitor Research</span>
-                <span>Brand Audit</span>
+                <span>{t('branding.marketAnalysis')}</span>
+                <span>{t('branding.competitorResearch')}</span>
+                <span>{t('branding.brandAudit')}</span>
               </div>
             </div>
           </TimelineItem>
@@ -792,12 +792,12 @@ const Branding = () => {
               <div className="branding-timeline-icon">
                 <i className="fas fa-lightbulb"></i>
               </div>
-              <h3>Strategy Development</h3>
-              <p>Create a comprehensive brand strategy that defines your positioning, messaging, and roadmap for market success.</p>
+              <h3>{t('branding.strategyDevelopmentTitle')}</h3>
+              <p>{t('branding.strategyDevelopmentTitleDesc')}</p>
               <div className="branding-timeline-features">
-                <span>Brand Positioning</span>
-                <span>Messaging Strategy</span>
-                <span>Brand Architecture</span>
+                <span>{t('branding.brandPositioning')}</span>
+                <span>{t('branding.messagingStrategy')}</span>
+                <span>{t('branding.brandArchitecture')}</span>
               </div>
             </div>
           </TimelineItem>
@@ -814,12 +814,12 @@ const Branding = () => {
               <div className="branding-timeline-icon">
                 <i className="fas fa-palette"></i>
               </div>
-              <h3>Creative Design</h3>
-              <p>Bring your brand to life through compelling visual identity, including logos, colors, typography, and brand assets.</p>
+              <h3>{t('branding.creativeDesignTitle')}</h3>
+              <p>{t('branding.creativeDesignTitleDesc')}</p>
               <div className="branding-timeline-features">
-                <span>Logo Design</span>
-                <span>Visual Identity</span>
-                <span>Brand Guidelines</span>
+                <span>{t('branding.logoDesign')}</span>
+                <span>{t('branding.visualIdentity')}</span>
+                <span>{t('branding.brandGuidelines')}</span>
               </div>
             </div>
           </TimelineItem>
@@ -836,12 +836,12 @@ const Branding = () => {
               <div className="branding-timeline-icon">
                 <i className="fas fa-rocket"></i>
               </div>
-              <h3>Launch & Implementation</h3>
-              <p>Deploy your new brand across all touchpoints and provide ongoing support to ensure consistent brand execution.</p>
+              <h3>{t('branding.launchImplementationTitle')}</h3>
+              <p>{t('branding.launchImplementationTitleDesc')}</p>
               <div className="branding-timeline-features">
-                <span>Brand Rollout</span>
-                <span>Team Training</span>
-                <span>Ongoing Support</span>
+                <span>{t('branding.brandRollout')}</span>
+                <span>{t('branding.teamTraining')}</span>
+                <span>{t('branding.ongoingSupport')}</span>
               </div>
             </div>
           </TimelineItem>
@@ -867,11 +867,11 @@ const Branding = () => {
             <div className="advantage-icon">
               <i className="fas fa-lightbulb"></i>
             </div>
-            <h3>Creative Excellence</h3>
-            <p>Award-winning creative team with a proven track record of delivering innovative branding solutions that captivate audiences.</p>
+            <h3>{t('branding.creativeExcellenceTitle')}</h3>
+            <p>{t('branding.creativeExcellenceTitleDesc')}</p>
             <div className="advantage-highlight">
-              <span>• 50+ Award-Winning Designs</span>
-              <span>• Creative Industry Recognition</span>
+              <span>{t('branding.awardWinningDesigns')}</span>
+              <span>{t('branding.creativeIndustryRecognition')}</span>
             </div>
           </AdvantageCard>
 
@@ -884,11 +884,11 @@ const Branding = () => {
             <div className="advantage-icon">
               <i className="fas fa-chart-line"></i>
             </div>
-            <h3>Data-Driven Strategy</h3>
-            <p>Every branding decision is backed by comprehensive market research and analytics to ensure maximum impact and ROI.</p>
+            <h3>{t('branding.dataDrivenStrategyTitle')}</h3>
+            <p>{t('branding.dataDrivenStrategyTitleDesc')}</p>
             <div className="advantage-highlight">
-              <span>• Market Research & Analysis</span>
-              <span>• Performance Tracking</span>
+              <span>{t('branding.marketResearchAnalysis')}</span>
+              <span>{t('branding.performanceTracking')}</span>
             </div>
           </AdvantageCard>
 
@@ -901,11 +901,11 @@ const Branding = () => {
             <div className="advantage-icon">
               <i className="fas fa-handshake"></i>
             </div>
-            <h3>Partnership Approach</h3>
-            <p>We work as an extension of your team, providing collaborative support and transparent communication throughout the journey.</p>
+            <h3>{t('branding.partnershipApproachTitle')}</h3>
+            <p>{t('branding.partnershipApproachTitleDesc')}</p>
             <div className="advantage-highlight">
-              <span>• Dedicated Account Manager</span>
-              <span>• 24/7 Support Available</span>
+              <span>{t('branding.dedicatedAccountManager')}</span>
+              <span>{t('branding.support247Available')}</span>
             </div>
           </AdvantageCard>
 
@@ -918,11 +918,11 @@ const Branding = () => {
             <div className="advantage-icon">
               <i className="fas fa-rocket"></i>
             </div>
-            <h3>Future-Ready Solutions</h3>
-            <p>Scalable branding solutions designed to grow with your business and adapt to evolving market trends and technologies.</p>
+            <h3>{t('branding.futureReadySolutionsTitle')}</h3>
+            <p>{t('branding.futureReadySolutionsTitleDesc')}</p>
             <div className="advantage-highlight">
-              <span>• Scalable Brand Systems</span>
-              <span>• Future-Proof Design</span>
+              <span>{t('branding.scalableBrandSystems')}</span>
+              <span>{t('branding.futureProofDesign')}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
