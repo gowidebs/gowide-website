@@ -529,15 +529,15 @@ const Advertising = () => {
           <StatsContainer>
             <StatItem>
               <span className="stat-number">300%</span>
-              <span className="stat-label">Avg ROI Increase</span>
+              <span className="stat-label">{t('advertising.avgROIIncrease')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">50M+</span>
-              <span className="stat-label">Impressions Generated</span>
+              <span className="stat-label">{t('advertising.impressionsGenerated')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">95%</span>
-              <span className="stat-label">Client Satisfaction</span>
+              <span className="stat-label">{t('advertising.clientSatisfaction')}</span>
             </StatItem>
           </StatsContainer>
         </HeroContent>
@@ -550,7 +550,7 @@ const Advertising = () => {
           >
             <div className="metric-header">
               <i className="fas fa-chart-line"></i>
-              <span>Campaign Performance</span>
+              <span>{t('advertising.campaignPerformance')}</span>
             </div>
             <div className="metric-chart">
               <div className="chart-bar chart-bar-1"></div>
@@ -560,7 +560,7 @@ const Advertising = () => {
             </div>
             <div className="metric-value">
               <span className="value-number">+245%</span>
-              <span className="value-label">Growth</span>
+              <span className="value-label">{t('advertising.growth')}</span>
             </div>
           </MetricsCard>
         </HeroVisual>
@@ -584,13 +584,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fab fa-google"></i>
             </div>
-            <h3>Google Ads</h3>
-            <p>Strategic Google Ads campaigns that target the right audience and maximize your advertising spend.</p>
+            <h3>{t('advertising.googleAds')}</h3>
+            <p>{t('advertising.googleAdsDesc')}</p>
             <div className="service-features">
-              <span>Search Ads</span>
-              <span>Display Ads</span>
-              <span>Shopping Ads</span>
-              <span>Video Ads</span>
+              <span>{t('advertising.searchAds')}</span>
+              <span>{t('advertising.displayAds')}</span>
+              <span>{t('advertising.shoppingAds')}</span>
+              <span>{t('advertising.videoAds')}</span>
             </div>
           </ServiceCard>
 
@@ -602,13 +602,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-share-alt"></i>
             </div>
-            <h3>Social Media Advertising</h3>
-            <p>Engaging social media campaigns across all major platforms to build brand awareness and drive conversions.</p>
+            <h3>{t('advertising.socialMediaAdvertising')}</h3>
+            <p>{t('advertising.socialMediaAdvertisingDesc')}</p>
             <div className="service-features">
-              <span>Facebook Ads</span>
-              <span>Instagram Ads</span>
-              <span>LinkedIn Ads</span>
-              <span>Twitter Ads</span>
+              <span>{t('advertising.facebookAds')}</span>
+              <span>{t('advertising.instagramAds')}</span>
+              <span>{t('advertising.linkedinAds')}</span>
+              <span>{t('advertising.twitterAds')}</span>
             </div>
           </ServiceCard>
 
@@ -620,13 +620,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-bullseye"></i>
             </div>
-            <h3>Targeted Campaigns</h3>
-            <p>Precision-targeted advertising campaigns that reach your ideal customers at the right time and place.</p>
+            <h3>{t('advertising.targetedCampaigns')}</h3>
+            <p>{t('advertising.targetedCampaignsDesc')}</p>
             <div className="service-features">
-              <span>Audience Targeting</span>
-              <span>Retargeting</span>
-              <span>Lookalike Audiences</span>
-              <span>Behavioral Targeting</span>
+              <span>{t('advertising.audienceTargeting')}</span>
+              <span>{t('advertising.retargeting')}</span>
+              <span>{t('advertising.lookalikeاudiences')}</span>
+              <span>{t('advertising.behavioralTargeting')}</span>
             </div>
           </ServiceCard>
 
@@ -638,13 +638,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>Performance Tracking</h3>
-            <p>Comprehensive analytics and reporting to measure campaign success and optimize for better results.</p>
+            <h3>{t('advertising.performanceTracking')}</h3>
+            <p>{t('advertising.performanceTrackingDesc')}</p>
             <div className="service-features">
-              <span>Real-time Analytics</span>
-              <span>Conversion Tracking</span>
-              <span>ROI Reporting</span>
-              <span>Custom Dashboards</span>
+              <span>{t('advertising.realTimeAnalytics')}</span>
+              <span>{t('advertising.conversionTracking')}</span>
+              <span>{t('advertising.roiReporting')}</span>
+              <span>{t('advertising.customDashboards')}</span>
             </div>
           </ServiceCard>
 
@@ -656,13 +656,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-palette"></i>
             </div>
-            <h3>Creative Design</h3>
-            <p>Eye-catching ad creatives and compelling copy that capture attention and drive action.</p>
+            <h3>{t('advertising.creativeDesign')}</h3>
+            <p>{t('advertising.creativeDesignDesc')}</p>
             <div className="service-features">
-              <span>Banner Design</span>
-              <span>Video Creatives</span>
-              <span>Copywriting</span>
-              <span>Brand Consistency</span>
+              <span>{t('advertising.bannerDesign')}</span>
+              <span>{t('advertising.videoCreatives')}</span>
+              <span>{t('advertising.copywriting')}</span>
+              <span>{t('advertising.brandConsistency')}</span>
             </div>
           </ServiceCard>
 
@@ -674,13 +674,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-cogs"></i>
             </div>
-            <h3>Campaign Optimization</h3>
-            <p>Continuous optimization and A/B testing to improve campaign performance and maximize ROI.</p>
+            <h3>{t('advertising.campaignOptimization')}</h3>
+            <p>{t('advertising.campaignOptimizationDesc')}</p>
             <div className="service-features">
-              <span>A/B Testing</span>
-              <span>Bid Optimization</span>
-              <span>Keyword Research</span>
-              <span>Landing Page Optimization</span>
+              <span>{t('advertising.abTesting')}</span>
+              <span>{t('advertising.bidOptimization')}</span>
+              <span>{t('advertising.keywordResearch')}</span>
+              <span>{t('advertising.landingPageOptimization')}</span>
             </div>
           </ServiceCard>
         </ServicesGrid>
@@ -705,8 +705,8 @@ const Advertising = () => {
               <i className="fas fa-search"></i>
             </div>
             <div className="step-number">01</div>
-            <h3>Research & Analysis</h3>
-            <p>Deep market research and competitor analysis to identify opportunities.</p>
+            <h3>{t('advertising.researchAnalysis')}</h3>
+            <p>{t('advertising.researchAnalysisDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -718,8 +718,8 @@ const Advertising = () => {
               <i className="fas fa-bullseye"></i>
             </div>
             <div className="step-number">02</div>
-            <h3>Strategy Development</h3>
-            <p>Creating targeted advertising strategies aligned with your business goals.</p>
+            <h3>{t('advertising.strategyDevelopment')}</h3>
+            <p>{t('advertising.strategyDevelopmentDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -731,8 +731,8 @@ const Advertising = () => {
               <i className="fas fa-rocket"></i>
             </div>
             <div className="step-number">03</div>
-            <h3>Campaign Launch</h3>
-            <p>Executing campaigns across multiple platforms with precision timing.</p>
+            <h3>{t('advertising.campaignLaunch')}</h3>
+            <p>{t('advertising.campaignLaunchDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -744,8 +744,8 @@ const Advertising = () => {
               <i className="fas fa-chart-line"></i>
             </div>
             <div className="step-number">04</div>
-            <h3>Optimize & Track</h3>
-            <p>Continuous monitoring and optimization for maximum performance.</p>
+            <h3>{t('advertising.optimizeTrack')}</h3>
+            <p>{t('advertising.optimizeTrackDesc')}</p>
           </ProcessStep>
         </ProcessSteps>
       </ProcessSection>
@@ -768,16 +768,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>Data-Driven Results</h3>
-            <p>Strategic campaigns backed by comprehensive analytics and performance insights.</p>
+            <h3>{t('advertising.dataDrivenResults')}</h3>
+            <p>{t('advertising.dataDrivenResultsDesc')}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> Real-time Analytics</li>
-              <li><i className="fas fa-check"></i> Performance Tracking</li>
-              <li><i className="fas fa-check"></i> ROI Optimization</li>
+              <li><i className="fas fa-check"></i> {t('advertising.realTimeAnalytics')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.performanceTracking')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.roiOptimization')}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">300%</span>
-              <span className="metric-label">Avg ROI Increase</span>
+              <span className="metric-label">{t('advertising.avgROIIncrease')}</span>
             </div>
           </AdvantageCard>
 
@@ -789,16 +789,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-users"></i>
             </div>
-            <h3>Expert Team</h3>
-            <p>Certified advertising professionals with years of experience across all major platforms.</p>
+            <h3>{t('advertising.expertTeam')}</h3>
+            <p>{t('advertising.expertTeamDesc')}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> Google Certified</li>
-              <li><i className="fas fa-check"></i> Facebook Blueprint</li>
-              <li><i className="fas fa-check"></i> 5+ Years Experience</li>
+              <li><i className="fas fa-check"></i> {t('advertising.googleCertified')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.facebookBlueprint')}</li>
+              <li><i className="fas fa-check"></i> 5+ {t('advertising.yearsExperience')}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">50M+</span>
-              <span className="metric-label">Impressions Managed</span>
+              <span className="metric-label">{t('advertising.impressionsManaged')}</span>
             </div>
           </AdvantageCard>
 
@@ -810,16 +810,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-clock"></i>
             </div>
-            <h3>Quick Results</h3>
-            <p>Fast campaign setup and optimization to start seeing results within the first week.</p>
+            <h3>{t('advertising.quickResults')}</h3>
+            <p>{t('advertising.quickResultsDesc')}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> 24-48hr Setup</li>
-              <li><i className="fas fa-check"></i> Instant Optimization</li>
-              <li><i className="fas fa-check"></i> Weekly Reports</li>
+              <li><i className="fas fa-check"></i> {t('advertising.setup24to48hr')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.instantOptimization')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.weeklyReports')}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">7</span>
-              <span className="metric-label">Days to Results</span>
+              <span className="metric-label">{t('advertising.daysToResults')}</span>
             </div>
           </AdvantageCard>
 
@@ -831,16 +831,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-headset"></i>
             </div>
-            <h3>Dedicated Support</h3>
-            <p>Personal account manager and 24/7 support for all your advertising needs.</p>
+            <h3>{t('advertising.dedicatedSupport')}</h3>
+            <p>{t('advertising.dedicatedSupportDesc')}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> Account Manager</li>
-              <li><i className="fas fa-check"></i> 24/7 Chat Support</li>
-              <li><i className="fas fa-check"></i> Monthly Reviews</li>
+              <li><i className="fas fa-check"></i> {t('advertising.accountManager')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.chatSupport247')}</li>
+              <li><i className="fas fa-check"></i> {t('advertising.monthlyReviews')}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">24/7</span>
-              <span className="metric-label">Support Available</span>
+              <span className="metric-label">{t('advertising.supportAvailable')}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
@@ -864,12 +864,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-google"></i>
             </div>
-            <h3>Google Ads</h3>
-            <p>Reach customers when they search for your products and services on Google.</p>
+            <h3>{t('advertising.googleAdsTitle')}</h3>
+            <p>{t('advertising.googleAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">8.5B+</span>
-                <span className="stat-label">Daily Searches</span>
+                <span className="stat-label">{t('advertising.dailySearches')}</span>
               </div>
             </div>
           </PlatformCard>
@@ -882,12 +882,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-facebook"></i>
             </div>
-            <h3>Facebook Ads</h3>
-            <p>Connect with your audience on the world's largest social media platform.</p>
+            <h3>{t('advertising.facebookAdsTitle')}</h3>
+            <p>{t('advertising.facebookAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2.9B+</span>
-                <span className="stat-label">Monthly Users</span>
+                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
               </div>
             </div>
           </PlatformCard>
@@ -900,12 +900,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-instagram"></i>
             </div>
-            <h3>Instagram Ads</h3>
-            <p>Engage with visual content that captures attention and drives action.</p>
+            <h3>{t('advertising.instagramAdsTitle')}</h3>
+            <p>{t('advertising.instagramAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2B+</span>
-                <span className="stat-label">Monthly Users</span>
+                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
               </div>
             </div>
           </PlatformCard>
@@ -918,12 +918,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-linkedin"></i>
             </div>
-            <h3>LinkedIn Ads</h3>
-            <p>Target professionals and decision-makers in your industry.</p>
+            <h3>{t('advertising.linkedinAdsTitle')}</h3>
+            <p>{t('advertising.linkedinAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">900M+</span>
-                <span className="stat-label">Professionals</span>
+                <span className="stat-label">{t('advertising.professionals')}</span>
               </div>
             </div>
           </PlatformCard>
@@ -936,12 +936,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-youtube"></i>
             </div>
-            <h3>YouTube Ads</h3>
-            <p>Reach your audience with compelling video content and advertisements.</p>
+            <h3>{t('advertising.youtubeAdsTitle')}</h3>
+            <p>{t('advertising.youtubeAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2B+</span>
-                <span className="stat-label">Monthly Users</span>
+                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
               </div>
             </div>
           </PlatformCard>
@@ -954,12 +954,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-twitter"></i>
             </div>
-            <h3>Twitter Ads</h3>
-            <p>Join conversations and promote your brand in real-time discussions.</p>
+            <h3>{t('advertising.twitterAdsTitle')}</h3>
+            <p>{t('advertising.twitterAdsDesc2')}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">450M+</span>
-                <span className="stat-label">Monthly Users</span>
+                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
               </div>
             </div>
           </PlatformCard>
