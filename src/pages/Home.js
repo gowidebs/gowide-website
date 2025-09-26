@@ -963,15 +963,15 @@ const Home = () => {
               <FeatureList>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>Strategic Digital Solutions</span>
+                  <span>{t('about.strategicDigitalSolutions')}</span>
                 </FeatureItem>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>Expert Team of Professionals</span>
+                  <span>{t('about.expertTeamProfessionals')}</span>
                 </FeatureItem>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>Innovative Technology Approach</span>
+                  <span>{t('about.innovativeTechnologyApproach')}</span>
                 </FeatureItem>
               </FeatureList>
               <CTAButton to="/contact">
@@ -982,15 +982,15 @@ const Home = () => {
             <ImageSide>
               <FloatingCard className="card-1">
                 <i className="fas fa-chart-line"></i>
-                <span>Growth Analytics</span>
+                <span>{t('common.growthAnalytics')}</span>
               </FloatingCard>
               <FloatingCard className="card-2">
                 <i className="fas fa-users"></i>
-                <span>Team Collaboration</span>
+                <span>{t('common.teamCollaboration')}</span>
               </FloatingCard>
               <FloatingCard className="card-3">
                 <i className="fas fa-rocket"></i>
-                <span>Innovation</span>
+                <span>{t('common.innovation')}</span>
               </FloatingCard>
             </ImageSide>
           </SplitContent>
@@ -1142,7 +1142,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                Explore our innovative <span className="highlight">software solutions</span> designed to meet your needs.
+{t('about.exploreInnovativeSoftware')}
               </motion.p>
             </SectionHeader>
           </motion.div>
@@ -1172,17 +1172,17 @@ const Home = () => {
       <ContactSection>
         <Container>
           <SectionHeader>
-            <h2>Ready to Get Started?</h2>
-            <p>Let us know your needs and we'll <span className="highlight">get back to you</span></p>
+            <h2>{t('about.readyToGetStarted')}</h2>
+            <p>{t('about.letUsKnowNeeds')}</p>
           </SectionHeader>
           <div>
-            <h3>Tell Us About Your Project</h3>
-            <p>Whether you need branding, technology solutions, marketing strategies, or any of our products, we're here to help. Share your requirements with us and our expert team will get back to you with the perfect solution.</p>
+            <h3>{t('about.tellUsAboutProject')}</h3>
+            <p>{t('about.projectDescription')}</p>
           </div>
           <ContactButtons>
             <ContactBtn to="/contact">
               <i className="fas fa-phone"></i>
-              Schedule a Call
+              {t('about.scheduleACall')}
             </ContactBtn>
             <ContactBtn to="/contact">
               <i className="fas fa-envelope"></i>
@@ -1195,8 +1195,8 @@ const Home = () => {
       <ServicesSection>
         <Container>
           <SectionHeader>
-            <h2>Why Choose GoWide?</h2>
-            <p>We deliver <span className="highlight">exceptional results</span> through innovation and expertise</p>
+            <h2>{t('about.whyChooseGoWide')}</h2>
+            <p>{t('about.deliverExceptionalResults')}</p>
           </SectionHeader>
           <ServicesGrid>
             {whyChoose.map((item, index) => (
@@ -1215,8 +1215,8 @@ const Home = () => {
       <ProcessSection>
         <Container>
           <SectionHeader>
-            <h2>Our Process</h2>
-            <p>How we <span className="highlight">deliver success</span></p>
+            <h2>{t('common.ourProcess')}</h2>
+            <p>{t('about.howWeDeliverSuccess')}</p>
           </SectionHeader>
           <ProcessTimeline>
             {process.map((step, index) => (
@@ -1236,8 +1236,8 @@ const Home = () => {
       <ImpactSection>
         <Container>
           <SectionHeader>
-            <h2>Our Impact</h2>
-            <p>Numbers that <span className="highlight">speak for themselves</span></p>
+            <h2>{t('common.ourImpact')}</h2>
+            <p>{t('about.numbersThatSpeak')}</p>
           </SectionHeader>
           <ImpactGrid>
             {impacts.map((impact, index) => (
