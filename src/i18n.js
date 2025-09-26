@@ -3,7 +3,118 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 const resources = {
-
+  en: {
+    translation: {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "products": "Products",
+        "contact": "Contact",
+        "team": "Team",
+        "blog": "Blog",
+        "careers": "Careers",
+        "caseStudies": "Case Studies",
+        "branding": "Branding",
+        "technology": "Technology",
+        "marketing": "Marketing",
+        "advertising": "Advertising"
+      },
+      "hero": {
+        "title": "Transforming Ideas into Digital Reality",
+        "subtitle": "We are more than just a digital agency. We are your growth partners, dedicated to transforming your vision into impactful digital solutions that deliver results.",
+        "getStarted": "Get Started",
+        "learnMore": "Learn More"
+      },
+      "common": {
+        "learnMore": "Learn More",
+        "getStarted": "Get Started",
+        "contactUs": "Contact Us",
+        "readMore": "Read More",
+        "viewAll": "View All",
+        "scheduleCall": "Schedule Call",
+        "ourServices": "Our Services",
+        "ourProducts": "Our Products",
+        "whyChoose": "Why Choose GoWide?",
+        "ourProcess": "Our Process",
+        "ourImpact": "Our Impact",
+        "loading": "Loading...",
+        "applyNow": "Apply Now",
+        "viewMore": "View More",
+        "sendMessage": "Send Message",
+        "callNow": "Call Now",
+        "watchDemo": "Watch Demo",
+        "joinWaitlist": "Join Waitlist",
+        "launchPlatform": "Launch Platform",
+        "scheduleDemo": "Schedule Demo"
+      },
+      "about": {
+        "whoWeAre": "Who We Are",
+        "description": "We are GoWide, a creative digital agency. We specialize in branding, advertising, marketing, and technology solutions that help businesses grow and thrive in the digital landscape.",
+        "ourVision": "Our Vision",
+        "ourMission": "Our Mission",
+        "visionText": "To be the leading force in digital innovation, creating transformative solutions that inspire and elevate businesses worldwide.",
+        "missionText": "To deliver exceptional digital solutions through innovative thinking, cutting-edge technology, and unwavering commitment to client success.",
+        "title": "Who We Are",
+        "subtitle": "Innovative thinking",
+        "coreValues": "Our Core Values",
+        "coreValuesDesc": "The principles that guide everything we do",
+        "tailoredSolution": "Our Tailored Solution",
+        "tailoredSolutionDesc": "A systematic approach to deliver exceptional results",
+        "impact": "Our Impact",
+        "impactDesc": "Numbers that speak for themselves"
+      },
+      "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive digital solutions to grow your business",
+        "branding": "Branding",
+        "technology": "Technology",
+        "marketing": "Marketing",
+        "advertising": "Advertising",
+        "brandingDesc": "Transform your brand identity with our expertise",
+        "technologyDesc": "Power innovation with advanced solutions",
+        "marketingDesc": "Drive growth with strategic marketing solutions",
+        "advertisingDesc": "Create impactful advertising campaigns that convert"
+      },
+      "contact": {
+        "heroTitle": "Ready to Transform Your Business?",
+        "heroSubtitle": "From innovative technology solutions to creative branding strategies, we're here to help your business thrive and bring your vision to life",
+        "title": "Ready to get started?",
+        "subtitle": "Tell us what you need and we'll get back to you",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company",
+        "message": "Message",
+        "send": "Send Message",
+        "getInTouch": "Get In Touch",
+        "address": "Address",
+        "followUs": "Follow Us",
+        "ourLocations": "Our Locations",
+        "locationsDesc": "Find us across multiple locations worldwide",
+        "groupOfCompanies": "Group of Companies",
+        "companiesDesc": "Diverse portfolio of innovative solutions",
+        "sendUsMessage": "Send Us a Message",
+        "messageDesc": "Tell us about your project and we'll get back to you within 24 hours",
+        "preferDirectContact": "Prefer Direct Contact?",
+        "directContactDesc": "Choose the method that works best for you"
+      },
+      "footer": {
+        "description": "We are a creative agency focused on growing brands through innovative digital solutions and memorable experiences.",
+        "quickLinks": "Quick Links",
+        "services": "Services",
+        "products": "Products",
+        "copyright": "© 2025 Gowide Business Services Pvt Ltd. All rights reserved.",
+        "termsConditions": "Terms & Conditions",
+        "privacyPolicy": "Privacy Policy",
+        "refundPolicy": "Refund Policy",
+        "cookiePolicy": "Cookie Policy",
+        "newsletter": "Newsletter",
+        "subscribe": "Subscribe",
+        "enterEmail": "Enter your email"
+      }
+    }
+  },
   ar: {
     translation: {
       "nav": {
@@ -47,48 +158,7 @@ const resources = {
         "watchDemo": "مشاهدة العرض التوضيحي",
         "joinWaitlist": "انضم لقائمة الانتظار",
         "launchPlatform": "تشغيل المنصة",
-        "scheduleDemo": "جدولة عرض توضيحي",
-        "strategicSolutions": "حلول رقمية استراتيجية",
-        "expertTeam": "فريق خبراء محترفين",
-        "innovativeApproach": "نهج تكنولوجي مبتكر",
-        "growthAnalytics": "تحليلات النمو",
-        "teamCollaboration": "تعاون الفريق",
-        "innovation": "الابتكار",
-        "fastDelivery": "تسليم سريع",
-        "fastDeliveryDesc": "أوقات تسليم سريعة دون التنازل عن الجودة",
-        "reliableSolutions": "حلول موثوقة",
-        "reliableSolutionsDesc": "موثوق بها من قبل الشركات في جميع أنحاء العالم للحصول على نتائج متسقة",
-        "innovativeApproachTitle": "نهج مبتكر",
-        "innovativeApproachDesc": "حلول متطورة مصممة خصيصاً لاحتياجاتك",
-        "support247": "دعم 24/7",
-        "support247Desc": "مساعدة على مدار الساعة لجميع استفساراتك",
-        "discover": "اكتشاف",
-        "discoverDesc": "فهم احتياجاتك وأهدافك",
-        "design": "تصميم",
-        "designDesc": "إنشاء حلول مخصصة",
-        "develop": "تطوير",
-        "developDesc": "البناء بدقة",
-        "deploy": "نشر",
-        "deployDesc": "إطلاق نجاحك",
-        "projectsCompleted": "المشاريع المكتملة",
-        "happyClients": "العملاء السعداء",
-        "yearsExperience": "سنوات الخبرة",
-        "supportAvailable": "الدعم متاح",
-        "clientSatisfaction": "رضا العملاء",
-        "builtWithTech": "مبني بتقنية متطورة",
-        "builtWithTechDesc": "بيانات في الوقت الفعلي، رسوم متحركة متقدمة، وهندسة معمارية على مستوى المؤسسة",
-        "realTimeAnalytics": "تحليلات في الوقت الفعلي",
-        "realTimeAnalyticsDesc": "تتبع الزوار في الوقت الفعلي ومراقبة الأداء",
-        "advancedAnimations": "رسوم متحركة متقدمة",
-        "advancedAnimationsDesc": "رسوم متحركة بمعدل 60 إطار في الثانية مع انتقالات قائمة على الفيزياء",
-        "multiLanguageSystem": "نظام متعدد اللغات",
-        "multiLanguageSystemDesc": "كشف ذكي للغة وتبديل سلس",
-        "whatOurClientsSay": "ما يقوله عملاؤنا",
-        "clientTestimonial": "جو وايد حولت حضورنا الرقمي بالكامل. نهجهم المبتكر واهتمامهم بالتفاصيل فاق توقعاتنا. خبرة الفريق في التصميم والتكنولوجيا رائعة.",
-        "stayUpdated": "ابق على اطلاع",
-        "stayUpdatedDesc": "احصل على أحدث الرؤى والنصائح والتحديثات في صندوق الوارد الخاص بك",
-        "enterEmail": "أدخل بريدك الإلكتروني",
-        "subscribe": "اشترك"
+        "scheduleDemo": "جدولة عرض توضيحي"
       },
       "about": {
         "whoWeAre": "من نحن",
@@ -104,240 +174,7 @@ const resources = {
         "tailoredSolution": "حلولنا المخصصة",
         "tailoredSolutionDesc": "نهج منهجي لتحقيق نتائج استثنائية",
         "impact": "تأثيرنا",
-        "impactDesc": "أرقام تتحدث عن نفسها",
-        "scrollToExplore": "مرر للاستكشاف",
-        "stepLearn": "تعلم",
-        "stepLearnDesc": "نبدأ بفهم احتياجاتك وأهدافك الفريدة.",
-        "stepResearch": "بحث",
-        "stepResearchDesc": "يقوم فريقنا بإجراء بحث متعمق لتحديد الاستراتيجية الأكثر فعالية.",
-        "stepDiscuss": "مناقشة",
-        "stepDiscussDesc": "نتعاون معك لمناقشة الحل المقترح وضمان التوافق.",
-        "stepSolution": "حل",
-        "stepSolutionDesc": "نقدم حلاً مخصصاً مصمماً خصيصاً لمتطلباتك.",
-        "stepImplement": "تنفيذ",
-        "stepImplementDesc": "ينفذ فريقنا الحل، ويحول الاستراتيجية إلى واقع.",
-        "stepInvoice": "فاتورة",
-        "stepInvoiceDesc": "نوفر عملية فوترة شفافة بناءً على الخدمات المقدمة.",
-        "stepAnalyze": "تحليل",
-        "stepAnalyzeDesc": "نراجع النتائج ونجري التعديلات اللازمة لضمان النجاح المستمر.",
-        "innovationValue": "الابتكار",
-        "innovationValueDesc": "نتجاوز الحدود باستمرار ونتبنى التقنيات الجديدة لتقديم حلول متطورة.",
-        "integrityValue": "النزاهة",
-        "integrityValueDesc": "نبني الثقة من خلال الشفافية والصدق والممارسات التجارية الأخلاقية.",
-        "excellenceValue": "التميز",
-        "excellenceValueDesc": "نسعى للكمال في كل مشروع، ونقدم جودة تفوق التوقعات.",
-        "collaborationValue": "التعاون",
-        "collaborationValueDesc": "نؤمن بقوة العمل الجماعي والشراكة لتحقيق نتائج استثنائية.",
-        "strategicDigitalSolutions": "حلول رقمية استراتيجية",
-        "expertTeamProfessionals": "فريق خبراء محترفين",
-        "innovativeTechnologyApproach": "نهج تكنولوجي مبتكر",
-        "transformBrandIdentity": "حول هوية علامتك التجارية بخبرتنا",
-        "brandStrategy": "استراتيجية العلامة التجارية",
-        "marketResearch": "بحث السوق",
-        "brandPositioning": "وضع العلامة التجارية",
-        "targetAudienceAnalysis": "تحليل الجمهور المستهدف",
-        "competitiveAnalysis": "تحليل المنافسين",
-        "visualIdentity": "الهوية البصرية",
-        "logoDesign": "تصميم الشعار",
-        "colorSchemes": "أنظمة الألوان",
-        "typography": "الطباعة",
-        "brandGuidelines": "إرشادات العلامة التجارية",
-        "brandVoice": "صوت العلامة التجارية",
-        "toneDevelopment": "تطوير النبرة",
-        "messagingStrategy": "استراتيجية الرسائل",
-        "contentGuidelines": "إرشادات المحتوى",
-        "brandStory": "قصة العلامة التجارية",
-        "brandExperience": "تجربة العلامة التجارية",
-        "customerJourney": "رحلة العميل",
-        "touchpointDesign": "تصميم نقاط الاتصال",
-        "brandInteraction": "تفاعل العلامة التجارية",
-        "experienceMapping": "خريطة التجربة",
-        "poweringInnovation": "تشغيل الابتكار بحلول متقدمة",
-        "webDevelopment": "تطوير الويب",
-        "customWebApplications": "تطبيقات ويب مخصصة",
-        "responsiveDesign": "تصميم متجاوب",
-        "ecommerceSolutions": "حلول التجارة الإلكترونية",
-        "apiIntegration": "تكامل API",
-        "mobileDevelopment": "تطوير التطبيقات المحمولة",
-        "iosApplications": "تطبيقات iOS",
-        "androidApplications": "تطبيقات Android",
-        "crossPlatformApps": "تطبيقات متعددة المنصات",
-        "mobileUIUX": "واجهة وتجربة مستخدم محمولة",
-        "cloudServices": "خدمات سحابية",
-        "cloudMigration": "الهجرة السحابية",
-        "awsSolutions": "حلول AWS",
-        "cloudSecurity": "أمان سحابي",
-        "scalableInfrastructure": "بنية تحتية قابلة للتوسع",
-        "aiMachineLearning": "الذكاء الاصطناعي وتعلم الآلة",
-        "dataAnalytics": "تحليل البيانات",
-        "predictiveModels": "نماذج تنبؤية",
-        "aiIntegration": "تكامل الذكاء الاصطناعي",
-        "machineLearningModels": "نماذج تعلم الآلة",
-        "driveGrowthStrategic": "قُد النمو بحلول تسويقية استراتيجية",
-        "digitalMarketing": "التسويق الرقمي",
-        "socialMediaMarketing": "تسويق وسائل التواصل الاجتماعي",
-        "contentStrategy": "استراتيجية المحتوى",
-        "emailCampaigns": "حملات البريد الإلكتروني",
-        "digitalAdvertising": "الإعلان الرقمي",
-        "searchEngineOptimization": "تحسين محركات البحث",
-        "keywordResearch": "بحث الكلمات المفتاحية",
-        "onPageSEO": "تحسين محركات البحث داخل الصفحة",
-        "technicalSEO": "تحسين محركات البحث التقني",
-        "linkBuilding": "بناء الروابط",
-        "contentMarketing": "تسويق المحتوى",
-        "blogWriting": "كتابة المدونات",
-        "videoProduction": "إنتاج الفيديو",
-        "infographics": "الرسوم البيانية",
-        "marketingAnalytics": "تحليلات التسويق",
-        "performanceTracking": "تتبع الأداء",
-        "dataAnalysis": "تحليل البيانات",
-        "roiMeasurement": "قياس عائد الاستثمار",
-        "createImpactfulAds": "إنشاء حملات إعلانية مؤثرة تحقق التحويل",
-        "googleAdsManagement": "إدارة إعلانات جوجل",
-        "socialMediaAds": "إعلانات وسائل التواصل الاجتماعي",
-        "displayAdvertising": "إعلانات العرض",
-        "retargetingCampaigns": "حملات إعادة الاستهداف",
-        "ppcManagement": "إدارة الدفع لكل نقرة",
-        "keywordOptimization": "تحسين الكلمات المفتاحية",
-        "bidManagement": "إدارة العطاءات",
-        "abTesting": "اختبار A/B",
-        "conversionTracking": "تتبع التحويلات",
-        "creativeDesign": "التصميم الإبداعي",
-        "bannerDesign": "تصميم اللافتات",
-        "adCreatives": "إبداعات إعلانية",
-        "videoAds": "إعلانات فيديو",
-        "richMediaAds": "إعلانات وسائط غنية",
-        "campaignAnalytics": "تحليلات الحملة",
-        "performanceMetrics": "مقاييس الأداء",
-        "roiAnalysis": "تحليل عائد الاستثمار",
-        "audienceInsights": "رؤى الجمهور",
-        "campaignOptimization": "تحسين الحملة",
-        "exploreInnovativeSoftware": "استكشف حلولنا البرمجية المبتكرة المصممة لتلبية احتياجاتك",
-        "transformingWaste": "تحويل النفايات، دفع الاستدامة",
-        "rendreDesc": "رندر هو منصة مبتكرة تحدث ثورة في إعادة تدوير المركبات المهجورة وفي نهاية دورة حياتها. تبسط عملية التعرف والجمع وإعادة التدوير بينما تعزز الاستدامة البيئية.",
-        "connectingBusinesses": "ربط الشركات في جميع أنحاء العالم من خلال المطابقة الذكية",
-        "upflyoverDesc": "أب فلاي أوفر هو منصة شبكات تجارية B2B شاملة تربط الشركات في جميع أنحاء العالم مع مطابقة مدعومة بالذكاء الاصطناعي وشراكات معتمدة. تتضمن الميزات تسجيل الشركات، والتحقق من الهوية، ولوحة معلومات في الوقت الفعلي، والمطابقة التجارية الذكية.",
-        "revolutionizingFitness": "ثورة في إدارة اللياقة البدنية",
-        "gymestryDesc": "جيمستري هو منصة إدارة لياقة بدنية مبتكرة تبسط عمليات الصالة الرياضية، وإدارة الأعضاء، وتتبع التمارين. مثالية لمراكز اللياقة البدنية التي تتطلع لتحسين تجربة الأعضاء وكفاءة العمليات.",
-        "readyToGetStarted": "مستعد للبدء؟",
-        "letUsKnowNeeds": "أخبرنا باحتياجاتك وسنعاود الاتصال بك",
-        "tellUsAboutProject": "أخبرنا عن مشروعك",
-        "projectDescription": "سواء كنت تحتاج إلى علامة تجارية، أو حلول تقنية، أو استراتيجيات تسويقية، أو أي من منتجاتنا، نحن هنا للمساعدة. شارك متطلباتك معنا وسيعاود فريقنا الخبير الاتصال بك مع الحل المثالي.",
-        "scheduleCall": "جدولة مكالمة",
-        "whyChooseGoWide": "لماذا تختار جو وايد؟",
-        "deliverExceptionalResults": "نحن نقدم نتائج استثنائية من خلال الابتكار والخبرة",
-        "howWeDeliverSuccess": "كيف نحقق النجاح",
-        "numbersThatSpeak": "أرقام تتحدث عن نفسها",
-        "builtCuttingEdge": "🚀 مبني بتقنية متطورة",
-        "realTimeData": "بيانات في الوقت الفعلي، رسوم متحركة متقدمة، وهندسة معمارية على مستوى المؤسسات",
-        "liveDataStream": "تدفق بيانات مباشر",
-        "liveWebsiteStats": "// إحصائيات الموقع المباشرة",
-        "visitors": "زوار",
-        "apiCalls": "استدعاءات API",
-        "uptime": "وقت التشغيل",
-        "status": "الحالة",
-        "online": "متصل",
-        "framerMotionMagic": "// سحر Framer Motion",
-        "smoothAnimations": "رسوم متحركة سلسة",
-        "i18nImplementation": "// تطبيق i18n",
-        "languages": "اللغات",
-        "autoDetect": "الكشف التلقائي",
-        "clientTestimonialName": "سارة جونسون",
-        "clientTestimonialTitle": "الرئيس التنفيذي، تيك ستارت إنك",
-        "transformingWasteTagline": "تحويل النفايات، دفع الاستدامة",
-        "connectingBusinessesTagline": "ربط الشركات في جميع أنحاء العالم من خلال المطابقة الذكية",
-        "revolutionizingFitnessTagline": "ثورة في إدارة اللياقة البدنية",
-        "tellUsAboutProject": "أخبرنا عن مشروعك",
-        "scheduleACall": "جدولة مكالمة",
-        "marketResearchItem": "بحث السوق",
-        "brandPositioningItem": "وضع العلامة التجارية",
-        "targetAudienceAnalysisItem": "تحليل الجمهور المستهدف",
-        "competitiveAnalysisItem": "تحليل المنافسين",
-        "logoDesignItem": "تصميم الشعار",
-        "colorSchemesItem": "أنظمة الألوان",
-        "typographyItem": "الطباعة",
-        "brandGuidelinesItem": "إرشادات العلامة التجارية",
-        "toneDevelopmentItem": "تطوير النبرة",
-        "messagingStrategyItem": "استراتيجية الرسائل",
-        "contentGuidelinesItem": "إرشادات المحتوى",
-        "brandStoryItem": "قصة العلامة التجارية",
-        "customerJourneyItem": "رحلة العميل",
-        "touchpointDesignItem": "تصميم نقاط الاتصال",
-        "brandInteractionItem": "تفاعل العلامة التجارية",
-        "experienceMappingItem": "خريطة التجربة",
-        "customWebApplicationsItem": "تطبيقات ويب مخصصة",
-        "responsiveDesignItem": "تصميم متجاوب",
-        "ecommerceSolutionsItem": "حلول التجارة الإلكترونية",
-        "apiIntegrationItem": "تكامل API",
-        "iosApplicationsItem": "تطبيقات iOS",
-        "androidApplicationsItem": "تطبيقات Android",
-        "crossPlatformAppsItem": "تطبيقات متعددة المنصات",
-        "mobileUIUXItem": "واجهة وتجربة مستخدم محمولة",
-        "cloudMigrationItem": "الهجرة السحابية",
-        "awsSolutionsItem": "حلول AWS",
-        "cloudSecurityItem": "أمان سحابي",
-        "scalableInfrastructureItem": "بنية تحتية قابلة للتوسع",
-        "dataAnalyticsItem": "تحليل البيانات",
-        "predictiveModelsItem": "نماذج تنبؤية",
-        "aiIntegrationItem": "تكامل الذكاء الاصطناعي",
-        "machineLearningModelsItem": "نماذج تعلم الآلة",
-        "socialMediaMarketingItem": "تسويق وسائل التواصل الاجتماعي",
-        "contentStrategyItem": "استراتيجية المحتوى",
-        "emailCampaignsItem": "حملات البريد الإلكتروني",
-        "digitalAdvertisingItem": "الإعلان الرقمي",
-        "keywordResearchItem": "بحث الكلمات المفتاحية",
-        "onPageSEOItem": "تحسين محركات البحث داخل الصفحة",
-        "technicalSEOItem": "تحسين محركات البحث التقني",
-        "linkBuildingItem": "بناء الروابط",
-        "blogWritingItem": "كتابة المدونات",
-        "videoProductionItem": "إنتاج الفيديو",
-        "infographicsItem": "الرسوم البيانية",
-        "performanceTrackingItem": "تتبع الأداء",
-        "dataAnalysisItem": "تحليل البيانات",
-        "roiMeasurementItem": "قياس عائد الاستثمار",
-        "marketResearchItem2": "بحث السوق",
-        "googleAdsManagementItem": "إدارة إعلانات جوجل",
-        "socialMediaAdsItem": "إعلانات وسائل التواصل الاجتماعي",
-        "displayAdvertisingItem": "إعلانات العرض",
-        "retargetingCampaignsItem": "حملات إعادة الاستهداف",
-        "keywordOptimizationItem": "تحسين الكلمات المفتاحية",
-        "bidManagementItem": "إدارة العطاءات",
-        "abTestingItem": "اختبار A/B",
-        "conversionTrackingItem": "تتبع التحويلات",
-        "bannerDesignItem": "تصميم اللافتات",
-        "adCreativesItem": "إبداعات إعلانية",
-        "videoAdsItem": "إعلانات فيديو",
-        "richMediaAdsItem": "إعلانات وسائط غنية",
-        "performanceMetricsItem": "مقاييس الأداء",
-        "roiAnalysisItem": "تحليل عائد الاستثمار",
-        "audienceInsightsItem": "رؤى الجمهور",
-        "campaignOptimizationItem": "تحسين الحملة",
-        "tailoredSolutionDesc": "نهج منهجي لتحقيق نتائج استثنائية",
-        "impact": "تأثيرنا",
-        "impactDesc": "أرقام تتتحدث عن نفسها",
-        "scrollToExplore": "مرر للاستكشاف",
-        "stepLearn": "تعلم",
-        "stepLearnDesc": "نبدأ بفهم احتياجاتك وأهدافك الفريدة.",
-        "stepResearch": "بحث",
-        "stepResearchDesc": "يقوم فريقنا بإجراء بحث متعمق لتحديد الاستراتيجية الأكثر فعالية.",
-        "stepDiscuss": "مناقشة",
-        "stepDiscussDesc": "نتعاون معك لمناقشة الحل المقترح وضمان التوافق.",
-        "stepSolution": "حل",
-        "stepSolutionDesc": "نقدم حلاً مخصصاً مصمماً خصيصاً لمتطلباتك.",
-        "stepImplement": "تنفيذ",
-        "stepImplementDesc": "ينفذ فريقنا الحل، ويحول الاستراتيجية إلى واقع.",
-        "stepInvoice": "فاتورة",
-        "stepInvoiceDesc": "نوفر عملية فوترة شفافة بناءً على الخدمات المقدمة.",
-        "stepAnalyze": "تحليل",
-        "stepAnalyzeDesc": "نراجع النتائج ونجري التعديلات اللازمة لضمان النجاح المستمر.",
-        "innovationValue": "الابتكار",
-        "innovationValueDesc": "نتجاوز الحدود باستمرار ونتبنى التقنيات الجديدة لتقديم حلول متطورة.",
-        "integrityValue": "النزاهة",
-        "integrityValueDesc": "نبني الثقة من خلال الشفافية والصدق والممارسات التجارية الأخلاقية.",
-        "excellenceValue": "التميز",
-        "excellenceValueDesc": "نسعى للكمال في كل مشروع، ونقدم جودة تفوق التوقعات.",
-        "collaborationValue": "التعاون",
-        "collaborationValueDesc": "نؤمن بقوة العمل الجماعي والشراكة لتحقيق نتائج استثنائية."
+        "impactDesc": "أرقام تتحدث عن نفسها"
       },
       "services": {
         "title": "خدماتنا",
@@ -354,31 +191,6 @@ const resources = {
       "contact": {
         "heroTitle": "مستعد لتحويل عملك؟",
         "heroSubtitle": "من الحلول التقنية المبتكرة إلى استراتيجيات العلامة التجارية الإبداعية، نحن هنا لمساعدة عملك على الازدهار وتحقيق رؤيتك",
-        "letsConnect": "دعنا نتواصل",
-        "support": "الدعم",
-        "projects": "المشاريع",
-        "happyClients": "العملاء السعداء",
-        "sendMessage": "إرسال رسالة",
-        "globalPresence": "الحضور العالمي",
-        "headOffice": "المكتب الرئيسي - جو وايد",
-        "kochiBranch": "فرع كوتشي",
-        "dubaiOffice": "مكتب دبي - جلوبال تريد أليز ذ.م.م",
-        "londonOffice": "مكتب لندن",
-        "openingQ4": "الافتتاح الربع الرابع 2025",
-        "ourCompanies": "شركاتنا",
-        "fastResponse": "استجابة سريعة",
-        "fastResponseDesc": "نرد على جميع الاستفسارات خلال 24 ساعة",
-        "securePrivate": "آمن وخاص",
-        "securePrivateDesc": "معلوماتك سرية تماماً",
-        "freeConsultation": "استشارة مجانية",
-        "freeConsultationDesc": "مناقشة أولية مجانية حول مشروعك",
-        "firstName": "الاسم الأول",
-        "lastName": "اسم العائلة",
-        "service": "الخدمة المطلوبة",
-        "emailUs": "راسلنا",
-        "callUs": "اتصل بنا",
-        "scheduleCall": "جدولة مكالمة",
-        "bookConsultation": "احجز استشارة",
         "title": "مستعد للبدء؟",
         "subtitle": "أخبرنا باحتياجاتك وسنعاود الاتصال بك",
         "name": "الاسم",
@@ -389,697 +201,7 @@ const resources = {
         "send": "إرسال الرسالة",
         "getInTouch": "تواصل معنا",
         "address": "العنوان",
-        "followUs": "تابعنا",
-        "ourLocations": "مواقعنا",
-        "locationsDesc": "اعثر علينا في مواقع متعددة حول العالم",
-        "groupOfCompanies": "مجموعة الشركات",
-        "companiesDesc": "محفظة متنوعة من الحلول المبتكرة",
-        "sendUsMessage": "أرسل لنا رسالة",
-        "messageDesc": "أخبرنا عن مشروعك وسنعاود الاتصال بك خلال 24 ساعة",
-        "preferDirectContact": "تفضل التواصل المباشر؟",
-        "directContactDesc": "اختر الطريقة التي تناسبك"
-      },
-      "team": {
-        "title": "تعرف على العقول وراء جو وايد",
-        "subtitle": "فريقنا المتنوع من المحترفين المتحمسين يجمع بين الإبداع والخبرة التقنية والتفكير المبتكر",
-        "teamMembers": "أعضاء الفريق",
-        "yearsExperience": "سنوات الخبرة",
-        "projectsDelivered": "المشاريع المنجزة"
-      },
-      "blog": {
-        "title": "مدونتنا",
-        "subtitle": "رؤى ونصائح ومعرفة الصناعة لمساعدتك على البقاء في المقدمة في العالم الرقمي.",
-        "loading": "جاري تحميل منشورات المدونة...",
-        "noDate": "لا يوجد تاريخ",
-        "general": "عام"
-      },
-      "careers": {
-        "title": "انضم إلى فريقنا",
-        "subtitle": "ابن مسيرتك المهنية معنا وساعد في إنشاء تجارب رقمية مذهلة للعملاء في جميع أنحاء العالم.",
-        "loading": "جاري تحميل الفرص الوظيفية...",
-        "noOpenPositions": "لا توجد وظائف شاغرة",
-        "noPositionsDesc": "ليس لدينا أي وظائف شاغرة الآن، لكننا نبحث دائماً عن الأشخاص الموهوبين!",
-        "sendResume": "أرسل لنا سيرتك الذاتية"
-      },
-      "caseStudies": {
-        "title": "دراسات الحالة",
-        "subtitle": "نتائج حقيقية من عملاء حقيقيين. اكتشف كيف ساعدنا الشركات على تحقيق أهدافها.",
-        "loading": "جاري تحميل دراسات الحالة...",
-        "viewCaseStudy": "عرض دراسة الحالة",
-        "resultsAchieved": "النتائج المحققة"
-      },
-      "branding": {
-        "heroTitle": "ارتق بهوية علامتك التجارية",
-        "heroSubtitle": "نحن نصنع تجارب علامة تجارية مقنعة تتردد صداها مع جمهورك وتدفع الاتصالات الهادفة من خلال التصميم الاستراتيجي والسرد.",
-        "startJourney": "ابدأ رحلتك",
-        "whatWeOffer": "ما نقدمه",
-        "ourServices": "خدماتنا",
-        "servicesSubtitle": "حلول شاملة لرفع حضور علامتك التجارية",
-        "mostPopular": "الأكثر شعبية",
-        "howWeWork": "كيف نعمل",
-        "provenProcess": "عمليتنا المثبتة",
-        "processSubtitle": "نهج منهجي لإنشاء علامات تجارية استثنائية",
-        "whyGoWide": "لماذا جو وايد",
-        "whatSetsUsApart": "ما يميزنا",
-        "advantagesSubtitle": "اكتشف لماذا نحن شريك العلامة التجارية المثالي",
-        "brandingServices": "خدمات العلامة التجارية",
-        "servicesDesc": "حلول شاملة لرفع حضور علامتك التجارية",
-        "visualIdentityDesign": "تصميم الهوية البصرية",
-        "visualIdentityDesc": "إنشاء لغة بصرية متماسكة تحكي قصة علامتك التجارية من خلال الشعارات والألوان والطباعة وأنظمة التصميم.",
-        "logoDesignVariations": "تصميم الشعار والتنويعات",
-        "brandGuidelines": "إرشادات العلامة التجارية",
-        "colorPaletteTypography": "لوحة الألوان والطباعة",
-        "brandStrategy": "استراتيجية العلامة التجارية",
-        "brandStrategyDesc": "تطوير خارطة طريق شاملة لوضع علامتك التجارية بفعالية في المشهد التنافسي للسوق.",
-        "marketResearch": "بحث السوق",
-        "competitorAnalysis": "تحليل المنافسين",
-        "brandPositioning": "وضع العلامة التجارية",
-        "brandVoiceMessaging": "صوت العلامة التجارية والرسائل",
-        "brandVoiceDesc": "صياغة نبرة ثابتة واستراتيجية رسائل تتردد صداها مع جمهورك المستهدف عبر جميع نقاط الاتصال.",
-        "voiceGuidelines": "إرشادات الصوت",
-        "contentStrategy": "استراتيجية المحتوى",
-        "messagingFramework": "إطار الرسائل",
-        "brandImplementation": "تنفيذ العلامة التجارية",
-        "brandImplementationDesc": "دمج هوية علامتك التجارية الجديدة بسلاسة عبر جميع المنصات وتمكين فريقك من تمثيلها بثبات.",
-        "teamTraining": "تدريب الفريق",
-        "assetCreation": "إنشاء الأصول",
-        "launchStrategy": "استراتيجية الإطلاق",
-        "discoveryResearch": "الاكتشاف والبحث",
-        "discoveryDesc": "الغوص العميق في عملك ومشهد السوق والجمهور المستهدف لفهم وضعك الفريد والفرص المتاحة.",
-        "marketAnalysis": "تحليل السوق",
-        "competitorResearch": "بحث المنافسين",
-        "brandAudit": "مراجعة العلامة التجارية",
-        "strategyDevelopment": "تطوير الاستراتيجية",
-        "strategyDesc": "إنشاء استراتيجية علامة تجارية شاملة تحدد وضعك ورسائلك وخارطة طريق نجاح السوق.",
-        "brandArchitecture": "هندسة العلامة التجارية",
-        "messagingStrategy": "استراتيجية الرسائل",
-        "creativeDesign": "التصميم الإبداعي",
-        "creativeDesc": "إحياء علامتك التجارية من خلال الهوية البصرية المقنعة، بما في ذلك الشعارات والألوان والطباعة وأصول العلامة التجارية.",
-        "logoDesign": "تصميم الشعار",
-        "visualIdentity": "الهوية البصرية",
-        "launchImplementation": "الإطلاق والتنفيذ",
-        "launchDesc": "نشر علامتك التجارية الجديدة عبر جميع نقاط الاتصال وتقديم الدعم المستمر لضمان تنفيذ العلامة التجارية بثبات.",
-        "brandRollout": "طرح العلامة التجارية",
-        "ongoingSupport": "الدعم المستمر",
-        "creativeExcellence": "التميز الإبداعي",
-        "creativeExcellenceDesc": "فريق إبداعي حائز على جوائز مع سجل حافل في تقديم حلول علامة تجارية مبتكرة تأسر الجماهير.",
-        "awardWinningDesigns": "• 50+ تصميم حائز على جوائز",
-        "creativeIndustryRecognition": "• اعتراف صناعة الإبداع",
-        "dataDrivenStrategy": "استراتيجية مدفوعة بالبيانات",
-        "dataDrivenDesc": "كل قرار للعلامة التجارية مدعوم ببحث السوق الشامل والتحليلات لضمان أقصى تأثير وعائد استثمار.",
-        "marketResearchAnalysis": "• بحث وتحليل السوق",
-        "performanceTracking": "• تتبع الأداء",
-        "partnershipApproach": "نهج الشراكة",
-        "partnershipDesc": "نعمل كامتداد لفريقك، ونقدم الدعم التعاوني والتواصل الشفاف طوال الرحلة.",
-        "dedicatedAccountManager": "• مدير حساب مخصص",
-        "support247Available": "• دعم 24/7 متاح",
-        "futureReadySolutions": "حلول جاهزة للمستقبل",
-        "futureReadyDesc": "حلول علامة تجارية قابلة للتوسع مصممة للنمو مع عملك والتكيف مع اتجاهات السوق والتقنيات المتطورة.",
-        "scalableBrandSystems": "• أنظمة علامة تجارية قابلة للتوسع",
-        "futureProofDesign": "• تصميم مقاوم للمستقبل",
-        "visualIdentityDesignTitle": "تصميم الهوية البصرية",
-        "visualIdentityDesignDesc": "إنشاء لغة بصرية متماسكة تحكي قصة علامتك التجارية من خلال الشعارات والألوان والطباعة وأنظمة التصميم.",
-        "brandStrategyTitle": "استراتيجية العلامة التجارية",
-        "brandStrategyTitleDesc": "تطوير خارطة طريق شاملة لوضع علامتك التجارية بفعالية في المشهد التنافسي للسوق.",
-        "brandVoiceMessagingTitle": "صوت العلامة التجارية والرسائل",
-        "brandVoiceMessagingTitleDesc": "صياغة نبرة ثابتة واستراتيجية رسائل تتردد صداها مع جمهورك المستهدف عبر جميع نقاط الاتصال.",
-        "brandImplementationTitle": "تنفيذ العلامة التجارية",
-        "brandImplementationTitleDesc": "دمج هوية علامتك التجارية الجديدة بسلاسة عبر جميع المنصات وتمكين فريقك من تمثيلها بثبات.",
-        "discoveryResearchTitle": "الاكتشاف والبحث",
-        "discoveryResearchTitleDesc": "الغوص العميق في عملك ومشهد السوق والجمهور المستهدف لفهم وضعك الفريد والفرص المتاحة.",
-        "strategyDevelopmentTitle": "تطوير الاستراتيجية",
-        "strategyDevelopmentTitleDesc": "إنشاء استراتيجية علامة تجارية شاملة تحدد وضعك ورسائلك وخارطة طريق نجاح السوق.",
-        "creativeDesignTitle": "التصميم الإبداعي",
-        "creativeDesignTitleDesc": "إحياء علامتك التجارية من خلال الهوية البصرية المقنعة، بما في ذلك الشعارات والألوان والطباعة وأصول العلامة التجارية.",
-        "launchImplementationTitle": "الإطلاق والتنفيذ",
-        "launchImplementationTitleDesc": "نشر علامتك التجارية الجديدة عبر جميع نقاط الاتصال وتقديم الدعم المستمر لضمان تنفيذ العلامة التجارية بثبات.",
-        "creativeExcellenceTitle": "التميز الإبداعي",
-        "creativeExcellenceTitleDesc": "فريق إبداعي حائز على جوائز مع سجل حافل في تقديم حلول علامة تجارية مبتكرة تأسر الجماهير.",
-        "dataDrivenStrategyTitle": "استراتيجية مدفوعة بالبيانات",
-        "dataDrivenStrategyTitleDesc": "كل قرار للعلامة التجارية مدعوم ببحث السوق الشامل والتحليلات لضمان أقصى تأثير وعائد استثمار.",
-        "partnershipApproachTitle": "نهج الشراكة",
-        "partnershipApproachTitleDesc": "نعمل كامتداد لفريقك، ونقدم الدعم التعاوني والتواصل الشفاف طوال الرحلة.",
-        "futureReadySolutionsTitle": "حلول جاهزة للمستقبل",
-        "futureReadySolutionsTitleDesc": "حلول علامة تجارية قابلة للتوسع مصممة للنمو مع عملك والتكيف مع اتجاهات السوق والتقنيات المتطورة."
-      },
-      "technology": {
-        "heroTitle": "قوة مستقبلك الرقمي",
-        "heroSubtitle": "نحن نقدم حلول تقنية متطورة تحول الشركات وتدفع الابتكار من خلال التطوير الاستراتيجي والتميز الرقمي.",
-        "ourExpertise": "خبرتنا",
-        "technologySolutions": "الحلول التقنية",
-        "solutionsDesc": "خدمات تكنولوجية مبتكرة تحول عملك",
-        "technologySolutionsTitle": "الحلول التقنية",
-        "solutionsSubtitle": "حلول تقنية مبتكرة لتحويل عملك",
-        "webDevelopment": "تطوير الويب",
-        "customWebSolutions": "حلول ويب مخصصة",
-        "webDevelopmentDesc": "مواقع ويب وتطبيقات ويب متجاوبة مبنية بتقنيات حديثة للأداء الأمثل.",
-        "reactjs": "React.js",
-        "nodejs": "Node.js",
-        "ecommerce": "التجارة الإلكترونية",
-        "cms": "نظام إدارة المحتوى",
-        "mobileDevelopment": "تطوير التطبيقات المحمولة",
-        "nativeCrossPlatform": "تطبيقات أصلية ومتعددة المنصات",
-        "mobileDevelopmentDesc": "تطبيقات محمولة عالية الأداء لمنصات iOS و Android مع تجارب مستخدم سلسة.",
-        "ios": "iOS",
-        "android": "Android",
-        "reactNative": "React Native",
-        "flutter": "Flutter",
-        "customSoftware": "برمجيات مخصصة",
-        "enterpriseSolutions": "حلول المؤسسات",
-        "customSoftwareDesc": "أنظمة برمجية مصممة خصيصاً تؤتمت العمليات وتعزز كفاءة الأعمال.",
-        "crm": "إدارة علاقات العملاء",
-        "erp": "تخطيط موارد المؤسسة",
-        "automation": "الأتمتة",
-        "integration": "التكامل",
-        "cloudSolutions": "الحلول السحابية",
-        "scalableCloudInfrastructure": "بنية تحتية سحابية قابلة للتوسع",
-        "cloudSolutionsDesc": "حلول سحابية آمنة وقابلة للتوسع تحسن الأداء وتقلل التكاليف التشغيلية.",
-        "aws": "أمازون ويب سيرفيسز",
-        "azure": "مايكروسوفت أزور",
-        "migration": "الهجرة",
-        "security": "الأمان",
-        "cybersecurity": "الأمن السيبراني",
-        "advancedSecuritySolutions": "حلول أمنية متقدمة",
-        "cybersecurityDesc": "تدابير أمنية شاملة لحماية أصولك الرقمية من التهديدات السيبرانية.",
-        "firewall": "جدار الحماية",
-        "encryption": "التشفير",
-        "monitoring": "المراقبة",
-        "compliance": "الامتثال",
-        "uiuxDesign": "تصميم واجهة وتجربة المستخدم",
-        "userCenteredDesign": "تصميم محوره المستخدم",
-        "uiuxDesignDesc": "تجارب رقمية بديهية وجذابة تسعد المستخدمين وتدفع التحويلات.",
-        "prototyping": "النماذج الأولية",
-        "userTesting": "اختبار المستخدم",
-        "wireframes": "الإطارات الشبكية",
-        "designSystems": "أنظمة التصميم",
-        "ourProcess": "عمليتنا",
-        "developmentProcess": "عملية التطوير",
-        "processSubtitle": "نهج منهجي لتقديم حلول تقنية استثنائية",
-        "discoveryPlanning": "الاكتشاف والتخطيط",
-        "discoveryPlanningDesc": "فهم المتطلبات وإنشاء خرائط طريق استراتيجية لنجاح المشروع.",
-        "designPrototype": "التصميم والنموذج الأولي",
-        "designPrototypeDesc": "إنشاء تصاميم بديهية ونماذج أولية تفاعلية لتجربة مستخدم مثلى.",
-        "development": "التطوير",
-        "developmentDesc": "بناء الحلول باستخدام تقنيات متطورة وأفضل الممارسات في الصناعة.",
-        "launchSupport": "الإطلاق والدعم",
-        "launchSupportDesc": "نشر الحلول مع مراقبة مستمرة وخدمات دعم شاملة.",
-        "whyChooseUs": "لماذا تختارنا",
-        "technologyAdvantages": "مزايا التكنولوجيا",
-        "advantagesSubtitle": "اكتشف لماذا نحن شريك التكنولوجيا المثالي",
-        "rapidDevelopment": "تطوير سريع",
-        "rapidDevelopmentDesc": "منهجيات رشيقة وأدوات حديثة لتسليم المشاريع بشكل أسرع دون التنازل عن الجودة.",
-        "fasterDelivery": "تسليم أسرع",
-        "secureReliable": "آمن وموثوق",
-        "secureReliableDesc": "تدابير أمنية على مستوى المؤسسات وهندسة معمارية قوية لأقصى موثوقية وحماية البيانات.",
-        "uptime": "وقت التشغيل",
-        "scalableSolutions": "حلول قابلة للتوسع",
-        "scalableSolutionsDesc": "حلول تقنية مقاومة للمستقبل تنمو مع عملك وتتكيف مع الاحتياجات المتغيرة.",
-        "scalability": "قابلية التوسع",
-        "expertSupport": "دعم الخبراء",
-        "expertSupportDesc": "فريق دعم تقني مخصص متاح على مدار الساعة لعمليات سلسة.",
-        "support": "الدعم",
-        "techStack": "التقنيات",
-        "technologyStack": "مجموعة التقنيات",
-        "stackSubtitle": "التقنيات المتقدمة التي تشغل حلولنا المبتكرة",
-        "frontend": "الواجهة الأمامية",
-        "react": "رياكت",
-        "angular": "أنجولار",
-        "vuejs": "فيو جي إس",
-        "javascript": "جافا سكريبت",
-        "backend": "الواجهة الخلفية",
-        "python": "بايثون",
-        "php": "بي إتش بي",
-        "java": "جافا",
-        "mobile": "الهاتف المحمول",
-        "cloudDevops": "السحابة وعمليات التطوير",
-        "googleCloud": "جوجل كلاود",
-        "docker": "دوكر"
-      },
-      "marketing": {
-        "heroTitle": "ارتق بلعبة التسويق الخاصة بك",
-        "heroSubtitle": "حملات تسويقية استراتيجية تبني الوعي بالعلامة التجارية وتشرك الجماهير وتدفع النمو المستدام للأعمال من خلال استراتيجيات رقمية مبتكرة.",
-        "marketingServices": "خدمات التسويق",
-        "servicesDesc": "حلول تسويقية شاملة تدفع النمو",
-        "marketingSolutions": "حلول تسويقية",
-        "avgEngagementIncrease": "متوسط زيادة التفاعل",
-        "reachGenerated": "الوصول المحقق",
-        "clientRetention": "الاحتفاظ بالعملاء",
-        "marketingMetrics": "مقاييس التسويق",
-        "brandAwareness": "الوعي بالعلامة التجارية",
-        "engagement": "التفاعل",
-        "leadGeneration": "توليد العملاء المحتملين",
-        "ourServices": "خدماتنا",
-        "servicesSubtitle": "حلول تسويقية شاملة لدفع النمو",
-        "digitalMarketing": "التسويق الرقمي",
-        "digitalMarketingDesc": "استراتيجيات رقمية شاملة تربط علامتك التجارية بالجمهور المناسب عبر جميع القنوات.",
-        "socialMediaMarketing": "تسويق وسائل التواصل الاجتماعي",
-        "contentStrategy": "استراتيجية المحتوى",
-        "emailMarketing": "التسويق عبر البريد الإلكتروني",
-        "influencerMarketing": "تسويق المؤثرين",
-        "seoOptimization": "تحسين محركات البحث",
-        "seoOptimizationDesc": "تحسين محركات البحث الاستراتيجي لتحسين ظهورك ودفع نمو الزيارات العضوية.",
-        "keywordResearch": "بحث الكلمات المفتاحية",
-        "onPageSEO": "تحسين محركات البحث داخل الصفحة",
-        "technicalSEO": "تحسين محركات البحث التقني",
-        "linkBuilding": "بناء الروابط",
-        "contentMarketing": "تسويق المحتوى",
-        "contentMarketingDesc": "محتوى جذاب يحكي قصة علامتك التجارية ويدفع الاتصالات الهادفة مع جمهورك.",
-        "blogWriting": "كتابة المدونات",
-        "videoProduction": "إنتاج الفيديو",
-        "infographics": "الرسوم البيانية",
-        "contentPlanning": "تخطيط المحتوى",
-        "marketingAnalytics": "تحليلات التسويق",
-        "marketingAnalyticsDesc": "رؤى مدفوعة بالبيانات وتتبع الأداء لتحسين حملاتك التسويقية وعائد الاستثمار.",
-        "performanceTracking": "تتبع الأداء",
-        "dataAnalysis": "تحليل البيانات",
-        "roiMeasurement": "قياس عائد الاستثمار",
-        "marketResearch": "بحث السوق",
-        "emailCampaigns": "حملات البريد الإلكتروني",
-        "emailCampaignsDesc": "حملات تسويق عبر البريد الإلكتروني مخصصة ترعى العملاء المحتملين وتدفع الاحتفاظ بالعملاء.",
-        "emailAutomation": "أتمتة البريد الإلكتروني",
-        "listSegmentation": "تقسيم القوائم",
-        "abTesting": "اختبار A/B",
-        "campaignOptimization": "تحسين الحملة",
-        "brandStrategy": "استراتيجية العلامة التجارية",
-        "brandStrategyDesc": "وضع استراتيجي للعلامة التجارية ورسائل تميزك في السوق.",
-        "brandPositioning": "وضع العلامة التجارية",
-        "messagingStrategy": "استراتيجية الرسائل",
-        "competitiveAnalysis": "تحليل المنافسين",
-        "brandGuidelines": "إرشادات العلامة التجارية",
-        "whyChooseUs": "لماذا تختارنا",
-        "marketingAdvantages": "مزايا التسويق",
-        "advantagesSubtitle": "اكتشف لماذا نحن شريك التسويق المثالي",
-        "dataDrivenStrategy": "استراتيجية مدفوعة بالبيانات",
-        "dataDrivenStrategyDesc": "حملات تسويقية استراتيجية مدعومة بتحليلات شاملة ورؤى السوق.",
-        "expertTeam": "فريق خبراء",
-        "expertTeamDesc": "محترفو تسويق معتمدون مع سجل حافل مثبت عبر جميع القنوات الرقمية.",
-        "targetedApproach": "نهج مستهدف",
-        "targetedApproachDesc": "استراتيجيات تسويقية مركزة بدقة تصل إلى الجمهور المناسب في الوقت المناسب.",
-        "conversionRate": "معدل التحويل",
-        "provenResults": "نتائج مثبتة",
-        "provenResultsDesc": "تقديم متسق لنتائج قابلة للقياس وقصص نجاح طويلة المدى للعملاء.",
-        "ourProcess": "عمليتنا",
-        "marketingProcess": "عملية التسويق",
-        "processSubtitle": "نهج منهجي لتحقيق نتائج قابلة للقياس",
-        "researchDiscovery": "بحث واكتشاف",
-        "researchDiscoveryDesc": "تحليل عميق للسوق ورؤى الجمهور لبناء استراتيجيات تسويقية فعالة.",
-        "strategyPlanning": "تخطيط الاستراتيجية",
-        "strategyPlanningDesc": "تطوير استراتيجيات تسويقية شاملة متوافقة مع أهداف عملك.",
-        "creativeExecution": "التنفيذ الإبداعي",
-        "creativeExecutionDesc": "صياغة محتوى ومرئيات مقنعة تتردد صداها مع جمهورك المستهدف.",
-        "optimizeAnalyze": "تحسين وتحليل",
-        "optimizeAnalyzeDesc": "مراقبة مستمرة وتحسين لأقصى أداء تسويقي.",
-        "ourTools": "أدواتنا",
-        "marketingTools": "أدوات التسويق",
-        "toolsSubtitle": "التقنيات المتقدمة التي تشغل حملاتنا",
-        "analytics": "التحليلات",
-        "googleAnalytics": "جوجل أناليتيكس",
-        "semrush": "سيم رش",
-        "ahrefs": "أهريفس",
-        "hotjar": "هوت جار",
-        "socialMedia": "وسائل التواصل الاجتماعي",
-        "hootsuite": "هوت سويت",
-        "sproutSocial": "سبراوت سوشيال",
-        "buffer": "بافر",
-        "metaBusiness": "ميتا بيزنس",
-        "automation": "الأتمتة",
-        "hubspot": "هاب سبوت",
-        "mailchimp": "ميل تشيمب",
-        "activeCampaign": "أكتيف كامبين",
-        "zapier": "زابير",
-        "contentCreation": "إنشاء المحتوى",
-        "canva": "كانفا",
-        "adobeCreative": "أدوبي كرييتيف",
-        "figma": "فيجما",
-        "grammarly": "جرامرلي"
-      },
-      "advertising": {
-        "heroTitle": "ضخم وصول علامتك التجارية",
-        "heroSubtitle": "حملات إعلانية استراتيجية تحقق النتائج وتزيد من عائد الاستثمار من خلال حلول التسويق الرقمي المستهدفة.",
-        "advertisingServices": "خدمات الإعلان",
-        "servicesDesc": "حلول إعلانية شاملة تدفع النمو",
-        "advertisingSolutions": "حلول إعلانية",
-        "avgROIIncrease": "متوسط زيادة عائد الاستثمار",
-        "impressionsGenerated": "الظهور المحققة",
-        "clientSatisfaction": "رضا العملاء",
-        "campaignPerformance": "أداء الحملة",
-        "growth": "نمو",
-        "ourServices": "خدماتنا",
-        "servicesSubtitle": "حلول إعلانية شاملة لدفع النمو",
-        "googleAds": "إعلانات جوجل",
-        "googleAdsDesc": "حملات إعلانات جوجل استراتيجية تستهدف الجمهور المناسب وتعظم إنفاقك الإعلاني.",
-        "searchAds": "إعلانات البحث",
-        "displayAds": "إعلانات العرض",
-        "shoppingAds": "إعلانات التسوق",
-        "videoAds": "إعلانات الفيديو",
-        "socialMediaAdvertising": "إعلانات وسائل التواصل الاجتماعي",
-        "socialMediaAdvertisingDesc": "حملات وسائل التواصل الاجتماعي الجذابة عبر جميع المنصات الرئيسية لبناء الوعي بالعلامة التجارية ودفع التحويلات.",
-        "facebookAds": "إعلانات فيسبوك",
-        "instagramAds": "إعلانات إنستاجرام",
-        "linkedinAds": "إعلانات لينكد إن",
-        "twitterAds": "إعلانات تويتر",
-        "targetedCampaigns": "حملات مستهدفة",
-        "targetedCampaignsDesc": "حملات إعلانية مستهدفة بدقة تصل إلى عملائك المثاليين في الوقت والمكان المناسب.",
-        "audienceTargeting": "استهداف الجمهور",
-        "retargeting": "إعادة الاستهداف",
-        "lookalikeاudiences": "جماهير مشابهة",
-        "behavioralTargeting": "استهداف سلوكي",
-        "performanceTracking": "تتبع الأداء",
-        "performanceTrackingDesc": "تحليلات وتقارير شاملة لقياس نجاح الحملة والتحسين للحصول على نتائج أفضل.",
-        "realTimeAnalytics": "تحليلات في الوقت الفعلي",
-        "conversionTracking": "تتبع التحويلات",
-        "roiReporting": "تقارير عائد الاستثمار",
-        "customDashboards": "لوحات معلومات مخصصة",
-        "creativeDesign": "التصميم الإبداعي",
-        "creativeDesignDesc": "إبداعات إعلانية لافتة للنظر ونصوص مقنعة تجذب الانتباه وتدفع إلى العمل.",
-        "bannerDesign": "تصميم اللافتات",
-        "videoCreatives": "إبداعات الفيديو",
-        "copywriting": "كتابة النصوص",
-        "brandConsistency": "ثبات العلامة التجارية",
-        "campaignOptimization": "تحسين الحملة",
-        "campaignOptimizationDesc": "تحسين مستمر واختبار A/B لتحسين أداء الحملة وتعظيم عائد الاستثمار.",
-        "abTesting": "اختبار A/B",
-        "bidOptimization": "تحسين العطاءات",
-        "keywordResearch": "بحث الكلمات المفتاحية",
-        "landingPageOptimization": "تحسين صفحة الهبوط",
-        "ourProcess": "عمليتنا",
-        "advertisingProcess": "عملية الإعلان",
-        "processSubtitle": "نهج منهجي لتعظيم عائد استثمارك الإعلاني",
-        "researchAnalysis": "بحث وتحليل",
-        "researchAnalysisDesc": "بحث عميق في السوق وتحليل المنافسين لتحديد الفرص.",
-        "strategyDevelopment": "تطوير الاستراتيجية",
-        "strategyDevelopmentDesc": "إنشاء استراتيجيات إعلانية مستهدفة متوافقة مع أهداف عملك.",
-        "campaignLaunch": "إطلاق الحملة",
-        "campaignLaunchDesc": "تنفيذ الحملات عبر منصات متعددة بتوقيت دقيق.",
-        "optimizeTrack": "تحسين وتتبع",
-        "optimizeTrackDesc": "مراقبة مستمرة وتحسين لأقصى أداء.",
-        "whyChooseUs": "لماذا تختارنا",
-        "advertisingAdvantages": "مزايا الإعلان",
-        "advantagesSubtitle": "اكتشف لماذا نحن شريك الإعلان المثالي",
-        "dataDrivenResults": "نتائج مدفوعة بالبيانات",
-        "dataDrivenResultsDesc": "حملات استراتيجية مدعومة بتحليلات شاملة ورؤى الأداء.",
-        "roiOptimization": "تحسين عائد الاستثمار",
-        "expertTeam": "فريق خبراء",
-        "expertTeamDesc": "محترفو إعلان معتمدون مع سنوات من الخبرة عبر جميع المنصات الرئيسية.",
-        "googleCertified": "معتمد من جوجل",
-        "facebookBlueprint": "فيسبوك بلوبرينت",
-        "yearsExperience": "سنوات خبرة",
-        "impressionsManaged": "ظهور مُدارة",
-        "quickResults": "نتائج سريعة",
-        "quickResultsDesc": "إعداد وتحسين سريع للحملة لبدء رؤية النتائج خلال الأسبوع الأول.",
-        "setup24to48hr": "إعداد 24-48 ساعة",
-        "instantOptimization": "تحسين فوري",
-        "weeklyReports": "تقارير أسبوعية",
-        "daysToResults": "أيام للنتائج",
-        "dedicatedSupport": "دعم مخصص",
-        "dedicatedSupportDesc": "مدير حساب شخصي ودعم 24/7 لجميع احتياجاتك الإعلانية.",
-        "accountManager": "مدير حساب",
-        "chatSupport247": "دعم دردشة 24/7",
-        "monthlyReviews": "مراجعات شهرية",
-        "supportAvailable": "الدعم متاح",
-        "ourPlatforms": "منصاتنا",
-        "advertisingPlatforms": "منصات الإعلان",
-        "platformsSubtitle": "نهج متعدد المنصات لأقصى وصول",
-        "googleAdsTitle": "إعلانات جوجل",
-        "googleAdsDesc2": "الوصول إلى العملاء عندما يبحثون عن منتجاتك وخدماتك على جوجل.",
-        "dailySearches": "عمليات بحث يومية",
-        "facebookAdsTitle": "إعلانات فيسبوك",
-        "facebookAdsDesc2": "تواصل مع جمهورك على أكبر منصة وسائل تواصل اجتماعي في العالم.",
-        "monthlyUsers": "مستخدم شهرياً",
-        "instagramAdsTitle": "إعلانات إنستاجرام",
-        "instagramAdsDesc2": "تفاعل مع المحتوى البصري الذي يجذب الانتباه ويدفع إلى العمل.",
-        "linkedinAdsTitle": "إعلانات لينكد إن",
-        "linkedinAdsDesc2": "استهدف المحترفين وصناع القرار في صناعتك.",
-        "professionals": "محترف",
-        "youtubeAdsTitle": "إعلانات يوتيوب",
-        "youtubeAdsDesc2": "الوصول إلى جمهورك بمحتوى فيديو مقنع وإعلانات.",
-        "twitterAdsTitle": "إعلانات تويتر",
-        "twitterAdsDesc2": "انضم إلى المحادثات وروج لعلامتك التجارية في المناقشات الفورية."
-      },
-      "rendre": {
-        "sustainableInnovation": "الابتكار المستدام",
-        "heroTitle": "رندر لإعادة التدوير",
-        "heroSubtitle": "تحويل إعادة تدوير المركبات بالتعرف الذكي والجمع الفعال والمعالجة الصديقة للبيئة للاستدامة البيئية.",
-        "launchingMid2026": "🚀 الإطلاق منتصف 2026",
-        "days": "أيام",
-        "hours": "ساعات",
-        "minutes": "دقائق",
-        "seconds": "ثواني",
-        "getNotified": "احصل على إشعار عند الإطلاق",
-        "currentProblems": "المشاكل الحالية",
-        "challengeTitle": "التحدي الذي نحله",
-        "challengeSubtitle": "معالجة التحديات الحضرية",
-        "environmentalPollution": "التلوث البيئي",
-        "environmentalPollutionDesc": "المركبات المهجورة تسرب سوائل ضارة، مما يلوث التربة والمياه الجوفية بينما تنبعث غازات سامة.",
-        "visualBlight": "التشويه البصري",
-        "visualBlightDesc": "السيارات المهجورة تخلق مناظر قبيحة تقلل من قيم العقارات وجمالية المجتمع.",
-        "safetyHazards": "مخاطر السلامة",
-        "safetyHazardsDesc": "هذه المركبات تعرقل المساحات العامة ويمكن أن تصبح مراكز للأنشطة الإجرامية.",
-        "resourceWastage": "هدر الموارد",
-        "resourceWastageDesc": "المواد القيمة تبقى غير مستغلة بدلاً من إعادة تدويرها بشكل مسؤول.",
-        "ourSolution": "حلنا",
-        "solutionTitle": "حلنا الشامل",
-        "solutionSubtitle": "الممارسات المستدامة",
-        "ourServices": "خدماتنا",
-        "servicesTitle": "خدمات إعادة تدوير المركبات",
-        "servicesSubtitle": "حلول",
-        "vehicleIdentification": "تحديد هوية المركبة",
-        "vehicleIdentificationDesc": "الكشف والفهرسة بالذكاء الاصطناعي للمركبات المهجورة باستخدام تقنية التصوير الذكية.",
-        "collectionServices": "خدمات الجمع",
-        "collectionServicesDesc": "الاستلام والنقل الفعال للمركبات إلى مرافق إعادة التدوير مع تتبع GPS.",
-        "materialProcessing": "معالجة المواد",
-        "materialProcessingDesc": "عمليات إعادة تدوير متقدمة لاستعادة المواد والمكونات القيمة بأمان.",
-        "impactTracking": "تتبع التأثير",
-        "impactTrackingDesc": "المراقبة والتقرير في الوقت الفعلي للتأثير البيئي ومقاييس إعادة التدوير."
-      },
-      "upflyover": {
-        "title": "أب فلاي أوفر",
-          "tagline": "تحليق فوق حواجز الأعمال",
-          "subtitle": "منصة الشبكات التجارية الأكثر ثقة في العالم",
-          "description": "انضم إلى آلاف الشركات المعتمدة في جميع أنحاء العالم. ابحث عن الموردين والعملاء وشركاء الأعمال مع نظام المطابقة المدعوم بالذكاء الاصطناعي.",
-          "launchingUAE": "🚀 الآن يتم الإطلاق في الإمارات!",
-          "firstYearFree": "السنة الأولى مجانية تماماً",
-          "firstThousand": "كن من بين أول 1000 شركة تنضم",
-          "limitedOffer": "عرض محدود الوقت",
-          "offerDetails": "لا حاجة للدفع • وصول كامل لجميع الميزات • انضم الآن واحجز مكانك",
-          "whyChoose": "لماذا تختار أب فلاي أوفر؟",
-          "whyChooseDesc": "اكتشف الميزات الثورية التي تجعل أب فلاي أوفر منصة الشبكات التجارية الأكثر ثقة في العالم",
-          "howItWorks": "كيف يعمل",
-          "howItWorksDesc": "ابدأ في دقائق وتواصل مع الشركات المعتمدة في جميع أنحاء العالم",
-          "uaeLaunchPricing": "أسعار إطلاق الإمارات",
-          "pricingDesc": "عرض خاص لأول 1000 شركة إماراتية تنضم لمنصتنا",
-          "pricingNote": "🎉 السنة الأولى مجانية تماماً - لا حاجة لبطاقة ائتمان",
-          "takeAnywhere": "خذ أب فلاي أوفر في أي مكان",
-          "mobileDesc": "تواصل مع الشركات أثناء التنقل مع تطبيقنا المحمول القوي",
-          "platformFeatures": "ميزات المنصة",
-          "featuresDesc": "أدوات قوية للشبكات التجارية العالمية",
-          "builtWithTech": "مبني بتقنية حديثة",
-          "techDesc": "مدعوم بتقنيات متطورة للأداء الأمثل وقابلية التوسع",
-          "readyFoundingMember": "مستعد لتكون عضو مؤسس؟",
-          "foundingDesc": "انضم لأول 1000 شركة إماراتية واحصل على مزايا مدى الحياة كمتبني مبكر",
-          "getStartedNow": "ابدأ الآن",
-          "contactSales": "اتصل بالمبيعات",
-          "launchPlatform": "تشغيل المنصة",
-        "heroTitle": "أب فلاي أوفر",
-        "heroTagline": "تحليق فوق حواجز الأعمال",
-        "heroSubtitle": "منصة الشبكات التجارية الأكثر ثقة في العالم",
-        "heroDescription": "انضم إلى آلاف الشركات المعتمدة في جميع أنحاء العالم. ابحث عن الموردين والعملاء وشركاء الأعمال مع نظام المطابقة المدعوم بالذكاء الاصطناعي.",
-        "launchPlatform": "تشغيل المنصة",
-        "learnMore": "اعرف المزيد",
-        "launchingUAE": "🚀 الآن يتم الإطلاق في الإمارات!",
-        "firstThousand": "كن من بين أول 1000 شركة تنضم",
-        "limitedOffer": "عرض محدود الوقت",
-        "firstYearFree": "السنة الأولى مجانية تماماً",
-        "offerDetails": "لا حاجة للدفع • وصول كامل لجميع الميزات • انضم الآن واحجز مكانك",
-        "whyChoose": "لماذا تختار أب فلاي أوفر؟",
-        "whyChooseDesc": "اكتشف الميزات الثورية التي تجعل أب فلاي أوفر منصة الشبكات التجارية الأكثر ثقة في العالم",
-        "howItWorks": "كيف يعمل",
-        "howItWorksDesc": "ابدأ في دقائق وتواصل مع الشركات المعتمدة في جميع أنحاء العالم",
-        "uaeLaunchPricing": "أسعار إطلاق الإمارات",
-        "pricingDesc": "عرض خاص لأول 1000 شركة إماراتية تنضم لمنصتنا",
-        "pricingNote": "🎉 السنة الأولى مجانية تماماً - لا حاجة لبطاقة ائتمان",
-        "takeAnywhere": "خذ أب فلاي أوفر في أي مكان",
-        "mobileDesc": "تواصل مع الشركات أثناء التنقل مع تطبيقنا المحمول القوي",
-        "platformFeatures": "ميزات المنصة",
-        "featuresDesc": "أدوات قوية للشبكات التجارية العالمية",
-        "builtWithTech": "مبني بتقنية حديثة",
-        "techDesc": "مدعوم بتقنيات متطورة للأداء الأمثل وقابلية التوسع",
-        "readyFoundingMember": "مستعد لتكون عضو مؤسس؟",
-        "foundingDesc": "انضم لأول 1000 شركة إماراتية واحصل على مزايا مدى الحياة كمتبني مبكر",
-        "getStartedNow": "ابدأ الآن",
-        "contactSales": "اتصل بالمبيعات",
-        "dualRoleSystem": "نظام الدور المزدوج",
-        "dualRoleSystemDesc": "كل شركة تعمل كمورد ومستقبل في نفس الوقت",
-        "aiDrivenMatching": "مطابقة مدفوعة بالذكاء الاصطناعي",
-        "aiDrivenMatchingDesc": "خوارزميات ذكية تطابق الشركات بناءً على الاحتياجات",
-        "verifiedCompanies": "شركات معتمدة",
-        "verifiedCompaniesDesc": "جميع الشركات تخضع لعملية التحقق",
-        "globalReach": "وصول عالمي",
-        "globalReachDesc": "تواصل مع الشركات في جميع أنحاء العالم",
-        "createProfile": "إنشاء ملفك الشخصي",
-        "createProfileDesc": "سجل وابني ملف شركتك الشامل مع التحقق",
-        "postRequirements": "نشر المتطلبات",
-        "postRequirementsDesc": "شارك احتياجات عملك أو تصفح الفرص من الشركات الأخرى",
-        "aiMatching": "مطابقة الذكاء الاصطناعي",
-        "aiMatchingDesc": "نظامنا الذكي يطابقك مع الشركاء الأكثر صلة",
-        "connectTrade": "تواصل وتاجر",
-        "connectTradeDesc": "ابدأ المحادثات، تفاوض على الصفقات، وانمِ شبكة أعمالك",
-        "earlyAdopter": "متبني مبكر",
-        "freeFirstYear": "السنة الأولى مجانية",
-        "completePlatformAccess": "وصول كامل للمنصة للشركات الإماراتية",
-        "premiumCompanyProfile": "ملف شركة مميز مع شارة التحقق",
-        "unlimitedTeamUsers": "مستخدمو فريق غير محدودين",
-        "unlimitedRequirementsPosting": "نشر متطلبات غير محدود",
-        "browseUnlimitedCompanies": "تصفح شركات غير محدودة",
-        "advancedMessagingVideoCalls": "رسائل متقدمة ومكالمات فيديو",
-        "aiPoweredMatching": "مطابقة مدعومة بالذكاء الاصطناعي",
-        "analyticsDashboard": "لوحة تحليلات",
-        "prioritySupport": "دعم أولوية",
-        "customIntegrations": "تكاملات مخصصة (وصول API)",
-        "dedicatedAccountManager": "مدير حساب مخصص",
-        "joinFreeForYear": "انضم مجاناً لمدة سنة",
-        "professional": "احترافي",
-        "monthlyPrice99": "99 دولار/شهر",
-        "startingYear2": "بدءاً من السنة الثانية (2026)",
-        "enhancedCompanyProfile": "ملف شركة محسن",
-        "teamUsersIncluded": "5 مستخدمي فريق مشمولين",
-        "post50Requirements": "نشر 50 متطلب/شهر",
-        "enterprise": "مؤسسي",
-        "monthlyPrice299": "299 دولار/شهر",
-        "premiumProfileTrustBadges": "ملف شركة مميز مع شارات الثقة",
-        "advancedTeamManagement": "إدارة فريق متقدمة",
-        "advancedAnalyticsReports": "تحليلات وتقارير متقدمة",
-        "phoneSupport247": "دعم هاتفي 24/7",
-        "realTimeNotifications": "إشعارات في الوقت الفعلي للاتصالات الجديدة",
-        "browseOffline": "تصفح الشركات والمتطلبات دون اتصال",
-        "instantMessagingVideoCalls": "رسائل فورية ومكالمات فيديو",
-        "welcomeBackAhmed": "مرحباً بعودتك، أحمد!",
-        "newConnectionRequests": "لديك 3 طلبات اتصال جديدة",
-        "connections": "اتصالات",
-        "messages": "رسائل",
-        "gulfTradingRequest": "شركة الخليج التجارية أرسلت طلب اتصال",
-        "newMessageTechSolutions": "رسالة جديدة من الحلول التقنية",
-        "requirementResponses": "متطلبك حصل على 3 ردود",
-        "companyRegistration": "تسجيل الشركة",
-        "companyRegistrationDesc": "عملية إعداد سهلة مع إنشاء ملف شركة شامل ونظام تحقق للشركات في جميع أنحاء العالم.",
-        "kycVerification": "التحقق من الهوية",
-        "kycVerificationDesc": "نظام تحقق هوية آمن يضمن شراكات تجارية موثوقة مع تحقق مستندات متعدد المستويات.",
-        "realTimeDashboard": "لوحة معلومات في الوقت الفعلي",
-        "realTimeDashboardDesc": "تحليلات ورؤى شاملة لتتبع الاتصالات التجارية والفرص ومقاييس الأداء.",
-        "companyDirectory": "دليل الشركات",
-        "companyDirectoryDesc": "قدرات بحث وتصفية متقدمة للعثور على شركاء الأعمال المثاليين في جميع أنحاء العالم مع مطابقة مدعومة بالذكاء الاصطناعي.",
-        "requirementsPosting": "نشر المتطلبات",
-        "requirementsPostingDesc": "انشر متطلبات عملك واحصل على مطابقة مع الشركات ذات الصلة من خلال خوارزميات التوصية الذكية.",
-        "documentManagement": "إدارة المستندات",
-        "documentManagementDesc": "نظام مشاركة وإدارة مستندات آمن للتعاون التجاري مع التحكم في الإصدارات وأذونات الوصول.",
-        "realTimeMessaging": "رسائل في الوقت الفعلي",
-        "realTimeMessagingDesc": "نظام تواصل فوري مع مشاركة الملفات ومؤشرات الكتابة وتاريخ الرسائل للمناقشات التجارية السلسة.",
-        "portfolioShowcase": "عرض المحفظة",
-        "portfolioShowcaseDesc": "إدارة محفظة شركة كاملة مع معارض المشاريع وعروض الخدمات وشهادات العملاء.",
-        "subscriptionManagement": "إدارة الاشتراك",
-        "subscriptionManagementDesc": "مستويات تسعير مرنة مع تكامل Stripe وتتبع الاستخدام والفوترة الآلية للنمو التجاري القابل للتوسع.",
-        "stayUpdated": "ابق على اطلاع",
-        "getLatestInsights": "احصل على أحدث الرؤى والنصائح والتحديثات في صندوق الوارد الخاص بك"
-      },
-      "products": {
-        "title": "منتجاتنا",
-        "subtitle": "استكشف حلولنا البرمجية المبتكرة المصممة لتلبية احتياجاتك.",
-        "comingSoon": "قريباً",
-        "learnMore": "اعرف المزيد",
-        "rendre": {
-          "title": "رندر لإعادة التدوير",
-          "tagline": "تحويل النفايات، دفع الاستدامة.",
-          "subtitle": "تحويل إعادة تدوير المركبات بالتعرف الذكي والجمع الفعال والمعالجة الصديقة للبيئة للاستدامة البيئية.",
-          "launchingMid2026": "🚀 الإطلاق منتصف 2026",
-          "getNotified": "احصل على إشعار عند الإطلاق",
-          "currentProblems": "المشاكل الحالية",
-          "challengeTitle": "التحدي الذي نحله",
-          "challengeSubtitle": "معالجة التحديات البيئية والحضرية الحرجة",
-          "ourSolution": "حلنا",
-          "solutionTitle": "حلنا الشامل",
-          "solutionSubtitle": "رندر يدمج التكنولوجيا مع الممارسات المستدامة لإدارة دورة حياة المركبات الكاملة.",
-          "ourServices": "خدماتنا",
-          "servicesTitle": "خدمات إعادة تدوير المركبات",
-          "servicesSubtitle": "حلول إدارة المركبات من البداية إلى النهاية",
-          "days": "أيام",
-          "hours": "ساعات",
-          "minutes": "دقائق",
-          "seconds": "ثواني"
-        }
-      },
-      "gymestry": {
-        "title": "جيمستري",
-          "tagline": "ثورة في إدارة اللياقة البدنية",
-          "subtitle": "منصة إدارة اللياقة البدنية الأكثر شمولية المصممة خصيصاً لصالات الألعاب الرياضية ومراكز اللياقة البدنية الحديثة.",
-          "launchingJan2026": "🚀 الإطلاق 1 يناير 2026",
-          "uaeLaunchStrategy": "🇦🇪 استراتيجية إطلاق الإمارات",
-          "targetMarket": "🎯 السوق المستهدف",
-          "platformFeatures": "ميزات المنصة الشاملة",
-          "whyChoose": "لماذا تختار جيمستري؟",
-          "readyToTransform": "مستعد لتحويل أعمال اللياقة البدنية؟",
-          "getNotified": "احصل على إشعار عند الإطلاق",
-          "joinWaitlist": "انضم لقائمة الانتظار",
-        "heroTitle": "جيمستري",
-        "heroTagline": "ثورة في إدارة اللياقة البدنية",
-        "heroSubtitle": "منصة إدارة اللياقة البدنية الأكثر شمولية المصممة خصيصاً لصالات الألعاب الرياضية ومراكز اللياقة البدنية الحديثة. بسط العمليات، عزز مشاركة الأعضاء، وازد الإيرادات مع حلنا الشامل.",
-        "joinWaitlist": "انضم لقائمة الانتظار",
-        "watchDemo": "مشاهدة عرض توضيحي",
-        "launchingJan2026": "🚀 الإطلاق 1 يناير 2026",
-        "firstLaunchingUAE": "الإطلاق الأول في الإمارات - تحويل مراكز اللياقة البدنية في جميع أنحاء الإمارات",
-        "days": "أيام",
-        "hours": "ساعات",
-        "minutes": "دقائق",
-        "seconds": "ثواني",
-        "uaeLaunchStrategy": "🇦🇪 استراتيجية إطلاق الإمارات",
-        "uaeLaunchDesc": "نحن نطلق استراتيجياً في دولة الإمارات العربية المتحدة، بالشراكة مع صالات الألعاب الرياضية المميزة ومراكز اللياقة البدنية في جميع أنحاء دبي وأبو ظبي والشارقة. منصتنا مصممة خصيصاً لصناعة اللياقة البدنية الديناميكية في الإمارات.",
-        "multiLanguageSupport": "دعم متعدد اللغات (عربي وإنجليزي)",
-        "uaePaymentGateway": "تكامل بوابة الدفع الإماراتية",
-        "localCompliance": "الامتثال واللوائح المحلية",
-        "culturalCustomization": "ميزات التخصيص الثقافي",
-        "targetMarket": "🎯 السوق المستهدف",
-        "targetMarketDesc": "التركيز على مراكز اللياقة البدنية الحديثة، وصالات الألعاب الرياضية المميزة، والاستوديوهات المتخصصة، ومراكز العافية التي تريد رفع تجربة أعضائها وكفاءة عملياتها.",
-        "premiumFitnessCenters": "مراكز اللياقة البدنية المميزة",
-        "boutiqueFitnessStudios": "استوديوهات اللياقة البدنية المتخصصة",
-        "corporateWellnessCenters": "مراكز العافية المؤسسية",
-        "hotelFitnessFacilities": "مرافق اللياقة البدنية في الفنادق",
-        "comprehensivePlatformFeatures": "ميزات المنصة الشاملة",
-        "everythingYouNeed": "كل ما تحتاجه لإدارة أعمال لياقة بدنية ناجحة",
-        "memberManagement": "إدارة الأعضاء",
-        "memberManagementDesc": "ملفات أعضاء شاملة مع تاريخ لياقة بدنية مفصل، وتتبع العضوية مع التجديد الآلي، وأنظمة فوترة ذكية مع خيارات دفع متعددة.",
-        "classScheduling": "جدولة الحصص",
-        "classSchedulingDesc": "نظام حجز حصص متقدم مع إدارة قائمة الانتظار، وجدولة المدربين مع تتبع التوفر، ومراقبة السعة في الوقت الفعلي لجميع برامج اللياقة البدنية.",
-        "workoutTracking": "تتبع التمارين",
-        "workoutTrackingDesc": "سجلات تمارين شخصية مع مكتبات تمارين، وتتبع تقدم شامل مع رسوم بيانية بصرية، وتحليلات أداء مفصلة لتحفيز الأعضاء.",
-        "mobileApp": "تطبيق محمول",
-        "mobileAppDesc": "تطبيقات أصلية لنظامي iOS وAndroid لكل من موظفي الصالة الرياضية والأعضاء مع قدرات عمل دون اتصال، ومزامنة في الوقت الفعلي، وإشعارات فورية.",
-        "paymentProcessing": "معالجة المدفوعات",
-        "paymentProcessingDesc": "بوابة دفع متكاملة آمنة تدعم عملات متعددة، وفوترة آلية للعضويات وجلسات التدريب الشخصي ومبيعات البضائع.",
-        "analyticsDashboard": "لوحة تحليلات",
-        "analyticsDashboardDesc": "ذكاء أعمال شامل مع تحليلات الاحتفاظ بالأعضاء، وتوقع الإيرادات، وتحليل ساعات الذروة، وأدوات تقارير قابلة للتخصيص.",
-        "equipmentManagement": "إدارة المعدات",
-        "equipmentManagementDesc": "تتبع ذكي للمعدات مع جداول صيانة، وتحليلات الاستخدام، وتنبيهات آلية للإصلاحات والاستبدالات.",
-        "staffManagement": "إدارة الموظفين",
-        "staffManagementDesc": "نظام جدولة موظفين كامل مع تكامل كشوف المرتبات، وتتبع الأداء، وإدارة شهادات المدربين والمدربين.",
-        "smartNotifications": "إشعارات ذكية",
-        "smartNotificationsDesc": "إشعارات SMS وبريد إلكتروني آلية لتذكيرات الحصص، وتجديد العضوية، ومواعيد استحقاق الدفع، والحملات الترويجية.",
-        "whyChooseGymestry": "لماذا تختار جيمستري؟",
-        "transformBusinessResults": "حول أعمال اللياقة البدنية مع نتائج قابلة للقياس",
-        "saveTime": "وفر الوقت",
-        "saveTimeDesc": "أتمتة المهام الإدارية الروتينية، وبسط تسجيل دخول الأعضاء، وقلل الأعمال الورقية اليدوية بنسبة تصل إلى 80%.",
-        "increaseRevenue": "زيادة الإيرادات",
-        "increaseRevenueDesc": "حسن استراتيجيات التسعير، وقلل ترك الأعضاء بنسبة 35%، وحدد فرص إيرادات جديدة من خلال رؤى البيانات.",
-        "improveExperience": "تحسين التجربة",
-        "improveExperienceDesc": "عزز رضا الأعضاء مع تجارب رقمية سلسة، وخطط تمارين شخصية، ووصول إلى الخدمات على مدار 24/7.",
-        "dataDrivenDecisions": "قرارات مدفوعة بالبيانات",
-        "dataDrivenDecisionsDesc": "اتخذ قرارات أعمال مدروسة مع تحليلات في الوقت الفعلي، ورؤى تنبؤية، ومقاييس أداء شاملة.",
-        "secureReliable": "آمن وموثوق",
-        "secureReliableDesc": "أمان على مستوى المؤسسات مع تشفير البيانات، ونسخ احتياطية منتظمة، وضمان وقت تشغيل 99.9% لعمليات غير منقطعة.",
-        "support247": "دعم 24/7",
-        "support247Desc": "دعم عملاء على مدار الساعة مع مديري حسابات مخصصين، وتدريب شامل، ومساعدة تقنية مستمرة.",
-        "readyToTransform": "مستعد لتحويل أعمال اللياقة البدنية؟",
-        "joinExclusiveWaitlist": "انضم إلى قائمة الانتظار الحصرية وكن من بين أول مراكز اللياقة البدنية في الإمارات لتجربة مستقبل إدارة الصالات الرياضية",
-        "joinExclusiveWaitlistBtn": "انضم لقائمة الانتظار الحصرية",
-        "scheduleDemo": "جدولة عرض توضيحي"
+        "followUs": "تابعنا"
       },
       "footer": {
         "description": "نحن وكالة إبداعية تركز على تنمية العلامات التجارية من خلال الحلول الرقمية المبتكرة والتجارب التي لا تُنسى.",
@@ -1091,10 +213,9 @@ const resources = {
         "privacyPolicy": "سياسة الخصوصية",
         "refundPolicy": "سياسة الاسترداد",
         "cookiePolicy": "سياسة ملفات تعريف الارتباط",
-        "stayUpdatedFooter": "ابق على اطلاع",
-        "getLatestInsightsFooter": "احصل على أحدث الرؤى والنصائح وال��حديثات في صندوق الوارد الخاص بك",
-        "enterEmailFooter": "أدخل بريدك الإلكتروني",
-        "subscribeFooter": "اشترك"
+        "newsletter": "النشرة الإخبارية",
+        "subscribe": "اشترك",
+        "enterEmail": "أدخل بريدك الإلكتروني"
       }
     }
   }
