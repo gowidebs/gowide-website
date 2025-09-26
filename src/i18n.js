@@ -444,7 +444,7 @@ const resources = {
         "languages": "اللغات",
         "autoDetect": "الكشف التلقائي",
         "clientTestimonialName": "سارة جونسون",
-        "clientTestimonialTitle": "الرئيس التنفيذي، تيك ستارت إنك"
+        "clientTestimonialTitle": "الرئيس التنفيذي، تيك ستارت إنك",
         "tailoredSolutionDesc": "نهج منهجي لتحقيق نتائج استثنائية",
         "impact": "تأثيرنا",
         "impactDesc": "أرقام تتتحدث عن نفسها",
