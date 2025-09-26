@@ -66,9 +66,13 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Catamaran', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: transparent;
+    background: #0f0e17;
     overflow-x: hidden;
     transition: all 0.3s ease;
+  }
+
+  body.light-theme {
+    background: #f8f9fa;
   }
 
   .highlight {
