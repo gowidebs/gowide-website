@@ -524,15 +524,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-code"></i>
               </div>
-              <div className="solution-category">Web Development</div>
+              <div className="solution-category">{t('technology.webDevelopment')}</div>
             </div>
-            <h3>Custom Web Solutions</h3>
-            <p>Responsive websites and web applications built with modern technologies for optimal performance.</p>
+            <h3>{t('technology.customWebSolutions')}</h3>
+            <p>{t('technology.webDevelopmentDesc')}</p>
             <div className="solution-tags">
-              <span>React.js</span>
-              <span>Node.js</span>
-              <span>E-commerce</span>
-              <span>CMS</span>
+              <span>{t('technology.reactjs')}</span>
+              <span>{t('technology.nodejs')}</span>
+              <span>{t('technology.ecommerce')}</span>
+              <span>{t('technology.cms')}</span>
             </div>
           </SolutionCard>
 
@@ -545,15 +545,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-mobile-alt"></i>
               </div>
-              <div className="solution-category">Mobile Development</div>
+              <div className="solution-category">{t('technology.mobileDevelopment')}</div>
             </div>
-            <h3>Native & Cross-Platform Apps</h3>
-            <p>High-performance mobile applications for iOS and Android platforms with seamless user experiences.</p>
+            <h3>{t('technology.nativeCrossPlatform')}</h3>
+            <p>{t('technology.mobileDevelopmentDesc')}</p>
             <div className="solution-tags">
-              <span>iOS</span>
-              <span>Android</span>
-              <span>React Native</span>
-              <span>Flutter</span>
+              <span>{t('technology.ios')}</span>
+              <span>{t('technology.android')}</span>
+              <span>{t('technology.reactNative')}</span>
+              <span>{t('technology.flutter')}</span>
             </div>
           </SolutionCard>
 
@@ -566,15 +566,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-cogs"></i>
               </div>
-              <div className="solution-category">Custom Software</div>
+              <div className="solution-category">{t('technology.customSoftware')}</div>
             </div>
-            <h3>Enterprise Solutions</h3>
-            <p>Tailored software systems that automate processes and enhance business efficiency.</p>
+            <h3>{t('technology.enterpriseSolutions')}</h3>
+            <p>{t('technology.customSoftwareDesc')}</p>
             <div className="solution-tags">
-              <span>CRM</span>
-              <span>ERP</span>
-              <span>Automation</span>
-              <span>Integration</span>
+              <span>{t('technology.crm')}</span>
+              <span>{t('technology.erp')}</span>
+              <span>{t('technology.automation')}</span>
+              <span>{t('technology.integration')}</span>
             </div>
           </SolutionCard>
 
@@ -587,15 +587,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-cloud"></i>
               </div>
-              <div className="solution-category">Cloud Solutions</div>
+              <div className="solution-category">{t('technology.cloudSolutions')}</div>
             </div>
-            <h3>Scalable Cloud Infrastructure</h3>
-            <p>Secure and scalable cloud solutions that optimize performance and reduce operational costs.</p>
+            <h3>{t('technology.scalableCloudInfrastructure')}</h3>
+            <p>{t('technology.cloudSolutionsDesc')}</p>
             <div className="solution-tags">
-              <span>AWS</span>
-              <span>Azure</span>
-              <span>Migration</span>
-              <span>Security</span>
+              <span>{t('technology.aws')}</span>
+              <span>{t('technology.azure')}</span>
+              <span>{t('technology.migration')}</span>
+              <span>{t('technology.security')}</span>
             </div>
           </SolutionCard>
 
@@ -608,15 +608,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-shield-alt"></i>
               </div>
-              <div className="solution-category">Cybersecurity</div>
+              <div className="solution-category">{t('technology.cybersecurity')}</div>
             </div>
-            <h3>Advanced Security Solutions</h3>
-            <p>Comprehensive security measures to protect your digital assets from cyber threats.</p>
+            <h3>{t('technology.advancedSecuritySolutions')}</h3>
+            <p>{t('technology.cybersecurityDesc')}</p>
             <div className="solution-tags">
-              <span>Firewall</span>
-              <span>Encryption</span>
-              <span>Monitoring</span>
-              <span>Compliance</span>
+              <span>{t('technology.firewall')}</span>
+              <span>{t('technology.encryption')}</span>
+              <span>{t('technology.monitoring')}</span>
+              <span>{t('technology.compliance')}</span>
             </div>
           </SolutionCard>
 
@@ -629,15 +629,15 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-palette"></i>
               </div>
-              <div className="solution-category">UI/UX Design</div>
+              <div className="solution-category">{t('technology.uiuxDesign')}</div>
             </div>
-            <h3>User-Centered Design</h3>
-            <p>Intuitive and engaging digital experiences that delight users and drive conversions.</p>
+            <h3>{t('technology.userCenteredDesign')}</h3>
+            <p>{t('technology.uiuxDesignDesc')}</p>
             <div className="solution-tags">
-              <span>Prototyping</span>
-              <span>User Testing</span>
-              <span>Wireframes</span>
-              <span>Design Systems</span>
+              <span>{t('technology.prototyping')}</span>
+              <span>{t('technology.userTesting')}</span>
+              <span>{t('technology.wireframes')}</span>
+              <span>{t('technology.designSystems')}</span>
             </div>
           </SolutionCard>
         </SolutionsGrid>
@@ -662,8 +662,8 @@ const Technology = () => {
               <i className="fas fa-search"></i>
             </div>
             <div className="step-number">01</div>
-            <h3>Discovery & Planning</h3>
-            <p>Understanding requirements and creating strategic roadmaps for project success.</p>
+            <h3>{t('technology.discoveryPlanning')}</h3>
+            <p>{t('technology.discoveryPlanningDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -675,8 +675,8 @@ const Technology = () => {
               <i className="fas fa-pencil-ruler"></i>
             </div>
             <div className="step-number">02</div>
-            <h3>Design & Prototype</h3>
-            <p>Creating intuitive designs and interactive prototypes for optimal user experience.</p>
+            <h3>{t('technology.designPrototype')}</h3>
+            <p>{t('technology.designPrototypeDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -688,8 +688,8 @@ const Technology = () => {
               <i className="fas fa-code"></i>
             </div>
             <div className="step-number">03</div>
-            <h3>Development</h3>
-            <p>Building solutions using cutting-edge technologies and industry best practices.</p>
+            <h3>{t('technology.development')}</h3>
+            <p>{t('technology.developmentDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -701,8 +701,8 @@ const Technology = () => {
               <i className="fas fa-rocket"></i>
             </div>
             <div className="step-number">04</div>
-            <h3>Launch & Support</h3>
-            <p>Deploying solutions with ongoing monitoring and comprehensive support services.</p>
+            <h3>{t('technology.launchSupport')}</h3>
+            <p>{t('technology.launchSupportDesc')}</p>
           </ProcessStep>
         </ProcessSteps>
       </ProcessSection>
@@ -725,11 +725,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-bolt"></i>
             </div>
-            <h3>Rapid Development</h3>
-            <p>Agile methodologies and modern tools for faster project delivery without compromising quality.</p>
+            <h3>{t('technology.rapidDevelopment')}</h3>
+            <p>{t('technology.rapidDevelopmentDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">50%</span>
-              <span className="metric-label">Faster Delivery</span>
+              <span className="metric-label">{t('technology.fasterDelivery')}</span>
             </div>
           </AdvantageCard>
 
@@ -741,11 +741,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-shield-alt"></i>
             </div>
-            <h3>Secure & Reliable</h3>
-            <p>Enterprise-grade security measures and robust architecture for maximum reliability and data protection.</p>
+            <h3>{t('technology.secureReliable')}</h3>
+            <p>{t('technology.secureReliableDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">99.9%</span>
-              <span className="metric-label">Uptime</span>
+              <span className="metric-label">{t('technology.uptime')}</span>
             </div>
           </AdvantageCard>
 
@@ -757,11 +757,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-expand-arrows-alt"></i>
             </div>
-            <h3>Scalable Solutions</h3>
-            <p>Future-proof technology solutions that grow with your business and adapt to changing needs.</p>
+            <h3>{t('technology.scalableSolutions')}</h3>
+            <p>{t('technology.scalableSolutionsDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">10x</span>
-              <span className="metric-label">Scalability</span>
+              <span className="metric-label">{t('technology.scalability')}</span>
             </div>
           </AdvantageCard>
 
@@ -773,11 +773,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-headset"></i>
             </div>
-            <h3>Expert Support</h3>
-            <p>Dedicated technical support team available round-the-clock for seamless operations.</p>
+            <h3>{t('technology.expertSupport')}</h3>
+            <p>{t('technology.expertSupportDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">24/7</span>
-              <span className="metric-label">Support</span>
+              <span className="metric-label">{t('technology.support')}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
@@ -798,23 +798,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <h3>Frontend</h3>
+            <h3>{t('technology.frontend')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-react"></i>
-                <span>React</span>
+                <span>{t('technology.react')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-angular"></i>
-                <span>Angular</span>
+                <span>{t('technology.angular')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-vuejs"></i>
-                <span>Vue.js</span>
+                <span>{t('technology.vuejs')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-js-square"></i>
-                <span>JavaScript</span>
+                <span>{t('technology.javascript')}</span>
               </div>
             </div>
           </StackCategory>
@@ -824,23 +824,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h3>Backend</h3>
+            <h3>{t('technology.backend')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-node-js"></i>
-                <span>Node.js</span>
+                <span>{t('technology.nodejs')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-python"></i>
-                <span>Python</span>
+                <span>{t('technology.python')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-php"></i>
-                <span>PHP</span>
+                <span>{t('technology.php')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-java"></i>
-                <span>Java</span>
+                <span>{t('technology.java')}</span>
               </div>
             </div>
           </StackCategory>
@@ -850,23 +850,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h3>Mobile</h3>
+            <h3>{t('technology.mobile')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-android"></i>
-                <span>Android</span>
+                <span>{t('technology.android')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-apple"></i>
-                <span>iOS</span>
+                <span>{t('technology.ios')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-react"></i>
-                <span>React Native</span>
+                <span>{t('technology.reactNative')}</span>
               </div>
               <div className="tech-item">
                 <i className="fas fa-mobile-alt"></i>
-                <span>Flutter</span>
+                <span>{t('technology.flutter')}</span>
               </div>
             </div>
           </StackCategory>
@@ -876,23 +876,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <h3>Cloud & DevOps</h3>
+            <h3>{t('technology.cloudDevops')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-aws"></i>
-                <span>AWS</span>
+                <span>{t('technology.aws')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-google"></i>
-                <span>Google Cloud</span>
+                <span>{t('technology.googleCloud')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-microsoft"></i>
-                <span>Azure</span>
+                <span>{t('technology.azure')}</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-docker"></i>
-                <span>Docker</span>
+                <span>{t('technology.docker')}</span>
               </div>
             </div>
           </StackCategory>
