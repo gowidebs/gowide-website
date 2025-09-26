@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO';
 import TechShowcase from '../components/TechShowcase';
 import CounterStats from '../components/CounterStats';
-import TestimonialSlider from '../components/TestimonialSlider';
+
 
 const HomePage = styled.div`
   min-height: 100vh;
@@ -732,39 +732,45 @@ const ImpactCard = styled.div`
   }
 `;
 
-const CircularProgress = styled.div`
+const ProgressCard = styled.div`
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 25px;
-
-  .progress-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: conic-gradient(var(--primary-orange) ${props => props.percentage}%, rgba(255, 255, 255, 0.1) 0%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 80%;
-      height: 80%;
-      background: transparent;
-      border: 2px solid var(--primary-orange);
-      border-radius: 50%;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(255, 137, 6, 0.1) 0%, transparent 100%);
+  border: 2px solid var(--primary-orange);
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+  --progress-width: ${props => props.percentage}%;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-orange), var(--secondary-orange));
+    animation: progressAnimation 2s ease-in-out forwards;
+  }
+  
+  @keyframes progressAnimation {
+    to {
+      width: var(--progress-width);
     }
   }
-
-  .progress-inner {
-    position: relative;
-    z-index: 2;
-    font-size: 1.5rem;
+  
+  .impact-number {
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-orange);
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .impact-icon {
+    font-size: 2rem;
+    color: var(--primary-orange);
+    margin-bottom: 15px;
   }
 `;
 
@@ -814,50 +820,50 @@ const Home = () => {
   const { t } = useTranslation();
   const services = [
     {
-      title: "Branding",
-      subtitle: "Transform Your Brand Identity With Our Expertise",
+      title: t('home.brandingTitle'),
+      subtitle: t('home.brandingSubtitle'),
       icon: "fas fa-palette",
       items: [
-        { icon: "fas fa-chess", title: "Brand Strategy", features: ["Market Research", "Brand Positioning", "Target Audience Analysis", "Competitive Analysis"] },
-        { icon: "fas fa-palette", title: "Visual Identity", features: ["Logo Design", "Color Schemes", "Typography", "Brand Guidelines"] },
-        { icon: "fas fa-comment-dots", title: "Brand Voice", features: ["Tone Development", "Messaging Strategy", "Content Guidelines", "Brand Story"] },
-        { icon: "fas fa-star", title: "Brand Experience", features: ["Customer Journey", "Touchpoint Design", "Brand Interaction", "Experience Mapping"] }
+        { icon: "fas fa-chess", title: t('branding.brandStrategyTitle'), features: [t('branding.marketResearch'), t('branding.brandPositioning'), t('branding.targetAudienceAnalysis'), t('branding.competitiveAnalysis')] },
+        { icon: "fas fa-palette", title: t('branding.visualIdentityDesignTitle'), features: [t('branding.logoDesign'), t('branding.colorSchemes'), t('branding.typography'), t('branding.brandGuidelines')] },
+        { icon: "fas fa-comment-dots", title: t('branding.brandVoiceMessagingTitle'), features: [t('branding.toneDevelopment'), t('branding.messagingStrategy'), t('branding.contentGuidelines'), t('branding.brandStory')] },
+        { icon: "fas fa-star", title: t('branding.brandImplementationTitle'), features: [t('branding.customerJourney'), t('branding.touchpointDesign'), t('branding.brandInteraction'), t('branding.experienceMapping')] }
       ],
       link: "/branding"
     },
     {
-      title: "Technology",
-      subtitle: "Powering Innovation with Advanced Solutions",
+      title: t('home.technologyTitle'),
+      subtitle: t('home.technologySubtitle'),
       icon: "fas fa-code",
       items: [
-        { icon: "fas fa-code", title: "Web Development", features: ["Custom Web Applications", "Responsive Design", "E-commerce Solutions", "API Integration"] },
-        { icon: "fas fa-mobile-alt", title: "Mobile Development", features: ["iOS Applications", "Android Applications", "Cross-Platform Apps", "Mobile UI/UX"] },
-        { icon: "fas fa-cloud", title: "Cloud Services", features: ["Cloud Migration", "AWS Solutions", "Cloud Security", "Scalable Infrastructure"] },
-        { icon: "fas fa-brain", title: "AI & Machine Learning", features: ["Data Analytics", "Predictive Models", "AI Integration", "Machine Learning Models"] }
+        { icon: "fas fa-code", title: t('home.webDevelopment'), features: [t('home.customWebSolutions'), t('homeServices.responsiveDesign'), t('home.ecommerce'), t('homeServices.apiIntegration')] },
+        { icon: "fas fa-mobile-alt", title: t('home.mobileDevelopment'), features: [t('home.ios'), t('home.android'), t('homeServices.crossPlatformApps'), t('homeServices.mobileUIUX')] },
+        { icon: "fas fa-cloud", title: t('home.cloudSolutions'), features: [t('home.migration'), t('home.aws'), t('home.security'), t('homeServices.scalableInfrastructure')] },
+        { icon: "fas fa-brain", title: t('homeServices.aiMachineLearning'), features: [t('homeServices.dataAnalytics'), t('homeServices.predictiveModels'), t('homeServices.aiIntegration'), t('homeServices.machineLearningModels')] }
       ],
       link: "/technology"
     },
     {
-      title: "Marketing",
-      subtitle: "Drive Growth with Strategic Marketing Solutions",
+      title: t('home.marketingTitle'),
+      subtitle: t('home.marketingSubtitle'),
       icon: "fas fa-bullhorn",
       items: [
-        { icon: "fas fa-bullhorn", title: "Digital Marketing", features: ["Social Media Marketing", "Content Strategy", "Email Campaigns", "Digital Advertising"] },
-        { icon: "fas fa-search", title: "Search Engine Optimization", features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"] },
-        { icon: "fas fa-pen-fancy", title: "Content Marketing", features: ["Blog Writing", "Video Production", "Infographics", "Content Strategy"] },
-        { icon: "fas fa-chart-line", title: "Marketing Analytics", features: ["Performance Tracking", "Data Analysis", "ROI Measurement", "Market Research"] }
+        { icon: "fas fa-bullhorn", title: t('marketing.digitalMarketing'), features: [t('marketing.socialMediaMarketing'), t('marketing.contentStrategy'), t('marketing.emailMarketing'), t('advertising.digitalAdvertising')] },
+        { icon: "fas fa-search", title: t('marketing.seoOptimization'), features: [t('marketing.keywordResearch'), t('marketing.onPageSEO'), t('marketing.technicalSEO'), t('marketing.linkBuilding')] },
+        { icon: "fas fa-pen-fancy", title: t('marketing.contentMarketing'), features: [t('marketing.blogWriting'), t('marketing.videoProduction'), t('marketing.infographics'), t('marketing.contentStrategy')] },
+        { icon: "fas fa-chart-line", title: t('marketing.marketingAnalytics'), features: [t('marketing.performanceTracking'), t('marketing.dataAnalysis'), t('marketing.roiMeasurement'), t('marketing.marketResearch')] }
       ],
       link: "/marketing"
     },
     {
-      title: "Advertisement",
-      subtitle: "Create Impactful Ad Campaigns That Convert",
+      title: t('home.advertisingTitle'),
+      subtitle: t('home.advertisingSubtitle'),
       icon: "fas fa-ad",
       items: [
-        { icon: "fas fa-ad", title: "Digital Advertising", features: ["Google Ads Management", "Social Media Ads", "Display Advertising", "Retargeting Campaigns"] },
-        { icon: "fas fa-mouse-pointer", title: "PPC Management", features: ["Keyword Optimization", "Bid Management", "A/B Testing", "Conversion Tracking"] },
-        { icon: "fas fa-palette", title: "Creative Design", features: ["Banner Design", "Ad Creatives", "Video Ads", "Rich Media Ads"] },
-        { icon: "fas fa-chart-pie", title: "Campaign Analytics", features: ["Performance Metrics", "ROI Analysis", "Audience Insights", "Campaign Optimization"] }
+        { icon: "fas fa-ad", title: t('advertising.googleAds'), features: [t('advertising.googleAdsManagement'), t('advertising.socialMediaAdvertising'), t('advertising.displayAds'), t('advertising.retargeting')] },
+        { icon: "fas fa-mouse-pointer", title: t('home.ppcManagement'), features: [t('advertising.keywordResearch'), t('advertising.bidManagement'), t('advertising.abTesting'), t('advertising.conversionTracking')] },
+        { icon: "fas fa-palette", title: t('advertising.creativeDesign'), features: [t('advertising.bannerDesign'), t('homeServices.adCreatives'), t('advertising.videoAds'), t('homeServices.richMediaAds')] },
+        { icon: "fas fa-chart-pie", title: t('homeServices.campaignAnalytics'), features: [t('homeServices.performanceMetrics'), t('homeServices.roiAnalysis'), t('homeServices.audienceInsights'), t('advertising.campaignOptimization')] }
       ],
       link: "/advertising"
     }
@@ -888,24 +894,24 @@ const Home = () => {
   ];
 
   const whyChoose = [
-    { icon: "fas fa-rocket", title: "Fast Delivery", description: "Quick turnaround times without compromising quality" },
-    { icon: "fas fa-shield-alt", title: "Reliable Solutions", description: "Trusted by businesses worldwide for consistent results" },
-    { icon: "fas fa-lightbulb", title: "Innovative Approach", description: "Cutting-edge solutions tailored to your needs" },
-    { icon: "fas fa-headset", title: "24/7 Support", description: "Round-the-clock assistance for all your queries" }
+    { icon: "fas fa-rocket", title: t('whyChoose.fastDelivery'), description: t('whyChoose.fastDeliveryDesc') },
+    { icon: "fas fa-shield-alt", title: t('whyChoose.reliableSolutions'), description: t('whyChoose.reliableSolutionsDesc') },
+    { icon: "fas fa-lightbulb", title: t('whyChoose.innovativeApproach'), description: t('whyChoose.innovativeApproachDesc') },
+    { icon: "fas fa-headset", title: t('whyChoose.support247'), description: t('whyChoose.support247Desc') }
   ];
 
   const process = [
-    { number: 1, icon: "fas fa-search", title: "Discover", description: "Understanding your needs and goals" },
-    { number: 2, icon: "fas fa-lightbulb", title: "Design", description: "Creating tailored solutions" },
-    { number: 3, icon: "fas fa-cogs", title: "Develop", description: "Building with precision" },
-    { number: 4, icon: "fas fa-rocket", title: "Deploy", description: "Launching your success" }
+    { number: 1, icon: "fas fa-search", title: t('process.discover'), description: t('process.discoverDesc') },
+    { number: 2, icon: "fas fa-lightbulb", title: t('process.design'), description: t('process.designDesc') },
+    { number: 3, icon: "fas fa-cogs", title: t('process.develop'), description: t('process.developDesc') },
+    { number: 4, icon: "fas fa-rocket", title: t('process.deploy'), description: t('process.deployDesc') }
   ];
 
   const impacts = [
-    { number: "100+", title: "Projects Completed", percentage: 85 },
-    { number: "50+", title: "Happy Clients", percentage: 75 },
-    { number: "5+", title: "Years Experience", percentage: 60 },
-    { number: "24/7", title: "Support Available", percentage: 100 }
+    { number: "100+", title: t('common.projectsCompleted'), percentage: 85, icon: "fas fa-rocket" },
+    { number: "50+", title: t('common.happyClients'), percentage: 75, icon: "fas fa-users" },
+    { number: "5+", title: t('common.yearsExperience'), percentage: 60, icon: "fas fa-calendar-alt" },
+    { number: "24/7", title: t('common.supportAvailable'), percentage: 100, icon: "fas fa-headset" }
   ];
 
   return (
@@ -1186,7 +1192,7 @@ const Home = () => {
             </ContactBtn>
             <ContactBtn to="/contact">
               <i className="fas fa-envelope"></i>
-              Contact Us
+              {t('common.contactUs')}
             </ContactBtn>
           </ContactButtons>
         </Container>
@@ -1242,14 +1248,13 @@ const Home = () => {
           <ImpactGrid>
             {impacts.map((impact, index) => (
               <ImpactCard key={index}>
-                <CircularProgress percentage={impact.percentage}>
-                  <div className="progress-circle">
-                    <div className="progress-inner">
-                      <span>{impact.number}</span>
-                    </div>
+                <ProgressCard percentage={impact.percentage}>
+                  <div className="impact-icon">
+                    <i className={impact.icon}></i>
                   </div>
-                </CircularProgress>
-                <h3>{impact.title}</h3>
+                  <span className="impact-number">{impact.number}</span>
+                  <h3>{impact.title}</h3>
+                </ProgressCard>
               </ImpactCard>
             ))}
           </ImpactGrid>
@@ -1258,7 +1263,6 @@ const Home = () => {
 
       <CounterStats />
       <TechShowcase />
-      <TestimonialSlider />
     </HomePage>
     </>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const GymestryPage = styled.div`
   min-height: 100vh;
@@ -463,6 +464,7 @@ const CTAButtons = styled.div`
 `;
 
 const Gymestry = () => {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = React.useState({
     days: 0,
     hours: 0,
@@ -582,7 +584,7 @@ const Gymestry = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                Gymestry
+                {t('gymestry.title')}
               </motion.h1>
               <motion.p
                 className="hero-tagline"
@@ -590,7 +592,7 @@ const Gymestry = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Revolutionizing Fitness Management
+                {t('gymestry.tagline')}
               </motion.p>
               <motion.p
                 className="hero-description"
@@ -598,7 +600,7 @@ const Gymestry = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                The most comprehensive fitness management platform designed specifically for modern gyms and fitness centers. Streamline operations, boost member engagement, and maximize revenue with our all-in-one solution.
+                {t('gymestry.description')}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -608,11 +610,11 @@ const Gymestry = () => {
                 <HeroButtons>
                   <CTAButton href="#contact" className="primary">
                     <i className="fas fa-rocket"></i>
-                    Join Waitlist
+                    {t('gymestry.joinWaitlist')}
                   </CTAButton>
                   <CTAButton href="#features" className="secondary">
                     <i className="fas fa-play-circle"></i>
-                    Watch Demo
+                    {t('gymestry.watchDemo')}
                   </CTAButton>
                 </HeroButtons>
               </motion.div>
@@ -629,52 +631,52 @@ const Gymestry = () => {
       <LaunchSection>
         <Container>
           <CountdownContainer>
-            <CountdownTitle>🚀 Launching January 1, 2026</CountdownTitle>
-            <CountdownSubtitle>First launching in UAE - Transforming fitness centers across the Emirates</CountdownSubtitle>
+            <CountdownTitle>{t('gymestry.launchDate')}</CountdownTitle>
+            <CountdownSubtitle>{t('gymestry.launchSubtitle')}</CountdownSubtitle>
             <CountdownTimer>
               <TimeUnit>
                 <span className="number">{timeLeft.days}</span>
-                <span className="label">Days</span>
+                <span className="label">{t('gymestry.days')}</span>
               </TimeUnit>
               <TimeUnit>
                 <span className="number">{timeLeft.hours}</span>
-                <span className="label">Hours</span>
+                <span className="label">{t('gymestry.hours')}</span>
               </TimeUnit>
               <TimeUnit>
                 <span className="number">{timeLeft.minutes}</span>
-                <span className="label">Minutes</span>
+                <span className="label">{t('gymestry.minutes')}</span>
               </TimeUnit>
               <TimeUnit>
                 <span className="number">{timeLeft.seconds}</span>
-                <span className="label">Seconds</span>
+                <span className="label">{t('gymestry.seconds')}</span>
               </TimeUnit>
             </CountdownTimer>
           </CountdownContainer>
           
           <LaunchDetails>
             <LaunchCard>
-              <h3>🇦🇪 UAE Launch Strategy</h3>
+              <h3>🇦🇪 {t('gymestry.uaeLaunchStrategy')}</h3>
               <p>
-                We're strategically launching in the United Arab Emirates, partnering with premium gyms and fitness centers across Dubai, Abu Dhabi, and Sharjah. Our platform is specifically tailored for the UAE's dynamic fitness industry.
+                {t('gymestry.uaeLaunchDesc')}
               </p>
               <ul>
-                <li>Multi-language support (Arabic & English)</li>
-                <li>UAE payment gateway integration</li>
-                <li>Local compliance and regulations</li>
-                <li>Cultural customization features</li>
+                <li>{t('gymestry.multiLanguage')}</li>
+                <li>{t('gymestry.uaePayment')}</li>
+                <li>{t('gymestry.localCompliance')}</li>
+                <li>{t('gymestry.culturalCustomization')}</li>
               </ul>
             </LaunchCard>
             
             <LaunchCard>
-              <h3>🎯 Target Market</h3>
+              <h3>🎯 {t('gymestry.targetMarket')}</h3>
               <p>
-                Focusing on modern fitness centers, premium gyms, boutique studios, and wellness centers that want to elevate their member experience and operational efficiency.
+                {t('gymestry.targetMarketDesc')}
               </p>
               <ul>
-                <li>Premium fitness centers</li>
-                <li>Boutique fitness studios</li>
-                <li>Corporate wellness centers</li>
-                <li>Hotel fitness facilities</li>
+                <li>{t('gymestry.premiumCenters')}</li>
+                <li>{t('gymestry.boutiqueStudios')}</li>
+                <li>{t('gymestry.corporateWellness')}</li>
+                <li>{t('gymestry.hotelFitness')}</li>
               </ul>
             </LaunchCard>
           </LaunchDetails>
@@ -684,8 +686,8 @@ const Gymestry = () => {
       <FeaturesSection id="features">
         <Container>
           <SectionHeader>
-            <h2>Comprehensive Platform Features</h2>
-            <p>Everything you need to run a successful fitness business</p>
+            <h2>{t('gymestry.platformFeatures')}</h2>
+            <p>{t('gymestry.platformFeaturesDesc')}</p>
           </SectionHeader>
           <FeaturesGrid>
             {features.map((feature, index) => (
@@ -700,8 +702,8 @@ const Gymestry = () => {
                   <div className="feature-icon">
                     <i className={feature.icon}></i>
                   </div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
+                  <h3>{t(`gymestry.feature${index + 1}Title`)}</h3>
+                  <p>{t(`gymestry.feature${index + 1}Desc`)}</p>
                 </FeatureCard>
               </motion.div>
             ))}
@@ -712,8 +714,8 @@ const Gymestry = () => {
       <BenefitsSection>
         <Container>
           <SectionHeader>
-            <h2>Why Choose Gymestry?</h2>
-            <p>Transform your fitness business with measurable results</p>
+            <h2>{t('gymestry.whyChoose')}</h2>
+            <p>{t('gymestry.whyChooseDesc')}</p>
           </SectionHeader>
           <BenefitsGrid>
             {benefits.map((benefit, index) => (
@@ -728,8 +730,8 @@ const Gymestry = () => {
                   <div className="benefit-icon">
                     <i className={benefit.icon}></i>
                   </div>
-                  <h3>{benefit.title}</h3>
-                  <p>{benefit.description}</p>
+                  <h3>{t(`gymestry.benefit${index + 1}Title`)}</h3>
+                  <p>{t(`gymestry.benefit${index + 1}Desc`)}</p>
                 </BenefitItem>
               </motion.div>
             ))}
@@ -740,16 +742,16 @@ const Gymestry = () => {
       <CTASection id="contact">
         <Container>
           <CTAContent>
-            <h2>Ready to Transform Your Fitness Business?</h2>
-            <p>Join the exclusive waitlist and be among the first fitness centers in UAE to experience the future of gym management</p>
+            <h2>{t('gymestry.readyTransform')}</h2>
+            <p>{t('gymestry.readyTransformDesc')}</p>
             <CTAButtons>
               <CTAButton href="/contact" className="primary">
                 <i className="fas fa-list-alt"></i>
-                Join Exclusive Waitlist
+                {t('gymestry.joinExclusiveWaitlist')}
               </CTAButton>
               <CTAButton href="/contact" className="secondary">
                 <i className="fas fa-calendar-check"></i>
-                Schedule Demo
+                {t('gymestry.scheduleDemo')}
               </CTAButton>
             </CTAButtons>
           </CTAContent>

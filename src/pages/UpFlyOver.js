@@ -952,16 +952,16 @@ const UpFlyOver = () => {
           </LaunchBanner>
           <StatsGrid>
             <StatCard>
-              <StatNumber>UAE</StatNumber>
-              <StatLabel>Launch Market</StatLabel>
+              <StatNumber>{t('upflyover.uaeMarket')}</StatNumber>
+              <StatLabel>{t('upflyover.launchMarket')}</StatLabel>
             </StatCard>
             <StatCard>
               <StatNumber>1000</StatNumber>
-              <StatLabel>Early Adopters</StatLabel>
+              <StatLabel>{t('upflyover.earlyAdopters')}</StatLabel>
             </StatCard>
             <StatCard>
               <StatNumber>100%</StatNumber>
-              <StatLabel>Free First Year</StatLabel>
+              <StatLabel>{t('upflyover.freeFirstYear')}</StatLabel>
             </StatCard>
           </StatsGrid>
         </Container>
@@ -978,29 +978,29 @@ const UpFlyOver = () => {
               <div className="icon">
                 <i className="fas fa-exchange-alt"></i>
               </div>
-              <h3>Dual Role System</h3>
-              <p>Every company acts as both supplier and receiver</p>
+              <h3>{t('upflyover.dualRoleSystem')}</h3>
+              <p>{t('upflyover.dualRoleSystemDesc')}</p>
             </WhyChooseCard>
             <WhyChooseCard>
               <div className="icon">
                 <i className="fas fa-robot"></i>
               </div>
-              <h3>AI-Driven Matching</h3>
-              <p>Smart algorithms match companies based on needs</p>
+              <h3>{t('upflyover.aiDrivenMatching')}</h3>
+              <p>{t('upflyover.aiDrivenMatchingDesc')}</p>
             </WhyChooseCard>
             <WhyChooseCard>
               <div className="icon">
                 <i className="fas fa-shield-check"></i>
               </div>
-              <h3>Verified Companies</h3>
-              <p>All companies go through verification process</p>
+              <h3>{t('upflyover.verifiedCompanies')}</h3>
+              <p>{t('upflyover.verifiedCompaniesDesc')}</p>
             </WhyChooseCard>
             <WhyChooseCard>
               <div className="icon">
                 <i className="fas fa-globe"></i>
               </div>
-              <h3>Global Reach</h3>
-              <p>Connect with businesses worldwide</p>
+              <h3>{t('upflyover.globalReach')}</h3>
+              <p>{t('upflyover.globalReachDesc')}</p>
             </WhyChooseCard>
           </WhyChooseGrid>
         </Container>
@@ -1015,23 +1015,23 @@ const UpFlyOver = () => {
           <StepsGrid>
             <StepCard>
               <StepNumber>🏢01</StepNumber>
-              <h3>Create Your Profile</h3>
-              <p>Sign up and build your comprehensive company profile with verification</p>
+              <h3>{t('upflyover.createProfile')}</h3>
+              <p>{t('upflyover.createProfileDesc')}</p>
             </StepCard>
             <StepCard>
               <StepNumber>📋02</StepNumber>
-              <h3>Post Requirements</h3>
-              <p>Share your business needs or browse opportunities from other companies</p>
+              <h3>{t('upflyover.postRequirements')}</h3>
+              <p>{t('upflyover.postRequirementsDesc')}</p>
             </StepCard>
             <StepCard>
               <StepNumber>🤖03</StepNumber>
-              <h3>AI Matching</h3>
-              <p>Our intelligent system matches you with the most relevant partners</p>
+              <h3>{t('upflyover.aiMatching')}</h3>
+              <p>{t('upflyover.aiMatchingDesc')}</p>
             </StepCard>
             <StepCard>
               <StepNumber>🤝04</StepNumber>
-              <h3>Connect & Trade</h3>
-              <p>Start conversations, negotiate deals, and grow your business network</p>
+              <h3>{t('upflyover.connectTrade')}</h3>
+              <p>{t('upflyover.connectTradeDesc')}</p>
             </StepCard>
           </StepsGrid>
         </Container>
@@ -1046,64 +1046,64 @@ const UpFlyOver = () => {
           </SectionHeader>
           <PricingGrid>
             <PricingCard className="popular">
-              <PopularBadge>🇦🇪 UAE Launch Special</PopularBadge>
+              <PopularBadge>🇦🇪 {t('upflyover.uaeLaunchSpecial')}</PopularBadge>
               <PricingHeader>
-                <h3>Early Adopter</h3>
-                <PricingPrice>FREE<span>First Year</span></PricingPrice>
-                <p>Complete platform access for UAE businesses</p>
+                <h3>{t('upflyover.earlyAdopter')}</h3>
+                <PricingPrice>{t('upflyover.free')}<span>{t('upflyover.firstYear')}</span></PricingPrice>
+                <p>{t('upflyover.completeAccess')}</p>
               </PricingHeader>
               <PricingFeatures>
-                <li>Premium company profile with verification badge</li>
-                <li>Unlimited team users</li>
-                <li>Unlimited requirements posting</li>
-                <li>Browse unlimited companies</li>
-                <li>Advanced messaging & video calls</li>
-                <li>AI-powered matching</li>
-                <li>Analytics dashboard</li>
-                <li>Priority support</li>
-                <li>Custom integrations (API access)</li>
-                <li>Dedicated account manager</li>
+                <li>{t('upflyover.premiumProfile')}</li>
+                <li>{t('upflyover.unlimitedUsers')}</li>
+                <li>{t('upflyover.unlimitedRequirements')}</li>
+                <li>{t('upflyover.browseUnlimited')}</li>
+                <li>{t('upflyover.advancedMessaging')}</li>
+                <li>{t('upflyover.aiMatching')}</li>
+                <li>{t('upflyover.analyticsDashboard')}</li>
+                <li>{t('upflyover.prioritySupport')}</li>
+                <li>{t('upflyover.customIntegrations')}</li>
+                <li>{t('upflyover.dedicatedManager')}</li>
               </PricingFeatures>
               <LaunchCTA>
                 <CTAButton href="https://upflyover.vercel.app" target="_blank" className="primary">
-                  🚀 Join Free for 1 Year
+                  🚀 {t('upflyover.joinFreeYear')}
                 </CTAButton>
               </LaunchCTA>
             </PricingCard>
             
             <PricingCard>
               <PricingHeader>
-                <h3>Professional</h3>
-                <PricingPrice>$99<span>/month</span></PricingPrice>
-                <p>Starting from Year 2 (2026)</p>
+                <h3>{t('upflyover.professional')}</h3>
+                <PricingPrice>$99<span>{t('upflyover.perMonth')}</span></PricingPrice>
+                <p>{t('upflyover.startingYear2')}</p>
               </PricingHeader>
               <PricingFeatures>
-                <li>Enhanced company profile</li>
-                <li>5 team users included</li>
-                <li>Post 50 requirements/month</li>
-                <li>Browse unlimited companies</li>
-                <li>Advanced messaging & video calls</li>
-                <li>AI-powered matching</li>
-                <li>Analytics dashboard</li>
-                <li>Priority support</li>
+                <li>{t('upflyover.enhancedProfile')}</li>
+                <li>{t('upflyover.fiveUsers')}</li>
+                <li>{t('upflyover.fiftyRequirements')}</li>
+                <li>{t('upflyover.browseUnlimited')}</li>
+                <li>{t('upflyover.advancedMessaging')}</li>
+                <li>{t('upflyover.aiMatching')}</li>
+                <li>{t('upflyover.analyticsDashboard')}</li>
+                <li>{t('upflyover.prioritySupport')}</li>
               </PricingFeatures>
             </PricingCard>
             
             <PricingCard>
               <PricingHeader>
-                <h3>Enterprise</h3>
-                <PricingPrice>$299<span>/month</span></PricingPrice>
-                <p>Starting from Year 2 (2026)</p>
+                <h3>{t('upflyover.enterprise')}</h3>
+                <PricingPrice>$299<span>{t('upflyover.perMonth')}</span></PricingPrice>
+                <p>{t('upflyover.startingYear2')}</p>
               </PricingHeader>
               <PricingFeatures>
-                <li>Premium company profile with trust badges</li>
-                <li>Unlimited team users</li>
-                <li>Unlimited requirements</li>
-                <li>Advanced team management</li>
-                <li>Custom integrations (API access)</li>
-                <li>Advanced analytics & reports</li>
-                <li>Dedicated account manager</li>
-                <li>24/7 phone support</li>
+                <li>{t('upflyover.premiumProfileBadges')}</li>
+                <li>{t('upflyover.unlimitedUsers')}</li>
+                <li>{t('upflyover.unlimitedRequirements')}</li>
+                <li>{t('upflyover.advancedTeamManagement')}</li>
+                <li>{t('upflyover.customIntegrations')}</li>
+                <li>{t('upflyover.advancedAnalytics')}</li>
+                <li>{t('upflyover.dedicatedManager')}</li>
+                <li>{t('upflyover.phoneSupport')}</li>
               </PricingFeatures>
             </PricingCard>
           </PricingGrid>
@@ -1117,28 +1117,28 @@ const UpFlyOver = () => {
               <h2>{t('upflyover.takeAnywhere')}</h2>
               <p>{t('upflyover.mobileDesc')}</p>
               <MobileFeatures>
-                <li>Real-time notifications for new connections</li>
-                <li>Browse companies and requirements offline</li>
-                <li>Instant messaging and video calls</li>
+                <li>{t('upflyover.realtimeNotifications')}</li>
+                <li>{t('upflyover.browseOffline')}</li>
+                <li>{t('upflyover.instantMessaging')}</li>
               </MobileFeatures>
             </MobileText>
             <MobilePreview>
               <PhoneMockup>
                 <PhoneScreen>
-                  <div className="status-bar">9:41 AM 100% 🔋</div>
+                  <div className="status-bar">{t('upflyover.statusBar')}</div>
                   <div className="app-header">
                     <h3>UpFlyOver</h3>
-                    <p>Welcome back, Ahmed!</p>
-                    <p>You have 3 new connection requests</p>
+                    <p>{t('upflyover.welcomeBack')}</p>
+                    <p>{t('upflyover.connectionRequests')}</p>
                   </div>
                   <div className="stats">
-                    <div className="stat">89 Connections</div>
-                    <div className="stat">23 Messages</div>
+                    <div className="stat">{t('upflyover.connections')}</div>
+                    <div className="stat">{t('upflyover.messages')}</div>
                   </div>
                   <div className="activity">
-                    <div className="activity-item">🏢 Gulf Trading LLC sent connection request</div>
-                    <div className="activity-item">💬 New message from Tech Solutions</div>
-                    <div className="activity-item">📋 Your requirement got 3 responses</div>
+                    <div className="activity-item">🏢 {t('upflyover.gulfTradingRequest')}</div>
+                    <div className="activity-item">💬 {t('upflyover.newMessageTech')}</div>
+                    <div className="activity-item">📋 {t('upflyover.requirementResponses')}</div>
                   </div>
                 </PhoneScreen>
               </PhoneMockup>
@@ -1166,8 +1166,8 @@ const UpFlyOver = () => {
                   <div className="feature-icon">
                     <i className={feature.icon}></i>
                   </div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
+                  <h3>{t(`upflyover.feature${index + 1}Title`)}</h3>
+                  <p>{t(`upflyover.feature${index + 1}Desc`)}</p>
                 </FeatureCard>
               </motion.div>
             ))}

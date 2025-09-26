@@ -80,7 +80,6 @@ function App() {
                   </Routes>
                 </Suspense>
               </main>
-              </main>
               <Footer />
               <ScrollToTop />
               <Notification />

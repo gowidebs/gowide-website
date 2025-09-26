@@ -625,7 +625,7 @@ const Advertising = () => {
             <div className="service-features">
               <span>{t('advertising.audienceTargeting')}</span>
               <span>{t('advertising.retargeting')}</span>
-              <span>{t('advertising.lookalikeاudiences')}</span>
+              <span>{t('advertising.lookalikeAudiences')}</span>
               <span>{t('advertising.behavioralTargeting')}</span>
             </div>
           </ServiceCard>

@@ -866,7 +866,7 @@ const Contact = () => {
                 Kochi - 682036
               </p>
               <div className="location-contact">
-                <span><i className="fas fa-phone"></i> Coming Soon</span>
+                <span><i className="fas fa-phone"></i> +91 7559988886</span>
                 <span><i className="fas fa-envelope"></i> contact@gowide.in</span>
               </div>
             </LocationCard>
@@ -1061,14 +1061,14 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                   >
-                    <option value="">Select Service</option>
-                    <option value="technology">Technology Development</option>
-                    <option value="branding">Branding & Design</option>
-                    <option value="advertising">Advertising & Campaigns</option>
-                    <option value="marketing">Digital Marketing</option>
-                    <option value="products">Product Solutions</option>
-                    <option value="consultation">Business Consultation</option>
-                    <option value="other">Other Services</option>
+                    <option value="">{t('contact.selectService')}</option>
+                    <option value="technology">{t('services.technology')}</option>
+                    <option value="branding">{t('services.branding')}</option>
+                    <option value="advertising">{t('services.advertising')}</option>
+                    <option value="marketing">{t('services.marketing')}</option>
+                    <option value="products">{t('services.products')}</option>
+                    <option value="consultation">{t('services.consultation')}</option>
+                    <option value="other">{t('services.other')}</option>
                   </select>
                   <label>{t('contact.service')}</label>
                 </InputGroup>

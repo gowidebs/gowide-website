@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -75,7 +75,7 @@ const HeroContent = styled.div`
     color: var(--text-primary);
     
     .highlight {
-      color: var(--primary-orange);
+      color: var(--primary);
     }
   }
 
@@ -418,22 +418,22 @@ const About = () => {
 
   const values = [
     {
-      icon: "fas fa-lightbulb",
+      icon: "💡",
       title: t('about.innovationValue'),
       description: t('about.innovationValueDesc')
     },
     {
-      icon: "fas fa-handshake",
+      icon: "🤝",
       title: t('about.integrityValue'),
       description: t('about.integrityValueDesc')
     },
     {
-      icon: "fas fa-star",
+      icon: "⭐",
       title: t('about.excellenceValue'),
       description: t('about.excellenceValueDesc')
     },
     {
-      icon: "fas fa-users",
+      icon: "👥",
       title: t('about.collaborationValue'),
       description: t('about.collaborationValueDesc')
     }
@@ -548,7 +548,7 @@ const About = () => {
               >
                 <ValueCard>
                   <div className="value-icon">
-                    <i className={value.icon}></i>
+                    {value.icon}
                   </div>
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>

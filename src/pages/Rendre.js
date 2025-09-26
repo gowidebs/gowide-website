@@ -573,15 +573,15 @@ const Rendre = () => {
           <StatsContainer>
             <StatItem>
               <span className="stat-number">1.5M+</span>
-              <span className="stat-label">Abandoned Vehicles</span>
+              <span className="stat-label">{t('rendre.abandonedVehicles')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">85%</span>
-              <span className="stat-label">Recycling Rate</span>
+              <span className="stat-label">{t('rendre.recyclingRate')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">24/7</span>
-              <span className="stat-label">Monitoring</span>
+              <span className="stat-label">{t('rendre.monitoring')}</span>
             </StatItem>
           </StatsContainer>
           
@@ -624,26 +624,26 @@ const Rendre = () => {
             <div className="dashboard-header">
               <div className="dashboard-title">
                 <i className="fas fa-recycle"></i>
-                <span>Recycling Dashboard</span>
+                <span>{t('rendre.recyclingDashboard')}</span>
               </div>
-              <div className="dashboard-time">Live Data</div>
+              <div className="dashboard-time">{t('rendre.liveData')}</div>
             </div>
             <div className="recycling-cards">
               <div className="recycling-card processed">
                 <div className="recycling-header">
                   <span className="vehicle-id">#V001</span>
-                  <span className="recycling-status">Processed</span>
+                  <span className="recycling-status">{t('rendre.processed')}</span>
                 </div>
-                <div className="vehicle-info">Sedan 2015 - Complete</div>
-                <div className="recycling-value">95% Materials</div>
+                <div className="vehicle-info">{t('rendre.sedan2015Complete')}</div>
+                <div className="recycling-value">95% {t('rendre.materials')}</div>
               </div>
               <div className="recycling-card pending">
                 <div className="recycling-header">
                   <span className="vehicle-id">#V002</span>
-                  <span className="recycling-status">Pending</span>
+                  <span className="recycling-status">{t('rendre.pending')}</span>
                 </div>
-                <div className="vehicle-info">SUV 2018 - Collection</div>
-                <div className="recycling-value">Scheduled Today</div>
+                <div className="vehicle-info">{t('rendre.suv2018Collection')}</div>
+                <div className="recycling-value">{t('rendre.scheduledToday')}</div>
               </div>
             </div>
           </DashboardMockup>
@@ -668,8 +668,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-leaf"></i>
             </div>
-            <h3>Environmental Pollution</h3>
-            <p>Abandoned vehicles leak harmful fluids, contaminating soil and groundwater while emitting toxic gases.</p>
+            <h3>{t('rendre.environmentalPollution')}</h3>
+            <p>{t('rendre.environmentalPollutionDesc')}</p>
           </Card>
           
           <Card
@@ -680,8 +680,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-eye-slash"></i>
             </div>
-            <h3>Visual Blight</h3>
-            <p>Abandoned cars create eyesores that diminish property values and community aesthetics.</p>
+            <h3>{t('rendre.visualBlight')}</h3>
+            <p>{t('rendre.visualBlightDesc')}</p>
           </Card>
           
           <Card
@@ -692,8 +692,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-exclamation-triangle"></i>
             </div>
-            <h3>Safety Hazards</h3>
-            <p>These vehicles obstruct public spaces and can become centers for criminal activity.</p>
+            <h3>{t('rendre.safetyHazards')}</h3>
+            <p>{t('rendre.safetyHazardsDesc')}</p>
           </Card>
           
           <Card
@@ -704,8 +704,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-recycle"></i>
             </div>
-            <h3>Resource Wastage</h3>
-            <p>Valuable materials remain unutilized instead of being recycled responsibly.</p>
+            <h3>{t('rendre.resourceWastage')}</h3>
+            <p>{t('rendre.resourceWastageDesc')}</p>
           </Card>
         </Grid>
       </SectionContainer>
@@ -723,15 +723,15 @@ const Rendre = () => {
             <div className="solution-features">
               <div className="feature">
                 <i className="fas fa-mobile-alt"></i>
-                <span>Mobile Platform</span>
+                <span>{t('rendre.mobilePlatform')}</span>
               </div>
               <div className="feature">
                 <i className="fas fa-cogs"></i>
-                <span>Automated Processes</span>
+                <span>{t('rendre.automatedProcesses')}</span>
               </div>
               <div className="feature">
                 <i className="fas fa-chart-line"></i>
-                <span>Data Analytics</span>
+                <span>{t('rendre.dataAnalytics')}</span>
               </div>
             </div>
           </div>
@@ -739,20 +739,20 @@ const Rendre = () => {
             <div className="process-flow">
               <div className="process-step">
                 <div className="step-number">1</div>
-                <h4>Identify</h4>
-                <p>Smart detection</p>
+                <h4>{t('rendre.identify')}</h4>
+                <p>{t('rendre.smartDetection')}</p>
               </div>
               <div className="process-arrow">→</div>
               <div className="process-step">
                 <div className="step-number">2</div>
-                <h4>Collect</h4>
-                <p>Efficient retrieval</p>
+                <h4>{t('rendre.collect')}</h4>
+                <p>{t('rendre.efficientRetrieval')}</p>
               </div>
               <div className="process-arrow">→</div>
               <div className="process-step">
                 <div className="step-number">3</div>
-                <h4>Process</h4>
-                <p>Refurbish or recycle</p>
+                <h4>{t('rendre.process')}</h4>
+                <p>{t('rendre.refurbishOrRecycle')}</p>
               </div>
             </div>
           </div>
@@ -777,8 +777,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-search"></i>
             </div>
-            <h3>Vehicle Identification</h3>
-            <p>AI-powered detection and cataloging of abandoned vehicles using smart imaging technology.</p>
+            <h3>{t('rendre.vehicleIdentification')}</h3>
+            <p>{t('rendre.vehicleIdentificationDesc')}</p>
           </Card>
           
           <Card
@@ -789,8 +789,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-truck-pickup"></i>
             </div>
-            <h3>Collection Services</h3>
-            <p>Efficient pickup and transportation of vehicles to recycling facilities with GPS tracking.</p>
+            <h3>{t('rendre.collectionServices')}</h3>
+            <p>{t('rendre.collectionServicesDesc')}</p>
           </Card>
           
           <Card
@@ -801,8 +801,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-recycle"></i>
             </div>
-            <h3>Material Processing</h3>
-            <p>Advanced recycling processes to recover valuable materials and components safely.</p>
+            <h3>{t('rendre.materialProcessing')}</h3>
+            <p>{t('rendre.materialProcessingDesc')}</p>
           </Card>
           
           <Card
@@ -813,8 +813,8 @@ const Rendre = () => {
             <div className="icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>Impact Tracking</h3>
-            <p>Real-time monitoring and reporting of environmental impact and recycling metrics.</p>
+            <h3>{t('rendre.impactTracking')}</h3>
+            <p>{t('rendre.impactTrackingDesc')}</p>
           </Card>
         </Grid>
       </SectionContainer>
