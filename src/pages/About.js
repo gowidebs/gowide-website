@@ -381,69 +381,69 @@ const About = () => {
   const steps = [
     {
       number: "01",
-      title: "Learn",
-      description: "We begin by understanding your unique needs and goals."
+      title: t('about.stepLearn'),
+      description: t('about.stepLearnDesc')
     },
     {
       number: "02",
-      title: "Research",
-      description: "Our team conducts in-depth research to determine the most effective strategy."
+      title: t('about.stepResearch'),
+      description: t('about.stepResearchDesc')
     },
     {
       number: "03",
-      title: "Discuss",
-      description: "We collaborate with you to discuss the proposed solution and ensure alignment."
+      title: t('about.stepDiscuss'),
+      description: t('about.stepDiscussDesc')
     },
     {
       number: "04",
-      title: "Solution",
-      description: "We present a customized solution tailored to your specific requirements."
+      title: t('about.stepSolution'),
+      description: t('about.stepSolutionDesc')
     },
     {
       number: "05",
-      title: "Implement",
-      description: "Our team executes the solution, bringing the strategy to life."
+      title: t('about.stepImplement'),
+      description: t('about.stepImplementDesc')
     },
     {
       number: "06",
-      title: "Invoice",
-      description: "We provide a transparent billing process based on the services delivered."
+      title: t('about.stepInvoice'),
+      description: t('about.stepInvoiceDesc')
     },
     {
       number: "07",
-      title: "Analyze",
-      description: "We review the results and make necessary adjustments to ensure ongoing success."
+      title: t('about.stepAnalyze'),
+      description: t('about.stepAnalyzeDesc')
     }
   ];
 
   const values = [
     {
       icon: "fas fa-lightbulb",
-      title: "Innovation",
-      description: "We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions."
+      title: t('about.innovationValue'),
+      description: t('about.innovationValueDesc')
     },
     {
       icon: "fas fa-handshake",
-      title: "Integrity",
-      description: "We build trust through transparency, honesty, and ethical business practices in all our relationships."
+      title: t('about.integrityValue'),
+      description: t('about.integrityValueDesc')
     },
     {
       icon: "fas fa-star",
-      title: "Excellence",
-      description: "We strive for perfection in every project, delivering quality that exceeds expectations."
+      title: t('about.excellenceValue'),
+      description: t('about.excellenceValueDesc')
     },
     {
       icon: "fas fa-users",
-      title: "Collaboration",
-      description: "We believe in the power of teamwork and partnership to achieve extraordinary results."
+      title: t('about.collaborationValue'),
+      description: t('about.collaborationValueDesc')
     }
   ];
 
   const impacts = [
-    { number: "100+", title: "Projects Completed", percentage: 85 },
-    { number: "50+", title: "Happy Clients", percentage: 75 },
-    { number: "5+", title: "Years Experience", percentage: 60 },
-    { number: "24/7", title: "Support Available", percentage: 100 }
+    { number: "100+", title: t('common.projectsCompleted'), percentage: 85 },
+    { number: "50+", title: t('common.happyClients'), percentage: 75 },
+    { number: "5+", title: t('common.yearsExperience'), percentage: 60 },
+    { number: "24/7", title: t('common.supportAvailable'), percentage: 100 }
   ];
 
   return (
@@ -471,7 +471,7 @@ const About = () => {
           </motion.p>
           <ScrollIndicator>
             <div className="mouse"></div>
-            <p>Scroll to explore</p>
+            <p>{t('about.scrollToExplore')}</p>
           </ScrollIndicator>
         </HeroContent>
       </HeroSection>
