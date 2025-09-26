@@ -46,7 +46,10 @@ const resources = {
         "watchDemo": "Watch Demo",
         "joinWaitlist": "Join Waitlist",
         "launchPlatform": "Launch Platform",
-        "scheduleDemo": "Schedule Demo"
+        "scheduleDemo": "Schedule Demo",
+        "growthAnalytics": "Growth Analytics",
+        "teamCollaboration": "Team Collaboration",
+        "innovation": "Innovation"
       },
       "about": {
         "whoWeAre": "Who We Are",
@@ -62,7 +65,20 @@ const resources = {
         "tailoredSolution": "Our Tailored Solution",
         "tailoredSolutionDesc": "A systematic approach to deliver exceptional results",
         "impact": "Our Impact",
-        "impactDesc": "Numbers that speak for themselves"
+        "impactDesc": "Numbers that speak for themselves",
+        "strategicDigitalSolutions": "Strategic digital solutions",
+        "expertTeamProfessionals": "Expert team of professionals",
+        "innovativeTechnologyApproach": "Innovative technology approach",
+        "exploreInnovativeSoftware": "Explore our innovative software solutions designed to meet your needs",
+        "readyToGetStarted": "Ready to get started?",
+        "letUsKnowNeeds": "Tell us what you need and we'll get back to you",
+        "tellUsAboutProject": "Tell us about your project",
+        "projectDescription": "Whether you need branding, technology solutions, marketing strategies, or any of our products, we're here to help. Share your requirements with us and our expert team will get back to you with the perfect solution.",
+        "scheduleACall": "Schedule a Call",
+        "whyChooseGoWide": "Why Choose GoWide?",
+        "deliverExceptionalResults": "We deliver exceptional results through innovation and expertise",
+        "howWeDeliverSuccess": "How we deliver success",
+        "numbersThatSpeak": "Numbers that speak for themselves"
       },
       "services": {
         "title": "Our Services",
@@ -158,7 +174,10 @@ const resources = {
         "watchDemo": "مشاهدة العرض التوضيحي",
         "joinWaitlist": "انضم لقائمة الانتظار",
         "launchPlatform": "تشغيل المنصة",
-        "scheduleDemo": "جدولة عرض توضيحي"
+        "scheduleDemo": "جدولة عرض توضيحي",
+        "growthAnalytics": "تحليلات النمو",
+        "teamCollaboration": "تعاون الفريق",
+        "innovation": "الابتكار"
       },
       "about": {
         "whoWeAre": "من نحن",
@@ -174,7 +193,20 @@ const resources = {
         "tailoredSolution": "حلولنا المخصصة",
         "tailoredSolutionDesc": "نهج منهجي لتحقيق نتائج استثنائية",
         "impact": "تأثيرنا",
-        "impactDesc": "أرقام تتحدث عن نفسها"
+        "impactDesc": "أرقام تتحدث عن نفسها",
+        "strategicDigitalSolutions": "حلول رقمية استراتيجية",
+        "expertTeamProfessionals": "فريق خبراء محترفين",
+        "innovativeTechnologyApproach": "نهج تكنولوجي مبتكر",
+        "exploreInnovativeSoftware": "استكشف حلولنا البرمجية المبتكرة المصممة لتلبية احتياجاتك",
+        "readyToGetStarted": "مستعد للبدء؟",
+        "letUsKnowNeeds": "أخبرنا باحتياجاتك وسنعاود الاتصال بك",
+        "tellUsAboutProject": "أخبرنا عن مشروعك",
+        "projectDescription": "سواء كنت تحتاج إلى علامة تجارية، أو حلول تقنية، أو استراتيجيات تسويقية، أو أي من منتجاتنا، نحن هنا للمساعدة.",
+        "scheduleACall": "جدولة مكالمة",
+        "whyChooseGoWide": "لماذا تختار جو وايد؟",
+        "deliverExceptionalResults": "نحن نقدم نتائج استثنائية من خلال الابتكار والخبرة",
+        "howWeDeliverSuccess": "كيف نحقق النجاح",
+        "numbersThatSpeak": "أرقام تتحدث عن نفسها"
       },
       "services": {
         "title": "خدماتنا",
