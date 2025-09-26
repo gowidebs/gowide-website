@@ -550,15 +550,15 @@ const Marketing = () => {
           <StatsContainer>
             <StatItem>
               <span className="stat-number">250%</span>
-              <span className="stat-label">Avg Engagement Increase</span>
+              <span className="stat-label">{t('marketing.avgEngagementIncrease')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">100M+</span>
-              <span className="stat-label">Reach Generated</span>
+              <span className="stat-label">{t('marketing.reachGenerated')}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">98%</span>
-              <span className="stat-label">Client Retention</span>
+              <span className="stat-label">{t('marketing.clientRetention')}</span>
             </StatItem>
           </StatsContainer>
         </HeroContent>
@@ -571,25 +571,25 @@ const Marketing = () => {
           >
             <div className="metric-header">
               <i className="fas fa-chart-pie"></i>
-              <span>Marketing Metrics</span>
+              <span>{t('marketing.marketingMetrics')}</span>
             </div>
             <div className="metric-circles">
               <div className="metric-circle">
                 <div className="circle-progress">
                   <span className="circle-value">85%</span>
                 </div>
-                <span className="circle-label">Brand Awareness</span>
+                <span className="circle-label">{t('marketing.brandAwareness')}</span>
               </div>
               <div className="metric-circle">
                 <div className="circle-progress">
                   <span className="circle-value">92%</span>
                 </div>
-                <span className="circle-label">Engagement</span>
+                <span className="circle-label">{t('marketing.engagement')}</span>
               </div>
             </div>
             <div className="metric-value">
               <span className="value-number">+180%</span>
-              <span className="value-label">Lead Generation</span>
+              <span className="value-label">{t('marketing.leadGeneration')}</span>
             </div>
           </MetricsCard>
         </HeroVisual>
@@ -613,13 +613,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-share-alt"></i>
             </div>
-            <h3>Digital Marketing</h3>
-            <p>Comprehensive digital strategies that connect your brand with the right audience across all channels.</p>
+            <h3>{t('marketing.digitalMarketing')}</h3>
+            <p>{t('marketing.digitalMarketingDesc')}</p>
             <div className="service-features">
-              <span>Social Media Marketing</span>
-              <span>Content Strategy</span>
-              <span>Email Marketing</span>
-              <span>Influencer Marketing</span>
+              <span>{t('marketing.socialMediaMarketing')}</span>
+              <span>{t('marketing.contentStrategy')}</span>
+              <span>{t('marketing.emailMarketing')}</span>
+              <span>{t('marketing.influencerMarketing')}</span>
             </div>
           </ServiceCard>
 
@@ -631,13 +631,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-search"></i>
             </div>
-            <h3>SEO Optimization</h3>
-            <p>Strategic search engine optimization to improve your visibility and drive organic traffic growth.</p>
+            <h3>{t('marketing.seoOptimization')}</h3>
+            <p>{t('marketing.seoOptimizationDesc')}</p>
             <div className="service-features">
-              <span>Keyword Research</span>
-              <span>On-Page SEO</span>
-              <span>Technical SEO</span>
-              <span>Link Building</span>
+              <span>{t('marketing.keywordResearch')}</span>
+              <span>{t('marketing.onPageSEO')}</span>
+              <span>{t('marketing.technicalSEO')}</span>
+              <span>{t('marketing.linkBuilding')}</span>
             </div>
           </ServiceCard>
 
@@ -649,13 +649,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-pen-fancy"></i>
             </div>
-            <h3>Content Marketing</h3>
-            <p>Engaging content that tells your brand story and drives meaningful connections with your audience.</p>
+            <h3>{t('marketing.contentMarketing')}</h3>
+            <p>{t('marketing.contentMarketingDesc')}</p>
             <div className="service-features">
-              <span>Blog Writing</span>
-              <span>Video Production</span>
-              <span>Infographics</span>
-              <span>Content Planning</span>
+              <span>{t('marketing.blogWriting')}</span>
+              <span>{t('marketing.videoProduction')}</span>
+              <span>{t('marketing.infographics')}</span>
+              <span>{t('marketing.contentPlanning')}</span>
             </div>
           </ServiceCard>
 
@@ -667,13 +667,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>Marketing Analytics</h3>
-            <p>Data-driven insights and performance tracking to optimize your marketing campaigns and ROI.</p>
+            <h3>{t('marketing.marketingAnalytics')}</h3>
+            <p>{t('marketing.marketingAnalyticsDesc')}</p>
             <div className="service-features">
-              <span>Performance Tracking</span>
-              <span>Data Analysis</span>
-              <span>ROI Measurement</span>
-              <span>Market Research</span>
+              <span>{t('marketing.performanceTracking')}</span>
+              <span>{t('marketing.dataAnalysis')}</span>
+              <span>{t('marketing.roiMeasurement')}</span>
+              <span>{t('marketing.marketResearch')}</span>
             </div>
           </ServiceCard>
 
@@ -685,13 +685,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-envelope"></i>
             </div>
-            <h3>Email Campaigns</h3>
-            <p>Personalized email marketing campaigns that nurture leads and drive customer retention.</p>
+            <h3>{t('marketing.emailCampaigns')}</h3>
+            <p>{t('marketing.emailCampaignsDesc')}</p>
             <div className="service-features">
-              <span>Email Automation</span>
-              <span>List Segmentation</span>
-              <span>A/B Testing</span>
-              <span>Campaign Optimization</span>
+              <span>{t('marketing.emailAutomation')}</span>
+              <span>{t('marketing.listSegmentation')}</span>
+              <span>{t('marketing.abTesting')}</span>
+              <span>{t('marketing.campaignOptimization')}</span>
             </div>
           </ServiceCard>
 
@@ -703,13 +703,13 @@ const Marketing = () => {
             <div className="service-icon">
               <i className="fas fa-bullhorn"></i>
             </div>
-            <h3>Brand Strategy</h3>
-            <p>Strategic brand positioning and messaging that differentiates you in the marketplace.</p>
+            <h3>{t('marketing.brandStrategy')}</h3>
+            <p>{t('marketing.brandStrategyDesc')}</p>
             <div className="service-features">
-              <span>Brand Positioning</span>
-              <span>Messaging Strategy</span>
-              <span>Competitive Analysis</span>
-              <span>Brand Guidelines</span>
+              <span>{t('marketing.brandPositioning')}</span>
+              <span>{t('marketing.messagingStrategy')}</span>
+              <span>{t('marketing.competitiveAnalysis')}</span>
+              <span>{t('marketing.brandGuidelines')}</span>
             </div>
           </ServiceCard>
         </ServicesGrid>
@@ -733,11 +733,11 @@ const Marketing = () => {
             <div className="advantage-icon">
               <i className="fas fa-chart-line"></i>
             </div>
-            <h3>Data-Driven Strategy</h3>
-            <p>Strategic marketing campaigns backed by comprehensive analytics and market insights.</p>
+            <h3>{t('marketing.dataDrivenStrategy')}</h3>
+            <p>{t('marketing.dataDrivenStrategyDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">250%</span>
-              <span className="metric-label">Avg Engagement Increase</span>
+              <span className="metric-label">{t('marketing.avgEngagementIncrease')}</span>
             </div>
           </AdvantageCard>
 
@@ -749,11 +749,11 @@ const Marketing = () => {
             <div className="advantage-icon">
               <i className="fas fa-users"></i>
             </div>
-            <h3>Expert Team</h3>
-            <p>Certified marketing professionals with proven track records across all digital channels.</p>
+            <h3>{t('marketing.expertTeam')}</h3>
+            <p>{t('marketing.expertTeamDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">100M+</span>
-              <span className="metric-label">Reach Generated</span>
+              <span className="metric-label">{t('marketing.reachGenerated')}</span>
             </div>
           </AdvantageCard>
 
@@ -765,11 +765,11 @@ const Marketing = () => {
             <div className="advantage-icon">
               <i className="fas fa-bullseye"></i>
             </div>
-            <h3>Targeted Approach</h3>
-            <p>Precision-focused marketing strategies that reach the right audience at the right time.</p>
+            <h3>{t('marketing.targetedApproach')}</h3>
+            <p>{t('marketing.targetedApproachDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">85%</span>
-              <span className="metric-label">Conversion Rate</span>
+              <span className="metric-label">{t('marketing.conversionRate')}</span>
             </div>
           </AdvantageCard>
 
@@ -781,11 +781,11 @@ const Marketing = () => {
             <div className="advantage-icon">
               <i className="fas fa-trophy"></i>
             </div>
-            <h3>Proven Results</h3>
-            <p>Consistent delivery of measurable results and long-term client success stories.</p>
+            <h3>{t('marketing.provenResults')}</h3>
+            <p>{t('marketing.provenResultsDesc')}</p>
             <div className="advantage-metric">
               <span className="metric-number">98%</span>
-              <span className="metric-label">Client Retention</span>
+              <span className="metric-label">{t('marketing.clientRetention')}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
@@ -810,8 +810,8 @@ const Marketing = () => {
               <i className="fas fa-search"></i>
             </div>
             <div className="step-number">01</div>
-            <h3>Research & Discovery</h3>
-            <p>Deep market analysis and audience insights to build effective marketing strategies.</p>
+            <h3>{t('marketing.researchDiscovery')}</h3>
+            <p>{t('marketing.researchDiscoveryDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -823,8 +823,8 @@ const Marketing = () => {
               <i className="fas fa-lightbulb"></i>
             </div>
             <div className="step-number">02</div>
-            <h3>Strategy Planning</h3>
-            <p>Developing comprehensive marketing strategies aligned with your business goals.</p>
+            <h3>{t('marketing.strategyPlanning')}</h3>
+            <p>{t('marketing.strategyPlanningDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -836,8 +836,8 @@ const Marketing = () => {
               <i className="fas fa-paint-brush"></i>
             </div>
             <div className="step-number">03</div>
-            <h3>Creative Execution</h3>
-            <p>Crafting compelling content and visuals that resonate with your target audience.</p>
+            <h3>{t('marketing.creativeExecution')}</h3>
+            <p>{t('marketing.creativeExecutionDesc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -849,8 +849,8 @@ const Marketing = () => {
               <i className="fas fa-chart-line"></i>
             </div>
             <div className="step-number">04</div>
-            <h3>Optimize & Analyze</h3>
-            <p>Continuous monitoring and optimization for maximum marketing performance.</p>
+            <h3>{t('marketing.optimizeAnalyze')}</h3>
+            <p>{t('marketing.optimizeAnalyzeDesc')}</p>
           </ProcessStep>
         </ProcessSteps>
       </ProcessSection>
@@ -873,12 +873,12 @@ const Marketing = () => {
             <div className="card-icon">
               <i className="fas fa-chart-line"></i>
             </div>
-            <h3>Analytics</h3>
+            <h3>{t('marketing.analytics')}</h3>
             <div className="tool-stack">
-              <div className="stack-item"><i className="fab fa-google"></i> Google Analytics</div>
-              <div className="stack-item"><i className="fas fa-chart-pie"></i> SEMrush</div>
-              <div className="stack-item"><i className="fas fa-search"></i> Ahrefs</div>
-              <div className="stack-item"><i className="fas fa-chart-bar"></i> Hotjar</div>
+              <div className="stack-item"><i className="fab fa-google"></i> {t('marketing.googleAnalytics')}</div>
+              <div className="stack-item"><i className="fas fa-chart-pie"></i> {t('marketing.semrush')}</div>
+              <div className="stack-item"><i className="fas fa-search"></i> {t('marketing.ahrefs')}</div>
+              <div className="stack-item"><i className="fas fa-chart-bar"></i> {t('marketing.hotjar')}</div>
             </div>
           </ToolkitCard>
 
@@ -890,12 +890,12 @@ const Marketing = () => {
             <div className="card-icon">
               <i className="fas fa-share-alt"></i>
             </div>
-            <h3>Social Media</h3>
+            <h3>{t('marketing.socialMedia')}</h3>
             <div className="tool-stack">
-              <div className="stack-item"><i className="fas fa-calendar-alt"></i> Hootsuite</div>
-              <div className="stack-item"><i className="fas fa-comments"></i> Sprout Social</div>
-              <div className="stack-item"><i className="fab fa-buffer"></i> Buffer</div>
-              <div className="stack-item"><i className="fab fa-facebook"></i> Meta Business</div>
+              <div className="stack-item"><i className="fas fa-calendar-alt"></i> {t('marketing.hootsuite')}</div>
+              <div className="stack-item"><i className="fas fa-comments"></i> {t('marketing.sproutSocial')}</div>
+              <div className="stack-item"><i className="fab fa-buffer"></i> {t('marketing.buffer')}</div>
+              <div className="stack-item"><i className="fab fa-facebook"></i> {t('marketing.metaBusiness')}</div>
             </div>
           </ToolkitCard>
 
@@ -907,12 +907,12 @@ const Marketing = () => {
             <div className="card-icon">
               <i className="fas fa-robot"></i>
             </div>
-            <h3>Automation</h3>
+            <h3>{t('marketing.automation')}</h3>
             <div className="tool-stack">
-              <div className="stack-item"><i className="fas fa-robot"></i> HubSpot</div>
-              <div className="stack-item"><i className="fas fa-envelope"></i> Mailchimp</div>
-              <div className="stack-item"><i className="fas fa-paper-plane"></i> ActiveCampaign</div>
-              <div className="stack-item"><i className="fas fa-cogs"></i> Zapier</div>
+              <div className="stack-item"><i className="fas fa-robot"></i> {t('marketing.hubspot')}</div>
+              <div className="stack-item"><i className="fas fa-envelope"></i> {t('marketing.mailchimp')}</div>
+              <div className="stack-item"><i className="fas fa-paper-plane"></i> {t('marketing.activeCampaign')}</div>
+              <div className="stack-item"><i className="fas fa-cogs"></i> {t('marketing.zapier')}</div>
             </div>
           </ToolkitCard>
 
@@ -924,12 +924,12 @@ const Marketing = () => {
             <div className="card-icon">
               <i className="fas fa-palette"></i>
             </div>
-            <h3>Content Creation</h3>
+            <h3>{t('marketing.contentCreation')}</h3>
             <div className="tool-stack">
-              <div className="stack-item"><i className="fas fa-pencil-alt"></i> Canva</div>
-              <div className="stack-item"><i className="fas fa-video"></i> Adobe Creative</div>
-              <div className="stack-item"><i className="fas fa-camera"></i> Figma</div>
-              <div className="stack-item"><i className="fas fa-edit"></i> Grammarly</div>
+              <div className="stack-item"><i className="fas fa-pencil-alt"></i> {t('marketing.canva')}</div>
+              <div className="stack-item"><i className="fas fa-video"></i> {t('marketing.adobeCreative')}</div>
+              <div className="stack-item"><i className="fas fa-camera"></i> {t('marketing.figma')}</div>
+              <div className="stack-item"><i className="fas fa-edit"></i> {t('marketing.grammarly')}</div>
             </div>
           </ToolkitCard>
         </ToolkitGrid>
