@@ -4,14 +4,16 @@ import { ThemeProvider } from './context/ThemeContext';
 import { HelmetProvider } from 'react-helmet-async';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { preloadCriticalResources, lazyLoadResources, optimizeAnimations } from './utils/performance';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 import LoadingScreen from './components/LoadingScreen';
 import ScrollToTop from './components/ScrollToTop';
 import Notification from './components/Notification';
-import ParticleBackground from './components/ParticleBackground';
-import ScrollProgress from './components/ScrollProgress';
+// Lazy load non-critical components
+const ParticleBackground = React.lazy(() => import('./components/ParticleBackground'));
+const ScrollProgress = React.lazy(() => import('./components/ScrollProgress'));
 // Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
@@ -33,6 +35,17 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Initialize performance optimizations
+    preloadCriticalResources();
+    optimizeAnimations();
+    
+    // Load non-critical resources after initial render
+    setTimeout(() => {
+      lazyLoadResources();
+    }, 100);
+  }, []);
+
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
@@ -45,13 +58,12 @@ function App() {
         <ParticleBackground />
         <ScrollProgress />
         <div className="App">
-          <div className="stars-container">
-            <div className="stars">
-              {Array.from({ length: 20 }, (_, i) => (
-                <div key={i} className="star"></div>
-              ))}
-            </div>
-          </div>
+          {!isLoading && (
+            <Suspense fallback={null}>
+              <ParticleBackground />
+              <ScrollProgress />
+            </Suspense>
+          )}
           {isLoading ? (
             <LoadingScreen onLoadingComplete={handleLoadingComplete} />
           ) : (
