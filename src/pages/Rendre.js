@@ -152,12 +152,20 @@ const StatItem = styled.div`
     font-weight: 700;
     color: #4CAF50;
     display: block;
+    
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
   
   .stat-label {
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 0.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -172,6 +180,10 @@ const CountdownContainer = styled.div`
   h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
   
   .countdown {
@@ -179,6 +191,11 @@ const CountdownContainer = styled.div`
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    
+    @media (max-width: 768px) {
+      gap: 0.5rem;
+    }
     
     .time-unit {
       background: rgba(255, 255, 255, 0.2);
@@ -186,15 +203,28 @@ const CountdownContainer = styled.div`
       border-radius: 10px;
       min-width: 60px;
       
+      @media (max-width: 768px) {
+        padding: 0.8rem 0.5rem;
+        min-width: 50px;
+      }
+      
       .number {
         font-size: 2rem;
         font-weight: 700;
         display: block;
+        
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
       
       .label {
         font-size: 0.8rem;
         opacity: 0.9;
+        
+        @media (max-width: 768px) {
+          font-size: 0.7rem;
+        }
       }
     }
   }
@@ -369,16 +399,9 @@ const Grid = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    max-width: 400px;
   }
 `;
 

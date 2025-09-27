@@ -461,7 +461,7 @@ const ServicesGrid = styled.div`
   gap: 30px;
   margin-bottom: 50px;
   
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 400px;
@@ -510,7 +510,7 @@ const ServiceBox = styled.div`
     }
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 30px 20px;
     
     &:hover {
@@ -531,7 +531,7 @@ const ServiceBox = styled.div`
     color: var(--primary-orange);
     border: 2px solid rgba(255, 137, 6, 0.2);
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       width: 70px;
       height: 70px;
       font-size: 1.8rem;
@@ -548,7 +548,7 @@ const ServiceBox = styled.div`
       color: var(--primary);
     }
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 1.3rem;
       margin-bottom: 15px;
     }
@@ -586,7 +586,7 @@ const ProductsGrid = styled.div`
   max-width: 1000px;
   margin: 0 auto;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 400px;
@@ -760,7 +760,7 @@ const ProcessTimeline = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 30px;
     max-width: 400px;
@@ -829,7 +829,7 @@ const ImpactGrid = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 25px;
     max-width: 400px;
@@ -980,7 +980,7 @@ const GroupGrid = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 30px;
     max-width: 400px;
@@ -1025,7 +1025,7 @@ const GroupCard = styled.div`
     }
   }
   
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     padding: 30px 20px;
     
     &:hover {
@@ -1050,7 +1050,7 @@ const GroupCard = styled.div`
       padding: 10px;
     }
     
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       width: 100px;
       height: 100px;
       margin: 0 auto 20px;
@@ -1063,7 +1063,7 @@ const GroupCard = styled.div`
     margin-bottom: 15px;
     color: var(--primary-orange);
     
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       font-size: 1.3rem;
       margin-bottom: 12px;
     }
@@ -1074,7 +1074,7 @@ const GroupCard = styled.div`
     line-height: 1.6;
     font-size: 1rem;
     
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       font-size: 0.95rem;
     }
   }
