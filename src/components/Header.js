@@ -29,6 +29,11 @@ const Nav = styled.nav`
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    position: relative;
+  }
 `;
 
 const Logo = styled.div`
@@ -267,6 +272,9 @@ const ThemeToggle = styled(motion.button)`
   @media (max-width: 768px) {
     width: 60px;
     height: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     .moon, .sun {
       width: 45px;
@@ -288,9 +296,10 @@ const Hamburger = styled.button`
 
   @media (max-width: 768px) {
     display: flex;
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
   }
 
   span {
@@ -327,6 +336,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <Nav>
@@ -337,49 +350,47 @@ const Header = () => {
         </Logo>
         
         <NavLinks className={isMenuOpen ? 'active' : ''}>
-          <li><NavLink as={Link} to="/">{t('nav.home')}</NavLink></li>
-          <li><NavLink as={Link} to="/about">{t('nav.about')}</NavLink></li>
+          <li><NavLink as={Link} to="/" onClick={closeMenu}>{t('nav.home')}</NavLink></li>
+          <li><NavLink as={Link} to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
           <li className="dropdown">
             <NavLink>{t('nav.services')}</NavLink>
             <div className="dropdown-content">
-              <NavLink as={Link} to="/branding">Branding</NavLink>
-              <NavLink as={Link} to="/advertising">Advertising</NavLink>
-              <NavLink as={Link} to="/marketing">Marketing</NavLink>
-              <NavLink as={Link} to="/technology">Technology</NavLink>
+              <NavLink as={Link} to="/branding" onClick={closeMenu}>Branding</NavLink>
+              <NavLink as={Link} to="/advertising" onClick={closeMenu}>Advertising</NavLink>
+              <NavLink as={Link} to="/marketing" onClick={closeMenu}>Marketing</NavLink>
+              <NavLink as={Link} to="/technology" onClick={closeMenu}>Technology</NavLink>
             </div>
           </li>
           <li className="dropdown">
             <NavLink>{t('nav.products')}</NavLink>
             <div className="dropdown-content">
-              <NavLink as={Link} to="/rendre">Rendre</NavLink>
-              <NavLink as={Link} to="/upflyover">UpFlyOver</NavLink>
-              <NavLink as={Link} to="/gymestry">Gymestry</NavLink>
+              <NavLink as={Link} to="/rendre" onClick={closeMenu}>Rendre</NavLink>
+              <NavLink as={Link} to="/upflyover" onClick={closeMenu}>UpFlyOver</NavLink>
+              <NavLink as={Link} to="/gymestry" onClick={closeMenu}>Gymestry</NavLink>
             </div>
           </li>
 
-          <li><NavLink as={Link} to="/contact">{t('nav.contact')}</NavLink></li>
+          <li><NavLink as={Link} to="/contact" onClick={closeMenu}>{t('nav.contact')}</NavLink></li>
         </NavLinks>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <ThemeToggle 
-            onClick={toggleTheme}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="moon">
-              <div className="moon-crater crater-1"></div>
-              <div className="moon-crater crater-2"></div>
-              <div className="moon-crater crater-3"></div>
-            </div>
-            <div className="sun"></div>
-          </ThemeToggle>
-          
-          <Hamburger className={isMenuOpen ? 'active' : ''} onClick={toggleMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </Hamburger>
-        </div>
+        <ThemeToggle 
+          onClick={toggleTheme}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <div className="moon">
+            <div className="moon-crater crater-1"></div>
+            <div className="moon-crater crater-2"></div>
+            <div className="moon-crater crater-3"></div>
+          </div>
+          <div className="sun"></div>
+        </ThemeToggle>
+        
+        <Hamburger className={isMenuOpen ? 'active' : ''} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </Hamburger>
       </Nav>
     </HeaderContainer>
   );
