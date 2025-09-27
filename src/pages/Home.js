@@ -434,11 +434,15 @@ const ServicesGrid = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 350px;
+    margin: 0 auto 50px;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 25px;
+    max-width: 400px;
+    margin: 0 auto 50px;
   }
 
   @media (max-width: 1024px) {
@@ -710,11 +714,15 @@ const ProcessTimeline = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     gap: 30px;
+    max-width: 350px;
+    margin: 60px auto 0;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 30px;
+    max-width: 400px;
+    margin: 60px auto 0;
   }
 
   @media (max-width: 1200px) {
@@ -779,8 +787,10 @@ const ImpactGrid = styled.div`
   margin-top: 60px;
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 25px;
+    max-width: 300px;
+    margin: 60px auto 0;
   }
 
   @media (max-width: 768px) {
@@ -930,11 +940,15 @@ const GroupGrid = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     gap: 30px;
+    max-width: 350px;
+    margin: 60px auto 0;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 35px;
+    max-width: 400px;
+    margin: 60px auto 0;
   }
 
   @media (max-width: 1024px) {
