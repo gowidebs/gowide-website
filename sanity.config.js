@@ -97,5 +97,10 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
   schema: {
     types: [blogPost, caseStudy, jobVacancy, contactEnquiry, newsletter, jobApplication]
+  },
+  document: {
+    actions: (prev, context) => {
+      return [...prev]
+    }
   }
 })

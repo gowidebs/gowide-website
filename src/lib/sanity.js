@@ -133,3 +133,12 @@ export const createBlogPost = async (blogData) => {
     throw error;
   }
 }
+
+export const deleteBlogPost = async (documentId) => {
+  try {
+    return await writeClient.delete(documentId);
+  } catch (error) {
+    console.error('Error deleting blog post:', error);
+    throw error;
+  }
+}
