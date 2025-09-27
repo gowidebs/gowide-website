@@ -31,7 +31,7 @@ const Nav = styled.nav`
   margin: 0 auto;
   
   @media (max-width: 768px) {
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
   }
 `;
@@ -270,16 +270,21 @@ const ThemeToggle = styled(motion.button)`
   }
 
   @media (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     .moon, .sun {
-      width: 45px;
-      height: 45px;
+      width: 35px;
+      height: 35px;
     }
+    
+    .crater-1 { width: 8px; height: 8px; }
+    .crater-2 { width: 6px; height: 6px; }
+    .crater-3 { width: 4px; height: 4px; }
   }
 `;
 
@@ -298,7 +303,7 @@ const Hamburger = styled.button`
     display: flex;
     position: absolute;
     top: 50%;
-    right: 1rem;
+    right: 0.5rem;
     transform: translateY(-50%);
   }
 
