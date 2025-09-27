@@ -112,8 +112,8 @@ const PrivacyPolicy = () => {
           
           <h2>10. Contact Us</h2>
           <p>For privacy-related questions or requests:</p>
-          <p>Email: privacy@gowide.in<br />
-          Phone: +971 XX XXX XXXX</p>
+          <p>Email: contact@gowide.in<br />
+          Phone: +917559988886</p>
         </Content>
       </Container>
     </>

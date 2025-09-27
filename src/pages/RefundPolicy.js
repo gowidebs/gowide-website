@@ -111,8 +111,8 @@ const RefundPolicy = () => {
           
           <h2>9. Contact for Refunds</h2>
           <p>For refund requests or questions:</p>
-          <p>Email: billing@gowide.in<br />
-          Phone: +971 XX XXX XXXX<br />
+          <p>Email: contact@gowide.in<br />
+          Phone: +917559988886<br />
           Include: Project ID, payment reference, and detailed reason</p>
         </Content>
       </Container>

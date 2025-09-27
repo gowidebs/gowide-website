@@ -89,8 +89,8 @@ const TermsConditions = () => {
           
           <h2>10. Contact Information</h2>
           <p>For questions about these Terms & Conditions, contact us at:</p>
-          <p>Email: legal@gowide.in<br />
-          Phone: +971 XX XXX XXXX</p>
+          <p>Email: contact@gowide.in<br />
+          Phone: +917559988886</p>
         </Content>
       </Container>
     </>
