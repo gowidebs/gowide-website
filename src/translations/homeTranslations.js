@@ -10,6 +10,10 @@ export const homeTranslations = {
     ourServices: "Our Services",
     servicesSubtitle: "Comprehensive digital solutions tailored to your business needs",
     
+    // Split Section (different from hero)
+    splitTitle: "Empowering Businesses Through <span>Innovation</span>",
+    splitSubtitle: "From concept to execution, we partner with you to build digital solutions that transform your business operations and accelerate growth.",
+    
     // Technology Service
     technologyTitle: "Technology",
     technologySubtitle: "Powering Innovation with Advanced Solutions",
@@ -203,6 +207,10 @@ export const homeTranslations = {
     // Services Section
     ourServices: "خدماتنا",
     servicesSubtitle: "حلول رقمية شاملة مصممة خصيصاً لاحتياجات عملك",
+    
+    // Split Section (different from hero)
+    splitTitle: "تمكين الشركات من خلال <span>الابتكار</span>",
+    splitSubtitle: "من المفهوم إلى التنفيذ، نتشارك معك لبناء حلول رقمية تحول عمليات عملك وتسرع النمو.",
     
     // Technology Service
     technologyTitle: "التكنولوجيا",

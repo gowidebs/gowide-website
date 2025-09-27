@@ -1298,9 +1298,9 @@ const Home = () => {
           <SplitContent>
             <ContentSide>
               <span className="highlight-text">{ht.ourServices}</span>
-              <h2 dangerouslySetInnerHTML={{ __html: ht.heroTitle }}></h2>
+              <h2 dangerouslySetInnerHTML={{ __html: ht.splitTitle }}></h2>
               <p className="main-text">
-                {ht.heroSubtitle}
+                {ht.splitSubtitle}
               </p>
               <FeatureList>
                 <FeatureItem>
