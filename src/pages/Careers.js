@@ -288,7 +288,7 @@ const ModalContent = styled.div`
   overflow-y: auto;
   
   h3 {
-    color: var(--text-primary);
+    color: white;
     margin-bottom: 1.5rem;
     text-align: center;
   }
@@ -298,7 +298,7 @@ const ModalContent = styled.div`
     
     label {
       display: block;
-      color: var(--text-primary);
+      color: white;
       margin-bottom: 0.5rem;
       font-weight: 600;
     }
@@ -309,7 +309,7 @@ const ModalContent = styled.div`
       border: 1px solid rgba(255, 137, 6, 0.3);
       border-radius: 10px;
       background: var(--input-bg);
-      color: var(--text-primary);
+      color: white;
       font-size: 1rem;
       
       &:focus {
@@ -340,7 +340,7 @@ const ModalContent = styled.div`
         border: 2px dashed rgba(255, 137, 6, 0.3);
         border-radius: 10px;
         text-align: center;
-        color: var(--text-secondary);
+        color: white;
         cursor: pointer;
         transition: all 0.3s ease;
         
@@ -372,7 +372,7 @@ const ModalContent = styled.div`
       
       &.cancel {
         background: transparent;
-        color: var(--text-secondary);
+        color: white;
         border: 1px solid rgba(255, 137, 6, 0.3);
         
         &:hover {
