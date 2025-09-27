@@ -81,10 +81,10 @@ const Footer = () => {
           </div>
           <div className="footer-right">
             <div className="legal-links">
-              <Link to="/terms">{t('footer.termsConditions')}</Link>
-              <Link to="/privacy">{t('footer.privacyPolicy')}</Link>
-              <Link to="/refund">{t('footer.refundPolicy')}</Link>
-              <Link to="/cookie">{t('footer.cookiePolicy')}</Link>
+              <Link to="/terms-conditions">Terms & Conditions</Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/refund-policy">Refund Policy</Link>
+              <Link to="/cookie-policy">Cookie Policy</Link>
             </div>
             <LanguageSwitcher />
           </div>

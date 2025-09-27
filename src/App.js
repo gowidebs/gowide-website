@@ -30,6 +30,10 @@ const Careers = React.lazy(() => import('./pages/Careers'));
 const CaseStudies = React.lazy(() => import('./pages/CaseStudies'));
 const CaseStudyDetail = React.lazy(() => import('./pages/CaseStudyDetail'));
 const Contact = React.lazy(() => import('./pages/Contact'));
+const TermsConditions = React.lazy(() => import('./pages/TermsConditions'));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const RefundPolicy = React.lazy(() => import('./pages/RefundPolicy'));
+const CookiePolicy = React.lazy(() => import('./pages/CookiePolicy'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -78,6 +82,10 @@ function App() {
                     <Route path="/case-studies" element={<CaseStudies />} />
                     <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/terms-conditions" element={<TermsConditions />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/refund-policy" element={<RefundPolicy />} />
+                    <Route path="/cookie-policy" element={<CookiePolicy />} />
                   </Routes>
                 </Suspense>
               </main>
