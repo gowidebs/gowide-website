@@ -34,6 +34,7 @@ const TermsConditions = React.lazy(() => import('./pages/TermsConditions'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const RefundPolicy = React.lazy(() => import('./pages/RefundPolicy'));
 const CookiePolicy = React.lazy(() => import('./pages/CookiePolicy'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -86,6 +87,7 @@ function App() {
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/refund-policy" element={<RefundPolicy />} />
                     <Route path="/cookie-policy" element={<CookiePolicy />} />
+                    <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
               </main>
