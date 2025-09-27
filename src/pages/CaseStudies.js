@@ -234,8 +234,9 @@ const CaseStudies = () => {
   if (loading) {
     return (
       <CaseStudiesContainer>
+        <ParticleBackground />
         <LoadingState>
-          <h2>{t('caseStudies.loading')}</h2>
+          <h2>Loading...</h2>
         </LoadingState>
       </CaseStudiesContainer>
     );
@@ -280,12 +281,12 @@ const CaseStudies = () => {
                   <div className="case-results">
                     <div className="result-item">
                       <span className="result-number">Success</span>
-                      <span className="result-label">{t('caseStudies.resultsAchieved')}</span>
+                      <span className="result-label">Results Achieved</span>
                     </div>
                   </div>
                 )}
                 <Link to={`/case-studies/${caseStudy.slug?.current}`} className="view-case">
-                  {t('caseStudies.viewCaseStudy')} <i className="fas fa-arrow-right"></i>
+                  {t('caseStudies.viewProject')} <i className="fas fa-arrow-right"></i>
                 </Link>
               </div>
             </CaseStudyCard>

@@ -51,7 +51,10 @@ export const caseStudiesTranslations = {
       development: "Development",
       testing: "Testing",
       launch: "Launch",
-      maintenance: "Maintenance"
+      maintenance: "Maintenance",
+      resultsAchieved: "Results Achieved",
+      viewCaseStudy: "View Case Study",
+      loading: "Loading..."
     }
   },
   ar: {
@@ -106,7 +109,10 @@ export const caseStudiesTranslations = {
       development: "التطوير",
       testing: "الاختبار",
       launch: "الإطلاق",
-      maintenance: "الصيانة"
+      maintenance: "الصيانة",
+      resultsAchieved: "النتائج المحققة",
+      viewCaseStudy: "عرض دراسة الحالة",
+      loading: "جاري التحميل..."
     }
   }
 };
