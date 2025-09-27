@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { HelmetProvider } from 'react-helmet-async';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -84,6 +85,7 @@ function App() {
               <ScrollToTop />
               <Notification />
               <SpeedInsights />
+              <Analytics />
             </>
           )}
         </div>
