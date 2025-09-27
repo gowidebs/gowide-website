@@ -87,12 +87,20 @@ const jobVacancy = {
   type: 'document',
   fields: [
     {name: 'title', title: 'Job Title', type: 'string'},
-    {name: 'department', title: 'Department', type: 'string'},
-    {name: 'location', title: 'Location', type: 'string'},
-    {name: 'type', title: 'Job Type', type: 'string'},
-    {name: 'description', title: 'Description', type: 'text'},
-    {name: 'requirements', title: 'Requirements', type: 'text'},
-    {name: 'isActive', title: 'Active', type: 'boolean'}
+    {name: 'department', title: 'Department', type: 'string', options: {list: ['Technology', 'Marketing', 'Design', 'Sales', 'Operations', 'HR']}},
+    {name: 'location', title: 'Location', type: 'string', options: {list: ['Dubai, UAE', 'Kochi, India', 'Remote', 'Hybrid']}},
+    {name: 'jobType', title: 'Job Type', type: 'string', options: {list: ['Full Time', 'Part Time', 'Contract', 'Internship']}},
+    {name: 'experienceLevel', title: 'Experience Level', type: 'string', options: {list: ['Entry Level', 'Mid Level', 'Senior Level', 'Lead/Manager']}},
+    {name: 'description', title: 'Job Description', type: 'text'},
+    {name: 'responsibilities', title: 'Key Responsibilities', type: 'array', of: [{type: 'string'}]},
+    {name: 'requirements', title: 'Requirements', type: 'array', of: [{type: 'string'}]},
+    {name: 'skills', title: 'Required Skills', type: 'array', of: [{type: 'string'}]},
+    {name: 'benefits', title: 'Benefits', type: 'array', of: [{type: 'string'}]},
+    {name: 'salaryRange', title: 'Salary Range', type: 'string'},
+    {name: 'applicationDeadline', title: 'Application Deadline', type: 'date'},
+    {name: 'isActive', title: 'Active', type: 'boolean', initialValue: true},
+    {name: 'isFeatured', title: 'Featured Job', type: 'boolean', initialValue: false},
+    {name: 'postedDate', title: 'Posted Date', type: 'date', initialValue: () => new Date().toISOString().split('T')[0]}
   ]
 }
 

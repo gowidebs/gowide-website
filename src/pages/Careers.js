@@ -134,12 +134,13 @@ const JobCard = styled(motion.article)`
         }
       }
       
-      .job-location {
+      .job-location, .job-experience {
         color: var(--text-secondary);
         font-size: 0.9rem;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        margin-bottom: 0.25rem;
       }
     }
     
@@ -373,6 +374,10 @@ const Careers = () => {
                       <i className="fas fa-map-marker-alt"></i>
                       {job.location}
                     </div>
+                    <div className="job-experience">
+                      <i className="fas fa-briefcase"></i>
+                      {job.experienceLevel}
+                    </div>
                   </div>
                   <div className="job-type">{job.jobType}</div>
                 </div>
@@ -381,9 +386,9 @@ const Careers = () => {
                   {job.description}
                 </div>
                 
-                {job.requirements && (
+                {job.requirements && job.requirements.length > 0 && (
                   <div className="job-requirements">
-                    <h4>{t('careers.requirements')}</h4>
+                    <h4>Requirements</h4>
                     <ul>
                       {job.requirements.slice(0, 4).map((req, idx) => (
                         <li key={idx}>
