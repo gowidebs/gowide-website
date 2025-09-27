@@ -160,6 +160,11 @@ const SolutionsGrid = styled.div`
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
 `;
 
 const SolutionCard = styled(motion.div)`
@@ -243,16 +248,10 @@ const ProcessSteps = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
   }
 `;
 
@@ -316,16 +315,10 @@ const AdvantagesGrid = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
   }
 `;
 
@@ -399,16 +392,10 @@ const StackCategories = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
   }
 `;
 

@@ -194,7 +194,10 @@ const CountdownContainer = styled.div`
     flex-wrap: wrap;
     
     @media (max-width: 768px) {
-      gap: 0.5rem;
+      flex-direction: column;
+      gap: 0.8rem;
+      max-width: 200px;
+      margin: 0 auto 1rem;
     }
     
     .time-unit {
@@ -204,8 +207,11 @@ const CountdownContainer = styled.div`
       min-width: 60px;
       
       @media (max-width: 768px) {
-        padding: 0.8rem 0.5rem;
-        min-width: 50px;
+        padding: 1rem;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
       
       .number {
@@ -214,7 +220,8 @@ const CountdownContainer = styled.div`
         display: block;
         
         @media (max-width: 768px) {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
+          display: inline;
         }
       }
       
@@ -223,7 +230,9 @@ const CountdownContainer = styled.div`
         opacity: 0.9;
         
         @media (max-width: 768px) {
-          font-size: 0.7rem;
+          font-size: 0.9rem;
+          display: inline;
+          margin-left: 0.5rem;
         }
       }
     }
