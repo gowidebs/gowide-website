@@ -22,6 +22,8 @@ const HeroSection = styled.section`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 4rem 1rem;
+    gap: 2rem;
   }
 `;
 
@@ -108,10 +110,12 @@ const HeroContent = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 2rem;
-  line-height: 1.1;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   
   .brand-name {
     color: var(--text-primary);
@@ -122,7 +126,9 @@ const Title = styled.h1`
   }
   
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -131,6 +137,12 @@ const Description = styled.p`
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 3rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -361,6 +373,10 @@ const DashboardMockup = styled(motion.div)`
 const SectionContainer = styled.section`
   padding: 6rem 2rem;
   
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+  
   &:nth-child(even) {
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.05), rgba(76, 175, 80, 0.02));
   }
@@ -369,6 +385,11 @@ const SectionContainer = styled.section`
 const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 4rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
   
   .section-badge {
     display: inline-block;
@@ -382,10 +403,14 @@ const SectionHeader = styled.div`
   }
   
   h2 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
   }
   
   .section-subtitle {
@@ -393,6 +418,12 @@ const SectionHeader = styled.div`
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      max-width: 90%;
+      padding: 0 0.5rem;
+    }
     
     .highlight {
       color: #4CAF50;
@@ -422,9 +453,17 @@ const Card = styled(motion.div)`
   text-align: center;
   transition: all 0.3s ease;
   
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+  
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(76, 175, 80, 0.2);
+    
+    @media (max-width: 768px) {
+      transform: translateY(-5px);
+    }
   }
   
   .icon {
@@ -437,9 +476,19 @@ const Card = styled(motion.div)`
     justify-content: center;
     margin: 0 auto 1.5rem;
     
+    @media (max-width: 768px) {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+    }
+    
     i {
       font-size: 2rem;
       color: white;
+      
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
   }
   
@@ -447,11 +496,19 @@ const Card = styled(motion.div)`
     color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
   }
   
   p {
     color: var(--text-secondary);
     line-height: 1.6;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 
