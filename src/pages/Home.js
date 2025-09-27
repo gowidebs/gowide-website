@@ -226,6 +226,10 @@ const SplitSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+  
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
   }
@@ -457,28 +461,14 @@ const ServicesGrid = styled.div`
   gap: 30px;
   margin-bottom: 50px;
   
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 350px;
-    margin: 0 auto 50px;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 25px;
     max-width: 400px;
     margin: 0 auto 50px;
   }
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
   
   @media (min-width: 1920px) {
     gap: 40px;
@@ -596,23 +586,11 @@ const ProductsGrid = styled.div`
   max-width: 1000px;
   margin: 0 auto;
 
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 25px;
     max-width: 400px;
     margin: 0 auto;
-  }
-
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
   }
   
   @media (min-width: 1440px) {
@@ -639,6 +617,11 @@ const ProductCard = styled.div`
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
+  
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 250px;
+  }
 `;
 
 const ProductCardInner = styled.div`
@@ -652,6 +635,14 @@ const ProductCardInner = styled.div`
   ${ProductCard}:hover & {
     transform: rotateY(180deg);
   }
+  
+  @media (max-width: 768px) {
+    transform-style: flat;
+    
+    ${ProductCard}:hover & {
+      transform: none;
+    }
+  }
 `;
 
 const ProductCardFront = styled.div`
@@ -664,6 +655,10 @@ const ProductCardFront = styled.div`
   align-items: center;
   justify-content: center;
   padding: 40px;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   .product-icon {
     font-size: 3rem;
@@ -694,12 +689,24 @@ const ProductCardBack = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 30px;
+  
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    backface-visibility: visible;
+    padding: 20px;
+  }
 
   .product-title {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--primary-orange);
+    
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
   }
 
   .product-description {
@@ -707,6 +714,11 @@ const ProductCardBack = styled.div`
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 0.95rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
   }
 
   .learn-more-btn {
@@ -720,6 +732,11 @@ const ProductCardBack = styled.div`
 
     &:hover {
       background: var(--secondary-orange);
+    }
+    
+    @media (max-width: 768px) {
+      padding: 8px 16px;
+      font-size: 0.9rem;
     }
   }
 `;
@@ -743,24 +760,14 @@ const ProcessTimeline = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 350px;
-    margin: 60px auto 0;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 30px;
     max-width: 400px;
     margin: 60px auto 0;
   }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
-  }
+
   
   @media (min-width: 1920px) {
     gap: 50px;
@@ -822,22 +829,14 @@ const ImpactGrid = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 25px;
-    max-width: 300px;
+    max-width: 400px;
     margin: 60px auto 0;
   }
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-  }
   
   @media (min-width: 1920px) {
     gap: 50px;
@@ -921,6 +920,10 @@ const ContactSection = styled.section`
   background: transparent;
   text-align: center;
   
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+  
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
   }
@@ -962,6 +965,10 @@ const GroupSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+  
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
   }
@@ -973,24 +980,14 @@ const GroupGrid = styled.div`
   gap: 40px;
   margin-top: 60px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 30px;
-    max-width: 350px;
-    margin: 60px auto 0;
-  }
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 35px;
     max-width: 400px;
     margin: 60px auto 0;
   }
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
-  }
+
   
   @media (min-width: 1920px) {
     gap: 50px;
@@ -1028,7 +1025,7 @@ const GroupCard = styled.div`
     }
   }
   
-  @media (max-width: 480px) {
+  @media (max-width: 900px) {
     padding: 30px 20px;
     
     &:hover {
@@ -1053,7 +1050,7 @@ const GroupCard = styled.div`
       padding: 10px;
     }
     
-    @media (max-width: 480px) {
+    @media (max-width: 900px) {
       width: 100px;
       height: 100px;
       margin: 0 auto 20px;
@@ -1066,7 +1063,7 @@ const GroupCard = styled.div`
     margin-bottom: 15px;
     color: var(--primary-orange);
     
-    @media (max-width: 480px) {
+    @media (max-width: 900px) {
       font-size: 1.3rem;
       margin-bottom: 12px;
     }
@@ -1077,7 +1074,7 @@ const GroupCard = styled.div`
     line-height: 1.6;
     font-size: 1rem;
     
-    @media (max-width: 480px) {
+    @media (max-width: 900px) {
       font-size: 0.95rem;
     }
   }

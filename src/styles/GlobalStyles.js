@@ -771,15 +771,10 @@ export const MainFooter = styled.footer`
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
 
-      @media (max-width: 480px) {
+      @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-      }
-
-      @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
       }
       
       @media (min-width: 1920px) {

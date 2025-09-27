@@ -31,7 +31,7 @@ const Nav = styled.nav`
   margin: 0 auto;
   
   @media (max-width: 768px) {
-    justify-content: flex-start;
+    justify-content: space-between;
     position: relative;
   }
 `;
@@ -178,15 +178,18 @@ const NavLinks = styled.ul`
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(15, 14, 23, 0.95);
+    background: rgba(15, 14, 23, 0.98);
     backdrop-filter: blur(10px);
     flex-direction: column;
-    padding: 5rem 1.5rem 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 6rem 2rem 2rem;
     transform: translateX(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
     z-index: 999;
+    gap: 1.5rem;
 
     &.active {
       transform: translateX(0);
@@ -195,18 +198,60 @@ const NavLinks = styled.ul`
     }
 
     body.light-theme & {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
+    }
+    
+    li {
+      width: 100%;
+      text-align: center;
+      
+      > a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255, 137, 6, 0.1);
+        cursor: pointer;
+      }
+      
+      &.dropdown > a::after {
+        content: ' ▼';
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      &.dropdown.active > a::after {
+        transform: rotate(180deg);
+      }
     }
     
     .dropdown-content {
       position: static;
-      opacity: 1;
-      visibility: visible;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      overflow: hidden;
       transform: none;
       box-shadow: none;
-      background: transparent;
+      background: rgba(255, 137, 6, 0.05);
       padding: 0;
-      margin-left: 1rem;
+      margin: 0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      
+      a {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border-bottom: none;
+      }
+    }
+    
+    .dropdown.active .dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      max-height: 300px;
+      padding: 0.5rem 0;
+      margin: 0.5rem 0;
     }
   }
 `;
@@ -315,10 +360,6 @@ const Hamburger = styled.button`
 
   @media (max-width: 768px) {
     display: flex;
-    position: absolute;
-    top: 50%;
-    right: 0.5rem;
-    transform: translateY(-50%);
   }
 
   span {
