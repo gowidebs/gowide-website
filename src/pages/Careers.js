@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { getJobVacancies, submitJobApplication } from '../lib/sanity';
 import { showNotification } from '../components/Notification';
 import SEO from '../components/SEO';
+import ParticleBackground from '../components/ParticleBackground';
 
 const CareersContainer = styled.div`
   padding-top: 120px;
@@ -340,6 +341,7 @@ const Careers = () => {
         url="https://gowide.in/careers"
       />
       <CareersContainer>
+        <ParticleBackground />
       <HeroSection>
         <Title>
           {t('careers.title').split(' ').slice(0, 2).join(' ')} <span className="highlight">{t('careers.title').split(' ').slice(2).join(' ')}</span>

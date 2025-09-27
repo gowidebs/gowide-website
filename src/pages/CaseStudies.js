@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getCaseStudies } from '../lib/sanity';
+import ParticleBackground from '../components/ParticleBackground';
 
 const CaseStudiesContainer = styled.div`
   padding-top: 120px;
@@ -242,6 +243,7 @@ const CaseStudies = () => {
 
   return (
     <CaseStudiesContainer>
+      <ParticleBackground />
       <HeroSection>
         <Title>
           {t('caseStudies.title').split(' ')[0]} <span className="highlight">{t('caseStudies.title').split(' ')[1]}</span>

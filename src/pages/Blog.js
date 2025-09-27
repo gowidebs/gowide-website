@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getBlogPosts } from '../lib/sanity';
+import ParticleBackground from '../components/ParticleBackground';
 
 const BlogContainer = styled.div`
   padding-top: 120px;
@@ -241,6 +242,7 @@ const Blog = () => {
 
   return (
     <BlogContainer>
+      <ParticleBackground />
       <HeroSection>
         <Title>
           {t('blog.title')}
