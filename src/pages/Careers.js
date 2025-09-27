@@ -204,6 +204,37 @@ const JobCard = styled(motion.article)`
       font-weight: 600;
     }
     
+    .job-actions {
+      display: flex;
+      gap: 0.5rem;
+      
+      @media (max-width: 480px) {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+    
+    .view-details-btn {
+      background: transparent;
+      color: var(--primary-orange);
+      border: 1px solid var(--primary-orange);
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: var(--primary-orange);
+        color: white;
+        transform: translateY(-2px);
+      }
+      
+      @media (max-width: 480px) {
+        padding: 1rem;
+      }
+    }
+    
     .apply-btn {
       background: var(--primary-orange);
       color: white;
@@ -220,7 +251,6 @@ const JobCard = styled(motion.article)`
       }
       
       @media (max-width: 480px) {
-        width: 100%;
         padding: 1rem;
       }
     }
@@ -402,6 +432,7 @@ const Careers = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -416,6 +447,11 @@ const Careers = () => {
     setSelectedJob({ id: jobId, title: jobTitle });
     setShowModal(true);
     setFormData({ name: '', email: '', phone: '', coverLetter: '', resume: null });
+  };
+
+  const handleViewDetails = (job) => {
+    setSelectedJob(job);
+    setShowDetailsModal(true);
   };
 
   const handleInputChange = (e) => {
@@ -570,6 +606,100 @@ const Careers = () => {
             </ModalContent>
           </ModalOverlay>
         )}
+        
+        {showDetailsModal && selectedJob && (
+          <ModalOverlay onClick={() => setShowDetailsModal(false)}>
+            <ModalContent onClick={(e) => e.stopPropagation()}>
+              <h3>{selectedJob.title}</h3>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: 'var(--primary-orange)' }}>Department:</strong> {selectedJob.department}
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: 'var(--primary-orange)' }}>Location:</strong> {selectedJob.location}
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: 'var(--primary-orange)' }}>Job Type:</strong> {selectedJob.jobType}
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: 'var(--primary-orange)' }}>Experience Level:</strong> {selectedJob.experienceLevel}
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: 'var(--primary-orange)' }}>Salary:</strong> {selectedJob.salaryRange}
+                </div>
+                
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Description</h4>
+                  <p style={{ color: 'white', lineHeight: '1.6' }}>{selectedJob.description}</p>
+                </div>
+                
+                {selectedJob.responsibilities && selectedJob.responsibilities.length > 0 && (
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Responsibilities</h4>
+                    <ul style={{ color: 'white', paddingLeft: '1rem' }}>
+                      {selectedJob.responsibilities.map((resp, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {selectedJob.requirements && selectedJob.requirements.length > 0 && (
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Requirements</h4>
+                    <ul style={{ color: 'white', paddingLeft: '1rem' }}>
+                      {(Array.isArray(selectedJob.requirements) 
+                        ? selectedJob.requirements 
+                        : selectedJob.requirements.split('\n').filter(req => req.trim())
+                      ).map((req, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>{req.trim()}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {selectedJob.skills && selectedJob.skills.length > 0 && (
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Required Skills</h4>
+                    <ul style={{ color: 'white', paddingLeft: '1rem' }}>
+                      {selectedJob.skills.map((skill, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {selectedJob.benefits && selectedJob.benefits.length > 0 && (
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <h4 style={{ color: 'white', marginBottom: '0.5rem' }}>Benefits</h4>
+                    <ul style={{ color: 'white', paddingLeft: '1rem' }}>
+                      {selectedJob.benefits.map((benefit, idx) => (
+                        <li key={idx} style={{ marginBottom: '0.5rem' }}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+              
+              <div className="modal-actions">
+                <button type="button" className="cancel" onClick={() => setShowDetailsModal(false)}>
+                  Close
+                </button>
+                <button 
+                  type="button" 
+                  className="submit" 
+                  onClick={() => {
+                    setShowDetailsModal(false);
+                    handleApplyClick(selectedJob._id, selectedJob.title);
+                  }}
+                >
+                  Apply Now
+                </button>
+              </div>
+            </ModalContent>
+          </ModalOverlay>
+        )}
+        
       <HeroSection>
         <Title>
           Join Our <span className="highlight">Team</span>
@@ -632,12 +762,20 @@ const Careers = () => {
                 
                 <div className="job-footer">
                   <div className="job-salary">{job.salaryRange}</div>
-                  <button 
-                    className="apply-btn"
-                    onClick={() => handleApplyClick(job._id, job.title)}
-                  >
-                    {t('careers.applyNow')}
-                  </button>
+                  <div className="job-actions">
+                    <button 
+                      className="view-details-btn"
+                      onClick={() => handleViewDetails(job)}
+                    >
+                      View Details
+                    </button>
+                    <button 
+                      className="apply-btn"
+                      onClick={() => handleApplyClick(job._id, job.title)}
+                    >
+                      Apply Now
+                    </button>
+                  </div>
                 </div>
               </JobCard>
             ))}
