@@ -126,6 +126,20 @@ const NavLinks = styled.ul`
       visibility: visible;
       transform: translateY(0);
     }
+    
+    @media (max-width: 768px) {
+      &:hover .dropdown-content {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+      }
+      
+      &.active .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
   }
   
   .dropdown-content {
@@ -336,13 +350,20 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setActiveDropdown(null);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
   return (
@@ -357,8 +378,8 @@ const Header = () => {
         <NavLinks className={isMenuOpen ? 'active' : ''}>
           <li><NavLink as={Link} to="/" onClick={closeMenu}>{t('nav.home')}</NavLink></li>
           <li><NavLink as={Link} to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink></li>
-          <li className="dropdown">
-            <NavLink>{t('nav.services')}</NavLink>
+          <li className={`dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
+            <NavLink onClick={() => toggleDropdown('services')}>{t('nav.services')}</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/branding" onClick={closeMenu}>Branding</NavLink>
               <NavLink as={Link} to="/advertising" onClick={closeMenu}>Advertising</NavLink>
@@ -366,8 +387,8 @@ const Header = () => {
               <NavLink as={Link} to="/technology" onClick={closeMenu}>Technology</NavLink>
             </div>
           </li>
-          <li className="dropdown">
-            <NavLink>{t('nav.products')}</NavLink>
+          <li className={`dropdown ${activeDropdown === 'products' ? 'active' : ''}`}>
+            <NavLink onClick={() => toggleDropdown('products')}>{t('nav.products')}</NavLink>
             <div className="dropdown-content">
               <NavLink as={Link} to="/rendre" onClick={closeMenu}>Rendre</NavLink>
               <NavLink as={Link} to="/upflyover" onClick={closeMenu}>UpFlyOver</NavLink>

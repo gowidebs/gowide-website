@@ -269,11 +269,13 @@ const SplitContent = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
+    text-align: center;
   }
   
   @media (min-width: 1920px) {
@@ -352,6 +354,10 @@ const ImageSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const FloatingCard = styled.div`
@@ -397,6 +403,10 @@ const ServicesSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+  
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
   }
@@ -405,11 +415,21 @@ const ServicesSection = styled.section`
 const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 80px;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
 
   h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 20px;
+    
+    @media (max-width: 480px) {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+      margin-bottom: 15px;
+    }
   }
 
   p {
@@ -417,6 +437,12 @@ const SectionHeader = styled.div`
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      max-width: 90%;
+      line-height: 1.5;
+    }
 
     .highlight {
       color: var(--primary-orange);
@@ -574,12 +600,14 @@ const ProductsGrid = styled.div`
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 350px;
+    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 25px;
     max-width: 400px;
+    margin: 0 auto;
   }
 
   @media (max-width: 900px) {
@@ -700,6 +728,10 @@ const ProcessSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
+  
   body.light-theme & {
     background: rgba(248, 249, 250, 0.9);
   }
@@ -774,6 +806,10 @@ const TimelineItem = styled.div`
 const ImpactSection = styled.section`
   padding: 100px 0;
   background: transparent;
+  
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
   
   body.light-theme & {
     background: rgba(255, 255, 254, 0.95);
