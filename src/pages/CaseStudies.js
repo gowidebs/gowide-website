@@ -263,23 +263,23 @@ const CaseStudies = () => {
               transition={{ delay: index * 0.1 }}
             >
               <div className="case-image">
-                {caseStudy.projectImage ? (
-                  <img src={caseStudy.projectImage} alt={caseStudy.projectTitle || 'Case study image'} />
+                {caseStudy.featuredImage ? (
+                  <img src={caseStudy.featuredImage} alt={caseStudy.title || 'Case study image'} />
                 ) : (
                   <div className="placeholder">
                     <i className="fas fa-chart-line"></i>
                   </div>
                 )}
-                <div className="case-category">{caseStudy.industry}</div>
+                <div className="case-category">{caseStudy.category || caseStudy.industry}</div>
               </div>
               <div className="case-content">
                 <div className="case-client">{caseStudy.clientName}</div>
-                <h3>{caseStudy.projectTitle}</h3>
-                <p>{caseStudy.projectDescription}</p>
+                <h3>{caseStudy.title}</h3>
+                <p>{caseStudy.challenge ? caseStudy.challenge.substring(0, 150) + '...' : 'Case study details'}</p>
                 {caseStudy.results && (
                   <div className="case-results">
                     <div className="result-item">
-                      <span className="result-number">{caseStudy.results}</span>
+                      <span className="result-number">Success</span>
                       <span className="result-label">{t('caseStudies.resultsAchieved')}</span>
                     </div>
                   </div>

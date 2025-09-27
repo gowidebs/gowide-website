@@ -38,8 +38,8 @@ export const getBlogPosts = () => {
 }
 
 export const getCaseStudies = () => {
-  return client.fetch(`
-    *[_type == "caseStudy" && isPublished == true] | order(completedDate desc) {
+  return writeClient.fetch(`
+    *[_type == "caseStudy" && isPublished == true] | order(_createdAt desc) {
       _id,
       title,
       slug,
