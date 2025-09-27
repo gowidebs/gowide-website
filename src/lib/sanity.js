@@ -18,7 +18,7 @@ export const writeClient = createClient({
 // Helper functions for fetching data
 export const getJobVacancies = () => {
   return writeClient.fetch(`
-    *[_type == "jobVacancy" && isActive == true] | order(postedDate desc) {
+    *[_type == "jobVacancy" && isActive == true] | order(_createdAt desc) {
       _id,
       title,
       department,

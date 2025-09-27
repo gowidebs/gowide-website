@@ -316,7 +316,7 @@ const Careers = () => {
     const fetchJobs = async () => {
       try {
         const jobsData = await getJobVacancies();
-        // console.log('Jobs fetched:', jobsData);
+        console.log('Jobs fetched:', jobsData);
         setJobs(Array.isArray(jobsData) ? jobsData : []);
       } catch (error) {
         console.error('Error fetching jobs:', error);
@@ -345,10 +345,10 @@ const Careers = () => {
         <ParticleBackground />
       <HeroSection>
         <Title>
-          {t('careers.title').split(' ').slice(0, 2).join(' ')} <span className="highlight">{t('careers.title').split(' ').slice(2).join(' ')}</span>
+          Join Our <span className="highlight">Team</span>
         </Title>
         <Description>
-          {t('careers.subtitle')}
+          Build your career with us and be part of something amazing
         </Description>
       </HeroSection>
 
@@ -414,10 +414,10 @@ const Careers = () => {
           </JobsGrid>
         ) : (
           <NoJobsState>
-            <h3>{t('careers.noOpenPositions')}</h3>
-            <p>{t('careers.noPositionsDesc')}</p>
+            <h3>No Open Positions</h3>
+            <p>We don't have any open positions at the moment, but we're always looking for talented individuals.</p>
             <button className="contact-btn">
-              {t('careers.sendResume')}
+              Send Resume
             </button>
           </NoJobsState>
         )}
