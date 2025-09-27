@@ -386,14 +386,17 @@ const Careers = () => {
                   {job.description}
                 </div>
                 
-                {job.requirements && job.requirements.length > 0 && (
+                {job.requirements && (
                   <div className="job-requirements">
                     <h4>Requirements</h4>
                     <ul>
-                      {job.requirements.slice(0, 4).map((req, idx) => (
+                      {(Array.isArray(job.requirements) 
+                        ? job.requirements 
+                        : job.requirements.split('\n').filter(req => req.trim())
+                      ).slice(0, 4).map((req, idx) => (
                         <li key={idx}>
                           <i className="fas fa-check"></i>
-                          {req}
+                          {req.trim()}
                         </li>
                       ))}
                     </ul>
