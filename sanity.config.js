@@ -24,21 +24,60 @@ const caseStudy = {
   title: 'Case Studies',
   type: 'document',
   fields: [
-    {name: 'title', title: 'Title', type: 'string'},
+    // 1. Title & Client Overview
+    {name: 'title', title: 'Title', type: 'string', description: 'Result-focused title (e.g., "Scaling ABC Corp with Cloud Migration")'},
     {name: 'slug', title: 'Slug', type: 'slug', options: {source: 'title'}},
-    {name: 'description', title: 'Description', type: 'text'},
-    {name: 'client', title: 'Client', type: 'string'},
     {name: 'clientName', title: 'Client Name', type: 'string'},
-    {name: 'category', title: 'Category', type: 'string'},
-    {name: 'completedDate', title: 'Completed Date', type: 'date'},
-    {name: 'projectDuration', title: 'Project Duration', type: 'string'},
+    {name: 'industry', title: 'Industry', type: 'string'},
+    {name: 'companySize', title: 'Company Size', type: 'string', options: {list: ['Startup', 'SME', 'Enterprise']}},
+    {name: 'location', title: 'Location', type: 'string'},
+    {name: 'clientLogo', title: 'Client Logo', type: 'image'},
     {name: 'featuredImage', title: 'Featured Image', type: 'image'},
-    {name: 'projectOverview', title: 'Project Overview', type: 'text'},
-    {name: 'challenge', title: 'Challenge', type: 'text'},
-    {name: 'solution', title: 'Solution', type: 'text'},
-    {name: 'results', title: 'Results', type: 'text'},
+    
+    // 2. Challenge / Problem Statement
+    {name: 'challenge', title: 'The Challenge', type: 'text', description: 'Business pain points and what was at risk'},
+    
+    // 3. Objectives
+    {name: 'objectives', title: 'Objectives', type: 'array', of: [{type: 'string'}], description: 'What the client wanted to achieve'},
+    
+    // 4. Our Approach / Solution
+    {name: 'solution', title: 'Our Solution', type: 'text', description: 'Step-by-step process and approach'},
     {name: 'technologiesUsed', title: 'Technologies Used', type: 'array', of: [{type: 'string'}]},
-    {name: 'isPublished', title: 'Published', type: 'boolean', initialValue: false}
+    {name: 'projectGallery', title: 'Project Gallery', type: 'array', of: [{type: 'image'}], description: 'Screenshots, diagrams, UI images'},
+    {name: 'websiteUrl', title: 'Website URL', type: 'url'},
+    {name: 'appStoreUrl', title: 'App Store URL', type: 'url'},
+    {name: 'playStoreUrl', title: 'Play Store URL', type: 'url'},
+    {name: 'instagramUrl', title: 'Instagram URL', type: 'url'},
+    
+    // 5. Results & Impact
+    {name: 'results', title: 'Results & Impact', type: 'text', description: 'Quantified results and business outcomes'},
+    {name: 'metricsImproved', title: 'Key Metrics', type: 'array', of: [{
+      type: 'object',
+      fields: [
+        {name: 'metric', title: 'Metric', type: 'string'},
+        {name: 'improvement', title: 'Improvement', type: 'string'},
+        {name: 'beforeValue', title: 'Before', type: 'string'},
+        {name: 'afterValue', title: 'After', type: 'string'}
+      ]
+    }]},
+    
+    // 6. Client Testimonial
+    {name: 'testimonial', title: 'Client Testimonial', type: 'text'},
+    {name: 'testimonialAuthor', title: 'Testimonial Author', type: 'string'},
+    {name: 'testimonialPosition', title: 'Author Position', type: 'string'},
+    
+    // 7. Key Takeaways
+    {name: 'keyTakeaways', title: 'Key Takeaways', type: 'array', of: [{type: 'string'}]},
+    
+    // Project Details
+    {name: 'projectDuration', title: 'Project Duration', type: 'string'},
+    {name: 'teamSize', title: 'Team Size', type: 'string'},
+    {name: 'completedDate', title: 'Completed Date', type: 'date'},
+    {name: 'category', title: 'Service Category', type: 'string', options: {list: ['Web Development', 'Mobile App', 'Cloud Migration', 'Digital Transformation', 'E-commerce', 'Custom Software']}},
+    
+    // Publishing
+    {name: 'isPublished', title: 'Published', type: 'boolean', initialValue: false},
+    {name: 'isFeatured', title: 'Featured Case Study', type: 'boolean', initialValue: false}
   ]
 }
 
