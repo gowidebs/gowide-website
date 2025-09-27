@@ -119,7 +119,7 @@ const HeroContent = styled.div`
   z-index: 2;
   position: relative;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 0 15px;
   }
   
@@ -145,7 +145,7 @@ const HeroContent = styled.div`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: clamp(2rem, 8vw, 2.5rem);
       margin-bottom: 20px;
     }
@@ -161,7 +161,7 @@ const HeroContent = styled.div`
     margin-bottom: 40px;
     line-height: 1.6;
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 1.1rem;
       margin-bottom: 30px;
     }
@@ -182,7 +182,7 @@ const HeroButtons = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     gap: 15px;
     flex-direction: column;
     align-items: center;
@@ -226,7 +226,7 @@ const SplitSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -240,7 +240,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 0 15px;
   }
   
@@ -270,7 +270,7 @@ const SplitContent = styled.div`
   gap: 80px;
   align-items: center;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
@@ -407,7 +407,7 @@ const ServicesSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -420,7 +420,7 @@ const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 80px;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     margin-bottom: 40px;
     padding: 0 10px;
   }
@@ -430,7 +430,7 @@ const SectionHeader = styled.div`
     font-weight: 700;
     margin-bottom: 20px;
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: clamp(1.5rem, 6vw, 2rem);
       margin-bottom: 15px;
     }
@@ -442,7 +442,7 @@ const SectionHeader = styled.div`
     max-width: 600px;
     margin: 0 auto;
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 1rem;
       max-width: 90%;
       line-height: 1.5;
@@ -745,7 +745,7 @@ const ProcessSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -814,7 +814,7 @@ const ImpactSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -920,7 +920,7 @@ const ContactSection = styled.section`
   background: transparent;
   text-align: center;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -936,7 +936,7 @@ const ContactButtons = styled.div`
   flex-wrap: wrap;
   margin-top: 40px;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     gap: 15px;
@@ -965,7 +965,7 @@ const GroupSection = styled.section`
   padding: 100px 0;
   background: transparent;
   
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
   }
   
@@ -1090,7 +1090,7 @@ const GroupDescription = styled.div`
     color: var(--text-secondary);
     line-height: 1.7;
     
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       font-size: 1rem;
     }
   }
