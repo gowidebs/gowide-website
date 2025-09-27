@@ -21,7 +21,20 @@ export const getJobVacancies = () => {
 }
 
 export const getBlogPosts = () => {
-  return client.fetch('*[_type == "blogPost"] | order(publishedAt desc)')
+  return writeClient.fetch(`
+    *[_type == "blogPost" && isPublished == true] | order(publishedDate desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      "body": content,
+      category,
+      "publishedAt": publishedDate,
+      "featuredImage": featuredImage.asset->url,
+      author,
+      _createdAt
+    }
+  `)
 }
 
 export const getCaseStudies = () => {
@@ -96,6 +109,27 @@ export const subscribeNewsletter = async (email, name = '') => {
     return result;
   } catch (error) {
     console.error('Error subscribing to newsletter:', error);
+    throw error;
+  }
+}
+
+export const createBlogPost = async (blogData) => {
+  try {
+    return await writeClient.create({
+      _type: 'blogPost',
+      title: blogData.title,
+      slug: {
+        _type: 'slug',
+        current: blogData.slug
+      },
+      excerpt: blogData.excerpt,
+      body: blogData.body,
+      category: blogData.category,
+      publishedAt: blogData.publishedAt || new Date().toISOString(),
+      featuredImage: blogData.featuredImage
+    });
+  } catch (error) {
+    console.error('Error creating blog post:', error);
     throw error;
   }
 }

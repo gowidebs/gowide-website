@@ -907,6 +907,13 @@ const resources = {
       "yearsExperience": "Years Experience",
       "projectsDelivered": "Projects Delivered"
     },
+    "blog": {
+      "title": "Our Blog",
+      "subtitle": "Insights, tips, and updates from our team of experts",
+      "loading": "Loading...",
+      "noDate": "No date",
+      "general": "General"
+    },
     "home": {
       "brandingTitle": "Branding",
       "brandingSubtitle": "Create a powerful brand that resonates with your audience and drives business growth through strategic branding solutions.",
@@ -1922,6 +1929,13 @@ const resources = {
         "yearsExperience": "سنوات الخبرة",
         "projectsDelivered": "المشاريع المنجزة"
       },
+    "blog": {
+      "title": "مدونتنا",
+      "subtitle": "رؤى ونصائح وتحديثات من فريق خبرائنا",
+      "loading": "جاري التحميل...",
+      "noDate": "لا يوجد تاريخ",
+      "general": "عام"
+    },
     "home": {
       "brandingTitle": "العلامة التجارية",
       "brandingSubtitle": "أنشئ علامة تجارية قوية تتفاعل مع جمهورك وتدفع نمو الأعمال من خلال حلول العلامة التجارية الاستراتيجية.",

@@ -216,6 +216,7 @@ const Blog = () => {
     const fetchBlogs = async () => {
       try {
         const blogsData = await getBlogPosts();
+        console.log('Fetched blogs data:', blogsData); // Debug log
         setBlogs(blogsData || []);
       } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -275,6 +276,7 @@ const Blog = () => {
                 </div>
                 <h3>{blog.title}</h3>
                 <p>{blog.excerpt}</p>
+                {blog.author && <p><strong>By:</strong> {blog.author}</p>}
                 <Link to={`/blog/${blog.slug?.current}`} className="read-more">
                   {t('common.readMore')} <i className="fas fa-arrow-right"></i>
                 </Link>
