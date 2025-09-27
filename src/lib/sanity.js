@@ -38,7 +38,26 @@ export const getBlogPosts = () => {
 }
 
 export const getCaseStudies = () => {
-  return client.fetch('*[_type == "caseStudy"] | order(_createdAt desc)')
+  return client.fetch(`
+    *[_type == "caseStudy" && isPublished == true] | order(completedDate desc) {
+      _id,
+      title,
+      slug,
+      description,
+      client,
+      clientName,
+      category,
+      completedDate,
+      projectDuration,
+      "featuredImage": featuredImage.asset->url,
+      projectOverview,
+      challenge,
+      solution,
+      results,
+      technologiesUsed,
+      _createdAt
+    }
+  `)
 }
 
 export const getContactEnquiries = () => {

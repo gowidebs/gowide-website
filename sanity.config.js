@@ -28,9 +28,17 @@ const caseStudy = {
     {name: 'slug', title: 'Slug', type: 'slug', options: {source: 'title'}},
     {name: 'description', title: 'Description', type: 'text'},
     {name: 'client', title: 'Client', type: 'string'},
+    {name: 'clientName', title: 'Client Name', type: 'string'},
     {name: 'category', title: 'Category', type: 'string'},
     {name: 'completedDate', title: 'Completed Date', type: 'date'},
-    {name: 'featuredImage', title: 'Featured Image', type: 'image'}
+    {name: 'projectDuration', title: 'Project Duration', type: 'string'},
+    {name: 'featuredImage', title: 'Featured Image', type: 'image'},
+    {name: 'projectOverview', title: 'Project Overview', type: 'text'},
+    {name: 'challenge', title: 'Challenge', type: 'text'},
+    {name: 'solution', title: 'Solution', type: 'text'},
+    {name: 'results', title: 'Results', type: 'text'},
+    {name: 'technologiesUsed', title: 'Technologies Used', type: 'array', of: [{type: 'string'}]},
+    {name: 'isPublished', title: 'Published', type: 'boolean', initialValue: false}
   ]
 }
 
