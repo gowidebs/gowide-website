@@ -122,47 +122,48 @@ const MetricsCard = styled(motion.div)`
     }
   }
   
-  .metric-circles {
-    display: flex;
-    gap: 2rem;
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
     margin-bottom: 2rem;
-    justify-content: center;
   }
   
-  .metric-circle {
+  .metric-item {
     text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 137, 6, 0.05);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 137, 6, 0.2);
     
-    .circle-progress {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: conic-gradient(var(--primary-orange) 0deg, var(--primary-orange) 306deg, rgba(255, 137, 6, 0.2) 306deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .metric-percentage {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-orange);
       margin-bottom: 0.5rem;
-      position: relative;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        background: var(--card-bg);
-        border-radius: 50%;
-      }
-      
-      .circle-value {
-        position: relative;
-        z-index: 1;
-        font-weight: 700;
-        color: var(--primary-orange);
-      }
+      display: block;
     }
     
-    .circle-label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
+    .metric-label {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 137, 6, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-orange), rgba(255, 137, 6, 0.8));
+        border-radius: 4px;
+        transition: width 2s ease;
+      }
     }
   }
   
@@ -573,18 +574,20 @@ const Marketing = () => {
               <i className="fas fa-chart-pie"></i>
               <span>{t('marketing.marketingMetrics')}</span>
             </div>
-            <div className="metric-circles">
-              <div className="metric-circle">
-                <div className="circle-progress">
-                  <span className="circle-value">85%</span>
+            <div className="metrics-grid">
+              <div className="metric-item">
+                <span className="metric-percentage">85%</span>
+                <div className="metric-label">{t('marketing.brandAwareness')}</div>
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{width: '85%'}}></div>
                 </div>
-                <span className="circle-label">{t('marketing.brandAwareness')}</span>
               </div>
-              <div className="metric-circle">
-                <div className="circle-progress">
-                  <span className="circle-value">92%</span>
+              <div className="metric-item">
+                <span className="metric-percentage">92%</span>
+                <div className="metric-label">{t('marketing.engagement')}</div>
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{width: '92%'}}></div>
                 </div>
-                <span className="circle-label">{t('marketing.engagement')}</span>
               </div>
             </div>
             <div className="metric-value">

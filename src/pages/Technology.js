@@ -2,15 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { technologyTranslations } from '../translations/technologyTranslations';
 
 const TechnologyContainer = styled.div`
   padding-top: 120px;
   min-height: 100vh;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(255, 255, 254, 0.95);
-  }
+  background: var(--bg-primary);
 `;
 
 const HeroSection = styled.section`
@@ -430,7 +427,7 @@ const StackCategory = styled(motion.div)`
   
   .tech-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     
     .tech-item {
@@ -450,34 +447,44 @@ const StackCategory = styled(motion.div)`
       i {
         font-size: 1.5rem;
         color: var(--primary-orange);
+        min-width: 24px;
       }
       
       span {
-        color: var(--text-secondary);
+        color: var(--text-primary);
         font-weight: 500;
+        font-size: 0.9rem;
       }
     }
   }
 `;
 
 const Technology = () => {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const t = (key) => {
+    const keys = key.split('.');
+    let value = technologyTranslations[currentLang];
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    return value || key;
+  };
   
   return (
     <TechnologyContainer>
       <HeroSection>
         <HeroContent>
           <div className="hero-badge">
-            <span>{t('technology.technologySolutions')}</span>
+            <span>{t('solutionsSubtitle')}</span>
           </div>
           
           <Title>
-            <span className="title-main">{t('technology.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
-            <span className="title-highlight">{t('technology.heroTitle').split(' ').slice(2).join(' ')}</span>
+            <span className="title-main">{t('heroTitle')}</span>
           </Title>
           
           <Description>
-            {t('technology.heroSubtitle')}
+            {t('heroDescription')}
           </Description>
         </HeroContent>
         
@@ -508,10 +515,10 @@ const Technology = () => {
       <SolutionsSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('technology.ourExpertise')}</span>
+            <span>{t('solutionsTitle')}</span>
           </div>
-          <h2>{t('technology.technologySolutionsTitle')}</h2>
-          <p className="section-subtitle">{t('technology.solutionsSubtitle').split('transform your business')[0]}<span className="highlight">transform your business</span></p>
+          <h2>{t('solutionsSubtitle')}</h2>
+          <p className="section-subtitle">{t('solutionsDescription')}</p>
         </SectionHeader>
 
         <SolutionsGrid>
@@ -524,15 +531,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-code"></i>
               </div>
-              <div className="solution-category">{t('technology.webDevelopment')}</div>
+              <div className="solution-category">Web Development</div>
             </div>
-            <h3>{t('technology.customWebSolutions')}</h3>
-            <p>{t('technology.webDevelopmentDesc')}</p>
+            <h3>{t('webTitle')}</h3>
+            <p>{t('webDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.reactjs')}</span>
-              <span>{t('technology.nodejs')}</span>
-              <span>{t('technology.ecommerce')}</span>
-              <span>{t('technology.cms')}</span>
+              {t('webTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
 
@@ -545,15 +551,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-mobile-alt"></i>
               </div>
-              <div className="solution-category">{t('technology.mobileDevelopment')}</div>
+              <div className="solution-category">Mobile Development</div>
             </div>
-            <h3>{t('technology.nativeCrossPlatform')}</h3>
-            <p>{t('technology.mobileDevelopmentDesc')}</p>
+            <h3>{t('mobileTitle')}</h3>
+            <p>{t('mobileDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.ios')}</span>
-              <span>{t('technology.android')}</span>
-              <span>{t('technology.reactNative')}</span>
-              <span>{t('technology.flutter')}</span>
+              {t('mobileTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
 
@@ -566,15 +571,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-cogs"></i>
               </div>
-              <div className="solution-category">{t('technology.customSoftware')}</div>
+              <div className="solution-category">Custom Software</div>
             </div>
-            <h3>{t('technology.enterpriseSolutions')}</h3>
-            <p>{t('technology.customSoftwareDesc')}</p>
+            <h3>{t('softwareTitle')}</h3>
+            <p>{t('softwareDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.crm')}</span>
-              <span>{t('technology.erp')}</span>
-              <span>{t('technology.automation')}</span>
-              <span>{t('technology.integration')}</span>
+              {t('softwareTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
 
@@ -587,15 +591,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-cloud"></i>
               </div>
-              <div className="solution-category">{t('technology.cloudSolutions')}</div>
+              <div className="solution-category">Cloud Solutions</div>
             </div>
-            <h3>{t('technology.scalableCloudInfrastructure')}</h3>
-            <p>{t('technology.cloudSolutionsDesc')}</p>
+            <h3>{t('cloudTitle')}</h3>
+            <p>{t('cloudDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.aws')}</span>
-              <span>{t('technology.azure')}</span>
-              <span>{t('technology.migration')}</span>
-              <span>{t('technology.security')}</span>
+              {t('cloudTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
 
@@ -608,15 +611,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-shield-alt"></i>
               </div>
-              <div className="solution-category">{t('technology.cybersecurity')}</div>
+              <div className="solution-category">Cybersecurity</div>
             </div>
-            <h3>{t('technology.advancedSecuritySolutions')}</h3>
-            <p>{t('technology.cybersecurityDesc')}</p>
+            <h3>{t('securityTitle')}</h3>
+            <p>{t('securityDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.firewall')}</span>
-              <span>{t('technology.encryption')}</span>
-              <span>{t('technology.monitoring')}</span>
-              <span>{t('technology.compliance')}</span>
+              {t('securityTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
 
@@ -629,15 +631,14 @@ const Technology = () => {
               <div className="solution-icon">
                 <i className="fas fa-palette"></i>
               </div>
-              <div className="solution-category">{t('technology.uiuxDesign')}</div>
+              <div className="solution-category">UI/UX Design</div>
             </div>
-            <h3>{t('technology.userCenteredDesign')}</h3>
-            <p>{t('technology.uiuxDesignDesc')}</p>
+            <h3>{t('designTitle')}</h3>
+            <p>{t('designDescription')}</p>
             <div className="solution-tags">
-              <span>{t('technology.prototyping')}</span>
-              <span>{t('technology.userTesting')}</span>
-              <span>{t('technology.wireframes')}</span>
-              <span>{t('technology.designSystems')}</span>
+              {t('designTags').map((tag, index) => (
+                <span key={index}>{tag}</span>
+              ))}
             </div>
           </SolutionCard>
         </SolutionsGrid>
@@ -646,10 +647,10 @@ const Technology = () => {
       <ProcessSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('technology.ourProcess')}</span>
+            <span>Our Process</span>
           </div>
-          <h2>{t('technology.developmentProcess')}</h2>
-          <p className="section-subtitle">{t('technology.processSubtitle').split('exceptional technology solutions')[0]}<span className="highlight">exceptional technology solutions</span></p>
+          <h2>{t('processTitle')}</h2>
+          <p className="section-subtitle">{t('processDescription')}</p>
         </SectionHeader>
 
         <ProcessSteps>
@@ -662,8 +663,8 @@ const Technology = () => {
               <i className="fas fa-search"></i>
             </div>
             <div className="step-number">01</div>
-            <h3>{t('technology.discoveryPlanning')}</h3>
-            <p>{t('technology.discoveryPlanningDesc')}</p>
+            <h3>{t('processStep1')}</h3>
+            <p>{t('processStep1Desc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -675,8 +676,8 @@ const Technology = () => {
               <i className="fas fa-pencil-ruler"></i>
             </div>
             <div className="step-number">02</div>
-            <h3>{t('technology.designPrototype')}</h3>
-            <p>{t('technology.designPrototypeDesc')}</p>
+            <h3>{t('processStep2')}</h3>
+            <p>{t('processStep2Desc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -688,8 +689,8 @@ const Technology = () => {
               <i className="fas fa-code"></i>
             </div>
             <div className="step-number">03</div>
-            <h3>{t('technology.development')}</h3>
-            <p>{t('technology.developmentDesc')}</p>
+            <h3>{t('processStep3')}</h3>
+            <p>{t('processStep3Desc')}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -701,8 +702,8 @@ const Technology = () => {
               <i className="fas fa-rocket"></i>
             </div>
             <div className="step-number">04</div>
-            <h3>{t('technology.launchSupport')}</h3>
-            <p>{t('technology.launchSupportDesc')}</p>
+            <h3>{t('processStep4')}</h3>
+            <p>{t('processStep4Desc')}</p>
           </ProcessStep>
         </ProcessSteps>
       </ProcessSection>
@@ -710,10 +711,10 @@ const Technology = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('technology.whyChooseUs')}</span>
+            <span>Why Choose Us</span>
           </div>
-          <h2>{t('technology.technologyAdvantages')}</h2>
-          <p className="section-subtitle">{t('technology.advantagesSubtitle').split('ideal technology partner')[0]}<span className="highlight">ideal technology partner</span></p>
+          <h2>{t('advantagesTitle')}</h2>
+          <p className="section-subtitle">{t('advantagesDescription')}</p>
         </SectionHeader>
 
         <AdvantagesGrid>
@@ -725,11 +726,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-bolt"></i>
             </div>
-            <h3>{t('technology.rapidDevelopment')}</h3>
-            <p>{t('technology.rapidDevelopmentDesc')}</p>
+            <h3>{t('rapidTitle')}</h3>
+            <p>{t('rapidDescription')}</p>
             <div className="advantage-metric">
-              <span className="metric-number">50%</span>
-              <span className="metric-label">{t('technology.fasterDelivery')}</span>
+              <span className="metric-number">{t('rapidMetric')}</span>
+              <span className="metric-label">{t('rapidLabel')}</span>
             </div>
           </AdvantageCard>
 
@@ -741,11 +742,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-shield-alt"></i>
             </div>
-            <h3>{t('technology.secureReliable')}</h3>
-            <p>{t('technology.secureReliableDesc')}</p>
+            <h3>{t('secureTitle')}</h3>
+            <p>{t('secureDescription')}</p>
             <div className="advantage-metric">
-              <span className="metric-number">99.9%</span>
-              <span className="metric-label">{t('technology.uptime')}</span>
+              <span className="metric-number">{t('secureMetric')}</span>
+              <span className="metric-label">{t('secureLabel')}</span>
             </div>
           </AdvantageCard>
 
@@ -757,11 +758,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-expand-arrows-alt"></i>
             </div>
-            <h3>{t('technology.scalableSolutions')}</h3>
-            <p>{t('technology.scalableSolutionsDesc')}</p>
+            <h3>{t('scalableTitle')}</h3>
+            <p>{t('scalableDescription')}</p>
             <div className="advantage-metric">
-              <span className="metric-number">10x</span>
-              <span className="metric-label">{t('technology.scalability')}</span>
+              <span className="metric-number">{t('scalableMetric')}</span>
+              <span className="metric-label">{t('scalableLabel')}</span>
             </div>
           </AdvantageCard>
 
@@ -773,11 +774,11 @@ const Technology = () => {
             <div className="advantage-icon">
               <i className="fas fa-headset"></i>
             </div>
-            <h3>{t('technology.expertSupport')}</h3>
-            <p>{t('technology.expertSupportDesc')}</p>
+            <h3>{t('supportTitle')}</h3>
+            <p>{t('supportDescription')}</p>
             <div className="advantage-metric">
-              <span className="metric-number">24/7</span>
-              <span className="metric-label">{t('technology.support')}</span>
+              <span className="metric-number">{t('supportMetric')}</span>
+              <span className="metric-label">{t('supportLabel')}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
@@ -786,10 +787,10 @@ const Technology = () => {
       <TechStackSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('technology.techStack')}</span>
+            <span>Tech Stack</span>
           </div>
-          <h2>{t('technology.technologyStack')}</h2>
-          <p className="section-subtitle">{t('technology.stackSubtitle').split('innovative solutions')[0]}<span className="highlight">innovative solutions</span></p>
+          <h2>{t('techStackTitle')}</h2>
+          <p className="section-subtitle">{t('techStackDescription')}</p>
         </SectionHeader>
 
         <StackCategories>
@@ -798,23 +799,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <h3>{t('technology.frontend')}</h3>
+            <h3>{t('frontendTitle')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-react"></i>
-                <span>{t('technology.react')}</span>
+                <span>React</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-angular"></i>
-                <span>{t('technology.angular')}</span>
+                <span>Angular</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-vuejs"></i>
-                <span>{t('technology.vuejs')}</span>
+                <span>Vue.js</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-js-square"></i>
-                <span>{t('technology.javascript')}</span>
+                <span>JavaScript</span>
               </div>
             </div>
           </StackCategory>
@@ -824,23 +825,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h3>{t('technology.backend')}</h3>
+            <h3>{t('backendTitle')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-node-js"></i>
-                <span>{t('technology.nodejs')}</span>
+                <span>Node.js</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-python"></i>
-                <span>{t('technology.python')}</span>
+                <span>Python</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-php"></i>
-                <span>{t('technology.php')}</span>
+                <span>PHP</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-java"></i>
-                <span>{t('technology.java')}</span>
+                <span>Java</span>
               </div>
             </div>
           </StackCategory>
@@ -850,23 +851,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <h3>{t('technology.mobile')}</h3>
+            <h3>{t('mobileStackTitle')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-android"></i>
-                <span>{t('technology.android')}</span>
+                <span>Android</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-apple"></i>
-                <span>{t('technology.ios')}</span>
+                <span>iOS</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-react"></i>
-                <span>{t('technology.reactNative')}</span>
+                <span>React Native</span>
               </div>
               <div className="tech-item">
                 <i className="fas fa-mobile-alt"></i>
-                <span>{t('technology.flutter')}</span>
+                <span>Flutter</span>
               </div>
             </div>
           </StackCategory>
@@ -876,23 +877,23 @@ const Technology = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <h3>{t('technology.cloudDevops')}</h3>
+            <h3>{t('cloudDevOpsTitle')}</h3>
             <div className="tech-items">
               <div className="tech-item">
                 <i className="fab fa-aws"></i>
-                <span>{t('technology.aws')}</span>
+                <span>AWS</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-google"></i>
-                <span>{t('technology.googleCloud')}</span>
+                <span>Google Cloud</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-microsoft"></i>
-                <span>{t('technology.azure')}</span>
+                <span>Azure</span>
               </div>
               <div className="tech-item">
                 <i className="fab fa-docker"></i>
-                <span>{t('technology.docker')}</span>
+                <span>Docker</span>
               </div>
             </div>
           </StackCategory>

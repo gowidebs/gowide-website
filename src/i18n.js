@@ -12,6 +12,7 @@ const resources = {
         "products": "Products",
         "contact": "Contact",
         "team": "Team",
+        "ourTeams": "Our Teams",
         "blog": "Blog",
         "careers": "Careers",
         "caseStudies": "Case Studies",
@@ -898,6 +899,14 @@ const resources = {
       "deploy": "Deploy",
       "deployDesc": "Launching your success"
     },
+    "team": {
+      "ourTeam": "Our Team",
+      "title": "Meet Our Amazing Team",
+      "subtitle": "Passionate professionals dedicated to delivering exceptional results and driving innovation in every project we undertake.",
+      "teamMembers": "Team Members",
+      "yearsExperience": "Years Experience",
+      "projectsDelivered": "Projects Delivered"
+    },
     "home": {
       "brandingTitle": "Branding",
       "brandingSubtitle": "Create a powerful brand that resonates with your audience and drives business growth through strategic branding solutions.",
@@ -929,6 +938,7 @@ const resources = {
         "products": "المنتجات",
         "contact": "اتصل بنا",
         "team": "الفريق",
+        "ourTeams": "فرقنا",
         "blog": "المدونة",
         "careers": "الوظائف",
         "caseStudies": "دراسات الحالة",
@@ -1037,24 +1047,24 @@ const resources = {
         "advertisingDesc": "إنشاء حملات إعلانية مؤثرة تحقق التحويل"
       },
       "whyChoose": {
-        "fastDelivery": "تسليم سريع",
-        "fastDeliveryDesc": "أوقات تسليم سريعة دون التنازل عن الجودة",
-        "reliableSolutions": "حلول موثوقة",
-        "reliableSolutionsDesc": "موثوق بها من قبل الشركات في جميع أنحاء العالم للحصول على نتائج متسقة",
-        "innovativeApproach": "نهج مبتكر",
-        "innovativeApproachDesc": "حلول متطورة مصممة خصيصاً لاحتياجاتك",
-        "support247": "دعم 24/7",
-        "support247Desc": "مساعدة على مدار الساعة لجميع استفساراتك"
+        "fastDelivery": "Fast Delivery",
+        "fastDeliveryDesc": "Quick delivery times without compromising on quality",
+        "reliableSolutions": "Reliable Solutions",
+        "reliableSolutionsDesc": "Trusted by businesses worldwide for consistent results",
+        "innovativeApproach": "Innovative Approach",
+        "innovativeApproachDesc": "Cutting-edge solutions tailored to your needs",
+        "support247": "24/7 Support",
+        "support247Desc": "Round-the-clock assistance for all your queries"
       },
       "process": {
-        "discover": "اكتشف",
-        "discoverDesc": "فهم احتياجاتك وأهدافك",
-        "design": "تصميم",
-        "designDesc": "إنشاء حلول مخصصة",
-        "develop": "تطوير",
-        "developDesc": "البناء بدقة",
-        "deploy": "نشر",
-        "deployDesc": "إطلاق نجاحك"
+        "discover": "Discover",
+        "discoverDesc": "Understanding your needs and goals",
+        "design": "Design",
+        "designDesc": "Creating tailored solutions",
+        "develop": "Develop",
+        "developDesc": "Building with precision",
+        "deploy": "Deploy",
+        "deployDesc": "Launching your success"
       },
       "branding": {
         "heroTitle": "حول هوية علامتك التجارية",
@@ -1904,6 +1914,14 @@ const resources = {
       "roiAnalysis": "تحليل عائد الاستثمار",
       "audienceInsights": "رؤى الجمهور"
     },
+      "team": {
+        "ourTeam": "فريقنا",
+        "title": "تعرف على فريقنا المذهل",
+        "subtitle": "محترفون ش��وفون مكرسون لتقديم نتائج استثنائية وقيادة الابتكار في كل مشروع نقوم به.",
+        "teamMembers": "أعضاء الفريق",
+        "yearsExperience": "سنوات الخبرة",
+        "projectsDelivered": "المشاريع المنجزة"
+      },
     "home": {
       "brandingTitle": "العلامة التجارية",
       "brandingSubtitle": "أنشئ علامة تجارية قوية تتفاعل مع جمهورك وتدفع نمو الأعمال من خلال حلول العلامة التجارية الاستراتيجية.",

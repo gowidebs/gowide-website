@@ -263,49 +263,124 @@ const ValuesSection = styled.section`
 `;
 
 const ValuesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   margin-top: 60px;
 `;
 
+const ValuesRow = styled.div`
+  display: grid;
+  gap: 30px;
+  
+  &.first-row {
+    grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+    
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &.second-row {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+`;
+
 const ValueCard = styled.div`
-  background: var(--bg-primary);
-  padding: 40px 30px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  padding: 50px 30px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 137, 6, 0.2);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 137, 6, 0.1), transparent);
+    transition: left 0.6s;
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 137, 6, 0.3);
+    border-color: var(--primary-orange);
+    
+    &::before {
+      left: 100%;
+    }
+    
+    .value-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: var(--primary-orange);
+      color: white;
+    }
   }
 
   .value-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 137, 6, 0.1);
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 137, 6, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 2rem;
-    color: var(--primary);
-    border: 2px solid rgba(255, 137, 6, 0.2);
+    margin: 0 auto 30px;
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    border: 3px solid rgba(255, 137, 6, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--primary);
+    margin-bottom: 20px;
+    color: var(--primary-orange);
+    position: relative;
+    z-index: 2;
   }
 
   p {
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  &.collaboration-card {
+    background: linear-gradient(135deg, rgba(255, 137, 6, 0.1) 0%, var(--bg-primary) 50%, var(--bg-secondary) 100%);
+    border: 2px solid var(--primary-orange);
+    
+    .value-icon {
+      background: var(--primary-orange);
+      color: white;
+      box-shadow: 0 10px 30px rgba(255, 137, 6, 0.4);
+    }
+    
+    h3 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
   }
 `;
 
@@ -378,6 +453,7 @@ const ImpactTitle = styled.h3`
 
 const About = () => {
   const { t } = useTranslation();
+  
   const steps = [
     {
       number: "01",
@@ -443,7 +519,7 @@ const About = () => {
     { number: "100+", title: t('common.projectsCompleted'), percentage: 85 },
     { number: "50+", title: t('common.happyClients'), percentage: 75 },
     { number: "5+", title: t('common.yearsExperience'), percentage: 60 },
-    { number: "24/7", title: t('common.supportAvailable'), percentage: 100 }
+    { number: "24/7", title: t('common.support'), percentage: 100 }
   ];
 
   return (
@@ -456,14 +532,14 @@ const About = () => {
         </FloatingShapes>
         <HeroContent>
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {t('about.whoWeAre')} <span className="highlight">{t('about.subtitle')}</span>
+            {t('about.title')} <span className="highlight">GoWide</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -481,8 +557,8 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
             <VMCard>
               <h2>{t('about.ourVision')}</h2>
@@ -492,8 +568,8 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <VMCard>
               <h2>{t('about.ourMission')}</h2>
@@ -513,10 +589,10 @@ const About = () => {
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <Step>
                   <h3>
@@ -538,23 +614,42 @@ const About = () => {
             <p>{t('about.coreValuesDesc')}</p>
           </SectionHeader>
           <ValuesGrid>
-            {values.map((value, index) => (
+            <ValuesRow className="first-row">
+              {values.slice(0, 3).map((value, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <ValueCard>
+                    <div className="value-icon">
+                      {value.icon}
+                    </div>
+                    <h3>{value.title}</h3>
+                    <p>{value.description}</p>
+                  </ValueCard>
+                </motion.div>
+              ))}
+            </ValuesRow>
+            
+            <ValuesRow className="second-row">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <ValueCard>
+                <ValueCard className="collaboration-card">
                   <div className="value-icon">
-                    {value.icon}
+                    {values[3].icon}
                   </div>
-                  <h3>{value.title}</h3>
-                  <p>{value.description}</p>
+                  <h3>{values[3].title}</h3>
+                  <p>{values[3].description}</p>
                 </ValueCard>
               </motion.div>
-            ))}
+            </ValuesRow>
           </ValuesGrid>
         </Container>
       </ValuesSection>
@@ -571,15 +666,13 @@ const About = () => {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <ImpactCard>
                   <CircularProgress percentage={impact.percentage}>
                     <div className="progress-circle">
-                      <div className="progress-inner">
-                        <span>{impact.number}</span>
-                      </div>
+                      <div className="progress-inner">{impact.number}</div>
                     </div>
                   </CircularProgress>
                   <ImpactTitle>{impact.title}</ImpactTitle>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import advertisingTranslations from '../translations/advertisingTranslations';
 
 const AdvertisingContainer = styled.div`
   padding-top: 120px;
@@ -507,37 +508,39 @@ const PlatformCard = styled(motion.div)`
 `;
 
 const Advertising = () => {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const t = advertisingTranslations[currentLang] || advertisingTranslations.en;
   
   return (
     <AdvertisingContainer>
       <HeroSection>
         <HeroContent>
           <div className="hero-badge">
-            <span>{t('advertising.advertisingSolutions')}</span>
+            <span>{t.advertisingSolutions}</span>
           </div>
           
           <Title>
-            <span className="title-main">{t('advertising.heroTitle').split(' ').slice(0, 2).join(' ')}</span>
-            <span className="title-highlight">{t('advertising.heroTitle').split(' ').slice(2).join(' ')}</span>
+            <span className="title-main">{t.heroTitle.split(' ').slice(0, 2).join(' ')}</span>
+            <span className="title-highlight">{t.heroTitle.split(' ').slice(2).join(' ')}</span>
           </Title>
           
           <Description>
-            {t('advertising.heroSubtitle')}
+            {t.heroSubtitle}
           </Description>
           
           <StatsContainer>
             <StatItem>
               <span className="stat-number">300%</span>
-              <span className="stat-label">{t('advertising.avgROIIncrease')}</span>
+              <span className="stat-label">{t.avgROIIncrease}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">50M+</span>
-              <span className="stat-label">{t('advertising.impressionsGenerated')}</span>
+              <span className="stat-label">{t.impressionsGenerated}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">95%</span>
-              <span className="stat-label">{t('advertising.clientSatisfaction')}</span>
+              <span className="stat-label">{t.clientSatisfaction}</span>
             </StatItem>
           </StatsContainer>
         </HeroContent>
@@ -550,7 +553,7 @@ const Advertising = () => {
           >
             <div className="metric-header">
               <i className="fas fa-chart-line"></i>
-              <span>{t('advertising.campaignPerformance')}</span>
+              <span>{t.campaignPerformance}</span>
             </div>
             <div className="metric-chart">
               <div className="chart-bar chart-bar-1"></div>
@@ -560,7 +563,7 @@ const Advertising = () => {
             </div>
             <div className="metric-value">
               <span className="value-number">+245%</span>
-              <span className="value-label">{t('advertising.growth')}</span>
+              <span className="value-label">{t.growth}</span>
             </div>
           </MetricsCard>
         </HeroVisual>
@@ -569,10 +572,10 @@ const Advertising = () => {
       <ServicesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('advertising.ourServices')}</span>
+            <span>{t.ourServices}</span>
           </div>
-          <h2>{t('advertising.advertisingServices')}</h2>
-          <p className="section-subtitle">{t('advertising.servicesSubtitle').split('drive growth')[0]}<span className="highlight">drive growth</span>{t('advertising.servicesSubtitle').split('drive growth')[1]}</p>
+          <h2>{t.advertisingServices}</h2>
+          <p className="section-subtitle">{t.servicesSubtitle.split('drive growth')[0]}<span className="highlight">drive growth</span>{t.servicesSubtitle.split('drive growth')[1]}</p>
         </SectionHeader>
 
         <ServicesGrid>
@@ -584,13 +587,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fab fa-google"></i>
             </div>
-            <h3>{t('advertising.googleAds')}</h3>
-            <p>{t('advertising.googleAdsDesc')}</p>
+            <h3>{t.googleAds}</h3>
+            <p>{t.googleAdsDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.searchAds')}</span>
-              <span>{t('advertising.displayAds')}</span>
-              <span>{t('advertising.shoppingAds')}</span>
-              <span>{t('advertising.videoAds')}</span>
+              <span>{t.searchAds}</span>
+              <span>{t.displayAds}</span>
+              <span>{t.shoppingAds}</span>
+              <span>{t.videoAds}</span>
             </div>
           </ServiceCard>
 
@@ -602,13 +605,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-share-alt"></i>
             </div>
-            <h3>{t('advertising.socialMediaAdvertising')}</h3>
-            <p>{t('advertising.socialMediaAdvertisingDesc')}</p>
+            <h3>{t.socialMediaAdvertising}</h3>
+            <p>{t.socialMediaAdvertisingDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.facebookAds')}</span>
-              <span>{t('advertising.instagramAds')}</span>
-              <span>{t('advertising.linkedinAds')}</span>
-              <span>{t('advertising.twitterAds')}</span>
+              <span>{t.facebookAds}</span>
+              <span>{t.instagramAds}</span>
+              <span>{t.linkedinAds}</span>
+              <span>{t.twitterAds}</span>
             </div>
           </ServiceCard>
 
@@ -620,13 +623,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-bullseye"></i>
             </div>
-            <h3>{t('advertising.targetedCampaigns')}</h3>
-            <p>{t('advertising.targetedCampaignsDesc')}</p>
+            <h3>{t.targetedCampaigns}</h3>
+            <p>{t.targetedCampaignsDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.audienceTargeting')}</span>
-              <span>{t('advertising.retargeting')}</span>
-              <span>{t('advertising.lookalikeAudiences')}</span>
-              <span>{t('advertising.behavioralTargeting')}</span>
+              <span>{t.audienceTargeting}</span>
+              <span>{t.retargeting}</span>
+              <span>{t.lookalikeAudiences}</span>
+              <span>{t.behavioralTargeting}</span>
             </div>
           </ServiceCard>
 
@@ -638,13 +641,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>{t('advertising.performanceTracking')}</h3>
-            <p>{t('advertising.performanceTrackingDesc')}</p>
+            <h3>{t.performanceTracking}</h3>
+            <p>{t.performanceTrackingDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.realTimeAnalytics')}</span>
-              <span>{t('advertising.conversionTracking')}</span>
-              <span>{t('advertising.roiReporting')}</span>
-              <span>{t('advertising.customDashboards')}</span>
+              <span>{t.realTimeAnalytics}</span>
+              <span>{t.conversionTracking}</span>
+              <span>{t.roiReporting}</span>
+              <span>{t.customDashboards}</span>
             </div>
           </ServiceCard>
 
@@ -656,13 +659,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-palette"></i>
             </div>
-            <h3>{t('advertising.creativeDesign')}</h3>
-            <p>{t('advertising.creativeDesignDesc')}</p>
+            <h3>{t.creativeDesign}</h3>
+            <p>{t.creativeDesignDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.bannerDesign')}</span>
-              <span>{t('advertising.videoCreatives')}</span>
-              <span>{t('advertising.copywriting')}</span>
-              <span>{t('advertising.brandConsistency')}</span>
+              <span>{t.bannerDesign}</span>
+              <span>{t.videoCreatives}</span>
+              <span>{t.copywriting}</span>
+              <span>{t.brandConsistency}</span>
             </div>
           </ServiceCard>
 
@@ -674,13 +677,13 @@ const Advertising = () => {
             <div className="service-icon">
               <i className="fas fa-cogs"></i>
             </div>
-            <h3>{t('advertising.campaignOptimization')}</h3>
-            <p>{t('advertising.campaignOptimizationDesc')}</p>
+            <h3>{t.campaignOptimization}</h3>
+            <p>{t.campaignOptimizationDesc}</p>
             <div className="service-features">
-              <span>{t('advertising.abTesting')}</span>
-              <span>{t('advertising.bidOptimization')}</span>
-              <span>{t('advertising.keywordResearch')}</span>
-              <span>{t('advertising.landingPageOptimization')}</span>
+              <span>{t.abTesting}</span>
+              <span>{t.bidOptimization}</span>
+              <span>{t.keywordResearch}</span>
+              <span>{t.landingPageOptimization}</span>
             </div>
           </ServiceCard>
         </ServicesGrid>
@@ -689,10 +692,10 @@ const Advertising = () => {
       <ProcessSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('advertising.ourProcess')}</span>
+            <span>{t.ourProcess}</span>
           </div>
-          <h2>{t('advertising.advertisingProcess')}</h2>
-          <p className="section-subtitle">{t('advertising.processSubtitle').split('maximize your advertising ROI')[0]}<span className="highlight">maximize your advertising ROI</span></p>
+          <h2>{t.advertisingProcess}</h2>
+          <p className="section-subtitle">{t.processSubtitle.split('maximize your advertising ROI')[0]}<span className="highlight">maximize your advertising ROI</span></p>
         </SectionHeader>
 
         <ProcessSteps>
@@ -705,8 +708,8 @@ const Advertising = () => {
               <i className="fas fa-search"></i>
             </div>
             <div className="step-number">01</div>
-            <h3>{t('advertising.researchAnalysis')}</h3>
-            <p>{t('advertising.researchAnalysisDesc')}</p>
+            <h3>{t.researchAnalysis}</h3>
+            <p>{t.researchAnalysisDesc}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -718,8 +721,8 @@ const Advertising = () => {
               <i className="fas fa-bullseye"></i>
             </div>
             <div className="step-number">02</div>
-            <h3>{t('advertising.strategyDevelopment')}</h3>
-            <p>{t('advertising.strategyDevelopmentDesc')}</p>
+            <h3>{t.strategyDevelopment}</h3>
+            <p>{t.strategyDevelopmentDesc}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -731,8 +734,8 @@ const Advertising = () => {
               <i className="fas fa-rocket"></i>
             </div>
             <div className="step-number">03</div>
-            <h3>{t('advertising.campaignLaunch')}</h3>
-            <p>{t('advertising.campaignLaunchDesc')}</p>
+            <h3>{t.campaignLaunch}</h3>
+            <p>{t.campaignLaunchDesc}</p>
           </ProcessStep>
 
           <ProcessStep
@@ -744,8 +747,8 @@ const Advertising = () => {
               <i className="fas fa-chart-line"></i>
             </div>
             <div className="step-number">04</div>
-            <h3>{t('advertising.optimizeTrack')}</h3>
-            <p>{t('advertising.optimizeTrackDesc')}</p>
+            <h3>{t.optimizeTrack}</h3>
+            <p>{t.optimizeTrackDesc}</p>
           </ProcessStep>
         </ProcessSteps>
       </ProcessSection>
@@ -753,10 +756,10 @@ const Advertising = () => {
       <AdvantagesSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('advertising.whyChooseUs')}</span>
+            <span>{t.whyChooseUs}</span>
           </div>
-          <h2>{t('advertising.advertisingAdvantages')}</h2>
-          <p className="section-subtitle">{t('advertising.advantagesSubtitle').split('ideal advertising partner')[0]}<span className="highlight">ideal advertising partner</span></p>
+          <h2>{t.advertisingAdvantages}</h2>
+          <p className="section-subtitle">{t.advantagesSubtitle.split('ideal advertising partner')[0]}<span className="highlight">ideal advertising partner</span></p>
         </SectionHeader>
 
         <AdvantagesGrid>
@@ -768,16 +771,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-chart-bar"></i>
             </div>
-            <h3>{t('advertising.dataDrivenResults')}</h3>
-            <p>{t('advertising.dataDrivenResultsDesc')}</p>
+            <h3>{t.dataDrivenResults}</h3>
+            <p>{t.dataDrivenResultsDesc}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> {t('advertising.realTimeAnalytics')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.performanceTracking')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.roiOptimization')}</li>
+              <li><i className="fas fa-check"></i> {t.realTimeAnalytics}</li>
+              <li><i className="fas fa-check"></i> {t.performanceTracking}</li>
+              <li><i className="fas fa-check"></i> {t.roiOptimization}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">300%</span>
-              <span className="metric-label">{t('advertising.avgROIIncrease')}</span>
+              <span className="metric-label">{t.avgROIIncrease}</span>
             </div>
           </AdvantageCard>
 
@@ -789,16 +792,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-users"></i>
             </div>
-            <h3>{t('advertising.expertTeam')}</h3>
-            <p>{t('advertising.expertTeamDesc')}</p>
+            <h3>{t.expertTeam}</h3>
+            <p>{t.expertTeamDesc}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> {t('advertising.googleCertified')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.facebookBlueprint')}</li>
-              <li><i className="fas fa-check"></i> 5+ {t('advertising.yearsExperience')}</li>
+              <li><i className="fas fa-check"></i> {t.googleCertified}</li>
+              <li><i className="fas fa-check"></i> {t.facebookBlueprint}</li>
+              <li><i className="fas fa-check"></i> 5+ {t.yearsExperience}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">50M+</span>
-              <span className="metric-label">{t('advertising.impressionsManaged')}</span>
+              <span className="metric-label">{t.impressionsManaged}</span>
             </div>
           </AdvantageCard>
 
@@ -810,16 +813,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-clock"></i>
             </div>
-            <h3>{t('advertising.quickResults')}</h3>
-            <p>{t('advertising.quickResultsDesc')}</p>
+            <h3>{t.quickResults}</h3>
+            <p>{t.quickResultsDesc}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> {t('advertising.setup24to48hr')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.instantOptimization')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.weeklyReports')}</li>
+              <li><i className="fas fa-check"></i> {t.setup24to48hr}</li>
+              <li><i className="fas fa-check"></i> {t.instantOptimization}</li>
+              <li><i className="fas fa-check"></i> {t.weeklyReports}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">7</span>
-              <span className="metric-label">{t('advertising.daysToResults')}</span>
+              <span className="metric-label">{t.daysToResults}</span>
             </div>
           </AdvantageCard>
 
@@ -831,16 +834,16 @@ const Advertising = () => {
             <div className="advantage-icon">
               <i className="fas fa-headset"></i>
             </div>
-            <h3>{t('advertising.dedicatedSupport')}</h3>
-            <p>{t('advertising.dedicatedSupportDesc')}</p>
+            <h3>{t.dedicatedSupport}</h3>
+            <p>{t.dedicatedSupportDesc}</p>
             <ul className="advantage-features">
-              <li><i className="fas fa-check"></i> {t('advertising.accountManager')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.chatSupport247')}</li>
-              <li><i className="fas fa-check"></i> {t('advertising.monthlyReviews')}</li>
+              <li><i className="fas fa-check"></i> {t.accountManager}</li>
+              <li><i className="fas fa-check"></i> {t.chatSupport247}</li>
+              <li><i className="fas fa-check"></i> {t.monthlyReviews}</li>
             </ul>
             <div className="advantage-metric">
               <span className="metric-number">24/7</span>
-              <span className="metric-label">{t('advertising.supportAvailable')}</span>
+              <span className="metric-label">{t.supportAvailable}</span>
             </div>
           </AdvantageCard>
         </AdvantagesGrid>
@@ -849,10 +852,10 @@ const Advertising = () => {
       <PlatformsSection>
         <SectionHeader>
           <div className="section-badge">
-            <span>{t('advertising.ourPlatforms')}</span>
+            <span>{t.ourPlatforms}</span>
           </div>
-          <h2>{t('advertising.advertisingPlatforms')}</h2>
-          <p className="section-subtitle">{t('advertising.platformsSubtitle').split('maximum reach')[0]}<span className="highlight">maximum reach</span></p>
+          <h2>{t.advertisingPlatforms}</h2>
+          <p className="section-subtitle">{t.platformsSubtitle.split('maximum reach')[0]}<span className="highlight">maximum reach</span></p>
         </SectionHeader>
 
         <PlatformsGrid>
@@ -864,12 +867,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-google"></i>
             </div>
-            <h3>{t('advertising.googleAdsTitle')}</h3>
-            <p>{t('advertising.googleAdsDesc2')}</p>
+            <h3>{t.googleAdsTitle}</h3>
+            <p>{t.googleAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">8.5B+</span>
-                <span className="stat-label">{t('advertising.dailySearches')}</span>
+                <span className="stat-label">{t.dailySearches}</span>
               </div>
             </div>
           </PlatformCard>
@@ -882,12 +885,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-facebook"></i>
             </div>
-            <h3>{t('advertising.facebookAdsTitle')}</h3>
-            <p>{t('advertising.facebookAdsDesc2')}</p>
+            <h3>{t.facebookAdsTitle}</h3>
+            <p>{t.facebookAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2.9B+</span>
-                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
+                <span className="stat-label">{t.monthlyUsers}</span>
               </div>
             </div>
           </PlatformCard>
@@ -900,12 +903,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-instagram"></i>
             </div>
-            <h3>{t('advertising.instagramAdsTitle')}</h3>
-            <p>{t('advertising.instagramAdsDesc2')}</p>
+            <h3>{t.instagramAdsTitle}</h3>
+            <p>{t.instagramAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2B+</span>
-                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
+                <span className="stat-label">{t.monthlyUsers}</span>
               </div>
             </div>
           </PlatformCard>
@@ -918,12 +921,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-linkedin"></i>
             </div>
-            <h3>{t('advertising.linkedinAdsTitle')}</h3>
-            <p>{t('advertising.linkedinAdsDesc2')}</p>
+            <h3>{t.linkedinAdsTitle}</h3>
+            <p>{t.linkedinAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">900M+</span>
-                <span className="stat-label">{t('advertising.professionals')}</span>
+                <span className="stat-label">{t.professionals}</span>
               </div>
             </div>
           </PlatformCard>
@@ -936,12 +939,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-youtube"></i>
             </div>
-            <h3>{t('advertising.youtubeAdsTitle')}</h3>
-            <p>{t('advertising.youtubeAdsDesc2')}</p>
+            <h3>{t.youtubeAdsTitle}</h3>
+            <p>{t.youtubeAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">2B+</span>
-                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
+                <span className="stat-label">{t.monthlyUsers}</span>
               </div>
             </div>
           </PlatformCard>
@@ -954,12 +957,12 @@ const Advertising = () => {
             <div className="platform-icon">
               <i className="fab fa-twitter"></i>
             </div>
-            <h3>{t('advertising.twitterAdsTitle')}</h3>
-            <p>{t('advertising.twitterAdsDesc2')}</p>
+            <h3>{t.twitterAdsTitle}</h3>
+            <p>{t.twitterAdsDesc2}</p>
             <div className="platform-stats">
               <div className="stat">
                 <span className="stat-value">450M+</span>
-                <span className="stat-label">{t('advertising.monthlyUsers')}</span>
+                <span className="stat-label">{t.monthlyUsers}</span>
               </div>
             </div>
           </PlatformCard>

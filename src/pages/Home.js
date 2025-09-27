@@ -1,12 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { lazy, Suspense } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { lazy, Suspense, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { homeTranslations } from '../translations/homeTranslations';
 import SEO from '../components/SEO';
 import TechShowcase from '../components/TechShowcase';
 import CounterStats from '../components/CounterStats';
+
+// Import logos
+import gowideLogo from '../logo/GW.png';
+import ergoEdgeLogo from '../logo/logo.png';
+import globalTradeLogo from '../logo/gta.png';
+
+// Custom hooks for performance
+const useTypingAnimation = (text, speed = 100) => {
+  const [displayText, setDisplayText] = useState('');
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (!text) return;
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayText(text.slice(0, i + 1));
+        i++;
+      } else {
+        setIsComplete(true);
+        clearInterval(timer);
+      }
+    }, speed);
+    return () => clearInterval(timer);
+  }, [text, speed]);
+
+  return { displayText, isComplete };
+};
+
+const useCountUp = (end, duration = 2000, start = 0) => {
+  const [count, setCount] = useState(start);
+  const countRef = useRef(null);
+  const isInView = useInView(countRef, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+    let startTime;
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * (end - start) + start));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, [isInView, end, duration, start]);
+
+  return { count, ref: countRef };
+};
 
 
 const HomePage = styled.div`
@@ -37,6 +86,29 @@ const HeroSection = styled.section`
     bottom: 0;
     background: radial-gradient(circle at 20% 80%, rgba(255, 137, 6, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 137, 6, 0.1) 0%, transparent 50%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ff8906" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%23ff8906" opacity="0.7"><animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/></circle><circle cx="60" cy="70" r="1" fill="%23ff8906" opacity="0.8"><animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/></circle></svg>') repeat;
+    animation: float 20s linear infinite;
+  }
+  
+  body.light-theme & {
+    &::after {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23e67e00" opacity="0.8"><animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%23e67e00" opacity="0.9"><animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/></circle><circle cx="60" cy="70" r="1" fill="%23e67e00" opacity="1"><animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/></circle></svg>') repeat;
+    }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
   }
 `;
 
@@ -393,12 +465,29 @@ const ServiceBox = styled.div`
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 137, 6, 0.1), transparent);
+    transition: left 0.6s;
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 137, 6, 0.2);
     border-color: var(--primary-orange);
+    
+    &::before {
+      left: 100%;
+    }
   }
   
   @media (max-width: 480px) {
@@ -765,12 +854,19 @@ const ProgressCard = styled.div`
     color: var(--primary-orange);
     margin-bottom: 10px;
     display: block;
+    font-family: 'Courier New', monospace;
   }
   
   .impact-icon {
     font-size: 2rem;
     color: var(--primary-orange);
     margin-bottom: 15px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
   }
 `;
 
@@ -816,58 +912,201 @@ const ContactBtn = styled(Link)`
   }
 `;
 
+const GroupSection = styled.section`
+  padding: 100px 0;
+  background: transparent;
+  
+  body.light-theme & {
+    background: rgba(248, 249, 250, 0.9);
+  }
+`;
+
+const GroupGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  @media (min-width: 1920px) {
+    gap: 50px;
+  }
+`;
+
+const GroupCard = styled.div`
+  background: var(--bg-secondary);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 137, 6, 0.1), transparent);
+    transition: left 0.6s;
+  }
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(255, 137, 6, 0.2);
+    border-color: var(--primary-orange);
+    
+    &::before {
+      left: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 30px 20px;
+    
+    &:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  }
+
+  .company-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 137, 6, 0.2);
+    transition: all 0.3s ease;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: white;
+      padding: 10px;
+    }
+    
+    @media (max-width: 480px) {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-orange);
+    
+    @media (max-width: 480px) {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+    
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
+  }
+`;
+
+const GroupDescription = styled.div`
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }
+`;
+
 const Home = () => {
-  const { t } = useTranslation();
-  const services = [
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const ht = homeTranslations[currentLang] || homeTranslations.en;
+  
+  // Typing animation for hero title
+  const heroText = ht.heroTitle.replace(/<[^>]*>/g, '');
+  const { displayText } = useTypingAnimation(heroText, 80);
+  const services = useMemo(() => [
     {
-      title: t('home.brandingTitle'),
-      subtitle: t('home.brandingSubtitle'),
+      title: ht.brandingTitle,
+      subtitle: ht.brandingSubtitle,
       icon: "fas fa-palette",
       items: [
-        { icon: "fas fa-chess", title: t('branding.brandStrategyTitle'), features: [t('branding.marketResearch'), t('branding.brandPositioning'), t('branding.targetAudienceAnalysis'), t('branding.competitiveAnalysis')] },
-        { icon: "fas fa-palette", title: t('branding.visualIdentityDesignTitle'), features: [t('branding.logoDesign'), t('branding.colorSchemes'), t('branding.typography'), t('branding.brandGuidelines')] },
-        { icon: "fas fa-comment-dots", title: t('branding.brandVoiceMessagingTitle'), features: [t('branding.toneDevelopment'), t('branding.messagingStrategy'), t('branding.contentGuidelines'), t('branding.brandStory')] },
-        { icon: "fas fa-star", title: t('branding.brandImplementationTitle'), features: [t('branding.customerJourney'), t('branding.touchpointDesign'), t('branding.brandInteraction'), t('branding.experienceMapping')] }
+        { icon: "fas fa-lightbulb", title: ht.brandStrategy, features: ht.brandStrategyFeatures },
+        { icon: "fas fa-eye", title: ht.visualIdentity, features: ht.visualIdentityFeatures },
+        { icon: "fas fa-comment-dots", title: ht.brandVoice, features: ht.brandVoiceFeatures },
+        { icon: "fas fa-star", title: ht.brandExperience, features: ht.brandExperienceFeatures }
       ],
       link: "/branding"
     },
     {
-      title: t('home.technologyTitle'),
-      subtitle: t('home.technologySubtitle'),
+      title: ht.technologyTitle,
+      subtitle: ht.technologySubtitle,
       icon: "fas fa-code",
       items: [
-        { icon: "fas fa-code", title: t('home.webDevelopment'), features: [t('home.customWebSolutions'), t('homeServices.responsiveDesign'), t('home.ecommerce'), t('homeServices.apiIntegration')] },
-        { icon: "fas fa-mobile-alt", title: t('home.mobileDevelopment'), features: [t('home.ios'), t('home.android'), t('homeServices.crossPlatformApps'), t('homeServices.mobileUIUX')] },
-        { icon: "fas fa-cloud", title: t('home.cloudSolutions'), features: [t('home.migration'), t('home.aws'), t('home.security'), t('homeServices.scalableInfrastructure')] },
-        { icon: "fas fa-brain", title: t('homeServices.aiMachineLearning'), features: [t('homeServices.dataAnalytics'), t('homeServices.predictiveModels'), t('homeServices.aiIntegration'), t('homeServices.machineLearningModels')] }
+        { icon: "fas fa-code", title: ht.webDevelopment, features: ht.webDevFeatures },
+        { icon: "fas fa-mobile-alt", title: ht.mobileDevelopment, features: ht.mobileDevFeatures },
+        { icon: "fas fa-cloud", title: ht.cloudServices, features: ht.cloudServicesFeatures },
+        { icon: "fas fa-brain", title: ht.aiMachineLearning, features: ht.aiMachineLearningFeatures }
       ],
       link: "/technology"
     },
     {
-      title: t('home.marketingTitle'),
-      subtitle: t('home.marketingSubtitle'),
+      title: ht.marketingTitle,
+      subtitle: ht.marketingSubtitle,
       icon: "fas fa-bullhorn",
       items: [
-        { icon: "fas fa-bullhorn", title: t('marketing.digitalMarketing'), features: [t('marketing.socialMediaMarketing'), t('marketing.contentStrategy'), t('marketing.emailMarketing'), t('advertising.digitalAdvertising')] },
-        { icon: "fas fa-search", title: t('marketing.seoOptimization'), features: [t('marketing.keywordResearch'), t('marketing.onPageSEO'), t('marketing.technicalSEO'), t('marketing.linkBuilding')] },
-        { icon: "fas fa-pen-fancy", title: t('marketing.contentMarketing'), features: [t('marketing.blogWriting'), t('marketing.videoProduction'), t('marketing.infographics'), t('marketing.contentStrategy')] },
-        { icon: "fas fa-chart-line", title: t('marketing.marketingAnalytics'), features: [t('marketing.performanceTracking'), t('marketing.dataAnalysis'), t('marketing.roiMeasurement'), t('marketing.marketResearch')] }
+        { icon: "fas fa-bullhorn", title: ht.digitalMarketing, features: ht.digitalMarketingFeatures },
+        { icon: "fas fa-search", title: ht.seoOptimization, features: ht.seoFeatures },
+        { icon: "fas fa-pen-fancy", title: ht.contentMarketing, features: ht.contentMarketingFeatures },
+        { icon: "fas fa-chart-line", title: ht.marketingAnalytics, features: ht.marketingAnalyticsFeatures }
       ],
       link: "/marketing"
     },
     {
-      title: t('home.advertisingTitle'),
-      subtitle: t('home.advertisingSubtitle'),
+      title: ht.advertisingTitle,
+      subtitle: ht.advertisingSubtitle,
       icon: "fas fa-ad",
       items: [
-        { icon: "fas fa-ad", title: t('advertising.googleAds'), features: [t('advertising.googleAdsManagement'), t('advertising.socialMediaAdvertising'), t('advertising.displayAds'), t('advertising.retargeting')] },
-        { icon: "fas fa-mouse-pointer", title: t('home.ppcManagement'), features: [t('advertising.keywordResearch'), t('advertising.bidManagement'), t('advertising.abTesting'), t('advertising.conversionTracking')] },
-        { icon: "fas fa-palette", title: t('advertising.creativeDesign'), features: [t('advertising.bannerDesign'), t('homeServices.adCreatives'), t('advertising.videoAds'), t('homeServices.richMediaAds')] },
-        { icon: "fas fa-chart-pie", title: t('homeServices.campaignAnalytics'), features: [t('homeServices.performanceMetrics'), t('homeServices.roiAnalysis'), t('homeServices.audienceInsights'), t('advertising.campaignOptimization')] }
+        { icon: "fas fa-ad", title: ht.digitalAdvertising, features: ht.digitalAdvertisingFeatures },
+        { icon: "fas fa-mouse-pointer", title: ht.ppcManagement, features: ht.ppcManagementFeatures },
+        { icon: "fas fa-palette", title: ht.creativeDesign, features: ht.creativeDesignFeatures },
+        { icon: "fas fa-chart-pie", title: ht.campaignAnalytics, features: ht.campaignAnalyticsFeatures }
       ],
       link: "/advertising"
     }
-  ];
+  ], [ht]);
 
   const products = [
     {
@@ -894,25 +1133,69 @@ const Home = () => {
   ];
 
   const whyChoose = [
-    { icon: "fas fa-rocket", title: t('whyChoose.fastDelivery'), description: t('whyChoose.fastDeliveryDesc') },
-    { icon: "fas fa-shield-alt", title: t('whyChoose.reliableSolutions'), description: t('whyChoose.reliableSolutionsDesc') },
-    { icon: "fas fa-lightbulb", title: t('whyChoose.innovativeApproach'), description: t('whyChoose.innovativeApproachDesc') },
-    { icon: "fas fa-headset", title: t('whyChoose.support247'), description: t('whyChoose.support247Desc') }
+    { icon: "fas fa-users", title: ht.expertTeam, description: ht.expertTeamDesc },
+    { icon: "fas fa-lightbulb", title: ht.innovativeSolutions, description: ht.innovativeSolutionsDesc },
+    { icon: "fas fa-heart", title: ht.clientFocused, description: ht.clientFocusedDesc },
+    { icon: "fas fa-shield-alt", title: ht.qualityAssurance, description: ht.qualityAssuranceDesc }
   ];
 
   const process = [
-    { number: 1, icon: "fas fa-search", title: t('process.discover'), description: t('process.discoverDesc') },
-    { number: 2, icon: "fas fa-lightbulb", title: t('process.design'), description: t('process.designDesc') },
-    { number: 3, icon: "fas fa-cogs", title: t('process.develop'), description: t('process.developDesc') },
-    { number: 4, icon: "fas fa-rocket", title: t('process.deploy'), description: t('process.deployDesc') }
+    { number: 1, icon: "fas fa-search", title: ht.discovery, description: ht.discoveryDesc },
+    { number: 2, icon: "fas fa-clipboard-list", title: ht.planning, description: ht.planningDesc },
+    { number: 3, icon: "fas fa-cogs", title: ht.development, description: ht.developmentDesc },
+    { number: 4, icon: "fas fa-rocket", title: ht.delivery, description: ht.deliveryDesc }
   ];
 
   const impacts = [
-    { number: "100+", title: t('common.projectsCompleted'), percentage: 85, icon: "fas fa-rocket" },
-    { number: "50+", title: t('common.happyClients'), percentage: 75, icon: "fas fa-users" },
-    { number: "5+", title: t('common.yearsExperience'), percentage: 60, icon: "fas fa-calendar-alt" },
-    { number: "24/7", title: t('common.supportAvailable'), percentage: 100, icon: "fas fa-headset" }
+    { number: 100, suffix: "+", title: ht.projectsCompleted, percentage: 85, icon: "fas fa-rocket" },
+    { number: 50, suffix: "+", title: ht.clientsSatisfied, percentage: 75, icon: "fas fa-users" },
+    { number: 5, suffix: "+", title: ht.yearsExperience, percentage: 60, icon: "fas fa-calendar-alt" },
+    { number: 15, suffix: "+", title: ht.teamMembers, percentage: 100, icon: "fas fa-user-friends" }
   ];
+  
+  const groupCompanies = [
+    {
+      name: ht.goWideTitle,
+      description: ht.goWideDesc,
+      logo: gowideLogo
+    },
+    {
+      name: ht.ergoEdgeTitle,
+      description: ht.ergoEdgeDesc,
+      logo: ergoEdgeLogo
+    },
+    {
+      name: ht.globalTradeTitle,
+      description: ht.globalTradeDesc,
+      logo: globalTradeLogo
+    }
+  ];
+  
+  // Memoized components for performance
+  const MemoizedServiceBox = useMemo(() => React.memo(({ item, itemIndex }) => (
+    <motion.div
+      key={itemIndex}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
+    >
+      <ServiceBox>
+        <div className="box-icon">
+          <i className={item.icon}></i>
+        </div>
+        <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
+        <ul>
+          {item.features.map((feature, featureIndex) => (
+            <li key={featureIndex}>
+              <i className="fas fa-check"></i>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </ServiceBox>
+    </motion.div>
+  )), []);
 
   return (
     <>
@@ -929,14 +1212,20 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {t('hero.title')}
+            {displayText}
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+            >
+              |
+            </motion.span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {t('hero.subtitle')}
+            {ht.heroSubtitle}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -946,11 +1235,11 @@ const Home = () => {
             <HeroButtons>
               <HeroButton to="/contact" className="primary">
                 <i className="fas fa-rocket"></i>
-                {t('hero.getStarted')}
+                {ht.getStarted}
               </HeroButton>
               <HeroButton to="/about" className="secondary">
                 <i className="fas fa-info-circle"></i>
-                {t('hero.learnMore')}
+                {ht.learnMore}
               </HeroButton>
             </HeroButtons>
           </motion.div>
@@ -961,42 +1250,42 @@ const Home = () => {
         <Container>
           <SplitContent>
             <ContentSide>
-              <span className="highlight-text">{t('about.whoWeAre')}</span>
-              <h2>{t('hero.title')}</h2>
+              <span className="highlight-text">{ht.ourServices}</span>
+              <h2 dangerouslySetInnerHTML={{ __html: ht.heroTitle }}></h2>
               <p className="main-text">
-                {t('hero.subtitle')}
+                {ht.heroSubtitle}
               </p>
               <FeatureList>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>{t('about.strategicDigitalSolutions')}</span>
+                  <span>{ht.expertTeam}</span>
                 </FeatureItem>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>{t('about.expertTeamProfessionals')}</span>
+                  <span>{ht.innovativeSolutions}</span>
                 </FeatureItem>
                 <FeatureItem>
                   <i className="fas fa-check-circle"></i>
-                  <span>{t('about.innovativeTechnologyApproach')}</span>
+                  <span>{ht.clientFocused}</span>
                 </FeatureItem>
               </FeatureList>
               <CTAButton to="/contact">
                 <i className="fas fa-handshake"></i>
-                {t('common.contactUs')}
+                {ht.contactUs}
               </CTAButton>
             </ContentSide>
             <ImageSide>
               <FloatingCard className="card-1">
                 <i className="fas fa-chart-line"></i>
-                <span>{t('common.growthAnalytics')}</span>
+                <span>Growth Analytics</span>
               </FloatingCard>
               <FloatingCard className="card-2">
                 <i className="fas fa-users"></i>
-                <span>{t('common.teamCollaboration')}</span>
+                <span>Team Collaboration</span>
               </FloatingCard>
               <FloatingCard className="card-3">
                 <i className="fas fa-rocket"></i>
-                <span>{t('common.innovation')}</span>
+                <span>Innovation</span>
               </FloatingCard>
             </ImageSide>
           </SplitContent>
@@ -1043,64 +1332,7 @@ const Home = () => {
             </motion.div>
             <ServicesGrid>
               {service.items.map((item, itemIndex) => (
-                <motion.div
-                  key={itemIndex}
-                  initial={{ opacity: 0, y: 80, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: itemIndex * 0.15,
-                    type: "spring",
-                    stiffness: 120
-                  }}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    rotateY: 5,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <ServiceBox>
-                    <motion.div 
-                      className="box-icon"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: itemIndex * 0.15 + 0.3 }}
-                    >
-                      <i className={item.icon}></i>
-                    </motion.div>
-                    <motion.h3 
-                      dangerouslySetInnerHTML={{ __html: item.title }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: itemIndex * 0.15 + 0.4 }}
-                    ></motion.h3>
-                    <motion.ul
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: itemIndex * 0.15 + 0.5 }}
-                    >
-                      {item.features.map((feature, featureIndex) => (
-                        <motion.li 
-                          key={featureIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ 
-                            duration: 0.4, 
-                            delay: itemIndex * 0.15 + 0.6 + featureIndex * 0.1 
-                          }}
-                        >
-                          <i className="fas fa-check"></i>
-                          <span>{feature}</span>
-                        </motion.li>
-                      ))}
-                    </motion.ul>
-                  </ServiceBox>
-                </motion.div>
+                <MemoizedServiceBox key={itemIndex} item={item} itemIndex={itemIndex} />
               ))}
             </ServicesGrid>
             <motion.div
@@ -1115,7 +1347,7 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <CTAButton to={service.link}>
-                    {t('common.learnMore')}
+                    {ht.learnMore}
                   </CTAButton>
                 </motion.div>
               </CTAContainer>
@@ -1140,7 +1372,7 @@ const Home = () => {
                 transition={{ duration: 1.2, delay: 0.3, type: "spring" }}
                 style={{ perspective: "1000px" }}
               >
-                {t('common.ourProducts')}
+                {ht.ourProducts}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -1148,7 +1380,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-{t('about.exploreInnovativeSoftware')}
+                {ht.productsSubtitle}
               </motion.p>
             </SectionHeader>
           </motion.div>
@@ -1166,7 +1398,7 @@ const Home = () => {
                   <ProductCardBack>
                     <h3 className="product-title">{product.title}</h3>
                     <p className="product-description">{product.description}</p>
-                    <Link to={product.link} className="learn-more-btn">{t('common.learnMore')}</Link>
+                    <Link to={product.link} className="learn-more-btn">{ht.learnMore}</Link>
                   </ProductCardBack>
                 </ProductCardInner>
               </ProductCard>
@@ -1178,21 +1410,21 @@ const Home = () => {
       <ContactSection>
         <Container>
           <SectionHeader>
-            <h2>{t('about.readyToGetStarted')}</h2>
-            <p>{t('about.letUsKnowNeeds')}</p>
+            <h2>{ht.readyToStart}</h2>
+            <p>{ht.readyToStartDesc}</p>
           </SectionHeader>
           <div>
-            <h3>{t('about.tellUsAboutProject')}</h3>
-            <p>{t('about.projectDescription')}</p>
+            <h3>{ht.tellUsAboutProject}</h3>
+            <p>{ht.projectDescription}</p>
           </div>
           <ContactButtons>
             <ContactBtn to="/contact">
               <i className="fas fa-phone"></i>
-              {t('about.scheduleACall')}
+              {ht.scheduleCall}
             </ContactBtn>
             <ContactBtn to="/contact">
               <i className="fas fa-envelope"></i>
-              {t('common.contactUs')}
+              {ht.contactUs}
             </ContactBtn>
           </ContactButtons>
         </Container>
@@ -1201,18 +1433,26 @@ const Home = () => {
       <ServicesSection>
         <Container>
           <SectionHeader>
-            <h2>{t('about.whyChooseGoWide')}</h2>
-            <p>{t('about.deliverExceptionalResults')}</p>
+            <h2>{ht.whyChooseUs}</h2>
+            <p>{ht.whyChooseSubtitle}</p>
           </SectionHeader>
           <ServicesGrid>
             {whyChoose.map((item, index) => (
-              <ServiceBox key={index}>
-                <div className="box-icon">
-                  <i className={item.icon}></i>
-                </div>
-                <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
-                <p>{item.description}</p>
-              </ServiceBox>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ServiceBox>
+                  <div className="box-icon">
+                    <i className={item.icon}></i>
+                  </div>
+                  <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
+                  <p>{item.description}</p>
+                </ServiceBox>
+              </motion.div>
             ))}
           </ServicesGrid>
         </Container>
@@ -1221,19 +1461,27 @@ const Home = () => {
       <ProcessSection>
         <Container>
           <SectionHeader>
-            <h2>{t('common.ourProcess')}</h2>
-            <p>{t('about.howWeDeliverSuccess')}</p>
+            <h2>{ht.ourProcess}</h2>
+            <p>{ht.processSubtitle}</p>
           </SectionHeader>
           <ProcessTimeline>
             {process.map((step, index) => (
-              <TimelineItem key={index}>
-                <div className="timeline-marker">{step.number}</div>
-                <div className="timeline-icon">
-                  <i className={step.icon}></i>
-                </div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </TimelineItem>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <TimelineItem>
+                  <div className="timeline-marker">{step.number}</div>
+                  <div className="timeline-icon">
+                    <i className={step.icon}></i>
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </TimelineItem>
+              </motion.div>
             ))}
           </ProcessTimeline>
         </Container>
@@ -1242,26 +1490,59 @@ const Home = () => {
       <ImpactSection>
         <Container>
           <SectionHeader>
-            <h2>{t('common.ourImpact')}</h2>
-            <p>{t('about.numbersThatSpeak')}</p>
+            <h2>{ht.ourImpact}</h2>
+            <p>{ht.impactSubtitle}</p>
           </SectionHeader>
           <ImpactGrid>
-            {impacts.map((impact, index) => (
-              <ImpactCard key={index}>
-                <ProgressCard percentage={impact.percentage}>
-                  <div className="impact-icon">
-                    <i className={impact.icon}></i>
-                  </div>
-                  <span className="impact-number">{impact.number}</span>
-                  <h3>{impact.title}</h3>
-                </ProgressCard>
-              </ImpactCard>
-            ))}
+            {impacts.map((impact, index) => {
+              const { count, ref } = useCountUp(impact.number, 2000);
+              return (
+                <ImpactCard key={index} ref={ref}>
+                  <ProgressCard percentage={impact.percentage}>
+                    <div className="impact-icon">
+                      <i className={impact.icon}></i>
+                    </div>
+                    <span className="impact-number">{count}{impact.suffix}</span>
+                    <h3>{impact.title}</h3>
+                  </ProgressCard>
+                </ImpactCard>
+              );
+            })}
           </ImpactGrid>
         </Container>
       </ImpactSection>
 
-      <CounterStats />
+      <GroupSection>
+        <Container>
+          <SectionHeader>
+            <h2>{ht.ourGroup}</h2>
+            <p>{ht.groupSubtitle}</p>
+          </SectionHeader>
+          <GroupDescription>
+            <p>{ht.groupDescription}</p>
+          </GroupDescription>
+          <GroupGrid>
+            {groupCompanies.map((company, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <GroupCard>
+                  <div className="company-logo">
+                    <img src={company.logo} alt={company.name} />
+                  </div>
+                  <h3>{company.name}</h3>
+                  <p>{company.description}</p>
+                </GroupCard>
+              </motion.div>
+            ))}
+          </GroupGrid>
+        </Container>
+      </GroupSection>
+
       <TechShowcase />
     </HomePage>
     </>

@@ -134,6 +134,11 @@ const HeroVisual = styled.div`
     border: 3px solid rgba(255, 255, 255, 0.2);
     animation: float 6s ease-in-out infinite;
   }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
 `;
 
 const LaunchSection = styled.section`
@@ -208,12 +213,17 @@ const LaunchDetails = styled.div`
 `;
 
 const LaunchCard = styled.div`
-  background: linear-gradient(135deg, var(--primary) 0%, #e67c00 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #e67c00 100%);
   color: white;
   padding: 40px;
   border-radius: 20px;
   text-align: left;
   box-shadow: 0 15px 30px rgba(255, 107, 53, 0.2);
+  
+  body.light-theme & {
+    background: linear-gradient(135deg, #ff6b35 0%, #e67c00 100%);
+    color: white;
+  }
 
   h3 {
     font-size: 1.8rem;
@@ -414,11 +424,16 @@ const BenefitItem = styled.div`
 
 const CTASection = styled.section`
   padding: 100px 0;
-  background: linear-gradient(135deg, var(--primary) 0%, #e67c00 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #e67c00 100%);
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
+  
+  body.light-theme & {
+    background: linear-gradient(135deg, #ff6b35 0%, #e67c00 100%);
+    color: white;
+  }
 
   &::before {
     content: '';

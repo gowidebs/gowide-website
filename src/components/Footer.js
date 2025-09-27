@@ -43,7 +43,7 @@ const Footer = () => {
             <h4>{t('footer.quickLinks')}</h4>
             <ul>
               <li><Link to="/">{t('nav.home')}</Link></li>
-              <li><Link to="/about">{t('nav.about')}</Link></li>
+              <li><Link to="/team">{t('nav.ourTeams')}</Link></li>
               <li><Link to="/blog">{t('nav.blog')}</Link></li>
               <li><Link to="/case-studies">{t('nav.caseStudies')}</Link></li>
               <li><Link to="/careers">{t('nav.careers')}</Link></li>

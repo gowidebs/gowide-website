@@ -5,12 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 const UpFlyOverPage = styled.div`
   min-height: 100vh;
-  background: transparent;
+  background: var(--bg-primary);
   color: var(--text-primary);
-  
-  body.light-theme & {
-    background: rgba(255, 255, 254, 0.95);
-  }
 `;
 
 const HeroSection = styled.section`
@@ -149,12 +145,8 @@ const HeroVisual = styled.div`
 
 const LaunchSection = styled.section`
   padding: 80px 0;
-  background: transparent;
+  background: var(--bg-secondary);
   color: var(--text-primary);
-  
-  body.light-theme & {
-    background: rgba(248, 249, 250, 0.9);
-  }
 `;
 
 const LaunchBanner = styled.div`
@@ -247,11 +239,7 @@ const StatLabel = styled.div`
 
 const WhyChooseSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(255, 255, 254, 0.95);
-  }
+  background: var(--bg-primary);
 `;
 
 const WhyChooseGrid = styled.div`
@@ -307,11 +295,7 @@ const WhyChooseCard = styled.div`
 
 const HowItWorksSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(248, 249, 250, 0.9);
-  }
+  background: var(--bg-secondary);
 `;
 
 const StepsGrid = styled.div`
@@ -361,11 +345,7 @@ const StepNumber = styled.div`
 
 const PricingSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(255, 255, 254, 0.95);
-  }
+  background: var(--bg-primary);
 `;
 
 const PricingNote = styled.p`
@@ -479,11 +459,7 @@ const PricingFeatures = styled.ul`
 
 const MobileSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(248, 249, 250, 0.9);
-  }
+  background: var(--bg-secondary);
 `;
 
 const MobileContent = styled.div`
@@ -626,11 +602,7 @@ const SectionHeader = styled.div`
 
 const FeaturesSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(255, 255, 254, 0.95);
-  }
+  background: var(--bg-primary);
 `;
 
 const FeaturesGrid = styled.div`
@@ -716,11 +688,7 @@ const FeatureCard = styled.div`
 
 const TechStackSection = styled.section`
   padding: 100px 0;
-  background: transparent;
-  
-  body.light-theme & {
-    background: rgba(248, 249, 250, 0.9);
-  }
+  background: var(--bg-secondary);
 `;
 
 const TechGrid = styled.div`

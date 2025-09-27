@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import teamTranslations from '../translations/teamTranslations';
 
 const TeamPage = styled.div`
   min-height: 100vh;
@@ -160,99 +161,26 @@ const TeamCard = styled.div`
 `;
 
 const Team = () => {
-  const { t } = useTranslation();
-  const teamMembers = [
-    {
-      name: "Ashique Ebrahim",
-      role: "Founder",
-      bio: "Visionary leader driving GoWide's strategic direction and ensuring project excellence.",
-      icon: "fas fa-crown",
-      isLeadership: true
-    },
-    {
-      name: "Adish A",
-      role: "Co-founder",
-      bio: "Co-founder bringing technical expertise and innovative solutions to GoWide.",
-      icon: "fas fa-handshake"
-    },
-    {
-      name: "Askar Pattayil",
-      role: "Full Stack Developer",
-      bio: "Expert in both frontend and backend technologies, building scalable solutions.",
-      icon: "fas fa-server"
-    },
-    {
-      name: "Favas",
-      role: "Backend Developer",
-      bio: "Backend specialist ensuring robust, secure, and high-performance systems.",
-      icon: "fas fa-database"
-    },
-    {
-      name: "Sayana Fathima",
-      role: "Frontend Developer",
-      bio: "Creating beautiful, responsive user interfaces with modern web technologies.",
-      icon: "fas fa-laptop-code"
-    },
-    {
-      name: "Ayesha Fethin",
-      role: "Frontend Developer",
-      bio: "Crafting engaging user experiences with attention to detail and design.",
-      icon: "fas fa-laptop-code"
-    },
-    {
-      name: "Sarath Sasindran",
-      role: "Creative Director",
-      bio: "Leading creative vision and ensuring brand consistency across all projects.",
-      icon: "fas fa-palette"
-    },
-    {
-      name: "Muhammed Ameesh Radhi",
-      role: "Graphic Designer",
-      bio: "Creating stunning visual designs that communicate brand messages effectively.",
-      icon: "fas fa-paint-brush"
-    },
-    {
-      name: "Sinu Afsal",
-      role: "Marketing Head",
-      bio: "Driving marketing strategies that build brand awareness and generate leads.",
-      icon: "fas fa-bullhorn"
-    },
-    {
-      name: "Husna Niyas",
-      role: "Social Media Head",
-      bio: "Managing social media presence and engaging with our online community.",
-      icon: "fas fa-share-alt"
-    },
-    {
-      name: "Muhammed Rabeeh",
-      role: "Content Creator",
-      bio: "Crafting compelling content that tells our story and engages audiences.",
-      icon: "fas fa-pen-fancy"
-    },
-    {
-      name: "Fadhil Basheer",
-      role: "Business Strategy Head",
-      bio: "Developing strategic initiatives that drive business growth and success.",
-      icon: "fas fa-chess"
-    },
-    {
-      name: "Munas Moosa",
-      role: "Project Head",
-      bio: "Leading project execution and ensuring seamless delivery across all teams.",
-      icon: "fas fa-project-diagram"
-    },
-    {
-      name: "Mohammed Niyaz",
-      role: "Technical Engineer",
-      bio: "Technical expert ensuring robust engineering solutions and system optimization.",
-      icon: "fas fa-cogs"
-    },
-    {
-      name: "Naveed KM",
-      role: "Cyber Security Director",
-      bio: "Leading cybersecurity initiatives and protecting our systems from digital threats with strategic oversight.",
-      icon: "fas fa-shield-alt"
-    }
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const translations = teamTranslations[currentLang] || teamTranslations.en;
+  
+  const teamIcons = [
+    "fas fa-crown",
+    "fas fa-handshake",
+    "fas fa-server",
+    "fas fa-database",
+    "fas fa-laptop-code",
+    "fas fa-laptop-code",
+    "fas fa-palette",
+    "fas fa-paint-brush",
+    "fas fa-bullhorn",
+    "fas fa-share-alt",
+    "fas fa-pen-fancy",
+    "fas fa-chess",
+    "fas fa-project-diagram",
+    "fas fa-cogs",
+    "fas fa-shield-alt"
   ];
 
   return (
@@ -261,27 +189,27 @@ const Team = () => {
         <Container>
           <Badge>
             <i className="fas fa-users"></i>
-            {t('team.ourTeam')}
+            {translations.ourTeam}
           </Badge>
           <HeroTitle>
-            {t('team.title')}
+            {translations.title}
           </HeroTitle>
           <HeroSubtitle>
-            {t('team.subtitle')}
+            {translations.subtitle}
           </HeroSubtitle>
 
           <StatsGrid>
             <StatItem>
               <span className="stat-number">15+</span>
-              <span className="stat-label">{t('team.teamMembers')}</span>
+              <span className="stat-label">{translations.teamMembers}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">5+</span>
-              <span className="stat-label">{t('team.yearsExperience')}</span>
+              <span className="stat-label">{translations.yearsExperience}</span>
             </StatItem>
             <StatItem>
               <span className="stat-number">100+</span>
-              <span className="stat-label">{t('team.projectsDelivered')}</span>
+              <span className="stat-label">{translations.projectsDelivered}</span>
             </StatItem>
           </StatsGrid>
         </Container>
@@ -290,7 +218,7 @@ const Team = () => {
       <TeamSection>
         <Container>
           <TeamGrid>
-            {teamMembers.map((member, index) => (
+            {translations.members.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -298,9 +226,9 @@ const Team = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <TeamCard className={member.isLeadership ? 'leadership' : ''}>
+                <TeamCard className={index === 0 ? 'leadership' : ''}>
                   <div className="team-avatar">
-                    <i className={member.icon}></i>
+                    <i className={teamIcons[index]}></i>
                   </div>
                   <h3>{member.name}</h3>
                   <p className="team-role">{member.role}</p>
