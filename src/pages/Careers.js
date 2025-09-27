@@ -264,51 +264,203 @@ const NoJobsState = styled.div`
   }
 `;
 
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+`;
+
+const ModalContent = styled.div`
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(255, 137, 6, 0.3);
+      border-radius: 10px;
+      background: var(--input-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+      
+      &:focus {
+        outline: none;
+        border-color: var(--primary-orange);
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .file-input {
+      position: relative;
+      
+      input[type="file"] {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+      
+      .file-label {
+        display: block;
+        padding: 0.8rem;
+        border: 2px dashed rgba(255, 137, 6, 0.3);
+        border-radius: 10px;
+        text-align: center;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          border-color: var(--primary-orange);
+          color: var(--primary-orange);
+        }
+        
+        &.has-file {
+          border-color: var(--primary-orange);
+          color: var(--primary-orange);
+        }
+      }
+    }
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    
+    button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &.cancel {
+        background: transparent;
+        color: var(--text-secondary);
+        border: 1px solid rgba(255, 137, 6, 0.3);
+        
+        &:hover {
+          background: rgba(255, 137, 6, 0.1);
+        }
+      }
+      
+      &.submit {
+        background: var(--primary-orange);
+        color: white;
+        
+        &:hover {
+          background: var(--secondary-orange);
+        }
+        
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+`;
+
 const Careers = () => {
   const { t } = useTranslation();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    coverLetter: '',
+    resume: null
+  });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleApplyClick = (jobId, jobTitle) => {
-    // Create a proper modal instead of using prompt
-    const name = window.prompt('Enter your full name:');
-    if (!name) return;
+    setSelectedJob({ id: jobId, title: jobTitle });
+    setShowModal(true);
+    setFormData({ name: '', email: '', phone: '', coverLetter: '', resume: null });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData(prev => ({ ...prev, resume: file }));
+  };
+
+  const handleSubmitApplication = async (e) => {
+    e.preventDefault();
     
-    const email = window.prompt('Enter your email:');
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    if (!formData.name || !formData.email || !formData.resume) {
+      showNotification('Please fill in all required fields and upload your CV', 'error');
+      return;
+    }
+    
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
       showNotification('Please enter a valid email address', 'error');
       return;
     }
     
-    const phone = window.prompt('Enter your phone number:');
+    setSubmitting(true);
     
-    if (name && email) {
-      // Create file input for CV upload
-      const fileInput = document.createElement('input');
-      fileInput.type = 'file';
-      fileInput.accept = '.pdf,.doc,.docx';
-      fileInput.onchange = async (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          try {
-            const applicationData = {
-              jobId,
-              name,
-              email,
-              phone,
-              coverLetter: prompt('Brief cover letter (optional):') || '',
-              resume: file
-            };
-            
-            await submitJobApplication(applicationData);
-            showNotification(`Thank you for applying to ${jobTitle}! We will review your application and get back to you soon.`, 'success');
-          } catch (error) {
-            console.error('Error submitting application:', error);
-            showNotification('Sorry, there was an error submitting your application. Please try again.', 'error');
-          }
-        }
+    try {
+      const applicationData = {
+        jobId: selectedJob.id,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        coverLetter: formData.coverLetter,
+        resume: formData.resume
       };
-      fileInput.click();
+      
+      await submitJobApplication(applicationData);
+      showNotification(`Thank you for applying to ${selectedJob.title}! We will review your application and get back to you soon.`, 'success');
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      showNotification('Sorry, there was an error submitting your application. Please try again.', 'error');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -343,6 +495,81 @@ const Careers = () => {
       />
       <CareersContainer>
         <ParticleBackground />
+        
+        {showModal && (
+          <ModalOverlay onClick={() => setShowModal(false)}>
+            <ModalContent onClick={(e) => e.stopPropagation()}>
+              <h3>Apply for {selectedJob?.title}</h3>
+              <form onSubmit={handleSubmitApplication}>
+                <div className="form-group">
+                  <label>Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Email Address *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Phone Number</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Cover Letter</label>
+                  <textarea
+                    name="coverLetter"
+                    value={formData.coverLetter}
+                    onChange={handleInputChange}
+                    placeholder="Tell us why you're interested in this position..."
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Upload CV/Resume *</label>
+                  <div className="file-input">
+                    <input
+                      type="file"
+                      accept=".pdf,.doc,.docx"
+                      onChange={handleFileChange}
+                      required
+                    />
+                    <div className={`file-label ${formData.resume ? 'has-file' : ''}`}>
+                      {formData.resume ? formData.resume.name : 'Click to upload CV (PDF, DOC, DOCX)'}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="modal-actions">
+                  <button type="button" className="cancel" onClick={() => setShowModal(false)}>
+                    Cancel
+                  </button>
+                  <button type="submit" className="submit" disabled={submitting}>
+                    {submitting ? 'Submitting...' : 'Submit Application'}
+                  </button>
+                </div>
+              </form>
+            </ModalContent>
+          </ModalOverlay>
+        )}
       <HeroSection>
         <Title>
           Join Our <span className="highlight">Team</span>

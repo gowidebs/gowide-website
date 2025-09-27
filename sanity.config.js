@@ -140,7 +140,8 @@ const jobApplication = {
     {name: 'phone', title: 'Phone', type: 'string'},
     {name: 'coverLetter', title: 'Cover Letter', type: 'text'},
     {name: 'resume', title: 'Resume', type: 'file'},
-    {name: 'status', title: 'Status', type: 'string', options: {list: ['new', 'reviewing', 'interviewed', 'hired', 'rejected']}}
+    {name: 'appliedAt', title: 'Applied At', type: 'datetime'},
+    {name: 'status', title: 'Status', type: 'string', options: {list: ['new', 'reviewing', 'interviewed', 'hired', 'rejected']}, initialValue: 'new'}
   ]
 }
 

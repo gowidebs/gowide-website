@@ -126,16 +126,34 @@ export const submitContactForm = async (formData) => {
 
 export const submitJobApplication = async (applicationData) => {
   try {
-    return await writeClient.create({
+    let resumeAsset = null;
+    
+    // Upload resume file if provided
+    if (applicationData.resume) {
+      resumeAsset = await writeClient.assets.upload('file', applicationData.resume, {
+        filename: applicationData.resume.name
+      });
+    }
+    
+    const result = await writeClient.create({
       _type: 'jobApplication',
       jobId: applicationData.jobId,
       applicantName: applicationData.name,
       email: applicationData.email,
       phone: applicationData.phone,
       coverLetter: applicationData.coverLetter,
-      resume: applicationData.resume,
-      status: 'new'
-    })
+      resume: resumeAsset ? {
+        _type: 'file',
+        asset: {
+          _type: 'reference',
+          _ref: resumeAsset._id
+        }
+      } : null,
+      status: 'new',
+      appliedAt: new Date().toISOString()
+    });
+    
+    return result;
   } catch (error) {
     console.error('Error submitting job application:', error);
     throw error;
