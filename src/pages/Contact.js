@@ -1137,7 +1137,7 @@ const Contact = () => {
               </div>
             </DirectContactCard>
 
-            <DirectContactCard href="https://calendly.com/gowide" target="_blank" rel="noopener noreferrer">
+            <DirectContactCard href="https://calendly.com/gowidebs" target="_blank" rel="noopener noreferrer">
               <div className="contact-icon">
                 <i className="fas fa-calendar-alt"></i>
               </div>
